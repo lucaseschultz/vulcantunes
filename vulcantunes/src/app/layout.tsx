@@ -10,7 +10,8 @@ const geistSans = localFont({
 
 export const viewport: Viewport = {
   width: 'device-width',
-  initialScale: 1
+  initialScale: 1,
+  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#171717" }, { media: "(prefers-color-scheme: light)", color: "white" }],
 }
 
 export const metadata: Metadata = {
@@ -21,43 +22,26 @@ export const metadata: Metadata = {
   },
   description: "The place to buy innovative audio connectivity options for the Kawasaki Vulcan motorcycle",
   applicationName: "VulcanTunes",
-  authors: [{ name: "Lucas Schultz", url: "https://wyomingschultz.com/resume/"}],
   generator: "Next.js",
   keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan accessories"],
   robots: "index, follow",
-  icons: "/schultz-creations.jpg",
+  icons: "/vulcantunes-icon.png",
   openGraph: {
     type: "website",
     url: "https://vulcantunes.com",
     title: "VulcanTunes",
     description: "The place to buy innovative audio connectivity options for the Kawasaki Vulcan motorcycle",
     siteName: "VulcanTunes",
-    image: "/images/VulcanTunes.png",
+    images: [{
+      url: "/images/VulcanTunes.png",
+      alt: "VulcanTunes.com logo - Your ride just got better",
+    }],
     locale: "en_US",
   },
-
+  category: "business",
+  creator: "Lucas Schultz: https://wyomingschultz.com/resume/",
+  publisher: "VulcanTunes",
 };
-
-//   openGraph: {
-//     type: "website",
-//     locale: "en_US",
-//     siteName: "VulcanTunes",
-//     title: "VulcanTunes",
-//     description: "The place to buy innovative audio connectivity options for the Kawasaki Vulcan motorcycle",
-//   },
-
-
-// Additional metadata fields that would be valuable but require specific information:
-//
-//     manifest: Web app manifest URL
-// themeColor: Brand color for browser UI
-// openGraph.images: OG images for social sharing
-// verification: Google Search Console and other verification tokens
-// alternates: Alternative language versions if site is multilingual
-// category: Business category
-// creator: Company/developer name
-// publisher: Publishing entity name
-
 
 export default function RootLayout({
   children,
