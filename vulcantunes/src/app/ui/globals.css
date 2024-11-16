@@ -38,20 +38,10 @@ a {
   text-decoration: none;
 }
 
-/*##*/
 
-.navbar-container {
-    margin-top: 20px;
-    width: 100vw;
-}
-.navbar-content {
-    justify-content: center;
-    width: 100%;
-}
-.navbar-content a:hover {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-.navbar-separator {
-    margin: 0 8% 0 8%;
-}
+
+
+
+
+
+
