@@ -1,2 +1,8 @@
+General:
+Add light Theme
+
+page.module.css, globals.css:
+Remove unused styling
+
 layout.tsx:
 Ask Cody about adding more metadata keywords
