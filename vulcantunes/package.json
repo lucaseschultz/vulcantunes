@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.5-alpha.3",
-    "next": "15.0.2",
+    "next": "^15.0.3",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028"
   },
