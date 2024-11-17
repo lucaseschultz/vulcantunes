@@ -57,6 +57,8 @@ export const metadata: Metadata = {
     images: [{
       url: siteConfig.iconUrl,
       alt: "VulcanTunes.com logo - Your ride just got better",
+      width: 1200,
+      height: 630,
     }],
     locale: "en_US",
   },
