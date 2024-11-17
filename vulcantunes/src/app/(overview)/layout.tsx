@@ -1,5 +1,5 @@
-import TopNav from "@/app/ui/topnav";
-import Footer from "@/app/ui/footer";
+import TopNav from "@/app/ui/overview/topnav";
+import Footer from "@/app/ui/overview/footer";
 
 export default function Layout({
                                      children,
