@@ -7,10 +7,8 @@ export default function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={"page"}>
-      <header>
-        <TopNav></TopNav>
-      </header>
+    <div className="page">
+      <TopNav />
       {children}
       <Footer />
     </div>
