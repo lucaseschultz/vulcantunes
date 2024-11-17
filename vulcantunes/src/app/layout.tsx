@@ -80,8 +80,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={geistSans.variable}>
         {children}
       </body>
     </html>
