@@ -14,33 +14,40 @@ export const viewport: Viewport = {
   themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#171717" }, { media: "(prefers-color-scheme: light)", color: "white" }],
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://vulcantunes.com"),
-  title: {
-    template: '%s | VulcanTunes',
-    default: 'VulcanTunes',
-  },
+const siteConfig = {
+  title: 'VulcanTunes',
   description: "The place to buy innovative audio connectivity options for the Kawasaki Vulcan motorcycle",
-  applicationName: "VulcanTunes",
+  url: "https://vulcantunes.com",
+  iconUrl: "/vulcantunes-icon.png",
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    template: `%s | ${siteConfig.title}`,
+    default: siteConfig.title,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.title,
   generator: "Next.js",
   keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan accessories"],
   robots: "index, follow",
   icons: "/vulcantunes-icon.png",
   openGraph: {
     type: "website",
-    url: "https://vulcantunes.com",
-    title: "VulcanTunes",
-    description: "The place to buy innovative audio connectivity options for the Kawasaki Vulcan motorcycle",
-    siteName: "VulcanTunes",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.title,
     images: [{
-      url: "/images/VulcanTunes.png",
+      url: siteConfig.iconUrl,
       alt: "VulcanTunes.com logo - Your ride just got better",
     }],
     locale: "en_US",
   },
   category: "business",
   creator: "Lucas Schultz: https://wyomingschultz.com/resume/",
-  publisher: "VulcanTunes",
+  publisher: siteConfig.title,
 };
 
 export default function RootLayout({
