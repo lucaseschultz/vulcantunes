@@ -10,6 +10,7 @@ const geistSans = localFont({
   preload: true,
 });
 
+// noinspection JSUnusedGlobalSymbols
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -61,6 +62,12 @@ export const metadata: Metadata = {
       height: 630,
     }],
     locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: siteConfig.iconUrl,
   },
   category: "business",
   creator: "Lucas Schultz: https://wyomingschultz.com/resume/",
