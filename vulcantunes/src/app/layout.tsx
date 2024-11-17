@@ -36,8 +36,18 @@ export const metadata: Metadata = {
   applicationName: siteConfig.title,
   generator: "Next.js",
   keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan accessories"],
-  robots: "index, follow",
-  icons: "/vulcantunes-icon.png",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  icons: {
+    icon: siteConfig.iconUrl,
+    apple: siteConfig.iconUrl,
+  },
   openGraph: {
     type: "website",
     url: siteConfig.url,
