@@ -6,6 +6,8 @@ const geistSans = localFont({
   src: "./ui/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
+  display: 'swap',
+  preload: true,
 });
 
 export const viewport: Viewport = {
