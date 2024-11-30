@@ -14,7 +14,7 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.1.5-alpha.3",
+    "@phosphor-icons/react": "^2.1.7",
     "next": "^15.0.3",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028"
