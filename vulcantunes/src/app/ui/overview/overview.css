@@ -49,14 +49,11 @@ header {
     margin-right: .5rem;
   }
   a:hover {
-    font-size: 1.1rem;
-    font-weight: bold;
+    img, svg {
+      width: 36px;
+      height: 36px;
+    }
   }
-}
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
 }
 
 
