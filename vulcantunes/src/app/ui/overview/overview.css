@@ -59,6 +59,13 @@ main {
   gap: 32px;
 }
 
+
+/*main {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  gap: 32px;*/
+/*}*/
+
 /*main code {*/
 /*  background: var(--gray-alpha-100);*/
 /*  padding: 2px 4px;*/
