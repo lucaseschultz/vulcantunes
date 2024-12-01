@@ -15,8 +15,12 @@
 
 html {
   color-scheme: dark;
+    transition: all 0.2s ease-in-out;
     @media (prefers-color-scheme: light) {
         color-scheme: light;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
     }
 }
 
