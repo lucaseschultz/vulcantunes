@@ -4,6 +4,7 @@ export interface IconNavItem {
   name: string;
   href: string;
   icon: React.ComponentType<IconProps>;
+  size: number;
 }
 
 export interface ImageNavItem {
@@ -11,4 +12,6 @@ export interface ImageNavItem {
   href: string;
   icon: string;
   alt: string;
+  width: number;
+  height: number;
 }

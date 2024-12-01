@@ -15,12 +15,12 @@ export const displayNavItems = (NavName: string, NavItems: (IconNavItem|ImageNav
             <Image
               src={NavItem.icon}
               alt={(NavItem as ImageNavItem).alt}
-              width={32}
-              height={32}
+              width={(NavItem as ImageNavItem).width}
+              height={(NavItem as ImageNavItem).height}
             />
           ) : (
             <NavItem.icon
-              size={24}
+              size={(NavItem as IconNavItem).size}
               aria-hidden="true"
               weight='regular'
             />
