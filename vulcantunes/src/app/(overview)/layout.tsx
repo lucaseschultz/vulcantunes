@@ -1,3 +1,4 @@
+import '@/app/ui/overview/overview.css';
 import TopNav from "@/app/ui/overview/topnav";
 import Footer from "@/app/ui/overview/footer";
 

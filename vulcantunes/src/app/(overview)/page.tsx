@@ -1,4 +1,3 @@
-import '@/app/ui/overview/overview.css';
 
 export default function Home() {
   return (
