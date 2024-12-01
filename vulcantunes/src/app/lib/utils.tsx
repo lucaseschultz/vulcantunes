@@ -22,11 +22,11 @@ export const displayNavItems = (NavName: string, NavItems: (IconNavItem|ImageNav
             <NavItem.icon
               size={(NavItem as IconNavItem).size}
               aria-hidden="true"
-              weight='regular'
+              weight={NavItem.href === window.location.pathname ? 'fill' : 'regular'}
             />
           )}
         </Link>
       </li>
     ))}
   </ul>
-)
+);
