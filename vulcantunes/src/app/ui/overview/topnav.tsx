@@ -1,6 +1,8 @@
+'use client'
+
 import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions';
 import { MagnifyingGlass, ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
-import { displayNavItems } from '@/app/lib/utils';
+import { DisplayNavItems } from '@/app/lib/utils';
 
 const ICON_SIZE = 24;
 const TopNavLeft: ImageNavItem[] = [
@@ -43,8 +45,8 @@ const TopNavRight: IconNavItem[] = [
 export default function TopNav() {
   return (
     <nav className='top-nav' aria-label='Main navigation'>
-      {displayNavItems('top-nav-left', TopNavLeft)}
-      {displayNavItems('top-nav-right', TopNavRight)}
+      <DisplayNavItems NavName='top-nav-left' NavItems={TopNavLeft} />
+      <DisplayNavItems NavName='top-nav-right' NavItems={TopNavRight} />
     </nav>
   );
-};
+}
