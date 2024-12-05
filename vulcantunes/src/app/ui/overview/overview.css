@@ -37,6 +37,8 @@ header {
   display: flex;
   flex-direction: row;
   width: 95vw;
+  /* Setting the height to prevent content shift, due to icon size increasing on hover */
+  height: calc(2vh + 30px);
   margin: 2vh auto auto;
   margin-top: 2lvh;
   justify-content: space-between;
