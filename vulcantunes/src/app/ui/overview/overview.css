@@ -89,10 +89,11 @@ header {
   }
 }
 
-/*@media (max-width: 600px) {*/
-/*  .page {*/
-/*    padding: 32px 32px 80px;*/
-/*  }*/
+@media (max-width: 600px) {
+  main {
+    align-items: center;
+  }
+}
 
 footer {
   margin-top: 2rem;
