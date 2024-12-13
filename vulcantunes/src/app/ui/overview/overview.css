@@ -59,11 +59,10 @@ header {
 .top-nav {
   display: flex;
   flex-direction: row;
-  width: 95vw;
-  /* Setting the height to prevent content shift, due to icon size increasing on hover */
-  height: calc(2vh + 30px);
-  margin: 2vh auto auto;
-  margin-top: 2lvh;
+  width: 98vw;
+  height: 40px;
+  padding: 10px;
+  margin: auto;
   justify-content: space-between;
   * {
     display: flex;
@@ -95,10 +94,10 @@ header {
 /*    padding: 32px 32px 80px;*/
 /*  }*/
 
-/*  main {*/
-/*    align-items: center;*/
-/*  }*/
-
+footer {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
 .copyright {
   text-align: center;
