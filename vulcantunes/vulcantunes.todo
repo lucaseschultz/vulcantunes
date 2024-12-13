@@ -4,7 +4,7 @@ Add light Theme
 Optimize:
 
 
-page.module.css, globals.css:
+overview.css, globals.css:
 Remove unused styling
 
 globals.css:
