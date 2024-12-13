@@ -81,13 +81,13 @@ header {
   }
 }
 
-/* Enable hover only on non-touch devices */
-/*@media (hover: hover) and (pointer: fine) {*/
-/*  a:hover {*/
-/*    !*background: var(--button-primary-hover);*!*/
-/*    border-color: transparent;*/
-/*  }*/
-/*}*/
+ /*Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    /*background: var(--button-primary-hover);*/
+    border-color: transparent;
+  }
+}
 
 /*@media (max-width: 600px) {*/
 /*  .page {*/
