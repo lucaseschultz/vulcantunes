@@ -1,8 +1,8 @@
 General:
 Add light Theme
 
-Optimize:
-
+header-image.tsx:
+Darken image
 
 overview.css, globals.css:
 Remove unused styling
@@ -15,3 +15,5 @@ increase size of icons, when using desktop
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
+
+Optimize:
