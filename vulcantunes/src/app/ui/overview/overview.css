@@ -50,10 +50,9 @@ main {
   /*gap: 32px;*/
 }
 
-header {
-  width: 100%;
-  z-index: -1;
-}
+/*.header-image {*/
+/*  filter: brightness(65%);*/
+/*}*/
 
 .top-nav {
   z-index: 1;
