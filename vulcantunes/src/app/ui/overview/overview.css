@@ -50,10 +50,6 @@ main {
   /*gap: 32px;*/
 }
 
-/*.header-image {*/
-/*  filter: brightness(65%);*/
-/*}*/
-
 .top-nav {
   z-index: 1;
   position: fixed;
