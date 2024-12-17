@@ -51,7 +51,7 @@ main {
 
 header {
   width: 100%;
-  flex-direction: column;
+  z-index: -1;
 }
 
 /* Disabling a css inspection that notes margin-top being set twice, so that we can have a fallback, if lvh isn't supported */
