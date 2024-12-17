@@ -2,13 +2,13 @@ import HeaderImage from "@/app/ui/overview/header-image";
 
 export default function Home() {
   return (
-    <div className={'page'}>
+    <main className={'main'}>
       <header>
         <HeaderImage />
       </header>
-      <main className={'main'}>
+      <div className={'products'}>
 
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
