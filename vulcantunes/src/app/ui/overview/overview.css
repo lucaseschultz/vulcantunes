@@ -87,12 +87,6 @@ header {
   }
 }
 
-@media (max-width: 600px) {
-  main {
-    align-items: center;
-  }
-}
-
 footer {
   margin-top: 2rem;
   margin-bottom: 1rem;
