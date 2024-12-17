@@ -55,6 +55,7 @@ header {
 }
 
 .top-nav {
+  position: fixed;
   display: flex;
   flex-direction: row;
   width: 98vw;
