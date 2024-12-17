@@ -1,6 +1,9 @@
 General:
 Add light Theme
 
+top-nav:
+Darken background
+
 header-image.tsx:
 Darken image
 
