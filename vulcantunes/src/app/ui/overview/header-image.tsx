@@ -4,7 +4,7 @@ export default function HeaderImage() {
     return (
       <Image
           src="/vulcantunes-header-image-cropped.png"
-          alt="Vulcantunes.com logo - Your ride just got better"
+          alt="Vulcan motorcyle being driving on winding road"
           width={1080}
           height={674}
           style={{
