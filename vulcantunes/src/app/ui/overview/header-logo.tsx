@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function HeaderLogo() {
   return (
     <Image
-      src="/vulcantunes-header-image-cropped.png"
+      src="/vulcantunes-logo.png"
       alt="Vulcantunes.com logo - Your ride just got better"
-      width={1080}
-      height={674}
+      width={491}
+      height={101}
       priority
     />
   );
