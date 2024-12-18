@@ -8,13 +8,11 @@ header-image.tsx:
 Darken image?
 
 overview.css:
+increase size of icons, when using desktop
 Remove unused styling
 
 globals.css:
 Tinker with transitions
-
-overview.css:
-increase size of icons, when using desktop
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
