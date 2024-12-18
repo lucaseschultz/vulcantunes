@@ -55,10 +55,9 @@ main {
   position: fixed;
   display: flex;
   flex-direction: row;
-  width: 98vw;
-  height: 40px;
-  padding: 10px;
-  margin: auto;
+  width: 100lvw;
+  height: 43px;
+  padding: 10px 1lvw;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
