@@ -1,8 +1,5 @@
 General:
-Add light Theme
-
-top-nav:
-Darken background
+Add Logo to (overview)/'s header image
 
 header-image.tsx:
 Darken image?
@@ -10,6 +7,9 @@ Darken image?
 overview.css:
 increase size of icons, when using desktop
 Remove unused styling
+
+General:
+Add light Theme
 
 globals.css:
 Tinker with transitions
