@@ -60,6 +60,8 @@ main {
   padding: 10px;
   margin: auto;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   * {
     display: flex;
   }
