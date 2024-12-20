@@ -10,7 +10,7 @@ export default function HeaderImage() {
           style={{
             width: '100vw',
             height: 'auto',
-            // filter: 'brightness(65%)',
+            filter: 'brightness(50%)',
           }}
           priority
       />
