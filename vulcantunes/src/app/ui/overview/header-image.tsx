@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function HeaderImage() {
     return (
       <Image
-          src="/vulcantunes-header-image-cropped.png"
-          alt="Vulcan motorcyle being driving on winding road"
-          width={1080}
-          height={674}
+          src="/vulcantunes-header-image.png"
+          alt="Vulcan motorcyle rode on winding road"
+          width={654}
+          height={395}
           style={{
             width: '100vw',
             height: 'auto',
