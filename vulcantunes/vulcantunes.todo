@@ -17,4 +17,6 @@ Tinker with transitions
 layout.tsx:
 Ask Cody about adding more metadata keywords
 
-Optimize:
+Inventory Management:
+Discontinued/Backordered, reorder level, restock date.
+Quantity in stock
