@@ -86,8 +86,8 @@ header {
 }
 .header-logo {
   position: absolute;
-  top: 50%;
-  left: 30%;
+  top: 55%;
+  left: 29%;
   transform: translate(-50%, -50%);
 }
 footer {
