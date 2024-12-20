@@ -75,6 +75,10 @@ main {
   flex-direction: column;
   align-items: center;
   /*gap: 32px;*/
+  @media (min-width: 768px) {
+    position: relative;
+    bottom: 50px;
+  }
 }
 header {
   position: relative;
@@ -99,5 +103,12 @@ footer {
   a:hover {
     /*background: var(--button-primary-hover);*/
     border-color: transparent;
+  }
+}
+/* Vertically center header-image, if the lvh is less than the height of the header-image */
+@media (max-height: calc(100lvw * 674/1080)) {
+  .header-image {
+    position: relative;
+    bottom: calc((100lvw * 674/1080 - 100lvh) / 2);
   }
 }
