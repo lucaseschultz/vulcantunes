@@ -105,10 +105,3 @@ footer {
     border-color: transparent;
   }
 }
-/* Vertically center header-image, if the lvh is less than the height of the header-image */
-@media (max-height: calc(100lvw * 674/1080)) {
-  .header-image {
-    position: relative;
-    bottom: calc((100lvw * 674/1080 - 100lvh) / 2);
-  }
-}
