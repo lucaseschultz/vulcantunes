@@ -9,7 +9,7 @@ export default function HeaderLogo() {
       height={101}
       className={'header-logo'}
       style={{
-        width: '30lvw',
+        width: '40lvw',
         height: 'auto',
         zIndex: 1,
       }}
