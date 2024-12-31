@@ -1,7 +1,7 @@
 'use client'
 
 import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions';
-import { MagnifyingGlass, ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
+import { ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
 import { DisplayNavItems } from '@/app/lib/utils';
 import { useEffect, useState } from 'react';
 
@@ -26,11 +26,6 @@ export default function TopNav() {
   }];
 
   const TopNavRight: IconNavItem[] = [{
-    name: 'Search',
-    href: '/search',
-    icon: MagnifyingGlass,
-    size: iconSize,
-  }, {
     name: 'Cart',
     href: '/cart',
     icon: ShoppingCart,
