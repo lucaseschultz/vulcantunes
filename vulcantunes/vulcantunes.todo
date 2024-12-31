@@ -1,8 +1,8 @@
 General:
 Add Products to Home Page
-Add Product Reviews?
-Add Login/Accounts
-Add Admin Login/Page
+Make Product Reviews Page
+Make Login/Accounts Page
+Make Admin Login/Page
 Add light Theme
 
 layout.tsx:
