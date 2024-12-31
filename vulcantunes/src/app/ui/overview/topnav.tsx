@@ -26,7 +26,7 @@ export default function TopNav() {
   }];
 
   const TopNavRight: IconNavItem[] = [{
-    name: 'Cart',
+    name: 'Shopping Cart',
     href: '/cart',
     icon: ShoppingCart,
     size: iconSize,
