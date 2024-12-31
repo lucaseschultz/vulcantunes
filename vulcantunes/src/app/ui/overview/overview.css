@@ -59,11 +59,3 @@ footer {
 .copyright {
   text-align: center;
 }
-
-/* Enable hover effects only on non-touch devices to avoid unwanted behavior on touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a:hover {
-    /*background: var(--button-primary-hover);*/
-    border-color: transparent;
-  }
-}
