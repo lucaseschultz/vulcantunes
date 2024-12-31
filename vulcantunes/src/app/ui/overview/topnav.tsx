@@ -5,7 +5,7 @@ import { ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
 import { DisplayNavItems } from '@/app/lib/utils';
 import { useEffect, useState } from 'react';
 
-const getIconSize = () => window.innerWidth > 768 ? 28 : 24;
+const getIconSize = () => window.innerWidth >= 768 ? 28 : 24;
 
 export default function TopNav() {
   const [iconSize, setIconSize] = useState(getIconSize());
