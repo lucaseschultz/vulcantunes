@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+'use client'
 
+import { useState, useMemo, type ChangeEvent } from 'react'
 
 interface Country {
   name: string
