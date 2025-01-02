@@ -59,15 +59,3 @@ footer {
   text-align: center;
 }
 
-.countries-table {
-  border-collapse: collapse;
-  tbody {
-    tr {
-      border-bottom: 1px solid var(--foreground);
-    }
-    tr:last-child {
-      border-bottom: none;
-    }
-  }
-}
-
