@@ -7,8 +7,7 @@
   height: 43px;
   padding: 10px 1lvw;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background-color: #1e2124;
   @media (min-width: 768px) {
     height: 47px;
   }
