@@ -15,16 +15,22 @@ const COUNTRIES: Country[] = [
   { name: "Japan", continent: "Asia" },
 ]
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-  };
+export default function Products() {
+  const [searchInput, setSearchInput] = useState("")
 
-  if (searchInput.length > 0) {
-    countries.filter((country) => {
-      return country.name.match(searchInput);
-    });
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value)
   }
+
+  const filteredCountries = useMemo(() => {
+    if (!searchInput) return COUNTRIES
+
+    const searchTerm = searchInput.toLowerCase()
+    return COUNTRIES.filter((country) =>
+      country.name.toLowerCase().includes(searchTerm) ||
+      country.continent.toLowerCase().includes(searchTerm)
+    )
+  }, [searchInput])
 
   return (
     <div>
