@@ -40,6 +40,7 @@ export default function Products() {
         onChange={handleChange}
         value={searchInput} />
       <table
+        className="countries-table"
         aria-label="Products"
       >
         <thead>
