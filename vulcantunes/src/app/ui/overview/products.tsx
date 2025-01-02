@@ -49,14 +49,12 @@ export default function Products() {
           </tr>
         </thead>
         <tbody>
-          {countries.map((country) => {
-            return (
-              <tr>
-                <td>{country.name}</td>
-                <td>{country.continent}</td>
-              </tr>
-            )
-          })}
+        {filteredCountries.map((country) => (
+          <tr key={country.name}>
+            <td>{country.name}</td>
+            <td>{country.continent}</td>
+          </tr>
+        ))}
         </tbody>
       </table>
     </div>
