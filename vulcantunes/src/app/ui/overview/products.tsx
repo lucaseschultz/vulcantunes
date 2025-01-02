@@ -1,17 +1,18 @@
 import React, {useState} from 'react'
 
 
-export default function Products() {
+interface Country {
+  name: string
+  continent: string
+}
 
-  const [searchInput, setSearchInput] = useState("");
-
-  const countries = [
-    { name: "Belgium", continent: "Europe" },
-    { name: "India", continent: "Asia" },
-    { name: "Bolivia", continent: "South America" },
-    { name: "Ghana", continent: "Africa" },
-    { name: "Japan", continent: "Asia" },
-  ];
+const COUNTRIES: Country[] = [
+  { name: "Belgium", continent: "Europe" },
+  { name: "India", continent: "Asia" },
+  { name: "Bolivia", continent: "South America" },
+  { name: "Ghana", continent: "Africa" },
+  { name: "Japan", continent: "Asia" },
+]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
