@@ -58,5 +58,5 @@ export default function Products() {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
