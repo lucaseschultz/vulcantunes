@@ -1,4 +1,9 @@
-.countries-table {
+.products {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.products-table {
     border-collapse: collapse;
     width: 100%;
     tbody {
