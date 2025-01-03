@@ -1,5 +1,6 @@
 .countries-table {
     border-collapse: collapse;
+    width: 100%;
     tbody {
         tr {
             border-bottom: 1px solid var(--foreground);
