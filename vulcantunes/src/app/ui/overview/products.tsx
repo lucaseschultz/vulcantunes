@@ -33,14 +33,14 @@ export default function Products() {
   }, [searchInput])
 
   return (
-    <div>
+    <div className="products">
       <input
         type="search"
         placeholder="Search here"
         onChange={handleChange}
         value={searchInput} />
       <table
-        className="countries-table"
+        className="products-table"
         aria-label="Products"
       >
         <thead>
