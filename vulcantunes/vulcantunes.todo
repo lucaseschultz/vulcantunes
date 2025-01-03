@@ -1,5 +1,7 @@
 General:
+"Shrink" header image for laptops
 Add Products to products.tsx
+Add search bar to navbar
 Make Product Reviews Page
 Make Login/Accounts Page
 Make Admin Login/Page
