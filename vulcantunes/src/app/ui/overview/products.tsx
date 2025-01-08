@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, type ChangeEvent } from 'react'
+import { useState, useMemo, type ChangeEvent, useCallback } from 'react'
 
 interface Country {
   name: string
@@ -19,9 +19,9 @@ const COUNTRIES: Country[] = [
 export default function Products() {
   const [searchInput, setSearchInput] = useState("")
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value)
-  }
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value.trim())
+  }, [])
 
   const filteredCountries = useMemo(() => {
     if (!searchInput) return COUNTRIES
