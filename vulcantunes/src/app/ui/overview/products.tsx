@@ -48,10 +48,10 @@ export default function Products() {
         aria-label="Products list"
       >
         <thead>
-          <tr>
-            <th>Country</th>
-            <th>Continent</th>
-          </tr>
+        <tr>
+          <th scope='col'>Country</th>
+          <th scope='col'>Continent</th>
+        </tr>
         </thead>
         <tbody>
         {filteredCountries.map(({ name, continent, id }) => (
