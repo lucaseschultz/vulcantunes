@@ -6,11 +6,16 @@
 }
 
 :root {
-    --background: #171717;
-    --foreground: white;
+    --background: #14171f;
+    --foreground: #1d212f;
+    --text-color: #f9fafb;
+    --outline: #262b38;
+    --top-nav-height: 43px;
     @media (prefers-color-scheme: light) {
-        --background: white;
-        --foreground: #171717;
+        --background: #f9fafb;
+        --foreground: white;
+        --text-color: black;
+        --outline: #1e1f22;
     }
 }
 
@@ -31,7 +36,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
