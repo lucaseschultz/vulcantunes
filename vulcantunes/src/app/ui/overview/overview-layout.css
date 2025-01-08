@@ -47,10 +47,7 @@ main {
   }
 }
 .header-logo {
-  position: absolute;
-  top: 55%;
-  left: 29%;
-  transform: translate(-50%, -50%);
+  /*margin: 0 auto;*/
 }
 footer {
   margin-top: 2rem;
