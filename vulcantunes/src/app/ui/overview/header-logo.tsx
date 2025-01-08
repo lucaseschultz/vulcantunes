@@ -8,11 +8,6 @@ export default function HeaderLogo() {
       width={491}
       height={101}
       className={'header-logo'}
-      style={{
-        width: '40lvw',
-        height: 'auto',
-        zIndex: 1,
-      }}
       priority
     />
   );
