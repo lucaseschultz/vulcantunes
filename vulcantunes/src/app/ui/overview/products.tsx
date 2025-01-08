@@ -35,14 +35,16 @@ export default function Products() {
 
   return (
     <section className="products">
-      <input
-        type="search"
-        placeholder="Search products"
-        onChange={handleChange}
-        value={searchInput}
-        aria-label="Search products"
-        className="search-input"
-      />
+      <div className="filter">
+        <input
+          type="search"
+          placeholder="Search products"
+          onChange={handleChange}
+          value={searchInput}
+          aria-label="Search products"
+          className="search-input"
+        />
+      </div>
       <table
         className="products-table"
         aria-label="Products list"
