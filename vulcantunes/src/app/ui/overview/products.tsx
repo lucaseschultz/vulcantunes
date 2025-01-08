@@ -37,7 +37,7 @@ export default function Products() {
     <section className="products">
       <input
         type="search"
-        placeholder="Search here"
+        placeholder="Search products"
         onChange={handleChange}
         value={searchInput}
         aria-label="Search products"
