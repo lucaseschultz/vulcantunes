@@ -34,7 +34,7 @@ export default function Products() {
   }, [searchInput])
 
   return (
-    <div className="products">
+    <section className="products">
       <input
         type="search"
         placeholder="Search here"
@@ -62,6 +62,6 @@ export default function Products() {
         ))}
         </tbody>
       </table>
-    </div>
+    </section>
   )
 }
