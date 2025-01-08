@@ -35,6 +35,8 @@
   }
 }
 main {
+  position: relative;
+  top: var(--top-nav-height);
   display: flex;
   flex-direction: column;
   gap: 2rem;
