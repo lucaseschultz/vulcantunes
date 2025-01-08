@@ -39,7 +39,10 @@ export default function Products() {
         type="search"
         placeholder="Search here"
         onChange={handleChange}
-        value={searchInput} />
+        value={searchInput}
+        aria-label="Search products"
+        className="search-input"
+      />
       <table
         className="products-table"
         aria-label="Products"
