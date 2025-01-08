@@ -1,6 +1,8 @@
 import '@/app/ui/overview/overview.css';
 import TopNav from "@/app/ui/overview/topnav";
 import Footer from "@/app/ui/overview/footer";
+import HeaderImage from "@/app/ui/overview/header-image";
+import HeaderLogo from "@/app/ui/overview/header-logo";
 
 export default function Layout({
   children
@@ -10,8 +12,14 @@ export default function Layout({
   return (
     <div className="page">
       <TopNav />
-      {children}
-      <Footer />
+      <main>
+        <header>
+          <HeaderImage/>
+          <HeaderLogo/>
+        </header>
+        {children}
+      </main>
+      <Footer/>
     </div>
   );
 }

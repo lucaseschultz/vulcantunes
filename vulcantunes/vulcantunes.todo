@@ -1,7 +1,6 @@
 General:
 get padding for .products to work
 Make header image+logo a singular import, "header"
-Move header to layout (all pages show it, rather than just the "home" page)
 "Shrink" header image for laptops in order to make the current page more clear
 Add Products to products.tsx
 Add search bar to navbar
