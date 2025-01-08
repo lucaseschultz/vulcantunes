@@ -45,7 +45,7 @@ export default function Products() {
       />
       <table
         className="products-table"
-        aria-label="Products"
+        aria-label="Products list"
       >
         <thead>
           <tr>
