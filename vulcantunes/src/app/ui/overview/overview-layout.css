@@ -7,8 +7,11 @@
   height: 43px;
   padding: 10px 1lvw;
   justify-content: space-between;
-  background-color: #131921;
-  @media (min-width: 768px) {
+  background-color: #181b26;
+  @media (prefers-color-scheme: light) {
+    background-color: white;
+  }
+    @media (min-width: 768px) {
     height: 47px;
   }
   * {
