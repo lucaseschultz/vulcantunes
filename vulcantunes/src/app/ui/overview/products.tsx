@@ -27,10 +27,10 @@ export default function Products() {
     if (!searchInput) return COUNTRIES
 
     const searchTerm = searchInput.toLowerCase()
-    return COUNTRIES.filter((country) =>
+    return COUNTRIES.filter((country) => (
       country.name.toLowerCase().includes(searchTerm) ||
       country.continent.toLowerCase().includes(searchTerm)
-    )
+    ))
   }, [searchInput])
 
   return (
