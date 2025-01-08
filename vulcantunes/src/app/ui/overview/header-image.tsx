@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Header() {
+export default function HeaderImage() {
   return (
     <div className="header">
       <Image
