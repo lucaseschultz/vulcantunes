@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   width: 100lvw;
-  height: 43px;
+  height: var(--top-nav-height);
   padding: 10px 1lvw;
   justify-content: space-between;
   background-color: #181b26;

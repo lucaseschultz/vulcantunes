@@ -13,7 +13,7 @@
     width: 100%;
     tbody {
         tr {
-            border-bottom: 1px solid var(--foreground);
+            border-bottom: 1px solid var(--outline);
         }
         tr:last-child {
             border-bottom: none;
