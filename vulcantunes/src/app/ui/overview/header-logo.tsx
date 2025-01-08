@@ -1,20 +1,8 @@
 import Image from "next/image";
 
-export default function HeaderImage() {
+export default function HeaderLogo() {
   return (
     <div className="header">
-      <Image
-          src="/vulcantunes-header-image.png"
-          alt="Vulcan motorcyle rode on winding road"
-          width={654}
-          height={395}
-          style={{
-            width: '100vw',
-            height: 'auto',
-            filter: 'brightness(50%)',
-          }}
-          priority
-      />
       <Image
         src="/vulcantunes-logo.png"
         alt="Vulcantunes.com logo - Your ride just got better"
