@@ -5,14 +5,15 @@ import { useState, useMemo, type ChangeEvent } from 'react'
 interface Country {
   name: string
   continent: string
+  id: string
 }
 
 const COUNTRIES: Country[] = [
-  { name: "Belgium", continent: "Europe" },
-  { name: "India", continent: "Asia" },
-  { name: "Bolivia", continent: "South America" },
-  { name: "Ghana", continent: "Africa" },
-  { name: "Japan", continent: "Asia" },
+  { name: "Belgium", continent: "Europe", id: "be" },
+  { name: "Bolivia", continent: "South America", id: "bo" },
+  { name: "Ghana", continent: "Africa", id: "gh" },
+  { name: "India", continent: "Asia", id: "in" },
+  { name: "Japan", continent: "Asia", id: "jp" },
 ]
 
 export default function Products() {
@@ -50,10 +51,10 @@ export default function Products() {
           </tr>
         </thead>
         <tbody>
-        {filteredCountries.map((country) => (
-          <tr key={country.name}>
-            <td>{country.name}</td>
-            <td>{country.continent}</td>
+        {filteredCountries.map(({ name, continent, id }) => (
+          <tr key={id}>
+            <td>{name}</td>
+            <td>{continent}</td>
           </tr>
         ))}
         </tbody>
