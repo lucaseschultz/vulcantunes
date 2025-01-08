@@ -1,5 +1,4 @@
 General:
-get padding for .products to work
 Make header image+logo a singular import, "header"
 "Shrink" header image for laptops in order to make the current page more clear
 Add Products to products.tsx

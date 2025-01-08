@@ -1,4 +1,4 @@
-import '@/app/ui/overview/overview.css';
+import '@/app/ui/overview/overview-layout.css';
 import TopNav from "@/app/ui/overview/topnav";
 import Footer from "@/app/ui/overview/footer";
 import HeaderImage from "@/app/ui/overview/header-image";
