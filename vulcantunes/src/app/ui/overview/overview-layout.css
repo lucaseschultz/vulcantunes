@@ -36,6 +36,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   margin: 0 auto;
+  max-width: 1200px;
   @media (min-width: 768px) {
     position: relative;
     bottom: 50px;
