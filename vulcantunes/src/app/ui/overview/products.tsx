@@ -56,10 +56,7 @@ export default function Products() {
           className="search-input"
         />
       </div>
-      <table
-        className="products-table"
-        aria-label="Products list"
-      >
+      <table className="products-table" aria-label="Products list">
         <thead>
         <tr>
           <th scope='col'>Country</th>
