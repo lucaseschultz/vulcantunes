@@ -8,6 +8,7 @@
   padding: 10px 1lvw;
   justify-content: space-between;
   background-color: #181b26;
+  border-bottom: 1px solid var(--outline);
   @media (prefers-color-scheme: light) {
     background-color: white;
   }
