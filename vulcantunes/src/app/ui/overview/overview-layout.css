@@ -23,8 +23,8 @@
   }
   a:hover {
     img, svg {
-      width: 30px;
-      height: 30px;
+      width: var(--top-nav-icon-hover-size);
+      height: var(--top-nav-icon-hover-size);
     }
   }
 }
@@ -51,17 +51,3 @@ footer {
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .top-nav {
-    height: var(--top-nav-height);
-    a:hover {
-      img, svg {
-        width: 34px;
-        height: 34px;
-      }
-    }
-  }
-  main & footer {
-    top: var(--top-nav-height);
-  }
-}

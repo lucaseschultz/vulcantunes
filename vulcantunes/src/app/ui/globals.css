@@ -11,12 +11,14 @@
     --outline: #262b38;
     --text-color: #f9fafb;
     --top-nav-height: 43px;
+    --top-nav-icon-hover-size: 30px;
     @media (prefers-color-scheme: light) {
         --background: #f9fafb;
         --foreground: white;
         --outline: #1e1f22;
         --text-color: black;
         --top-nav-height: 47px;
+        --top-nav-icon-hover-size: 34px;
     }
 }
 
