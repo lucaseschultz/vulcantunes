@@ -1,4 +1,5 @@
 General:
+Rearrange nopnav logos (only profile on left/Add line right of logo to seperate from rest of logos)
 Add Products to products.tsx
 Add search bar to navbar
 Make Product Reviews Page
