@@ -1,6 +1,6 @@
 'use client'
 
-import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions';
+import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions'
 import { ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
 import { DisplayNavItems } from '@/app/lib/utils'
 import { useMemo } from 'react'
@@ -41,5 +41,5 @@ export default function TopNav() {
       <DisplayNavItems NavName='top-nav-left' NavItems={TopNavLeft} />
       <DisplayNavItems NavName='top-nav-right' NavItems={TopNavRight} />
     </nav>
-  );
+  )
 }
