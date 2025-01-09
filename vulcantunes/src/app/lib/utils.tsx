@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from 'next/navigation';
@@ -37,4 +38,31 @@ export function DisplayNavItems({ NavName, NavItems }: { NavName: string, NavIte
       })}
     </ul>
   );
+}
+
+interface WindowSize {
+  width: number
+  height: number
+}
+export function fetchWindowSize() {
+  const [windowSize, setWindowSize] = useState<WindowSize>({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  })
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize()
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return windowSize
 }
