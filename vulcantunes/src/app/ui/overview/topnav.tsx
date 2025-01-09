@@ -39,8 +39,8 @@ export default function TopNav() {
 
   return (
     <nav className='top-nav' aria-label='Main navigation'>
-      <DisplayNavItems NavName='top-nav-left' NavItems={TopNavLeft} />
-      <DisplayNavItems NavName='top-nav-right' NavItems={TopNavRight} />
+      <DisplayNavItems NavName='top-nav-left' NavItems={topNavLeft} />
+      <DisplayNavItems NavName='top-nav-right' NavItems={topNavRight} />
     </nav>
   )
 }
