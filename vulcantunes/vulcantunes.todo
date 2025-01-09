@@ -1,11 +1,9 @@
 General:
-Rearrange nopnav logos (only profile on left/Add line right of logo to seperate from rest of logos)
 Add Products to products.tsx
 Add search bar to navbar
 Make Product Reviews Page
 Make Login/Accounts Page
 Make Admin Login/Page
-Add light Theme
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
