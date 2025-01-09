@@ -4,11 +4,13 @@ import Image from "next/image";
 import { useTheme } from 'next-themes';
 
 export default function HeaderLogo() {
-  const { theme } = useTheme();
+  const { theme, systemTheme } = useTheme();
 
-  const logoSrc = theme === 'dark'
-    ? "/vulcantunes-logo-dark.png"
-    : "/vulcantunes-logo-light.png";
+  const currentTheme = theme === 'system' ? systemTheme : theme || 'dark';
+
+  const logoSrc = currentTheme === 'dark'
+    ? '/vulcantunes-logo-dark.png'
+    : '/vulcantunes-logo-light.png';
 
   return (
     <Image
