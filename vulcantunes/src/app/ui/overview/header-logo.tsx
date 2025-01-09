@@ -16,7 +16,7 @@ export default function HeaderLogo() {
       alt="Vulcantunes.com logo - Your ride just got better"
       width={491}
       height={101}
-      className={'header-logo'}
+      className="header-logo"
       style={{
         width: '80lvw',
         maxWidth: '491px',
