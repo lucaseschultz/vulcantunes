@@ -17,14 +17,14 @@ export default function TopNav() {
     alt: 'VulcanTunes Icon',
     width: iconSize,
     height: iconSize,
-  }];
-
-  const TopNavRight: IconNavItem[] = [{
+  }, {
     name: 'Shopping Cart',
     href: '/cart',
     icon: ShoppingCart,
     size: iconSize,
-  }, {
+  }], [iconSize])
+
+  const topNavRight: IconNavItem[] = useMemo(() => [{
     name: 'Wishlist',
     href: '/wishlist',
     icon: Heart,
