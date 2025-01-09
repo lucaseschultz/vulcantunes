@@ -39,8 +39,8 @@ export default function Products() {
     if (!searchInput) return COUNTRIES
 
     return COUNTRIES.filter((country) => (
-      country.name.toLowerCase().includes(searchTerm) ||
-      country.continent.toLowerCase().includes(searchTerm)
+      country.name.toLowerCase().includes(searchInput) ||
+      country.continent.toLowerCase().includes(searchInput)
     ))
   }, [searchInput])
 
