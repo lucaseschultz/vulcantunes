@@ -34,7 +34,8 @@ export default function TopNav() {
     href: '/account',
     icon: User,
     size: iconSize,
-  }];
+  }], [iconSize])
+
 
   return (
     <nav className='top-nav' aria-label='Main navigation'>
