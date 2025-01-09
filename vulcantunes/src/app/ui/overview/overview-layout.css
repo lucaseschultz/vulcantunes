@@ -47,7 +47,8 @@ main {
   }
 }
 .header-logo {
-  /*margin: 0 auto;*/
+  margin: 0 auto;
+  display: flex;
 }
 footer {
   margin-top: 2rem;
