@@ -34,6 +34,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   margin: 0 auto;
+  padding-top: 1rem;
 }
 .header-logo {
   margin: 0 auto;
