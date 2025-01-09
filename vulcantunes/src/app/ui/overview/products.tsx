@@ -67,14 +67,7 @@ export default function Products() {
           <th scope='col'>Continent</th>
         </tr>
         </thead>
-        <tbody>
-        {filteredCountries.map(({ name, continent, id }) => (
-          <tr key={id}>
-            <td>{name}</td>
-            <td>{continent}</td>
-          </tr>
-        ))}
-        </tbody>
+        <CountriesTableBody countries={filteredCountries}/>
       </table>
     </section>
   )
