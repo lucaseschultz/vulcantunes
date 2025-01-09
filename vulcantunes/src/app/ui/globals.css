@@ -10,13 +10,13 @@
     --foreground: #1d212f;
     --text-color: #f9fafb;
     --outline: #262b38;
-    --top-nav-mobile-height: 43px;
-    --top-nav-desktop-height: 47px;
+    --top-nav-height: 43px;
     @media (prefers-color-scheme: light) {
         --background: #f9fafb;
         --foreground: white;
         --text-color: black;
         --outline: #1e1f22;
+        --top-nav-height: 47px;
     }
 }
 
