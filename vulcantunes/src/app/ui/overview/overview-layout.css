@@ -28,6 +28,13 @@
     }
   }
 }
+.top-nav-left {
+  > *:first-child {
+    border-right: 1px solid var(--outline);
+    padding-right: 1rem;
+    margin-right: 1rem !important;
+  }
+}
 main {
   position: relative;
   top: var(--top-nav-height);
