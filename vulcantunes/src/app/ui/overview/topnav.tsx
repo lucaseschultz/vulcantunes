@@ -2,21 +2,15 @@
 
 import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions';
 import { ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
-import { DisplayNavItems } from '@/app/lib/utils';
-import { useEffect, useState } from 'react';
-
-const getIconSize = () => window.innerWidth >= 768 ? 28 : 24;
+import { DisplayNavItems } from '@/app/lib/utils'
+import { useMemo } from 'react'
+import { fetchWindowSize } from '@/app/lib/utils'
 
 export default function TopNav() {
-  const [iconSize, setIconSize] = useState(getIconSize());
+  const { width } = fetchWindowSize()
+  const iconSize = useMemo(() => (width >= 768 ? 28 : 24), [width])
 
-  useEffect(() => {
-    const handleResize = () => setIconSize(getIconSize());
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const TopNavLeft: ImageNavItem[] = [{
+  const topNavLeft: (ImageNavItem | IconNavItem)[] = useMemo(() => [{
     name: 'Home Page Link',
     href: '/',
     icon: "/vulcantunes-icon.png",
