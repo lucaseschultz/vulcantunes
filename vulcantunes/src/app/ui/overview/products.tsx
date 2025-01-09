@@ -32,13 +32,12 @@ export default function Products() {
   const [searchInput, setSearchInput] = useState("")
 
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value.trim())
+    setSearchInput(e.target.value.toLowerCase().trim())
   }, [])
 
   const filteredCountries = useMemo(() => {
     if (!searchInput) return COUNTRIES
 
-    const searchTerm = searchInput.toLowerCase()
     return COUNTRIES.filter((country) => (
       country.name.toLowerCase().includes(searchTerm) ||
       country.continent.toLowerCase().includes(searchTerm)
