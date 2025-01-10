@@ -31,15 +31,13 @@
 .search-input::placeholder {
     color: #94a3b8;
 }
-.products-table {
-    border-collapse: collapse;
+.products-list {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    tbody {
-        tr {
-            border-bottom: 2px solid var(--outline);
-        }
-        tr:last-child {
-            border-bottom: none;
-        }
+    > * {
+        padding: 1rem 0;
+        /* or if you prefer margin: */
+        /* margin: 1rem 0; */
     }
 }
