@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { useTheme } from 'next-themes';
 
 export default function HeaderLogo() {
@@ -13,18 +14,20 @@ export default function HeaderLogo() {
     : '/vulcantunes-logo-light.png';
 
   return (
-    <Image
-      src={logoSrc}
-      alt="Vulcantunes.com logo - Your ride just got better"
-      width={491}
-      height={101}
-      className="header-logo"
-      style={{
-        width: '80lvw',
-        maxWidth: '491px',
-        height: 'auto',
-      }}
-      priority
-    />
+    <Link href="/">
+      <Image
+        src={logoSrc}
+        alt="Vulcantunes.com logo - Your ride just got better"
+        width={491}
+        height={101}
+        className="header-logo"
+        style={{
+          width: '80lvw',
+          maxWidth: '491px',
+          height: 'auto',
+        }}
+        priority
+      />
+    </Link>
   );
 }
