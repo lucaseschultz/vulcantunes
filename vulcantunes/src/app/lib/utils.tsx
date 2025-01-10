@@ -46,8 +46,8 @@ interface WindowSize {
 }
 export function fetchWindowSize() {
   const [windowSize, setWindowSize] = useState<WindowSize>({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+    width: 0,
+    height: 0,
   })
 
   useEffect(() => {
