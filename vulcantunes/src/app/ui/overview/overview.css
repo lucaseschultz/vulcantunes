@@ -37,8 +37,6 @@
     width: 100%;
     > * {
         padding: 1rem 0;
-        /* or if you prefer margin: */
-        /* margin: 1rem 0; */
     }
     > *:nth-child(odd) {
         background: var(--foreground);
