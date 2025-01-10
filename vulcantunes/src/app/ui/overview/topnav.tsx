@@ -1,7 +1,7 @@
 'use client'
 
 import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions'
-import { ShoppingCart, User, Heart } from "@phosphor-icons/react/dist/ssr"
+import { ShoppingCart, User, Heart, Question } from "@phosphor-icons/react/dist/ssr"
 import { DisplayNavItems } from '@/app/lib/utils'
 import { useMemo } from 'react'
 import { fetchWindowSize } from '@/app/lib/utils'
@@ -33,6 +33,11 @@ export default function TopNav() {
     name: 'Account',
     href: '/account',
     icon: User,
+    size: iconSize,
+  }, {
+    name: 'Support',
+    href: '/support',
+    icon: Question,
     size: iconSize,
   }], [iconSize])
 
