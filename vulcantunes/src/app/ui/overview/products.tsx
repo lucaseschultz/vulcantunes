@@ -17,15 +17,15 @@ const COUNTRIES: readonly Country[] = [
   { name: "Japan", continent: "Asia", id: "jp" },
 ] as const
 
-const CountriesTableBody = ({ countries }: { countries: readonly Country[] }) => (
-  <tbody>
-  {countries.map(({ name, continent, id }) => (
-    <tr key={id}>
-      <td>{name}</td>
-      <td>{continent}</td>
-    </tr>
-  ))}
-  </tbody>
+const ProductsList = ({ countries }: { countries: readonly Country[] }) => (
+  <div className="products-list" aria-label="Products list">
+    {countries.map(({name, continent, id}) => (
+      <span key={id}>
+        <span>{name}</span>
+        <span>{continent}</span>
+      </span>
+    ))}
+  </div>
 )
 
 export default function Products() {
@@ -56,15 +56,7 @@ export default function Products() {
           className="search-input"
         />
       </div>
-      <table className="products-table" aria-label="Products list">
-        <thead>
-        <tr>
-          <th scope='col'>Country</th>
-          <th scope='col'>Continent</th>
-        </tr>
-        </thead>
-        <CountriesTableBody countries={filteredCountries}/>
-      </table>
+      <ProductsList countries={filteredCountries}/>
     </section>
   )
 }
