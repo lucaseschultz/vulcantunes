@@ -11,7 +11,7 @@ export default function TopNav() {
   const iconSize = useMemo(() => (width >= 768 ? 28 : 24), [width])
 
   const topNavLeft: (ImageNavItem | IconNavItem)[] = useMemo(() => [{
-    name: 'Home Page Link',
+    name: 'Home Page',
     href: '/',
     icon: "/vulcantunes-icon.png",
     alt: 'VulcanTunes Icon',
