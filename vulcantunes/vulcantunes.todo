@@ -1,7 +1,6 @@
 General:
 Add Products to products.tsx
-Make Login/Accounts Page
-Make Admin Login/Page
+Make account/login-->wishlist pages
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
