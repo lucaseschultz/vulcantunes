@@ -1,4 +1,4 @@
-import '@/app/ui/overview/support/support.css'
+import '@/app/ui/overview/information/information.css'
 
 export default function Page() {
   return (
