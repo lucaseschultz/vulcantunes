@@ -13,7 +13,7 @@
     --top-nav-height: 43px;
     --top-nav-icon-hover-size: 30px;
     @media (prefers-color-scheme: light) {
-        --background: #f9fafb;
+        --background: #dddddd;
         --foreground: white;
         --outline: #e6ebf2;
         --text-color: black;
