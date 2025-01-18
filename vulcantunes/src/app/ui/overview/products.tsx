@@ -67,6 +67,19 @@ export default function Products() {
     )
   }, [filters.searchInput])
 
+  const featureFilters = useMemo(() =>
+    Object.keys(FEATURE_FILTERS).map((feature) => (
+      <label key={feature} className="checkbox-label">
+        <input
+          type="checkbox"
+          className="checkbox-input"
+          checked={filters.selectedFeatures.has(feature)}
+          onChange={() => handleFeatureChange(feature)}
+        />
+        {feature}
+      </label>
+    )), [filters.selectedFeatures, handleFeatureChange])
+
   return (
     <section className="products">
       <div className="filter">
@@ -79,17 +92,7 @@ export default function Products() {
           className="search-input"
         />
         <div className="checkbox-group">
-          {Object.keys(FEATURE_FILTERS).map((feature) => (
-            <label key={feature} className="checkbox-label">
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                checked={filters.selectedFeatures.has(feature)}
-                onChange={() => handleFeatureChange(feature)}
-              />
-              {feature}
-            </label>
-          ))}
+          {featureFilters}
         </div>
       </div>
       <ProductsList countries={filteredCountries}/>
