@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from 'next/navigation';
-import type {IconNavItem, ImageNavItem} from '@/app/lib/definitions';
+import type { IconNavItem, ImageNavItem } from '@/app/lib/definitions';
 
 export function DisplayNavItems({ NavName, NavItems }: { NavName: string, NavItems: (IconNavItem|ImageNavItem)[] }) {
   const pathname = usePathname();
