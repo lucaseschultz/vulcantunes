@@ -3,7 +3,7 @@ Add Products
 Implement featureFilters/search
 
 General:
-Make account/login-->wishlist pages
+Make account/login, admin, cart, information, wishlist, & (products) pages
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
