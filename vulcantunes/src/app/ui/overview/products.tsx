@@ -25,10 +25,7 @@ const ProductsList = memo(({ countries }: { countries: readonly Country[] }) => 
   </div>
 ))
 
-interface FeatureFilters {
-  [key: string]: false
-}
-const FEATURE_FILTERS: FeatureFilters = {
+const FEATURE_FILTERS = {
   "Bluetooth": false,
   "USB Charger": false,
   "AUX Output": false,
