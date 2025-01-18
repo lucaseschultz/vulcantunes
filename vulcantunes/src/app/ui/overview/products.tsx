@@ -35,8 +35,13 @@ const FEATURE_FILTERS = {
   "Audio Jack": false
 } as const
 
+type Filters = {
+  searchInput: string
+  selectedFeatures: Set<string>
+}
+
 export default function Products() {
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<Filters>({
     searchInput: '',
     selectedFeatures: new Set<string>()
   })
