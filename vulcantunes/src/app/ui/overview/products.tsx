@@ -30,8 +30,8 @@ const ProductsList = memo(function ProductsList({ countries }: { countries: read
 const FEATURE_FILTERS = {
   "Bluetooth": false,
   "USB Charger": false,
-  "AUX Output": false,
   "AUX Input": false,
+  "AUX Output": false,
   "Audio Jack": false
 } as const satisfies Record<string, boolean>
 
