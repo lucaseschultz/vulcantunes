@@ -40,6 +40,30 @@ type Filters = {
   selectedFeatures: Set<string>
 }
 
+const FeatureFilters = memo(function FeatureFilters({
+  selectedFeatures,
+  onFeatureChange
+}: {
+  selectedFeatures: Set<string>
+  onFeatureChange: (feature: string) => void
+}) {
+  return (
+    <div className="checkbox-group">
+      {Object.keys(FEATURE_FILTERS).map((feature) => (
+        <label key={feature} className="checkbox-label">
+          <input
+            type="checkbox"
+            className="checkbox-input"
+            checked={selectedFeatures.has(feature)}
+            onChange={() => onFeatureChange(feature)}
+          />
+          {feature}
+        </label>
+      ))}
+    </div>
+  )
+})
+
 export default function Products() {
   const [filters, setFilters] = useState<Filters>({
     searchInput: '',
@@ -75,19 +99,6 @@ export default function Products() {
     )
   }, [filters.searchInput])
 
-  const featureFilters = useMemo(() =>
-    Object.keys(FEATURE_FILTERS).map((feature) => (
-      <label key={feature} className="checkbox-label">
-        <input
-          type="checkbox"
-          className="checkbox-input"
-          checked={filters.selectedFeatures.has(feature)}
-          onChange={() => handleFeatureChange(feature)}
-        />
-        {feature}
-      </label>
-    )), [filters.selectedFeatures, handleFeatureChange])
-
   return (
     <section className="products">
       <div className="filter">
@@ -99,9 +110,10 @@ export default function Products() {
           aria-label="Search products"
           className="search-input"
         />
-        <div className="checkbox-group">
-          {featureFilters}
-        </div>
+        <FeatureFilters
+          selectedFeatures={filters.selectedFeatures}
+          onFeatureChange={handleFeatureChange}
+        />
       </div>
       <ProductsList countries={filteredCountries}/>
     </section>
