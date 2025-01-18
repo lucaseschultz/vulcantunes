@@ -17,10 +17,10 @@ const COUNTRIES: readonly Country[] = [
 const ProductsList = memo(({ countries }: { countries: readonly Country[] }) => (
   <div className="products-list" aria-label="Products list">
     {countries.map(({name, continent, id}) => (
-      <span key={id}>
-        <span>{name}</span>
-        <span>{continent}</span>
-      </span>
+      <div key={id} className="product-item">
+        <span className="product-name">{name}</span>
+        <span className="product-continent">{continent}</span>
+      </div>
     ))}
   </div>
 )
