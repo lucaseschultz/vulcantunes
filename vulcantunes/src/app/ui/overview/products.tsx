@@ -58,7 +58,7 @@ export default function Products() {
   }, [])
 
   const filteredCountries = useMemo(() => {
-    if (!filters.searchInput) return COUNTRIES
+    if (!filters.searchInput.trim()) return COUNTRIES
 
     const searchTerm = filters.searchInput.toLowerCase()
     return COUNTRIES.filter((country) =>
