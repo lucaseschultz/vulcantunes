@@ -49,11 +49,7 @@ export default function Products() {
   const handleFeatureChange = useCallback((feature: string) => {
     setFilters(prev => {
       const newFeatures = new Set(prev.selectedFeatures)
-      if (newFeatures.has(feature)) {
-        newFeatures.delete(feature)
-      } else {
-        newFeatures.add(feature)
-      }
+      newFeatures.has(feature) ? newFeatures.delete(feature) : newFeatures.add(feature)
       return {
         ...prev,
         selectedFeatures: newFeatures
