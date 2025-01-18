@@ -37,11 +37,16 @@ const FEATURE_FILTERS: FeatureFilters = {
 } as const
 
 export default function Products() {
-  const [searchInput, setSearchInput] = useState("")
-  const [selectedFeatures, setSelectedFeatures] = useState<Set<string>>(new Set())
+  const [filters, setFilters] = useState({
+    searchInput: '',
+    selectedFeatures: new Set<string>()
+  })
 
-  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value.toLowerCase().trim())
+  const handleSearchChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setFilters(prev => ({
+      ...prev,
+      searchInput: e.target.value
+    }))
   }, [])
 
   const handleFeatureChange = useCallback((feature: string) => {
@@ -57,13 +62,16 @@ export default function Products() {
   }, [])
 
   const filteredCountries = useMemo(() => {
-    if (!searchInput) return COUNTRIES
+    if (!filters.searchInput) return COUNTRIES
 
-    return COUNTRIES.filter((country) => (
-      country.name.toLowerCase().includes(searchInput) ||
-      country.continent.toLowerCase().includes(searchInput)
-    ))
-  }, [searchInput])
+    return COUNTRIES.filter((country) => {
+      const searchTerm = filters.searchInput.toLowerCase()
+      return (
+        country.name.toLowerCase().includes(searchTerm) ||
+        country.continent.toLowerCase().includes(searchTerm)
+      )
+    })
+  }, [filters.searchInput])
 
   return (
     <section className="products">
@@ -71,8 +79,8 @@ export default function Products() {
         <input
           type="search"
           placeholder="Search products"
-          onChange={handleChange}
-          value={searchInput}
+          onChange={handleSearchChange}
+          value={filters.searchInput}
           aria-label="Search products"
           className="search-input"
         />
