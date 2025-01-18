@@ -10,6 +10,7 @@
     --foreground: #1d212f;
     --outline: #262b38;
     --text-color: #f9fafb;
+    --input-color: #3b82f6;
     --top-nav-height: 43px;
     --top-nav-icon-hover-size: 30px;
     @media (prefers-color-scheme: light) {
