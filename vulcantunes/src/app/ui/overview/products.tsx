@@ -50,14 +50,17 @@ export default function Products() {
   }, [])
 
   const handleFeatureChange = useCallback((feature: string) => {
-    setSelectedFeatures(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(feature)) {
-        newSet.delete(feature)
+    setFilters(prev => {
+      const newFeatures = new Set(prev.selectedFeatures)
+      if (newFeatures.has(feature)) {
+        newFeatures.delete(feature)
       } else {
-        newSet.add(feature)
+        newFeatures.add(feature)
       }
-      return newSet
+      return {
+        ...prev,
+        selectedFeatures: newFeatures
+      }
     })
   }, [])
 
