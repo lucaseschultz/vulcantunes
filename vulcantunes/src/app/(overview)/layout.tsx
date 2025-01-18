@@ -1,7 +1,8 @@
 import '@/app/ui/overview/overview-layout.css';
 import TopNav from "@/app/ui/overview/topnav";
-import Footer from "@/app/ui/overview/footer";
 import HeaderLogo from "@/app/ui/overview/header-logo";
+import PageName from "@/app/ui/overview/page-name";
+import Footer from "@/app/ui/overview/footer";
 
 export default function Layout({
   children
@@ -14,6 +15,7 @@ export default function Layout({
       <main>
         <header>
           <HeaderLogo/>
+          <PageName/>
         </header>
         {children}
       </main>
