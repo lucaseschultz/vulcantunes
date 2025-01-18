@@ -31,6 +31,33 @@
 .search-input::placeholder {
     color: #94a3b8;
 }
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+.checkbox-input {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--outline);
+    border-radius: 4px;
+    cursor: pointer;
+    accent-color: var(--input-color);
+}
+
+.checkbox-input:checked {
+    background-color: var(--input-color);
+    border-color: var(--input-color);
+}
 .products-list {
     display: flex;
     flex-direction: column;

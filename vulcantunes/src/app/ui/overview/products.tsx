@@ -27,12 +27,32 @@ const ProductsList = ({ countries }: { countries: readonly Country[] }) => (
     ))}
   </div>
 )
+const FEATURE_FILTERS = [
+  "Bluetooth",
+  "USB Charger",
+  "AUX Output",
+  "AUX Input",
+  "Audio Jack"
+] as const
 
 export default function Products() {
   const [searchInput, setSearchInput] = useState("")
+  const [selectedFeatures, setSelectedFeatures] = useState<Set<string>>(new Set())
 
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value.toLowerCase().trim())
+  }, [])
+
+  const handleFeatureChange = useCallback((feature: string) => {
+    setSelectedFeatures(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(feature)) {
+        newSet.delete(feature)
+      } else {
+        newSet.add(feature)
+      }
+      return newSet
+    })
   }, [])
 
   const filteredCountries = useMemo(() => {
@@ -55,6 +75,19 @@ export default function Products() {
           aria-label="Search products"
           className="search-input"
         />
+        <div className="checkbox-group">
+          {FEATURE_FILTERS.map((feature) => (
+            <label key={feature} className="checkbox-label">
+              <input
+                type="checkbox"
+                className="checkbox-input"
+                checked={selectedFeatures.has(feature)}
+                onChange={() => handleFeatureChange(feature)}
+              />
+              {feature}
+            </label>
+          ))}
+        </div>
       </div>
       <ProductsList countries={filteredCountries}/>
     </section>
