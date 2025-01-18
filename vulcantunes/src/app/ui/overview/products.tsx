@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, type ChangeEvent, useCallback } from 'react'
+import { useState, useMemo, type ChangeEvent, useCallback, memo } from 'react'
 
 interface Country {
   name: string
@@ -14,8 +14,7 @@ const COUNTRIES: readonly Country[] = [
   { name: "India", continent: "Asia", id: "in" },
   { name: "Japan", continent: "Asia", id: "jp" },
 ] as const
-
-const ProductsList = ({ countries }: { countries: readonly Country[] }) => (
+const ProductsList = memo(({ countries }: { countries: readonly Country[] }) => (
   <div className="products-list" aria-label="Products list">
     {countries.map(({name, continent, id}) => (
       <span key={id}>
