@@ -33,7 +33,7 @@ const FEATURE_FILTERS = {
   "AUX Output": false,
   "AUX Input": false,
   "Audio Jack": false
-} as const
+} as const satisfies Record<string, boolean>
 
 type Filters = {
   searchInput: string
