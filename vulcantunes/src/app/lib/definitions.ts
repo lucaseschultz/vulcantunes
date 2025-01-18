@@ -15,3 +15,8 @@ export interface ImageNavItem {
   width: number;
   height: number;
 }
+
+export interface productSearchFilters {
+  searchInput: string;
+  selectedFeatures: Set<string>
+}
