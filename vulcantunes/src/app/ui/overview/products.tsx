@@ -7,8 +7,6 @@ interface Country {
   continent: string
   id: string
 }
-
-// Move constant outside component to prevent recreation
 const COUNTRIES: readonly Country[] = [
   { name: "Belgium", continent: "Europe", id: "be" },
   { name: "Bolivia", continent: "South America", id: "bo" },
