@@ -23,14 +23,18 @@ const ProductsList = memo(({ countries }: { countries: readonly Country[] }) => 
       </div>
     ))}
   </div>
-)
-const FEATURE_FILTERS = [
-  "Bluetooth",
-  "USB Charger",
-  "AUX Output",
-  "AUX Input",
-  "Audio Jack"
-] as const
+))
+
+interface FeatureFilters {
+  [key: string]: false
+}
+const FEATURE_FILTERS: FeatureFilters = {
+  "Bluetooth": false,
+  "USB Charger": false,
+  "AUX Output": false,
+  "AUX Input": false,
+  "Audio Jack": false
+} as const
 
 export default function Products() {
   const [searchInput, setSearchInput] = useState("")
@@ -73,12 +77,12 @@ export default function Products() {
           className="search-input"
         />
         <div className="checkbox-group">
-          {FEATURE_FILTERS.map((feature) => (
+          {Object.keys(FEATURE_FILTERS).map((feature) => (
             <label key={feature} className="checkbox-label">
               <input
                 type="checkbox"
                 className="checkbox-input"
-                checked={selectedFeatures.has(feature)}
+                checked={filters.selectedFeatures.has(feature)}
                 onChange={() => handleFeatureChange(feature)}
               />
               {feature}
