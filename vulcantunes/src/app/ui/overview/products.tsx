@@ -47,9 +47,10 @@ export default function Products() {
   })
 
   const handleSearchChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = e.target.value
     setFilters(prev => ({
       ...prev,
-      searchInput: e.target.value
+      searchInput: searchTerm
     }))
   }, [])
 
