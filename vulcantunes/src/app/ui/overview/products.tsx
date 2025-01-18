@@ -14,16 +14,18 @@ const COUNTRIES: readonly Country[] = [
   { name: "India", continent: "Asia", id: "in" },
   { name: "Japan", continent: "Asia", id: "jp" },
 ] as const
-const ProductsList = memo(({ countries }: { countries: readonly Country[] }) => (
-  <div className="products-list" aria-label="Products list">
-    {countries.map(({name, continent, id}) => (
-      <div key={id} className="product-item">
-        <span className="product-name">{name}</span>
-        <span className="product-continent">{continent}</span>
-      </div>
-    ))}
-  </div>
-))
+const ProductsList = memo(function ProductsList({ countries }: { countries: readonly Country[] }) {
+  return (
+    <div className="products-list" aria-label="Products list">
+      {countries.map(({name, continent, id}) => (
+        <div key={id} className="product-item">
+          <span className="product-name">{name}</span>
+          <span className="product-continent">{continent}</span>
+        </div>
+      ))}
+    </div>
+  )
+})
 
 const FEATURE_FILTERS = {
   "Bluetooth": false,
