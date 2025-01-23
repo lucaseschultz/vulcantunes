@@ -36,7 +36,7 @@ export default function TopNav() {
     size: iconSize,
   }, {
     name: 'Information',
-    href: '/information',
+    href: '/info',
     icon: Info,
     size: iconSize,
   }], [iconSize])
