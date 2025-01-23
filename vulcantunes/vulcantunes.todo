@@ -6,6 +6,7 @@ Add Products
 Implement featureFilters/search
 
 General:
+Add variable metadata title
 Make account/login, admin, cart, wishlist, & (products) pages
 Add reCaptcha? ("Contact Us", "Account creation")
 
