@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo, type ChangeEvent, useCallback, memo } from 'react'
-import type { productSearchFilters } from '@/app/lib/definitions';
+import type { productSearchFilters } from '@/src/app/lib/definitions';
 
 interface Country {
   name: string

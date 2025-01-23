@@ -1,4 +1,4 @@
-import '@/app/ui/overview/cart/cart.css'
+import '@/src/app/ui/overview/cart/cart.css'
 
 export default function Page() {
   return (

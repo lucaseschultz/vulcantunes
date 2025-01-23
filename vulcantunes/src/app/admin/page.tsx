@@ -1,4 +1,4 @@
-import '@/app/ui/admin/admin.css'
+import '@/src/app/ui/admin/admin.css'
 
 export default function Page() {
   return (
