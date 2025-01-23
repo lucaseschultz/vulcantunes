@@ -3,7 +3,7 @@ Add Products
 Implement featureFilters/search
 
 General:
-Make account/login, admin, cart, information, wishlist, & (products) pages
+Make account/login, admin, cart, wishlist, & (products) pages
 Add reCaptcha? ("Contact Us", "Account creation")
 
 Information:
