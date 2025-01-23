@@ -20,3 +20,10 @@ export interface productSearchFilters {
   searchInput: string;
   selectedFeatures: Set<string>
 }
+
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}
