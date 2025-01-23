@@ -4,6 +4,7 @@ Implement featureFilters/search
 
 General:
 Make account/login, admin, cart, information, wishlist, & (products) pages
+Add reCaptcha? ("Contact Us", "Account creation")
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
