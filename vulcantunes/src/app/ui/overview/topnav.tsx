@@ -2,7 +2,7 @@
 
 import type { ImageNavItem, IconNavItem } from '@/app/lib/definitions'
 import { ShoppingCart, User, Heart, Info } from "@phosphor-icons/react/dist/ssr"
-import { DisplayNavItems } from '@/app/lib/utils'
+import { DisplayNavItems } from '@/app/lib/actions'
 import { useMemo } from 'react'
 import { fetchWindowSize } from '@/app/lib/utils'
 
