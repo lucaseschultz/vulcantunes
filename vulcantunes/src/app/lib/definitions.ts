@@ -21,13 +21,6 @@ export interface productSearchFilters {
   selectedFeatures: Set<string>
 }
 
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-}
-
 export interface WindowSize {
   width: number
   height: number
