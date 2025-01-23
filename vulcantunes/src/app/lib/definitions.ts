@@ -27,3 +27,8 @@ export type User = {
   email: string;
   password: string;
 }
+
+export interface WindowSize {
+  width: number
+  height: number
+}
