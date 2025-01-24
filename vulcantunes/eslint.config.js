@@ -5,6 +5,7 @@ import typescriptParser from '@typescript-eslint/parser'
 
 export default [
   js.configs.recommended,
+
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
@@ -15,6 +16,10 @@ export default [
         ecmaFeatures: {
           jsx: true
         }
+      },
+      globals: {
+        URL: 'readonly',
+        React: 'readonly'  // Added this line
       }
     },
     plugins: {
