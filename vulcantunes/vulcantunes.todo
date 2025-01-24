@@ -1,5 +1,5 @@
-Ask Wes:
-Social Login(s) (Just Google?)?
+General:
+authorization
 
 Products.tsx:
 .sql files
@@ -7,9 +7,10 @@ Add Products
 Implement featureFilters/search
 
 General:
+Email recovery
 Add variable metadata title
 Make account/login, admin, cart, wishlist, & (products) pages
-Add reCaptcha? ("Contact Us", "Account creation")
+Add reCaptcha ("Contact Us", "Account creation")
 
 Information:
 Make "Contact Us" form functional
