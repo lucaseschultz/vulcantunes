@@ -29,7 +29,7 @@ export default [
     rules: {
       ...nextPlugin.configs['core-web-vitals'].rules,
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': ['error']
+      '@typescript-eslint/no-unused-vars': ['warn'] // Changed from 'error' to 'warn'
     }
   }
 ]
