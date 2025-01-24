@@ -1,12 +1,10 @@
-General:
-authorization
-
 Products.tsx:
 .sql files
 Add Products
 Implement featureFilters/search
 
 General:
+authorization
 Email recovery
 Add variable metadata title
 Make account/login, admin, cart, wishlist, & (products) pages
