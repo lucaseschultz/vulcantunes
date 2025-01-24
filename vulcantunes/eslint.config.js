@@ -19,7 +19,7 @@ export default [
       },
       globals: {
         URL: 'readonly',
-        React: 'readonly'  // Added this line
+        React: 'readonly'
       }
     },
     plugins: {
