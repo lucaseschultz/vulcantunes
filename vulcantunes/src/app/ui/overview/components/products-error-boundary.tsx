@@ -1,9 +1,5 @@
 import { Component, ReactNode } from 'react'
-
-enum ErrorType {
-  NETWORK = 'network',
-  UNKNOWN = 'unknown'
-}
+import { ErrorType } from "@/src/app/lib/definitions";
 
 interface Props {
   children: ReactNode
@@ -23,14 +19,15 @@ interface ErrorMessageConfig {
 }
 
 export class ProductsErrorBoundary extends Component<Props, State> {
-  private errorMessages: Record<ErrorType, ErrorMessageConfig> = {
-    [ErrorType.NETWORK]: {
+  // Use private static for better memory usage
+  private static readonly errorMessages: Record<ErrorType, ErrorMessageConfig> = {
+    network: {
       title: 'Connection Error',
       message: 'Please check your internet connection and try again.',
       action: () => window.location.reload(),
       actionText: 'Retry'
     },
-    [ErrorType.UNKNOWN]: {
+    unknown: {
       title: 'Unexpected Error',
       message: 'Something went wrong. Please try again later.'
     }
@@ -46,8 +43,8 @@ export class ProductsErrorBoundary extends Component<Props, State> {
 
   static getDerivedStateFromError(error: Error): State {
     const errorType = error.message.toLowerCase().includes('fetch')
-      ? ErrorType.NETWORK
-      : ErrorType.UNKNOWN
+      ? 'network'
+      : 'unknown'
 
     return {
       hasError: true,
@@ -80,13 +77,16 @@ export class ProductsErrorBoundary extends Component<Props, State> {
   }
 
   render() {
-    if (!this.state.hasError) {
-      return this.props.children
+    const { hasError, errorType } = this.state
+    const { children } = this.props
+
+    if (!hasError) {
+      return children
     }
 
-    const errorConfig = this.state.errorType
-      ? this.errorMessages[this.state.errorType]
-      : this.errorMessages[ErrorType.UNKNOWN]
+    const errorConfig = errorType
+      ? ProductsErrorBoundary.errorMessages[errorType]
+      : ProductsErrorBoundary.errorMessages.unknown
 
     return this.renderErrorMessage(errorConfig)
   }

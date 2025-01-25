@@ -17,11 +17,6 @@ export interface ImageNavItem {
   height: number;
 }
 
-export interface productSearchFilters {
-  searchInput: string;
-  selectedFeatures: Set<string>
-}
-
 export interface WindowSize {
   width: number
   height: number
@@ -43,3 +38,10 @@ export interface Product {
   id: string
   features?: string[]
 }
+
+export const ErrorTypes = {
+  NETWORK: 'network',
+  UNKNOWN: 'unknown'
+} as const
+
+export type ErrorType = (typeof ErrorTypes)[keyof typeof ErrorTypes]
