@@ -1,13 +1,15 @@
 Products.tsx:
 .sql files
-Add Products
-Implement featureFilters/search
+Add Products (update Product type)
+
+products-reducer.ts:
+Implement feature functionality
 
 General:
 authorization
 Email recovery
 Add variable metadata title
-Make account/login, admin, cart, wishlist, & (products) pages
+Make account/login, admin (layout), cart, wishlist, & (products) pages
 Add reCaptcha ("Contact Us", "Account creation")
 
 Information:
@@ -24,3 +26,6 @@ Quantity in stock
 
 Payments:
 Discount codes
+
+production:
+search for "dev" & ## in files to see if anything hasn't been prepared yet
