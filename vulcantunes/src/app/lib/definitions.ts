@@ -1,9 +1,10 @@
 import { IconProps } from "@phosphor-icons/react";
+import { ComponentType } from 'react';
 
 export interface IconNavItem {
   name: string;
   href: string;
-  icon: React.ComponentType<IconProps>;
+  icon: ComponentType<IconProps>;
   size: number;
 }
 
