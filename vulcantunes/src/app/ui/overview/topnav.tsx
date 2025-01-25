@@ -10,7 +10,7 @@ export default function TopNav() {
   const { width } = fetchWindowSize()
   const iconSize = useMemo(() => (width >= 768 ? 28 : 24), [width])
 
-  const topNavLeft: (ImageNavItem | IconNavItem)[] = useMemo(() => [{
+  const topNavLeft = useMemo(() => [{
     name: 'Home Page',
     href: '/',
     icon: "/vulcantunes-icon.png",
@@ -22,9 +22,9 @@ export default function TopNav() {
     href: '/cart',
     icon: ShoppingCart,
     size: iconSize,
-  }], [iconSize])
+  }] satisfies (ImageNavItem | IconNavItem)[], [iconSize])
 
-  const topNavRight: IconNavItem[] = useMemo(() => [{
+  const topNavRight = useMemo(() => [{
     name: 'Wish List',
     href: '/account/wishlist',
     icon: Heart,
@@ -39,7 +39,7 @@ export default function TopNav() {
     href: '/info',
     icon: Info,
     size: iconSize,
-  }], [iconSize])
+  }] satisfies IconNavItem[], [iconSize])
 
 
   return (

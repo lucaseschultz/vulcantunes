@@ -13,7 +13,7 @@ const geistSans = localFont({
 });
 
 // noinspection JSUnusedGlobalSymbols
-export const viewport: Viewport = {
+export const viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
@@ -21,7 +21,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" }
   ],
   colorScheme: "light dark"
-}
+} satisfies Viewport
 
 const siteConfig = {
   title: 'VulcanTunes',
@@ -30,7 +30,7 @@ const siteConfig = {
   iconUrl: "/vulcantunes-icon.png",
 };
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     template: `%s | ${siteConfig.title}`,
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   category: "business",
   creator: "Lucas Schultz: https://wyomingschultz.com/resume/",
   publisher: siteConfig.title,
-};
+} satisfies Metadata;
 
 export default function RootLayout({
   children,
