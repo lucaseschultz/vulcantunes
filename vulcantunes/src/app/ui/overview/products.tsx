@@ -5,6 +5,7 @@ import { productsReducer, initialState } from '@/src/app/reducers/products-reduc
 import { FEATURE_FILTERS } from '@/src/app/constants/products'
 import type { Product } from '@/src/app/lib/definitions';
 import { useDebounce } from '@/src/app/hooks/use-debounce'
+import {ProductsErrorBoundary} from "@/src/app/ui/overview/components/products-error-boundary";
 
 const ProductsList = memo(function ProductsList({ products }: { products: readonly Product[] }) {
   return (
@@ -61,22 +62,24 @@ export default function Products() {
   }, [])
 
   return (
-    <section className="products">
-      <div className="filter">
-        <input
-          type="search"
-          placeholder="Search products"
-          onChange={handleSearchChange}
-          value={state.searchInput}
-          aria-label="Search products"
-          className="search-input"
-        />
-        <FeatureFilters
-          selectedFeatures={state.selectedFeatures}
-          onFeatureChange={handleFeatureChange}
-        />
-      </div>
-      <ProductsList products={state.filteredProducts}/>
-    </section>
+    <ProductsErrorBoundary>
+      <section className="products">
+        <div className="filter">
+          <input
+            type="search"
+            placeholder="Search products"
+            onChange={handleSearchChange}
+            value={state.searchInput}
+            aria-label="Search products"
+            className="search-input"
+          />
+          <FeatureFilters
+            selectedFeatures={state.selectedFeatures}
+            onFeatureChange={handleFeatureChange}
+          />
+        </div>
+        <ProductsList products={state.filteredProducts}/>
+      </section>
+    </ProductsErrorBoundary>
   )
 }
