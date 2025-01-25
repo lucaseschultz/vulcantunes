@@ -1,10 +1,13 @@
 import { Component, ReactNode } from 'react'
 
+enum ErrorType {
+  NETWORK = 'network',
+  UNKNOWN = 'unknown'
+}
+
 interface Props {
   children: ReactNode
 }
-
-type ErrorType = 'network' | 'unknown'
 
 interface State {
   hasError: boolean
