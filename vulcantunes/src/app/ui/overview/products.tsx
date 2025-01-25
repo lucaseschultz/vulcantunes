@@ -94,7 +94,7 @@ export default function Products() {
           onFeatureChange={handleFeatureChange}
         />
       </div>
-      <ProductsList countries={filteredCountries}/>
+      <ProductsList products={state.filteredProducts}/>
     </section>
   )
 }
