@@ -1,6 +1,6 @@
 import { Product } from "@/src/app/lib/definitions";
 
-export const PRODUCTS = [
+export const PRODUCTS: readonly Product[] = [
   { name: "United States", continent: "North America", id: "us" },
   { name: "Australia", continent: "Oceania", id: "au" },
   { name: "Belgium", continent: "Europe", id: "be" },
@@ -11,7 +11,7 @@ export const PRODUCTS = [
   { name: "India", continent: "Asia", id: "in" },
   { name: "Japan", continent: "Asia", id: "jp" },
   { name: "Sweden", continent: "Europe", id: "se" }
-] as const satisfies readonly Product[]
+] as const;
 
 export const FEATURE_FILTERS = {
   "Bluetooth": false,
