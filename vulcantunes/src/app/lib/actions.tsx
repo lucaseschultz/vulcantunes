@@ -1,13 +1,15 @@
-'use server';
+'use client'
 
-import { headers } from 'next/headers';
-import type { IconNavItem, ImageNavItem } from './definitions';
-import Link from "next/link";
-import Image from "next/image";
+import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from 'next/navigation'
+import type { IconNavItem, ImageNavItem } from './definitions'
 
-export async function DisplayNavItems({ NavName, NavItems }: { NavName: string, NavItems: (IconNavItem|ImageNavItem)[] }) {
-  const headersList = await headers();
-  const pathname = headersList.get('x-pathname') || '/';
+export function DisplayNavItems({ NavName, NavItems }: {
+  NavName: string,
+  NavItems: (IconNavItem|ImageNavItem)[]
+}) {
+  const pathname = usePathname()
 
   return (
     <ul className={NavName}>
