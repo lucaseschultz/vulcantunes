@@ -1,7 +1,10 @@
 'use client'
 
-import { useState, useMemo, type ChangeEvent, useCallback, memo } from 'react'
-import type { productSearchFilters } from '@/src/app/lib/definitions';
+import { useReducer, useCallback, memo, useState, useEffect, type ChangeEvent } from 'react'
+import { productsReducer, initialState } from '@/src/app/reducers/products-reducer'
+import { FEATURE_FILTERS } from '@/src/app/constants/products'
+import type { Product } from '@/src/app/lib/definitions';
+import { useDebounce } from '@/src/app/hooks/use-debounce'
 
 const ProductsList = memo(function ProductsList({ products }: { products: readonly Product[] }) {
   return (
