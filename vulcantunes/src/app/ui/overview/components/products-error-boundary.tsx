@@ -15,7 +15,27 @@ interface State {
   error?: Error
 }
 
+interface ErrorMessageConfig {
+  title: string
+  message: string
+  action?: () => void
+  actionText?: string
+}
+
 export class ProductsErrorBoundary extends Component<Props, State> {
+  private errorMessages: Record<ErrorType, ErrorMessageConfig> = {
+    [ErrorType.NETWORK]: {
+      title: 'Connection Error',
+      message: 'Please check your internet connection and try again.',
+      action: () => window.location.reload(),
+      actionText: 'Retry'
+    },
+    [ErrorType.UNKNOWN]: {
+      title: 'Unexpected Error',
+      message: 'Something went wrong. Please try again later.'
+    }
+  }
+
   constructor(props: Props) {
     super(props)
     this.state = {
@@ -25,11 +45,9 @@ export class ProductsErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
-    let errorType: ErrorType = 'unknown'
-
-    if (error.message.includes('fetch')) {
-      errorType = 'network'
-    }
+    const errorType = error.message.toLowerCase().includes('fetch')
+      ? ErrorType.NETWORK
+      : ErrorType.UNKNOWN
 
     return {
       hasError: true,
@@ -38,26 +56,38 @@ export class ProductsErrorBoundary extends Component<Props, State> {
     }
   }
 
+  private renderErrorMessage(config: ErrorMessageConfig) {
+    return (
+      <div className="error-container" role="alert">
+        <h3 className="error-title">{config.title}</h3>
+        <p className="error-message">
+          {config.message}
+          {this.state.error?.message && this.state.errorType === ErrorType.UNKNOWN && (
+            <span className="error-details">: {this.state.error.message}</span>
+          )}
+        </p>
+        {config.action && (
+          <button
+            onClick={config.action}
+            className="error-action"
+            aria-label={config.actionText}
+          >
+            {config.actionText}
+          </button>
+        )}
+      </div>
+    )
+  }
+
   render() {
-    if (!this.state.hasError) return this.props.children
-
-    switch (this.state.errorType) {
-      case 'network':
-        return (
-          <div className="error-network">
-            <h3>Connection Error</h3>
-            <p>Please check your internet connection and try again.</p>
-            <button onClick={() => window.location.reload()}>Retry</button>
-          </div>
-        )
-
-      default:
-        return (
-          <div className="error-unknown">
-            <h3>Unexpected Error</h3>
-            <p>{this.state.error?.message}</p>
-          </div>
-        )
+    if (!this.state.hasError) {
+      return this.props.children
     }
+
+    const errorConfig = this.state.errorType
+      ? this.errorMessages[this.state.errorType]
+      : this.errorMessages[ErrorType.UNKNOWN]
+
+    return this.renderErrorMessage(errorConfig)
   }
 }
