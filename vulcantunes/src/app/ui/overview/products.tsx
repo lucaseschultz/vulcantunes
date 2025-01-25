@@ -3,24 +3,7 @@
 import { useState, useMemo, type ChangeEvent, useCallback, memo } from 'react'
 import type { productSearchFilters } from '@/src/app/lib/definitions';
 
-interface Country {
-  name: string
-  continent: string
-  id: string
-}
-const COUNTRIES = [
-  { name: "United States", continent: "North America", id: "us" },
-  { name: "Australia", continent: "Oceania", id: "au" },
-  { name: "Belgium", continent: "Europe", id: "be" },
-  { name: "Bolivia", continent: "South America", id: "bo" },
-  { name: "Brazil", continent: "South America", id: "br" },
-  { name: "Canada", continent: "North America", id: "ca" },
-  { name: "Ghana", continent: "Africa", id: "gh" },
-  { name: "India", continent: "Asia", id: "in" },
-  { name: "Japan", continent: "Asia", id: "jp" },
-  { name: "Sweden", continent: "Europe", id: "se" }
-] as const satisfies readonly Country[]
-const ProductsList = memo(function ProductsList({ countries }: { countries: readonly Country[] }) {
+const ProductsList = memo(function ProductsList({ products }: { products: readonly Product[] }) {
   return (
     <div className="products-list" aria-label="Products list">
       {countries.map(({name, continent, id}) => (
