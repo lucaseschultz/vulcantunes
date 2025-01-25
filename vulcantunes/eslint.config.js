@@ -17,11 +17,6 @@ export default [
           jsx: true
         }
       },
-      globals: {
-        URL: 'readonly',
-        React: 'readonly',
-        process: 'readonly'
-      }
     },
     plugins: {
       '@next/next': nextPlugin,
@@ -30,7 +25,8 @@ export default [
     rules: {
       ...nextPlugin.configs['core-web-vitals'].rules,
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': ['warn']
+      'no-undef': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn'],
     }
   }
 ]
