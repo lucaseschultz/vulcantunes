@@ -33,12 +33,9 @@ export class ProductsErrorBoundary extends Component<Props, State> {
     }
   }
 
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      hasError: false,
-      errorType: null
-    }
+  state: State = {
+    hasError: false,
+    errorType: null
   }
 
   static getDerivedStateFromError(error: Error): State {
@@ -53,23 +50,30 @@ export class ProductsErrorBoundary extends Component<Props, State> {
     }
   }
 
-  private renderErrorMessage(config: ErrorMessageConfig) {
+  private renderErrorMessage({ title, message, action, actionText }: ErrorMessageConfig) {
+    const { error, errorType } = this.state
+
     return (
-      <div className="error-container" role="alert">
-        <h3 className="error-title">{config.title}</h3>
+      <div
+        className="error-container"
+        role="alert"
+        data-testid="error-boundary"
+      >
+        <h3 className="error-title">{title}</h3>
         <p className="error-message">
-          {config.message}
-          {this.state.error?.message && this.state.errorType === ErrorType.UNKNOWN && (
-            <span className="error-details">: {this.state.error.message}</span>
+          {message}
+          {error?.message && errorType === 'unknown' && (
+            <span className="error-details">: {error.message}</span>
           )}
         </p>
-        {config.action && (
+        {action && (
           <button
-            onClick={config.action}
+            onClick={action}
             className="error-action"
-            aria-label={config.actionText}
+            aria-label={actionText}
+            type="button"
           >
-            {config.actionText}
+            {actionText}
           </button>
         )}
       </div>
