@@ -6,7 +6,7 @@ import type { productSearchFilters } from '@/src/app/lib/definitions';
 const ProductsList = memo(function ProductsList({ products }: { products: readonly Product[] }) {
   return (
     <div className="products-list" aria-label="Products list">
-      {countries.map(({name, continent, id}) => (
+      {products.map(({name, continent, id}) => (
         <div key={id} className="product-item">
           <span className="product-name">{name}</span>
           <span className="product-continent">{continent}</span>
