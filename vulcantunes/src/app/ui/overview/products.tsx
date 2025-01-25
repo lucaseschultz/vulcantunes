@@ -8,7 +8,7 @@ interface Country {
   continent: string
   id: string
 }
-const COUNTRIES: readonly Country[] = [
+const COUNTRIES = [
   { name: "United States", continent: "North America", id: "us" },
   { name: "Australia", continent: "Oceania", id: "au" },
   { name: "Belgium", continent: "Europe", id: "be" },
@@ -19,7 +19,7 @@ const COUNTRIES: readonly Country[] = [
   { name: "India", continent: "Asia", id: "in" },
   { name: "Japan", continent: "Asia", id: "jp" },
   { name: "Sweden", continent: "Europe", id: "se" }
-] as const
+] as const satisfies readonly Country[]
 const ProductsList = memo(function ProductsList({ countries }: { countries: readonly Country[] }) {
   return (
     <div className="products-list" aria-label="Products list">
