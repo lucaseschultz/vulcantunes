@@ -16,14 +16,6 @@ const ProductsList = memo(function ProductsList({ products }: { products: readon
   )
 })
 
-const FEATURE_FILTERS = {
-  "Bluetooth": false,
-  "USB Charger": false,
-  "AUX Input": false,
-  "AUX Output": false,
-  "Audio Jack": false
-} as const satisfies Record<string, boolean>
-
 const FeatureFilters = memo(function FeatureFilters({
   selectedFeatures,
   onFeatureChange
