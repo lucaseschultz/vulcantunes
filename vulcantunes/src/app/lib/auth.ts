@@ -1,9 +1,7 @@
 import { NextAuthConfig } from 'next-auth'
 
 export const authOptions = {
-  providers: [
-    // Add your providers here
-  ],
+  providers: [],
   pages: {
     signIn: '/account/login',
   },
