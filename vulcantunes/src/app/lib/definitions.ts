@@ -26,3 +26,19 @@ export interface WindowSize {
   width: number
   height: number
 }
+
+export type ProductAction =
+  | { type: 'SET_SEARCH'; payload: string }
+  | { type: 'TOGGLE_FEATURE'; payload: string }
+
+export interface ProductState {
+  searchInput: string
+  selectedFeatures: Set<string>
+  filteredProducts: readonly Product[]
+}
+
+export interface Product {
+  name: string
+  continent: string
+  id: string
+}
