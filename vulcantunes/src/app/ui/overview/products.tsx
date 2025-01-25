@@ -50,33 +50,12 @@ export default function Products() {
   }, [debouncedSearchTerm])
 
   const handleSearchChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = e.target.value
-    setFilters(prev => ({
-      ...prev,
-      searchInput: searchTerm
-    }))
+    setSearchInput(e.target.value)
   }, [])
 
   const handleFeatureChange = useCallback((feature: string) => {
-    setFilters(prev => {
-      const newFeatures = new Set(prev.selectedFeatures)
-      newFeatures.has(feature) ? newFeatures.delete(feature) : newFeatures.add(feature)
-      return {
-        ...prev,
-        selectedFeatures: newFeatures
-      }
-    })
+    dispatch({ type: 'TOGGLE_FEATURE', payload: feature })
   }, [])
-
-  const filteredCountries = useMemo(() => {
-    if (!filters.searchInput.trim()) return COUNTRIES
-
-    const searchTerm = filters.searchInput.toLowerCase().trim()
-    return COUNTRIES.filter((country) =>
-      country.name.toLowerCase().includes(searchTerm) ||
-      country.continent.toLowerCase().includes(searchTerm)
-    )
-  }, [filters.searchInput])
 
   return (
     <section className="products">
@@ -85,12 +64,12 @@ export default function Products() {
           type="search"
           placeholder="Search products"
           onChange={handleSearchChange}
-          value={filters.searchInput}
+          value={state.searchInput}
           aria-label="Search products"
           className="search-input"
         />
         <FeatureFilters
-          selectedFeatures={filters.selectedFeatures}
+          selectedFeatures={state.selectedFeatures}
           onFeatureChange={handleFeatureChange}
         />
       </div>
