@@ -8,7 +8,20 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  headers: async () => {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains'
+          }
+        ],
+      },
+    ]
+  }
 } satisfies NextConfig;
 
 export default nextConfig;
