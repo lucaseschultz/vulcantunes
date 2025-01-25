@@ -41,4 +41,5 @@ export interface Product {
   name: string
   continent: string
   id: string
+  features?: string[]
 }
