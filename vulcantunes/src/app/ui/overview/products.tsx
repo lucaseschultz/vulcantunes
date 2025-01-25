@@ -41,10 +41,13 @@ const FeatureFilters = memo(function FeatureFilters({
 })
 
 export default function Products() {
-  const [filters, setFilters] = useState<productSearchFilters>({
-    searchInput: '',
-    selectedFeatures: new Set<string>()
-  })
+  const [state, dispatch] = useReducer(productsReducer, initialState)
+  const [searchInput, setSearchInput] = useState('')
+  const debouncedSearchTerm = useDebounce(searchInput)
+
+  useEffect(() => {
+    dispatch({ type: 'SET_SEARCH', payload: debouncedSearchTerm })
+  }, [debouncedSearchTerm])
 
   const handleSearchChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value
