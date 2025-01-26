@@ -1,5 +1,5 @@
 import { IconProps } from "@phosphor-icons/react";
-import { ComponentType } from 'react';
+import {ChangeEvent, ComponentType} from 'react';
 
 export interface IconNavItem {
   name: string;
@@ -45,3 +45,14 @@ export const ErrorTypes = {
 } as const
 
 export type ErrorType = (typeof ErrorTypes)[keyof typeof ErrorTypes]
+
+export interface FilterSectionProps {
+  searchValue: string
+  onSearchChange: (e: ChangeEvent<HTMLInputElement>) => void
+  selectedFeatures: Set<string>
+  onFeatureChange: (feature: string) => void
+}
+
+export interface ProductItemProps {
+  product: Product
+}
