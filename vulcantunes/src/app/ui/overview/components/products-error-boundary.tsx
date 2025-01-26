@@ -19,7 +19,6 @@ interface ErrorMessageConfig {
 }
 
 export class ProductsErrorBoundary extends Component<Props, State> {
-  // Use private static for better memory usage
   private static readonly errorMessages: Record<ErrorType, ErrorMessageConfig> = {
     network: {
       title: 'Connection Error',
