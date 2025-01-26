@@ -5,6 +5,7 @@ import { productsReducer, initialState } from '@/src/app/reducers/products-reduc
 import { ProductsErrorBoundary } from './components/products-error-boundary'
 import { FilterSection } from './components/filter-section'
 import { ProductsList } from './components/products-list'
+import { useDebounce } from "@/src/app/hooks/use-debounce";
 
 export default function Products() {
   const [state, dispatch] = useReducer(productsReducer, initialState)
