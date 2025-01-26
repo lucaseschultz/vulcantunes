@@ -1,6 +1,6 @@
 'use client'
 
-import { useReducer, useCallback, useState, type ChangeEvent } from 'react'
+import {useReducer, useCallback, useState, type ChangeEvent, useEffect} from 'react'
 import { productsReducer, initialState } from '@/src/app/reducers/products-reducer'
 import { ProductsErrorBoundary } from './components/products-error-boundary'
 import { FilterSection } from './components/filter-section'
