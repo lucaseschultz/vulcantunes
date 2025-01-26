@@ -1,5 +1,5 @@
-import {memo} from "react";
-import {Product} from "@/src/app/lib/definitions";
+import { memo } from "react";
+import { Product } from "@/src/app/lib/definitions";
 
 export const ProductsList = memo(function ProductsList({ products }: { products: readonly Product[] }) {
   return (
