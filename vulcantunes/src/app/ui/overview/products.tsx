@@ -64,21 +64,13 @@ export default function Products() {
   return (
     <ProductsErrorBoundary>
       <section className="products">
-        <div className="filter">
-          <input
-            type="search"
-            placeholder="Search products"
-            onChange={handleSearchChange}
-            value={state.searchInput}
-            aria-label="Search products"
-            className="search-input"
-          />
-          <FeatureFilters
-            selectedFeatures={state.selectedFeatures}
-            onFeatureChange={handleFeatureChange}
-          />
-        </div>
-        <ProductsList products={state.filteredProducts}/>
+        <FilterSection
+          searchValue={searchInput}
+          onSearchChange={handleSearchChange}
+          selectedFeatures={state.selectedFeatures}
+          onFeatureChange={handleFeatureChange}
+        />
+        <ProductsList products={state.filteredProducts} />
       </section>
     </ProductsErrorBoundary>
   )
