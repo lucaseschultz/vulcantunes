@@ -1,4 +1,5 @@
 search for "interface" and move all to definitions
+search for unneeded comments (//)
 add css for errors
 find ## and convert to todo
 
