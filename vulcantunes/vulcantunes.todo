@@ -1,3 +1,7 @@
+search for "interface" and move all to definitions
+add css for errors
+find ## and convert to todo
+
 Products.tsx:
 .sql files
 Add Products (update Product type)
