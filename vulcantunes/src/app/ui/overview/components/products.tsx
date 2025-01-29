@@ -2,9 +2,9 @@
 
 import {useReducer, useCallback, useState, type ChangeEvent, useEffect} from 'react'
 import { productsReducer, initialState } from '@/src/app/reducers/products-reducer'
-import { ProductsErrorBoundary } from './components/products-error-boundary'
-import { FilterSection } from './components/filter-section'
-import { ProductsList } from './components/products-list'
+import { ProductsErrorBoundary } from './products-error-boundary'
+import { FilterSection } from './filter-section'
+import { ProductsList } from './products-list'
 import { useDebounce } from "@/src/app/hooks/use-debounce";
 
 export default function Products() {
