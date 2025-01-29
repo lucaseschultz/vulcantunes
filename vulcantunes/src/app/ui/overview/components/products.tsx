@@ -2,7 +2,7 @@
 
 import {useReducer, useCallback, useState, type ChangeEvent, useEffect} from 'react'
 import { productsReducer, initialState } from '@/src/app/reducers/products-reducer'
-import { ProductsErrorBoundary } from './products-error-boundary'
+import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
 import { useDebounce } from "@/src/app/hooks/use-debounce";
@@ -32,9 +32,9 @@ export default function Products() {
           selectedFeatures={state.selectedFeatures}
           onFeatureChange={handleFeatureChange}
         />
-        <ProductsErrorBoundary>
+        <ProductsListErrorBoundary>
           <ProductsList products={state.filteredProducts} />
-        </ProductsErrorBoundary>
+        </ProductsListErrorBoundary>
       </section>
   )
 }

@@ -18,7 +18,7 @@ interface ErrorMessageConfig {
   actionText?: string
 }
 
-export class ProductsErrorBoundary extends Component<Props, State> {
+export class ProductsListErrorBoundary extends Component<Props, State> {
   private static readonly errorMessages: Record<ErrorType, ErrorMessageConfig> = {
     network: {
       title: 'Connection Error',
@@ -88,8 +88,8 @@ export class ProductsErrorBoundary extends Component<Props, State> {
     }
 
     const errorConfig = errorType
-      ? ProductsErrorBoundary.errorMessages[errorType]
-      : ProductsErrorBoundary.errorMessages.unknown
+      ? ProductsListErrorBoundary.errorMessages[errorType]
+      : ProductsListErrorBoundary.errorMessages.unknown
 
     return this.renderErrorMessage(errorConfig)
   }
