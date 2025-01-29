@@ -25,7 +25,6 @@ export default function Products() {
   }, [])
 
   return (
-    <ProductsErrorBoundary>
       <section className="products">
         <FilterSection
           searchValue={searchInput}
@@ -33,8 +32,9 @@ export default function Products() {
           selectedFeatures={state.selectedFeatures}
           onFeatureChange={handleFeatureChange}
         />
-        <ProductsList products={state.filteredProducts} />
+        <ProductsErrorBoundary>
+          <ProductsList products={state.filteredProducts} />
+        </ProductsErrorBoundary>
       </section>
-    </ProductsErrorBoundary>
   )
 }
