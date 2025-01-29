@@ -1,5 +1,5 @@
 import type { ProductState, ProductAction } from '../lib/definitions'
-import { PRODUCTS } from '@/src/app/constants/products'
+import { PRODUCTS } from '@/src/app/lib/constants'
 
 export const initialState = {
   searchInput: '',
