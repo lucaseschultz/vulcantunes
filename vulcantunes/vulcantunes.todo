@@ -1,3 +1,4 @@
+nothing found search response
 search for "interface" and move all to definitions
 search for unneeded comments (//)
 add css for products-error-boundary.tsx
@@ -30,6 +31,7 @@ Discontinued/Back-ordered, reorder level, restock date.
 Quantity in stock
 
 Payments:
+Snipcart/Woocommerce shopping cart?
 Discount codes
 
 production:
