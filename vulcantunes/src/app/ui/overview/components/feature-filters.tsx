@@ -1,5 +1,5 @@
 import { memo } from "react";
-import {FEATURE_FILTERS} from "@/src/app/constants/products";
+import { FEATURE_FILTERS } from "@/src/app/lib/constants";
 
 export const FeatureFilters = memo(function FeatureFilters({
   selectedFeatures,
