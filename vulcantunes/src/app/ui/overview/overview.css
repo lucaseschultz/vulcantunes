@@ -72,3 +72,21 @@
         background: var(--foreground);
     }
 }
+.no-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.no-products h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.no-products p {
+    color: var(--faded-text-color);
+}
