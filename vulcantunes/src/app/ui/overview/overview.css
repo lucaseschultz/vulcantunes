@@ -57,7 +57,6 @@
     cursor: pointer;
     accent-color: var(--input-color);
 }
-
 .checkbox-input:checked {
     background-color: var(--input-color);
     border-color: var(--input-color);
