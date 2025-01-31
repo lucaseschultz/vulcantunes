@@ -11,8 +11,10 @@
 }
 .filter {
     width: 100%;
-    max-width: 300px;
     margin-bottom: 2rem;
+    @media (min-width: 768px) {
+        max-width: 300px;
+    }
 }
 .search-input {
     width: 100%;
