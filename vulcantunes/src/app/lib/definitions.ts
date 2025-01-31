@@ -47,3 +47,8 @@ export interface FilterSectionProps {
 export interface ProductItemProps {
   product: Product
 }
+export interface SearchInputProps {
+  value: string
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+}
+

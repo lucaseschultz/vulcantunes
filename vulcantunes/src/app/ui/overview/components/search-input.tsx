@@ -1,9 +1,7 @@
 import { memo, type ChangeEvent } from 'react'
+import type { SearchInputProps } from '@/src/app/lib/definitions'
 
-interface SearchInputProps {
-  value: string
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void
-}
+
 
 export const SearchInput = memo(function SearchInput({ value, onChange }: SearchInputProps) {
   return (
