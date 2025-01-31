@@ -80,6 +80,9 @@
     align-items: center;
     padding: 2rem;
     text-align: center;
+    @media (min-width: 768px) {
+        margin: 0 auto;
+    }
 }
 .no-products h2 {
     font-size: 1.5rem;

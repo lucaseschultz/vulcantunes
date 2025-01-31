@@ -1,4 +1,4 @@
-center no-products-found
+fix logo link
 add search parameters to url
 add css for products-list-error-boundary.tsx
 find ## and convert to todo
