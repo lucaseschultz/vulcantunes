@@ -47,12 +47,6 @@ main {
   margin: 0 auto;
   display: flex;
 }
-.page-title {
-  text-align: center;
-  font-size: 2rem;
-  margin: 2rem 0;
-  color: var(--text-color);
-}
 footer {
   position: relative;
   top: var(--top-nav-height);

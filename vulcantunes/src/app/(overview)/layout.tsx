@@ -1,7 +1,6 @@
 import '@/src/app/ui/overview/overview-layout.css';
 import TopNav from "@/src/app/ui/overview/components/topnav";
 import HeaderLogo from "@/src/app/ui/overview/components/header-logo";
-import PageName from "@/src/app/ui/overview/components/page-name";
 import Footer from "@/src/app/ui/overview/components/footer";
 
 export default function Layout({
@@ -15,7 +14,6 @@ export default function Layout({
       <main>
         <header>
           <HeaderLogo/>
-          <PageName/>
         </header>
         {children}
       </main>
