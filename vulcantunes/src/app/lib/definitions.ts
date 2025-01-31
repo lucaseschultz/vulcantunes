@@ -1,5 +1,5 @@
 import { IconProps } from "@phosphor-icons/react";
-import {ChangeEvent, ComponentType} from 'react';
+import { ChangeEvent, ComponentType } from 'react';
 
 export interface IconNavItem {
   name: string;
