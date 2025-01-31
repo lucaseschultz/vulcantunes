@@ -2,6 +2,7 @@ center no-products-found
 add search parameters to url
 add css for products-list-error-boundary.tsx
 find ## and convert to todo
+keep footer at bottom of page
 
 Products.tsx:
 .sql files
