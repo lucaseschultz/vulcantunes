@@ -22,7 +22,6 @@ Make "Contact Us" form functional
 
 layout.tsx:
 Remove "wishlist" from topnav, when not signed in?
-Replace logo-dark image, when provided with logo-dark image (currently using logo-light image)
 Ask Cody about adding more metadata keywords
 
 Inventory Management:
@@ -35,3 +34,5 @@ Discount codes
 
 production:
 search for "dev" & ## in files to see if anything hasn't been prepared yet
+
+When provided with logo-dark image, replace logo-dark image (currently using logo-light image)
