@@ -50,9 +50,9 @@ export default function Products() {
 
   const filteredProducts = useMemo(() =>
       PRODUCTS.filter((product) => {
-        const matchesSearch = !searchInput ||
-          product.name.toLowerCase().includes(searchInput) ||
-          product.continent.toLowerCase().includes(searchInput)
+        const matchesSearch = !debouncedSearch ||
+          product.name.toLowerCase().includes(debouncedSearch) ||
+          product.continent.toLowerCase().includes(debouncedSearch)
 
         const matchesFeatures = features.size === 0 ||
           Array.from(features).every(feature => product.features?.includes(feature))
