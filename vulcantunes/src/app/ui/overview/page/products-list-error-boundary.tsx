@@ -1,24 +1,7 @@
-import { Component, ReactNode } from 'react'
-import { ErrorType } from "@/src/app/lib/definitions";
+import { Component } from 'react'
+import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState, ErrorMessageConfig } from "@/src/app/lib/definitions";
 
-interface Props {
-  children: ReactNode
-}
-
-interface State {
-  hasError: boolean
-  errorType: ErrorType | null
-  error?: Error
-}
-
-interface ErrorMessageConfig {
-  title: string
-  message: string
-  action?: () => void
-  actionText?: string
-}
-
-export class ProductsListErrorBoundary extends Component<Props, State> {
+export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
   private static readonly errorMessages: Record<ErrorType, ErrorMessageConfig> = {
     network: {
       title: 'Connection Error',
@@ -32,12 +15,12 @@ export class ProductsListErrorBoundary extends Component<Props, State> {
     }
   }
 
-  state: State = {
+  state: ProductsListErrorBoundaryState = {
     hasError: false,
     errorType: null
   }
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error): ProductsListErrorBoundaryState {
     const errorType = error.message.toLowerCase().includes('fetch')
       ? 'network'
       : 'unknown'

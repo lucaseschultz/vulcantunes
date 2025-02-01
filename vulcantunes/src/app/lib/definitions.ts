@@ -1,5 +1,5 @@
 import { IconProps } from "@phosphor-icons/react";
-import { ChangeEvent, ComponentType } from 'react';
+import { ChangeEvent, ComponentType, ReactNode } from 'react';
 
 export interface IconNavItem {
   name: string;
@@ -46,4 +46,18 @@ export interface FilterSectionProps {
 export interface FeatureFiltersProps {
   selectedFeatures: Set<string>;
   onFeatureChange: (feature: string) => void;
+}
+export interface ProductsListErrorBoundaryProps {
+  children: ReactNode
+}
+export interface ProductsListErrorBoundaryState {
+  hasError: boolean
+  errorType: ErrorType | null
+  error?: Error
+}
+export interface ErrorMessageConfig {
+  title: string
+  message: string
+  action?: () => void
+  actionText?: string
 }
