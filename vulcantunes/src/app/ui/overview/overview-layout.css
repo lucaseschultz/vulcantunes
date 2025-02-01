@@ -44,7 +44,7 @@ main {
   padding-top: 1.5rem;
 }
 .header-logo {
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   display: flex;
 }
 footer {
