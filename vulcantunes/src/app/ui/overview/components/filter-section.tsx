@@ -5,16 +5,16 @@ import type { FilterSectionProps } from '@/src/app/lib/definitions'
 
 export const FilterSection = memo(function FilterSection({
    searchValue,
-   onSearchChange,
-   selectedFeatures,
-   onFeatureChange
+   features,
+   handleSearchChange,
+   handleFeatureChange
  }: FilterSectionProps) {
   return (
     <div className="filter">
-      <SearchInput value={searchValue} onChange={onSearchChange} />
+      <SearchInput value={searchValue} onChange={handleSearchChange} />
       <FeatureFilters
-        selectedFeatures={selectedFeatures}
-        onFeatureChange={onFeatureChange}
+        selectedFeatures={features}
+        onFeatureChange={handleFeatureChange}
       />
     </div>
   )
