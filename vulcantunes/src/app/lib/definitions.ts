@@ -37,4 +37,13 @@ export interface SearchInputProps {
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
-
+export interface FilterSectionProps {
+  searchValue: string
+  features: Set<string>
+  handleSearchChange: (value: string) => void
+  handleFeatureChange: (features: Set<string>) => void
+}
+export interface FeatureFiltersProps {
+  selectedFeatures: Set<string>;
+  onFeatureChange: (feature: string) => void;
+}
