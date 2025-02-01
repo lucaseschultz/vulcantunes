@@ -30,7 +30,7 @@ Square payments
 Discount codes
 
 production:
-"Next dev to production tuturial"
+"Next dev to production tutorial"
 ^update NEXTAUTH_URL in .env
 ^search for "dev" in files to see what needs to be moved to "prod"
 
