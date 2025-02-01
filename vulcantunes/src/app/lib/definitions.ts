@@ -25,11 +25,6 @@ export interface Product {
   id: string
   features?: string[]
 }
-export const ErrorTypes = {
-  NETWORK: 'network',
-  UNKNOWN: 'unknown'
-} as const
-export type ErrorType = (typeof ErrorTypes)[keyof typeof ErrorTypes]
 export interface ProductItemProps {
   product: Product
 }
@@ -55,6 +50,11 @@ export interface ProductsListErrorBoundaryState {
   errorType: ErrorType | null
   error?: Error
 }
+export const ErrorTypes = {
+  NETWORK: 'network',
+  UNKNOWN: 'unknown'
+} as const
+export type ErrorType = (typeof ErrorTypes)[keyof typeof ErrorTypes]
 export interface ErrorMessageConfig {
   title: string
   message: string
