@@ -54,7 +54,7 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
         </div>
         <button
           onClick={() => window.location.reload()}
-          className="error-action"
+          className="error-button"
           aria-label="Refresh"
           type="button"
         >
