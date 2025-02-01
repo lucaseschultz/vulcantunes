@@ -40,10 +40,14 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
         data-testid="error-boundary"
       >
         <h3 className="error-title">{title}</h3>
-        <p className="error-message">
-          {message}
-          {error?.message && errorType === 'unknown' && (
-            <span className="error-details">: {error.message}</span>
+        <div className="error-message">
+          <div>
+            {message}
+          </div>
+          {error?.message && errorType !== 'network' && (
+            <div className="error-details">
+              {error.message}
+            </div>
           )}
         </div>
         <button
