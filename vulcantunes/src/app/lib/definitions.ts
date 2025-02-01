@@ -58,6 +58,4 @@ export interface ProductsListErrorBoundaryState {
 export interface ErrorMessageConfig {
   title: string
   message: string
-  action?: () => void
-  actionText?: string
 }

@@ -6,8 +6,6 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     network: {
       title: 'Connection Error',
       message: 'Please check your internet connection and try again.',
-      action: () => window.location.reload(),
-      actionText: 'Retry'
     },
     unknown: {
       title: 'Unexpected Error',
