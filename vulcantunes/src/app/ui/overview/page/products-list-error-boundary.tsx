@@ -13,7 +13,7 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     }
   }
 
-  state: ProductsListErrorBoundaryState = {
+  readonly state: ProductsListErrorBoundaryState = {
     hasError: false,
     errorType: null
   }
