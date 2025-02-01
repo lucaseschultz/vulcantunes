@@ -86,7 +86,7 @@
 }
 .no-products h2 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 0.5rem;
     color: var(--text-color);
 }
@@ -106,7 +106,7 @@
 }
 .error-title {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 1rem;
     color: var(--text-color);
 }
