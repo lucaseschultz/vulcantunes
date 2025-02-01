@@ -7,7 +7,7 @@ import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
 import { PRODUCTS } from '@/src/app/lib/constants'
-import { useDebounce } from '@/src/app/hooks/use-debounce'
+import { debounce } from '@/src/app/lib/debounce'
 
 export default function Products() {
   const searchParams = useSearchParams()
@@ -17,7 +17,7 @@ export default function Products() {
     searchParams.get('search')?.toLowerCase() || ''
   )
 
-  const debouncedSearch = useDebounce(searchInput)
+  const debouncedSearch = debounce(searchInput)
 
   const features = useMemo(() =>
       new Set(searchParams.get('features')?.split(',').filter(Boolean) || []),
