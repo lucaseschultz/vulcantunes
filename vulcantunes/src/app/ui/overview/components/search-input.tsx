@@ -1,12 +1,15 @@
-import { memo } from 'react'
+import { memo, ChangeEvent } from 'react'
 import type { SearchInputProps } from '@/src/app/lib/definitions'
 
-export const SearchInput = memo(function SearchInput({ value, onChange }: SearchInputProps) {
+export const SearchInput = memo(function SearchInput({
+   value,
+   onChange
+ }: SearchInputProps) {
   return (
     <input
       type="search"
       placeholder="Search products"
-      onChange={onChange}
+      onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
       value={value}
       aria-label="Search products"
       className="search-input"

@@ -2,31 +2,41 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
-import { useCallback, useMemo } from 'react'
+import {useCallback, useEffect, useMemo, useState} from 'react'
 import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
 import { PRODUCTS } from '@/src/app/lib/constants'
+import { useDebounce } from '@/src/app/hooks/use-debounce'
 
 export default function Products() {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const searchInput = searchParams.get('search')?.toLowerCase() || ''
+  const [searchInput, setSearchInput] = useState(
+    searchParams.get('search')?.toLowerCase() || ''
+  )
+
+  const debouncedSearch = useDebounce(searchInput)
+
   const features = useMemo(() =>
       new Set(searchParams.get('features')?.split(',').filter(Boolean) || []),
     [searchParams]
   )
 
-  const handleSearchChange = useCallback((value: string) => {
+  useEffect(() => {
     const params = new URLSearchParams(searchParams)
-    if (value) {
-      params.set('search', value)
+    if (debouncedSearch) {
+      params.set('search', debouncedSearch)
     } else {
       params.delete('search')
     }
     router.push(`?${params.toString()}`)
-  }, [searchParams, router])
+  }, [debouncedSearch, searchParams, router])
+
+  const handleSearchChange = useCallback((value: string) => {
+    setSearchInput(value)
+  }, [])
 
   const handleFeatureChange = useCallback((newFeatures: Set<string>) => {
     const params = new URLSearchParams(searchParams)
@@ -49,7 +59,7 @@ export default function Products() {
 
         return matchesSearch && matchesFeatures
       }),
-    [searchInput, features]
+    [debouncedSearch, features]
   )
 
   return (
