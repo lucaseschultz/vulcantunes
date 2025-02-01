@@ -11,10 +11,10 @@ export const FilterSection = memo(function FilterSection({
  }: FilterSectionProps) {
   return (
     <div className="filter">
-      <SearchInput value={searchValue} onChange={handleSearchChange} />
+      <SearchInput value={searchValue} onChange={(e) => handleSearchChange(e.target.value)} />
       <FeatureFilters
         selectedFeatures={features}
-        onFeatureChange={handleFeatureChange}
+        onFeatureChange={(feature) => handleFeatureChange(new Set([feature]))}
       />
     </div>
   )
