@@ -30,8 +30,8 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     }
   }
 
-  private renderErrorMessage({ title, message }: ErrorMessageConfig) {
-    const { error, errorType } = this.state
+  private renderErrorMessage = ({ title, message }: ErrorMessageConfig) => {
+    const { error, errorType } = this.state;
 
     return (
       <div
