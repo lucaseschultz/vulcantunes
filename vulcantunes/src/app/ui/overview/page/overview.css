@@ -115,8 +115,14 @@
     margin-bottom: 1.5rem;
 }
 .error-details {
-    /*color: red;*/
-    /*margin-top: 10rem;*/
+    color: var(--faded-text-color);
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    background: var(--background);
+    border-radius: 6px;
+    margin: 1rem 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 .error-action {
     padding: 0.75rem 1.5rem;
