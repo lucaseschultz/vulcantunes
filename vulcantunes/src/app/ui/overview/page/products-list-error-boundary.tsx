@@ -30,7 +30,7 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     }
   }
 
-  private renderErrorMessage({ title, message, action, actionText }: ErrorMessageConfig) {
+  private renderErrorMessage({ title, message }: ErrorMessageConfig) {
     const { error, errorType } = this.state
 
     return (
@@ -45,17 +45,15 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
           {error?.message && errorType === 'unknown' && (
             <span className="error-details">: {error.message}</span>
           )}
-        </p>
-        {action && (
-          <button
-            onClick={action}
-            className="error-action"
-            aria-label={actionText}
-            type="button"
-          >
-            {actionText}
-          </button>
-        )}
+        </div>
+        <button
+          onClick={() => window.location.reload()}
+          className="error-action"
+          aria-label="Refresh"
+          type="button"
+        >
+          Refresh
+        </button>
       </div>
     )
   }
