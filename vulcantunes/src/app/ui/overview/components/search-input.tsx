@@ -9,7 +9,7 @@ export const SearchInput = memo(function SearchInput({
     <input
       type="search"
       placeholder="Search products"
-      onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+      onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e)}
       value={value}
       aria-label="Search products"
       className="search-input"
