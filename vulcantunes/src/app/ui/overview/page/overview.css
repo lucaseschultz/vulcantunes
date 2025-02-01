@@ -82,9 +82,9 @@
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    @media (min-width: 768px) {
-        margin: 0 auto;
-    }
+    background: var(--foreground);
+    border-radius: 8px;
+    margin: 2rem;
 }
 .no-products h2 {
     font-size: 1.5rem;
