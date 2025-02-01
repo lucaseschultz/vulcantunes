@@ -38,15 +38,22 @@ export default function Products() {
     setSearchInput(value)
   }, [])
 
-  const handleFeatureChange = useCallback((newFeatures: Set<string>) => {
-    const params = new URLSearchParams(searchParams)
-    if (newFeatures.size > 0) {
-      params.set('features', Array.from(newFeatures).join(','))
+  const handleFeatureChange = useCallback((feature: string) => {
+    const newFeatures = new Set(features);
+    if (newFeatures.has(feature)) {
+      newFeatures.delete(feature);
     } else {
-      params.delete('features')
+      newFeatures.add(feature);
     }
-    router.push(`?${params.toString()}`)
-  }, [searchParams, router])
+
+    const params = new URLSearchParams(searchParams);
+    if (newFeatures.size > 0) {
+      params.set('features', Array.from(newFeatures).join(','));
+    } else {
+      params.delete('features');
+    }
+    router.push(`?${params.toString()}`);
+  }, [searchParams, router, features]);
 
   const filteredProducts = useMemo(() =>
       PRODUCTS.filter((product) => {

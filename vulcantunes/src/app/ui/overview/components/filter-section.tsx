@@ -14,7 +14,7 @@ export const FilterSection = memo(function FilterSection({
       <SearchInput value={searchValue} onChange={(e) => handleSearchChange(e.target.value)} />
       <FeatureFilters
         selectedFeatures={features}
-        onFeatureChange={(feature) => handleFeatureChange(new Set([feature]))}
+        onFeatureChange={handleFeatureChange}
       />
     </div>
   )

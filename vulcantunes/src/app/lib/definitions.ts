@@ -41,7 +41,7 @@ export interface FilterSectionProps {
   searchValue: string
   features: Set<string>
   handleSearchChange: (value: string) => void
-  handleFeatureChange: (features: Set<string>) => void
+  handleFeatureChange: (features: string) => void
 }
 export interface FeatureFiltersProps {
   selectedFeatures: Set<string>;
