@@ -6,7 +6,7 @@ import { useCallback, useMemo } from 'react'
 import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
-import { PRODUCTS } from '@/src/app/lib/data/products'
+import { PRODUCTS } from '@/src/app/lib/constants'
 
 export default function Products() {
   const searchParams = useSearchParams()
