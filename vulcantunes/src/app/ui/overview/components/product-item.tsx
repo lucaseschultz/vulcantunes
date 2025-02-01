@@ -6,7 +6,7 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
 
   return (
     <div
-      className="product-item"
+      className="product"
       data-testid={`product-${id}`}
     >
       <div className="product-details">
