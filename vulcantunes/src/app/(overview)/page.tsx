@@ -1,5 +1,5 @@
-import '@/src/app/ui/overview/overview.css'
-import Products from "@/src/app/ui/overview/components/products"
+import '@/src/app/ui/overview/page/overview.css'
+import Products from "@/src/app/ui/overview/page/products"
 
 export default function Page() {
   return (
