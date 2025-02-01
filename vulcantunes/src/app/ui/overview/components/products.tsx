@@ -70,7 +70,7 @@ export default function Products() {
   )
 
   return (
-    <>
+    <div className="products">
       <FilterSection
         searchValue={searchInput}
         features={features}
@@ -80,6 +80,6 @@ export default function Products() {
       <ProductsListErrorBoundary>
         <ProductsList products={filteredProducts} />
       </ProductsListErrorBoundary>
-    </>
+    </div>
   )
 }
