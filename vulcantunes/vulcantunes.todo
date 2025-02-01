@@ -31,6 +31,8 @@ Square payments
 Discount codes
 
 production:
-search for "dev" & ## in files to see if anything hasn't been prepared yet
+"Next dev to production tuturial"
+^update NEXTAUTH_URL in .env
+^search for "dev" in files to see what needs to be moved to "prod"
 
 When provided with logo-dark image, replace logo-dark image (currently using logo-light image)
