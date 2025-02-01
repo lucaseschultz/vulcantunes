@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
-import {useCallback, useEffect, useMemo, useState} from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
