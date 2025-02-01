@@ -103,7 +103,6 @@
     background: var(--foreground);
     border-radius: 8px;
     margin: 2rem;
-    max-width: 500px;
 }
 .error-title {
     font-size: 1.5rem;
