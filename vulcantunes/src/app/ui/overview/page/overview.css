@@ -28,7 +28,7 @@
 }
 .search-input:focus {
     border-color: var(--input-color);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 3px var(--faded-input-color);
 }
 .search-input::placeholder {
     color: var(--faded-text-color);
