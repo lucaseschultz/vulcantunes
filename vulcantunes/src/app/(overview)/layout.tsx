@@ -1,7 +1,7 @@
-import '@/src/app/ui/overview/overview-layout.css';
-import TopNav from "@/src/app/ui/overview/topnav";
-import HeaderLogo from "@/src/app/ui/overview/header-logo";
-import Footer from "@/src/app/ui/overview/footer";
+import '@/src/app/ui/overview/layout/overview-layout.css';
+import TopNav from "@/src/app/ui/overview/layout/topnav";
+import HeaderLogo from "@/src/app/ui/overview/layout/header-logo";
+import Footer from "@/src/app/ui/overview/layout/footer";
 
 export default function Layout({
   children
