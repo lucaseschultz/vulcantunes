@@ -1,11 +1,6 @@
-keep footer at bottom of page
-
 Products.tsx:
 .sql files
 Add Products (update Product type)
-
-products-reducer.ts:
-Implement feature functionality
 
 General:
 authorization
