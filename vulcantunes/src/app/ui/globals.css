@@ -15,6 +15,7 @@
     --faded-input-color: #0b5ed7;
     --top-nav-height: 43px;
     --top-nav-icon-hover-size: 30px;
+    --footer-height: 60px;
     @media (prefers-color-scheme: light) {
         --background: #dddddd;
         --foreground: white;
