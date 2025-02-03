@@ -35,7 +35,6 @@
   > *:first-child {
     border-right: 2px solid var(--outline);
     padding-right: .75rem;
-    margin-right: .75rem !important;
   }
 }
 main {
