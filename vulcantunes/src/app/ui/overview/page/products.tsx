@@ -16,13 +16,12 @@ export default function Products() {
   const [searchInput, setSearchInput] = useState(
     searchParams.get('search')?.toLowerCase() || ''
   )
+  const [features, setFeatures] = useState(
+    new Set(searchParams.get('features')?.split(',').filter(Boolean) || [])
+  )
 
   const debouncedSearch = debounce(searchInput)
-
-  const features = useMemo(() =>
-      new Set(searchParams.get('features')?.split(',').filter(Boolean) || []),
-    [searchParams]
-  )
+  const debouncedFeatures = debounce(Array.from(features).join(','))
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams)
@@ -33,11 +32,19 @@ export default function Products() {
     }
     router.push(`?${params.toString()}`)
   }, [debouncedSearch, searchParams, router])
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams)
+    if (debouncedFeatures) {
+      params.set('features', debouncedFeatures)
+    } else {
+      params.delete('features')
+    }
+    router.push(`?${params.toString()}`)
+  }, [debouncedFeatures, searchParams, router])
 
   const handleSearchChange = useCallback((value: string) => {
     setSearchInput(value)
   }, [])
-
   const handleFeatureChange = useCallback((feature: string) => {
     const newFeatures = new Set(features);
     if (newFeatures.has(feature)) {
@@ -45,15 +52,8 @@ export default function Products() {
     } else {
       newFeatures.add(feature);
     }
-
-    const params = new URLSearchParams(searchParams);
-    if (newFeatures.size > 0) {
-      params.set('features', Array.from(newFeatures).join(','));
-    } else {
-      params.delete('features');
-    }
-    router.push(`?${params.toString()}`);
-  }, [searchParams, router, features]);
+    setFeatures(newFeatures)
+  }, [features]);
 
   const filteredProducts = useMemo(() =>
       PRODUCTS.filter((product) => {
@@ -61,12 +61,12 @@ export default function Products() {
           product.name.toLowerCase().includes(debouncedSearch) ||
           product.continent.toLowerCase().includes(debouncedSearch)
 
-        const matchesFeatures = features.size === 0 ||
-          Array.from(features).every(feature => product.features?.includes(feature))
+        const matchesFeatures = debouncedFeatures.length === 0 ||
+          debouncedFeatures.split(',').every(feature => product.features?.includes(feature))
 
         return matchesSearch && matchesFeatures
       }),
-    [debouncedSearch, features]
+    [debouncedSearch, debouncedFeatures]
   )
 
   return (
