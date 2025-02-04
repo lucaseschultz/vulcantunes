@@ -1,6 +1,7 @@
 Products.tsx:
 .sql files
 Add Products (update Product type)
+make search safe for db querying
 
 General:
 authorization
