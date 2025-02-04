@@ -3,15 +3,16 @@ Products.tsx:
 Add Products (update Product type)
 make search safe for db querying
 
-General:
-authorization
-Email recovery
-Add variable metadata title
-Make account/login, admin (layout), cart, wishlist, & (products) pages
-Add reCaptcha ("Contact Us", "Account creation")
-
 Information:
 Make "Contact Us" form functional
+Add reCaptcha to "Contact Us" form
+
+General:
+Add variable metadata title
+authorization
+Make account/login, admin (layout), cart, wishlist, & (products) pages
+Email recovery
+Add reCaptcha to "Account creation"
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
