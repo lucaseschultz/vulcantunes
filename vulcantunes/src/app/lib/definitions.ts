@@ -20,9 +20,12 @@ export interface WindowSize {
   height: number
 }
 export interface Product {
-  name: string
-  continent: string
-  id: string
+  product_id: number
+  product_model: string
+  product_image: string
+  product_price: number
+  product_quantity: number
+  product_status: number
   features?: string[]
 }
 export interface ProductItemProps {
