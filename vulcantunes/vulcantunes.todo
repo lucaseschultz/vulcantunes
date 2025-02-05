@@ -3,8 +3,12 @@ Proper error handling and loading states
 
 Products.tsx:
 Add Products (update Product type)
+optimize page
 add features to products' db
 make search safe for db querying
+
+product-item.tsx
+Check/tweak look of product-item(s)
 
 Information:
 Make "Contact Us" form functional
