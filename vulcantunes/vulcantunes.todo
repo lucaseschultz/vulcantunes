@@ -1,5 +1,9 @@
+db:
+Proper error handling and loading states
+
 Products.tsx:
 Add Products (update Product type)
+add features to products' db
 make search safe for db querying
 
 Information:
