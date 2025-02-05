@@ -1,5 +1,6 @@
 db:
-Proper error handling and loading states
+rename 'VTAUX_SHORT' to 'VTCABLE_SHORT'
+Proper error handling and loading states (optimize)
 
 Products.tsx:
 Add Products (update Product type)
