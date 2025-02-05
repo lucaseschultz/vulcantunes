@@ -16,7 +16,7 @@ Add reCaptcha to "Account creation"
 layout.tsx:
 Ask Cody about adding more metadata keywords
 
-Inventory Management:
+Admin - Inventory Management:
 Discontinued/Back-ordered, reorder level, restock date.
 Quantity in stock
 
@@ -25,7 +25,7 @@ Square payments
 Discount codes
 
 production:
-"Next dev to production tutorial"
+"NextJS dev to production tutorial"
 ^update NEXTAUTH_URL in .env
 ^search for "dev" in files to see what needs to be moved to "prod"
 
