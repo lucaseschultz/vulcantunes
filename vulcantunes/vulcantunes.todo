@@ -30,3 +30,4 @@ production:
 ^search for "dev" in files to see what needs to be moved to "prod"
 
 When provided with logo-dark image, replace logo-dark image (currently using logo-light image)
+^Ask for product pictures with transparent background
