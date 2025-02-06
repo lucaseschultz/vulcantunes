@@ -11,7 +11,7 @@ export const ProductsList = memo(function ProductsList({ products }: { products:
   return (
     <div className="products-list" aria-label="Products list">
       {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
+        <ProductItem key={product.product_id} product={product} />
       ))}
     </div>
   )
