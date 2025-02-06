@@ -21,12 +21,11 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   };
 
   static getDerivedStateFromError(error: Error): ProductsListErrorBoundaryState {
-    const isNetworkError = error.message.toLowerCase().includes('fetch') ||
-      error.name === 'NetworkError';
+    const errorType = ProductsListErrorBoundary.getErrorType(error);
 
     return {
       hasError: true,
-      errorType: isNetworkError ? 'network' : 'unknown',
+      errorType,
       error
     }
   }
