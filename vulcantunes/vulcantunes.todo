@@ -1,10 +1,17 @@
-optimize prodicts-list-error-boundary.tsx (more error handling?)
+products-list-error-message.tsx:
+optimize (implement errorType?)
+
+prodicts-list-error-boundary.tsx:
+More error handling?
 
 Products.tsx:
 Add Products
 optimize page
 add features to products' db
 make search safe for db querying
+
+constants.ts:
+move feature_filters into db?
 
 product-item.tsx
 Check/tweak look of product-item(s)
