@@ -27,7 +27,22 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
       hasError: true,
       errorType,
       error
-    }
+    };
+  }
+
+  // Separate error type detection logic for better maintainability
+  private static getErrorType(error: Error): ErrorType {
+    if (!error) return 'unknown';
+
+    const errorMessage = error.message.toLowerCase();
+    const isNetworkError =
+      errorMessage.includes('fetch') ||
+      errorMessage.includes('network') ||
+      error.name === 'NetworkError' ||
+      error.name === 'AbortError' ||
+      error.name === 'TimeoutError';
+
+    return isNetworkError ? 'network' : 'unknown';
   }
 
   render() {
