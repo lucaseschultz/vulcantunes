@@ -1,6 +1,10 @@
 Mom:
 Ask for product pictures with transparent background
 
+customer_and_pricing_group_tables.sql:
+Add to vulcantunes db
+Update zen values?
+
 products-list-error-message.tsx:
 optimize (implement errorType?)
 
