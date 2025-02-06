@@ -1,5 +1,5 @@
-import mysql from 'mysql2/promise'
 import { NextResponse } from 'next/server'
+import { PRODUCT_POOL } from "@/src/app/lib/constants";
 
 export async function GET() {
   try {
@@ -16,8 +16,15 @@ export async function GET() {
       ORDER BY product_sort_order
     `)
 
-    return NextResponse.json(rows)
-  } finally {
-    await connection.end()
-  }
+    return NextResponse.json(rows, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
+      }
+    })
+
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Failed to fetch products' },
+      { status: 500 }
+    )  }
 }

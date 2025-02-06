@@ -1,17 +1,14 @@
-import { Product } from "@/src/app/lib/definitions";
+import mysql from "mysql2/promise";
 
-export const PRODUCTS: readonly Product[] = [
-  { name: "United States", continent: "North America", id: "us" },
-  { name: "Australia", continent: "Oceania", id: "au" },
-  { name: "Belgium", continent: "Europe", id: "be" },
-  { name: "Bolivia", continent: "South America", id: "bo" },
-  { name: "Brazil", continent: "South America", id: "br" },
-  { name: "Canada", continent: "North America", id: "ca" },
-  { name: "Ghana", continent: "Africa", id: "gh" },
-  { name: "India", continent: "Asia", id: "in" },
-  { name: "Japan", continent: "Asia", id: "jp" },
-  { name: "Sweden", continent: "Europe", id: "se" }
-] as const;
+export const PRODUCT_POOL = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+})
 
 export const FEATURE_FILTERS = {
   "Bluetooth": false,
