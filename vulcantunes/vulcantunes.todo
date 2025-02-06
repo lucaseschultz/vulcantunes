@@ -1,4 +1,3 @@
-move error message to products-list-error-message
 optimize prodicts-list-error-boundary.tsx (more error handling?)
 
 Products.tsx:
