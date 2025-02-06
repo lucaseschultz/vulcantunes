@@ -1,3 +1,6 @@
+Mom:
+Ask for product pictures with transparent background
+
 products-list-error-message.tsx:
 optimize (implement errorType?)
 
@@ -42,6 +45,3 @@ production:
 "NextJS dev to production tutorial"
 ^update NEXTAUTH_URL in .env
 ^search for "dev" in files to see what needs to be moved to "prod"
-
-When provided with logo-dark image, replace logo-dark image (currently using logo-light image)
-^Ask for product pictures with transparent background
