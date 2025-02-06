@@ -2,7 +2,7 @@ move error message to products-list-error-message
 optimize prodicts-list-error-boundary.tsx (more error handling?)
 
 Products.tsx:
-Add Products (update Product type)
+Add Products
 optimize page
 add features to products' db
 make search safe for db querying
