@@ -38,7 +38,13 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
       return children
     }
 
-    const errorConfig = ProductsListErrorBoundary.errorMessages[errorType ?? 'unknown']
-    return <ProductsListErrorMessage {...errorConfig} error={error} errorType={errorType} />
+    const errorConfig = ProductsListErrorBoundary.ERROR_MESSAGES[errorType ?? 'unknown'];
+    return (
+      <ProductsListErrorMessage
+        {...errorConfig}
+        error={error}
+        errorType={errorType}
+      />
+    );
   }
 }
