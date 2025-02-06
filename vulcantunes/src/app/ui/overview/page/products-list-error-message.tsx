@@ -19,7 +19,7 @@ export const ProductsListErrorMessage = ({
         <div className="error-message">
           {message}
         </div>
-        {error?.message && errorType !== 'network' && (
+        {error?.message && (
           <div className="error-details">
             {error.message}
           </div>
