@@ -7,7 +7,7 @@ import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
 import { Product } from '@/src/app/lib/definitions'
-import { debounce } from '@/src/app/lib/debounce'
+import { debounce } from '@/src/app/lib/utils'
 
 export default function Products() {
   const searchParams = useSearchParams()

@@ -23,3 +23,19 @@ export function fetchWindowSize() {
 
   return windowSize
 }
+
+export function debounce<T>(value: T, delay: number = 750): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value)
+    }, delay)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [value, delay])
+
+  return debouncedValue
+}
