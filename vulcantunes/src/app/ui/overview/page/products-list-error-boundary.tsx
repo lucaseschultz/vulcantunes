@@ -14,10 +14,11 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     }
   } as const;
 
-  readonly state: ProductsListErrorBoundaryState = {
+  state: ProductsListErrorBoundaryState = {
     hasError: false,
-    errorType: null
-  }
+    errorType: null,
+    error: undefined
+  };
 
   static getDerivedStateFromError(error: Error): ProductsListErrorBoundaryState {
     const isNetworkError = error.message.toLowerCase().includes('fetch') ||
