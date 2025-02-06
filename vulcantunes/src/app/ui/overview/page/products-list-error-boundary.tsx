@@ -46,8 +46,8 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   }
 
   render() {
-    const { hasError, errorType, error } = this.state
-    const { children } = this.props
+    const { hasError, errorType, error } = this.state;
+    const { children } = this.props;
 
     if (!hasError) {
       return children
