@@ -3,7 +3,7 @@ import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundarySta
 import { ProductsListErrorMessage } from './products-list-error-message';
 
 export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
-  private static readonly errorMessages: Record<ErrorType, ErrorMessageConfig> = {
+  private static readonly ERROR_MESSAGES: Readonly<Record<ErrorType, ErrorMessageConfig>> = {
     network: {
       title: 'Connection Error',
       message: 'Please check your internet connection and try again.',
@@ -12,7 +12,7 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
       title: 'Unexpected Error',
       message: 'Something went wrong. Please try again later.'
     }
-  }
+  } as const;
 
   readonly state: ProductsListErrorBoundaryState = {
     hasError: false,
