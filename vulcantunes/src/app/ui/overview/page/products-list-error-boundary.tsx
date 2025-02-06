@@ -30,7 +30,6 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     };
   }
 
-  // Separate error type detection logic for better maintainability
   private static getErrorType(error: Error): ErrorType {
     if (!error) return 'unknown';
 
