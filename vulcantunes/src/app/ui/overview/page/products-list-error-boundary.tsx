@@ -21,11 +21,9 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   });
 
   static getDerivedStateFromError(error: Error): ProductsListErrorBoundaryState {
-    const errorType = ProductsListErrorBoundary.getErrorType(error);
-
     return {
       hasError: true,
-      errorType,
+      errorType: ProductsListErrorBoundary.getErrorType(error),
       error
     };
   }
