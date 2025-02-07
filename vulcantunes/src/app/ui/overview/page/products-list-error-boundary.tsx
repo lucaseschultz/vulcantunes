@@ -31,15 +31,19 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   private static getErrorType(error: Error): ErrorType {
     if (!error) return 'unknown';
 
-    const errorMessage = error.message.toLowerCase();
-    const isNetworkError =
-      errorMessage.includes('fetch') ||
-      errorMessage.includes('network') ||
-      error.name === 'NetworkError' ||
-      error.name === 'AbortError' ||
-      error.name === 'TimeoutError';
+    const networkErrorPatterns = [
+      'fetch',
+      'network',
+      'NetworkError',
+      'AbortError',
+      'TimeoutError',
+      'failed to fetch',
+      'internet'
+    ];
 
-    return isNetworkError ? 'network' : 'unknown';
+    return networkErrorPatterns.some(pattern =>
+      error.message.toLowerCase().includes(pattern) || error.name === pattern
+    ) ? 'network' : 'unknown';
   }
 
   render() {
