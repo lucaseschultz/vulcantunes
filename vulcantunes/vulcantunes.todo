@@ -2,12 +2,6 @@ customer_and_pricing_group_tables.sql:
 Add to vulcantunes db
 Update zen values?
 
-products-list-error-message.tsx:
-optimize (implement errorType?)
-
-prodicts-list-error-boundary.tsx:
-Move error messages to a separate constants file
-
 Products.tsx:
 Add Products
 optimize page
