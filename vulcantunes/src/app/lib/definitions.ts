@@ -55,6 +55,8 @@ export interface ProductsListErrorBoundaryState {
 }
 export const ErrorTypes = {
   NETWORK: 'network',
+  NOT_FOUND: 'notFound',
+  SERVER: 'serverError',
   UNKNOWN: 'unknown'
 } as const
 export type ErrorType = (typeof ErrorTypes)[keyof typeof ErrorTypes]

@@ -8,6 +8,14 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
       title: 'Connection Error',
       message: 'Please check your internet connection and try again.',
     },
+    notFound: {
+      title: 'Content Not Found',
+      message: 'The requested content could not be found.',
+    },
+    serverError: {
+      title: 'Server Error',
+      message: 'Our servers are experiencing issues. Please try again later.',
+    },
     unknown: {
       title: 'Unexpected Error',
       message: 'Something went wrong. Please try again later.'
@@ -34,18 +42,29 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     const errorString = `${error.message} ${error.name}`.toLowerCase();
 
     const networkErrorPatterns = [
-      'fetch',
-      'network',
-      'NetworkError',
-      'AbortError',
-      'TimeoutError',
-      'failed to fetch',
-      'internet'
+      'fetch', 'network', 'networkerror', 'aborterror',
+      'timeouterror', 'failed to fetch', 'internet'
     ];
+    if (networkErrorPatterns.some(pattern => errorString.includes(pattern))) {
+      return 'network';
+    }
 
-    return networkErrorPatterns.some(pattern =>
-      error.message.toLowerCase().includes(pattern) || error.name === pattern
-    ) ? 'network' : 'unknown';
+    const notFoundPatterns = [
+      '404', 'not found', 'resource missing', 'content unavailable'
+    ];
+    if (notFoundPatterns.some(pattern => errorString.includes(pattern))) {
+      return 'notFound';
+    }
+
+    const serverErrorPatterns = [
+      '500', '502', '503', 'server error', 'internal error',
+      'service unavailable'
+    ];
+    if (serverErrorPatterns.some(pattern => errorString.includes(pattern))) {
+      return 'serverError';
+    }
+
+    return 'unknown';
   }
 
   render() {
