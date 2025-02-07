@@ -47,16 +47,12 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   }
 
   render() {
-    const { hasError, errorType, error } = this.state;
-    const { children } = this.props;
+    if (!this.state.hasError) return this.props.children;
 
-    if (!hasError) return children;
-
-    const errorConfig = ProductsListErrorBoundary.ERROR_MESSAGES[errorType ?? 'unknown'];
     return (
       <ProductsListErrorMessage
-        {...errorConfig}
-        error={error}
+        {...ProductsListErrorBoundary.ERROR_MESSAGES[this.state.errorType ?? 'unknown']}
+        error={this.state.error}
       />
     );
   }
