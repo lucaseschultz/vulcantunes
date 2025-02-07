@@ -3,9 +3,8 @@ import { ProductsListErrorMessageProps } from "@/src/app/lib/definitions";
 export const ProductsListErrorMessage = ({
    title,
    message,
-   error,
-   errorType
- }: ProductsListErrorMessageProps) => {
+   error
+}: ProductsListErrorMessageProps) => {
   return (
     <div
       className="error-container"

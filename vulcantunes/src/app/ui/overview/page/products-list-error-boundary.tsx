@@ -55,7 +55,6 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
       <ProductsListErrorMessage
         {...errorConfig}
         error={error}
-        errorType={errorType}
       />
     );
   }
