@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./ui/globals.css";
-import ClientSessionProvider from './client-session-provider';
+import ClientSessionProvider from '@/src/app/ui/layout/client-session-provider';
 
 const geistSans = localFont({
   src: "./ui/fonts/GeistVF.woff",
