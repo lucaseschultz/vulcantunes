@@ -6,7 +6,7 @@ products-list-error-message.tsx:
 optimize (implement errorType?)
 
 prodicts-list-error-boundary.tsx:
-More error handling?
+Move error messages to a separate constants file
 
 Products.tsx:
 Add Products
