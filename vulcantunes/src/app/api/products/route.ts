@@ -3,7 +3,7 @@ import { PRODUCT_POOL } from "@/src/app/lib/constants";
 
 export async function GET() {
   try {
-    const [rows] = await PRODUCT_POOL.execute(`
+    const [rows] = await pool.execute(`
       SELECT 
         product_id, 
         product_model, 
