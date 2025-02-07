@@ -8,9 +8,6 @@ optimize page
 add features to products' db
 make search safe for db querying
 
-constants.ts:
-move feature_filters into db?
-
 product-item.tsx
 Check/tweak look of product-item(s)
 
