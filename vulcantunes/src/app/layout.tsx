@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./ui/globals.css";
-import { SessionProvider } from "next-auth/react"
+import ClientSessionProvider from './client-session-provider';
 
 const geistSans = localFont({
   src: "./ui/fonts/GeistVF.woff",
@@ -83,12 +83,12 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <SessionProvider>
+    <ClientSessionProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={geistSans.variable}>
           {children}
         </body>
       </html>
-    </SessionProvider>
+    </ClientSessionProvider>
   );
 }
