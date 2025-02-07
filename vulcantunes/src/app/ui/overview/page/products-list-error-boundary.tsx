@@ -14,11 +14,11 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
     }
   } as const;
 
-  state: ProductsListErrorBoundaryState = {
+  state: ProductsListErrorBoundaryState = Object.freeze({
     hasError: false,
     errorType: null,
     error: undefined
-  };
+  });
 
   static getDerivedStateFromError(error: Error): ProductsListErrorBoundaryState {
     const errorType = ProductsListErrorBoundary.getErrorType(error);
