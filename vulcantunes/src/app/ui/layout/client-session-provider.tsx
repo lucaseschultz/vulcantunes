@@ -12,4 +12,5 @@ export default function ClientSessionProvider({
     <SessionProvider refetchInterval={0} refetchOnWindowFocus={false}>
       {children}
     </SessionProvider>
-  )}
+  )
+}
