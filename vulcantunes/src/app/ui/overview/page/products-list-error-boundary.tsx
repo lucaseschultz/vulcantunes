@@ -1,27 +1,9 @@
 import { Component } from 'react'
-import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState, ErrorMessageConfig } from "@/src/app/lib/definitions";
+import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState } from "@/src/app/lib/definitions";
 import { ProductsListErrorMessage } from './products-list-error-message';
+import { ERROR_MESSAGES } from '@/src/app/lib/constants';
 
 export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
-  private static readonly ERROR_MESSAGES: Readonly<Record<ErrorType, ErrorMessageConfig>> = {
-    network: {
-      title: 'Connection Error',
-      message: 'Please check your internet connection and try again.',
-    },
-    notFound: {
-      title: 'Content Not Found',
-      message: 'The requested content could not be found.',
-    },
-    serverError: {
-      title: 'Server Error',
-      message: 'Our servers are experiencing issues. Please try again later.',
-    },
-    unknown: {
-      title: 'Unexpected Error',
-      message: 'Something went wrong. Please try again later.'
-    }
-  } as const;
-
   state: ProductsListErrorBoundaryState = Object.freeze({
     hasError: false,
     errorType: null,
@@ -72,7 +54,7 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
 
     return (
       <ProductsListErrorMessage
-        {...ProductsListErrorBoundary.ERROR_MESSAGES[this.state.errorType ?? 'unknown']}
+        {...ERROR_MESSAGES[this.state.errorType ?? 'unknown']}
         error={this.state.error}
       />
     );
