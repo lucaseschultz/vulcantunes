@@ -31,6 +31,8 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   private static getErrorType(error: Error): ErrorType {
     if (!error) return 'unknown';
 
+    const errorString = `${error.message} ${error.name}`.toLowerCase();
+
     const networkErrorPatterns = [
       'fetch',
       'network',
