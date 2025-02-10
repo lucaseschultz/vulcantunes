@@ -10,8 +10,8 @@ export default function HeaderLogo() {
   const currentTheme = theme === 'system' ? systemTheme : theme || 'light';
 
   const logoSrc = currentTheme === 'dark'
-    ? '/vulcantunes-logo-dark.png'
-    : '/vulcantunes-logo-light.png';
+    ? '/icons&logos/vulcantunes-logo_dark.png'
+    : '/icons&logos/vulcantunes-logo_light.png';
 
   return (
     <Link href="/">
