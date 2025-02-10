@@ -15,18 +15,23 @@ const pool = mysql.createPool({
 
 export async function GET() {
   try {
-    const [rows] = await pool.execute(`
-      SELECT 
-        product_id, 
-        product_model, 
-        product_image, 
-        product_price, 
-        product_quantity,
-        product_status
-      FROM vulcantunes_products 
-      WHERE product_status = 1
-      ORDER BY product_sort_order
-    `)
+      const [rows] = await pool.execute(`
+    SELECT 
+      p.product_id, 
+      p.product_model, 
+      p.product_image, 
+      p.product_price, 
+      p.product_quantity,
+      p.product_status,
+      p.product_sort_order,
+      GROUP_CONCAT(f.feature_name) as features
+    FROM vulcantunes_products p
+    LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
+    LEFT JOIN vulcantunes_features f ON pf.feature_id = f.feature_id
+    WHERE p.product_status = 1
+    GROUP BY p.product_id, p.product_model, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order
+    ORDER BY p.product_sort_order
+`)
 
     return NextResponse.json(rows, {
       headers: {
