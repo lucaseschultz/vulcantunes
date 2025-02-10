@@ -1,5 +1,4 @@
 Products.tsx:
-Add Products
 optimize page
 add features to products' db
 make search safe for db querying
