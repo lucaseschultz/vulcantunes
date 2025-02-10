@@ -5,7 +5,6 @@ export const FEATURE_FILTERS = {
   "USB Charger": false,
   "AUX Input": false,
   "AUX Output": false,
-  "Audio Jack": false
 } as const
 export const ERROR_MESSAGES: Record<ErrorType, ErrorMessageConfig> = {
   network: {
