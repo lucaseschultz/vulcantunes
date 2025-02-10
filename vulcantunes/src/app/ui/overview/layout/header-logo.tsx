@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 export default function HeaderLogo() {
   const { theme, systemTheme } = useTheme();
 
-  const currentTheme = theme === 'system' ? systemTheme : theme || 'dark';
+  const currentTheme = theme === 'system' ? systemTheme : theme || 'light';
 
   const logoSrc = currentTheme === 'dark'
     ? '/vulcantunes-logo-dark.png'
