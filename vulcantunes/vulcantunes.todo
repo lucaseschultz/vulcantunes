@@ -1,9 +1,14 @@
+get headerlogo theme query working
+
 Products.tsx:
 add features to products' db
 make search safe for db querying
+add loading components
 
 product-item.tsx
 Check/tweak look of product-item(s)
+^Add left margin
+^Add product description (partial?)
 
 Information:
 Make "Contact Us" form functional
