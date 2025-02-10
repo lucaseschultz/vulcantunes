@@ -14,7 +14,7 @@ export const FeatureFilters = memo(function FeatureFilters({
             type="checkbox"
             className="checkbox-input"
             checked={selectedFeatures.has(feature)}
-            onChange={() => onFeatureChange(feature)}
+            onChange={() => onFeatureChange(feature.toLowerCase())}
           />
           {feature}
         </label>
