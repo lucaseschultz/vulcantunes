@@ -1,5 +1,3 @@
-get headerlogo theme query working
-
 Products.tsx:
 add features to products' db
 make search safe for db querying
