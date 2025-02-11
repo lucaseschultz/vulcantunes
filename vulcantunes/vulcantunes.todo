@@ -1,10 +1,9 @@
 fix filter checkboxes not turning blue
 
 Products.tsx:
-make search safe for db querying
 add loading components
 
-product-item.tsx
+product-item.tsx:
 Check/tweak look of product-item(s)
 ^Add left margin
 ^Add product description (partial?)
