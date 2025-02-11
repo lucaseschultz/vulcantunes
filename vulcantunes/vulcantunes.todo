@@ -1,6 +1,9 @@
 Products.tsx:
 add loading components
 
+/info/page.tsx:
+Fix 'export not a react component'
+
 product/route.ts:
 Get product description
 
