@@ -3,10 +3,14 @@ fix filter checkboxes not turning blue
 Products.tsx:
 add loading components
 
+product/route.ts:
+Get product description
+
 product-item.tsx:
 Check/tweak look of product-item(s)
 ^Add left margin
-^Add product description (partial?)
+^Use quantity
+^Use product description (partial?)
 
 Information:
 Make "Contact Us" form functional
