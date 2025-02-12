@@ -13,7 +13,6 @@ const geistSans = localFont({
   preload: true,
 });
 
-// noinspection JSUnusedGlobalSymbols
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
