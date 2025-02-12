@@ -5,18 +5,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/account/login',
   },
-  callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user
-      const isProtectedRoute = nextUrl.pathname.startsWith('/account') ||
-        nextUrl.pathname.startsWith('/admin')
-
-      if (isProtectedRoute) {
-        return isLoggedIn
-      }
-      return true
-    }
-  },
   secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === 'development',
   cookies: {
