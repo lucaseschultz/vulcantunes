@@ -10,6 +10,9 @@ Check/tweak look of product-item(s)
 ^Use quantity
 ^Use product description (partial?)
 
+skeletons.tsx:
+Update to look more like products
+
 overview/page.tsx:
 Add a "New Look" notification banner
 
