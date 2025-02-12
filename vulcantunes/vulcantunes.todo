@@ -1,9 +1,6 @@
 Products.tsx:
 add loading components
 
-/info/page.tsx:
-Fix 'export not a react component'
-
 product/route.ts:
 Get product description
 
@@ -13,7 +10,11 @@ Check/tweak look of product-item(s)
 ^Use quantity
 ^Use product description (partial?)
 
-Information:
+overview/page.tsx:
+Add a "New Look" notification banner
+
+/info/page.tsx:
+Fix 'export not a react component'
 Make "Contact Us" form functional
 Add reCaptcha to "Contact Us" form
 
