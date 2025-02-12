@@ -43,6 +43,7 @@ export default function Products() {
     }
     router.push(`?${params.toString()}`)
   }, [debouncedSearch, searchParams, router])
+
   useEffect(() => {
     const params = new URLSearchParams(searchParams)
     if (debouncedFeatures) {
@@ -56,6 +57,7 @@ export default function Products() {
   const handleSearchChange = useCallback((value: string) => {
     setSearchInput(value)
   }, [])
+
   const handleFeatureChange = useCallback((feature: string) => {
     const newFeatures = new Set(features);
     if (newFeatures.has(feature)) {
