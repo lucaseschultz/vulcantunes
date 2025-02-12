@@ -67,3 +67,7 @@ export interface ErrorMessageConfig {
 export interface ProductsListErrorMessageProps extends ErrorMessageConfig {
   error?: Error;
 }
+export interface ProductsListProps {
+  searchFilter: string;
+  featuresFilter: string;
+}

@@ -1,15 +1,12 @@
 import { memo, useEffect, useState } from "react";
-import { Product } from "@/src/app/lib/definitions";
+import { Product, ProductsListProps } from "@/src/app/lib/definitions";
 import { ProductItem } from "./product-item";
 import { NoProductsFound } from "./no-products-found";
 
 export const ProductsList = memo(function ProductsList({
    searchFilter,
    featuresFilter
- }: {
-  searchFilter: string,
-  featuresFilter: string
-}) {
+ }: ProductsListProps) {
   const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
