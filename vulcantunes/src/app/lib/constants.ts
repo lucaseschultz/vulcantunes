@@ -1,4 +1,4 @@
-import { ErrorMessageConfig, ErrorType } from "@/src/app/lib/definitions";
+import { ErrorMessageConfig, ErrorType } from "./definitions";
 
 export const FEATURE_FILTERS = {
   "Bluetooth": false,
