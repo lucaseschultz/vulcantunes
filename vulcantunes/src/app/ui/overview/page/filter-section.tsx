@@ -10,7 +10,7 @@ export const FilterSection = memo(function FilterSection({
    handleFeatureChange
  }: FilterSectionProps) {
   return (
-    <div className="filter">
+    <div className="filters">
       <SearchInput value={searchValue} onChange={(e) => handleSearchChange(e.target.value)} />
       <FeatureFilters
         selectedFeatures={features}
