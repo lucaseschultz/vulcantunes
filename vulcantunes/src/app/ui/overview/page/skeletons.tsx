@@ -12,15 +12,15 @@ export function ProductSkeleton() {
 
 export function ProductsSkeleton() {
   return (
-    <div className="products">
-      <ProductSkeleton />
-      <ProductSkeleton />
-      <ProductSkeleton />
-      <ProductSkeleton />
-      <ProductSkeleton />
-      <ProductSkeleton />
-      <ProductSkeleton />
-      <ProductSkeleton />
+    <div className="products-list">
+      <ProductSkeleton/>
+      <ProductSkeleton/>
+      <ProductSkeleton/>
+      <ProductSkeleton/>
+      <ProductSkeleton/>
+      <ProductSkeleton/>
+      <ProductSkeleton/>
+      <ProductSkeleton/>
     </div>
   );
 }
