@@ -16,11 +16,13 @@
     --top-nav-height: 43px;
     --top-nav-icon-hover-size: 30px;
     --footer-height: 60px;
-    @media (prefers-color-scheme: light) {
-        --background: #dddddd;
-        --foreground: white;
-        --outline: #e6ebf2;
-        --text-color: black;
+    @media (prefers-color-scheme: dark) {
+        --background: #14171f;
+        --foreground: #1d212f;
+        --outline: #262b38;
+        --text-color: #f9fafb;
+    }
+    @media (min-width: 768px) {
         --top-nav-height: 47px;
         --top-nav-icon-hover-size: 34px;
     }
