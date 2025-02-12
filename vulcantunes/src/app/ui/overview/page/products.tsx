@@ -2,27 +2,16 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useMemo, useState, Suspense } from 'react'
+import { useCallback, useEffect, useState, Suspense } from 'react'
 import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
-import { Product } from '@/src/app/lib/definitions'
 import { debounce } from '@/src/app/lib/utils'
 import { ProductsSkeleton } from "@/src/app/ui/overview/page/skeletons";
 
 export default function Products() {
   const searchParams = useSearchParams()
   const router = useRouter()
-  const [products, setProducts] = useState<Product[]>([])
-
-  useEffect(() => {
-    async function fetchProducts() {
-      const response = await fetch('/api/products')
-      const data = await response.json()
-      setProducts(data)
-    }
-    fetchProducts()
-  }, [])
 
   const [searchInput, setSearchInput] = useState(
     searchParams.get('search')?.toLowerCase() || ''
@@ -68,19 +57,6 @@ export default function Products() {
     setFeatures(newFeatures)
   }, [features]);
 
-  const filteredProducts = useMemo(() =>
-      products.filter((product) => {
-        const matchesSearch = !debouncedSearch ||
-          product.product_model.toLowerCase().includes(debouncedSearch)
-
-        const matchesFeatures = debouncedFeatures.length === 0 ||
-          debouncedFeatures.split(',').every(feature => product.features?.includes(feature))
-
-        return matchesSearch && matchesFeatures
-      }),
-    [debouncedSearch, debouncedFeatures, products]
-  )
-
   return (
     <div className="products">
       <FilterSection
@@ -91,7 +67,10 @@ export default function Products() {
       />
       <ProductsListErrorBoundary>
         <Suspense fallback={<ProductsSkeleton />}>
-          <ProductsList products={filteredProducts} />
+          <ProductsList
+            searchFilter={debouncedSearch}
+            featuresFilter={debouncedFeatures}
+          />
         </Suspense>
       </ProductsListErrorBoundary>
     </div>
