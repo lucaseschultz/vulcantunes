@@ -1,17 +1,8 @@
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
 import "./ui/globals.css";
 import ClientSessionProvider from '@/src/app/ui/layout/client-session-provider';
 import { ThemeProvider } from 'next-themes';
-
-const geistSans = localFont({
-  src: "./ui/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-  display: 'swap',
-  preload: true,
-});
 
 export const viewport = {
   width: 'device-width',
@@ -85,7 +76,7 @@ export default function RootLayout({
   return (
     <ClientSessionProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={geistSans.variable}>
+        <body>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
           </ThemeProvider>
