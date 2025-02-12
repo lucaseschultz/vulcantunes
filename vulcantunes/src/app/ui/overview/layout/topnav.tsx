@@ -13,7 +13,7 @@ export default function TopNav() {
   const topNavLeft = useMemo(() => [{
     name: 'Home Page',
     href: '/',
-    icon: "/vulcantunes-icon.png",
+    icon: "/icons&logos/vulcantunes-icon.png",
     alt: 'VulcanTunes Icon',
     width: iconSize,
     height: iconSize,
