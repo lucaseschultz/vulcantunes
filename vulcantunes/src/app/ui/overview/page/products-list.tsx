@@ -2,18 +2,25 @@ import { memo, useEffect, useState } from "react";
 import { Product, ProductsListProps } from "@/src/app/lib/definitions";
 import { ProductItem } from "./product-item";
 import { NoProductsFound } from "./no-products-found";
+import { ProductsSkeleton } from "./skeletons";
 
 export const ProductsList = memo(function ProductsList({
    searchFilter,
    featuresFilter
  }: ProductsListProps) {
   const [products, setProducts] = useState<Product[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch('/api/products')
-      const data = await response.json()
-      setProducts(data)
+      try {
+        setIsLoading(true)
+        const response = await fetch('/api/products')
+        const data = await response.json()
+        setProducts(data)
+      } finally {
+        setIsLoading(false)
+      }
     }
     fetchProducts()
   }, [])
@@ -27,6 +34,10 @@ export const ProductsList = memo(function ProductsList({
 
     return matchesSearch && matchesFeatures
   })
+
+  if (isLoading) {
+    return <ProductsSkeleton />
+  }
 
   if (filteredProducts.length === 0) {
     return <NoProductsFound />
