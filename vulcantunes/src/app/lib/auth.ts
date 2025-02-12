@@ -1,6 +1,6 @@
-import { NextAuthConfig } from 'next-auth'
+import { NextAuthOptions } from "next-auth"
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [],
   pages: {
     signIn: '/account/login',
@@ -30,4 +30,4 @@ export const authOptions = {
       }
     }
   }
-} satisfies NextAuthConfig
+}
