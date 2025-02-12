@@ -6,10 +6,10 @@
 }
 
 :root {
-    --background: #14171f;
-    --foreground: #1d212f;
-    --outline: #262b38;
-    --text-color: #f9fafb;
+    --background: #dddddd;
+    --foreground: white;
+    --outline: #e6ebf2;
+    --text-color: black;
     --faded-text-color: #94a3b8;
     --input-color: #3b82f6;
     --faded-input-color: #0b5ed7;
