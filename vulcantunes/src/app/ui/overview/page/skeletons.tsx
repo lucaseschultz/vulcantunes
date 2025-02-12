@@ -17,6 +17,10 @@ export function ProductsSkeleton() {
       <ProductSkeleton />
       <ProductSkeleton />
       <ProductSkeleton />
+      <ProductSkeleton />
+      <ProductSkeleton />
+      <ProductSkeleton />
+      <ProductSkeleton />
     </div>
   );
 }
