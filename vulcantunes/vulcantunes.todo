@@ -7,7 +7,7 @@ Check/tweak look of product-item(s)
 ^Use quantity
 ^Use product description (partial?)
 
-skeletons.tsx:
+^skeletons.tsx:
 Update to look more like products
 
 overview/page.tsx:
