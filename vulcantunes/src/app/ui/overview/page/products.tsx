@@ -2,12 +2,11 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useState, Suspense } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { ProductsListErrorBoundary } from './products-list-error-boundary'
 import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
 import { debounce } from '@/src/app/lib/utils'
-import { ProductsSkeleton } from "@/src/app/ui/overview/page/skeletons";
 
 export default function Products() {
   const searchParams = useSearchParams()
@@ -66,12 +65,10 @@ export default function Products() {
         handleFeatureChange={handleFeatureChange}
       />
       <ProductsListErrorBoundary>
-        <Suspense fallback={<ProductsSkeleton />}>
-          <ProductsList
-            searchFilter={debouncedSearch}
-            featuresFilter={debouncedFeatures}
-          />
-        </Suspense>
+        <ProductsList
+          searchFilter={debouncedSearch}
+          featuresFilter={debouncedFeatures}
+        />
       </ProductsListErrorBoundary>
     </div>
   )
