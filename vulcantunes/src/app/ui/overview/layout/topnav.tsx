@@ -1,10 +1,10 @@
 'use client'
 
-import type { ImageNavItem, IconNavItem } from '../../../lib/definitions'
+import type { ImageNavItem, IconNavItem } from '@/src/app/lib/definitions'
 import { ShoppingCart, User, Heart, Info } from "@phosphor-icons/react/dist/ssr"
-import { DisplayNavItems } from '../../../lib/actions'
+import { DisplayNavItems } from '@/src/app/lib/actions'
 import { useMemo } from 'react'
-import { fetchWindowSize } from '../../../lib/utils'
+import { fetchWindowSize } from '@/src/app/lib/utils'
 
 export default function TopNav() {
   const { width } = fetchWindowSize()
