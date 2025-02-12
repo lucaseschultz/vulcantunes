@@ -165,20 +165,20 @@
 .product-skeleton-image {
   height: 200px;
   width: 200px;
-  background-color: var(--foreground);
+  background-color: var(--text-color);
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 .product-skeleton-model {
   height: 1.5rem;
   width: 180px;
-  background-color: var(--foreground);
+  background-color: var(--text-color);
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }
 .product-skeleton-price {
   height: 1.5rem;
   width: 80px;
-  background-color: var(--foreground);
+  background-color: var(--text-color);
   border-radius: 4px;
 }
