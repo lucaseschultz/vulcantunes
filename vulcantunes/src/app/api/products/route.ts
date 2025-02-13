@@ -18,7 +18,6 @@ export async function GET() {
       const [rows] = await pool.execute(`
     SELECT 
       p.product_id, 
-      p.product_model, 
       p.product_image, 
       p.product_price, 
       p.product_quantity,
@@ -29,7 +28,7 @@ export async function GET() {
     LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
     LEFT JOIN vulcantunes_features f ON pf.feature_id = f.feature_id
     WHERE p.product_status = 1
-    GROUP BY p.product_id, p.product_model, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order
+    GROUP BY p.product_id, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order
     ORDER BY p.product_sort_order
 `)
 
