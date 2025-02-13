@@ -27,7 +27,7 @@ export default function Page() {
 
       <section className="info-section">
         <h2>Contact Us</h2>
-        <p>We love hearing from our customers. Just fill and submit the form below and we'll get back to you ASAP</p>
+        <p>We love hearing from and helping our customers. Just fill out and submit the form below and we'll get back to you ASAP</p>
 
         <form className="contact-form">
           <div className="form-group">
