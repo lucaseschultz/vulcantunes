@@ -6,7 +6,7 @@ Check/tweak look of product-item(s)
 ^Add left margin
 ^Use quantity
 ^Use product description (partial?)
-^Add "Add to cart" button
+^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 ^Add favorite button
 
 ^skeletons.tsx:
