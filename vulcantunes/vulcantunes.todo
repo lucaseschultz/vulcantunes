@@ -16,6 +16,11 @@ Update to look more like products
 overview/page.tsx:
 Add a "New Look" notification banner
 
+search bar:
+“Abbreviation and Symbol” Searches
+Search definition, as well
+Add non-exact matches
+
 /info/page.tsx:
 Fix 'export not a react component'
 Make "Contact Us" form functional
