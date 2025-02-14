@@ -19,6 +19,9 @@ Add a "New Look" notification banner
 search bar:
 Remove it
 
+Add brand "story"/deatils (Home page?):
+https://baymard.com/premium/blog/dtc-users-informational-needs
+
 /info/page.tsx:
 Fix 'export not a react component'
 Make "Contact Us" form functional
