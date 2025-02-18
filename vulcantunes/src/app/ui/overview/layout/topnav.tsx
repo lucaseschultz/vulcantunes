@@ -26,7 +26,7 @@ export default function TopNav() {
 
   const topNavRight = useMemo(() => [{
     name: 'Wish List',
-    href: '/account/wishlist',
+    href: '/wishlist',
     icon: Heart,
     size: iconSize,
   }, {
