@@ -6,6 +6,7 @@ Check/tweak look of product-item(s)
 ^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 ^Add favorite button
 ^Add "See Details" button
+^Replace "template" css & html
 
 ^skeletons.tsx:
 Update to look more like products
