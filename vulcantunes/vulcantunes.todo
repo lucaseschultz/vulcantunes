@@ -1,3 +1,6 @@
+vulcantunes_product_descriptions db table:
+Tune product names/descriptions
+
 product-item.tsx:
 Check/tweak look of product-item(s)
 ^Add left margin
