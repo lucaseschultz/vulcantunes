@@ -71,9 +71,23 @@
 .product-details {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+.product-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.product-description {
+    color: var(--faded-text-color);
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 .product-price {
-
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
 }
 .no-products {
     display: flex;
