@@ -13,7 +13,7 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
     >
       <Image
         src={imgSrc}
-        alt={`${product_model} image`}
+        alt={`${imgSrc} image`}
         width={200}
         height={200}
         style={{
