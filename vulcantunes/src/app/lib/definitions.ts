@@ -36,9 +36,7 @@ export interface SearchInputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 export interface FilterSectionProps {
-  searchValue: string
   features: Set<string>
-  handleSearchChange: (value: string) => void
   handleFeatureChange: (features: string) => void
 }
 export interface FeatureFiltersProps {
@@ -68,6 +66,5 @@ export interface ProductsListErrorMessageProps extends ErrorMessageConfig {
   error?: Error;
 }
 export interface ProductsListProps {
-  searchFilter: string;
   featuresFilter: string;
 }

@@ -1,11 +1,10 @@
-import { memo, useEffect, useState } from "react";
-import { Product, ProductsListProps } from "@/src/app/lib/definitions";
-import { ProductItem } from "./product-item";
-import { NoProductsFound } from "./no-products-found";
-import { ProductsSkeleton } from "./skeletons";
+import {memo, useEffect, useState} from "react";
+import {Product, ProductsListProps} from "@/src/app/lib/definitions";
+import {ProductItem} from "./product-item";
+import {NoProductsFound} from "./no-products-found";
+import {ProductsSkeleton} from "./skeletons";
 
 export const ProductsList = memo(function ProductsList({
-   searchFilter,
    featuresFilter
  }: ProductsListProps) {
   const [products, setProducts] = useState<Product[]>([])
@@ -26,13 +25,8 @@ export const ProductsList = memo(function ProductsList({
   }, [])
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch = !searchFilter ||
-      product.product_model.toLowerCase().includes(searchFilter)
-
-    const matchesFeatures = featuresFilter.length === 0 ||
+    return featuresFilter.length === 0 ||
       featuresFilter.split(',').every(feature => product.features?.includes(feature))
-
-    return matchesSearch && matchesFeatures
   })
 
   if (isLoading) {

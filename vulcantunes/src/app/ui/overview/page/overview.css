@@ -17,23 +17,6 @@
         max-width: 275px;
     }
 }
-.search-input {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    background-color: var(--foreground);
-    outline: none;
-    margin-bottom: 1.5rem;
-}
-.search-input:focus {
-    border-color: var(--input-color);
-    box-shadow: 0 0 0 3px var(--faded-input-color);
-}
-.search-input::placeholder {
-    color: var(--faded-text-color);
-}
 .checkbox-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
