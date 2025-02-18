@@ -8,6 +8,7 @@ export const FilterSection = memo(function FilterSection({
  }: FilterSectionProps) {
   return (
     <div className="filters">
+      <h2 className="filters-title">Filter Products</h2>
       <FeatureFilters
         selectedFeatures={features}
         onFeatureChange={handleFeatureChange}

@@ -17,6 +17,12 @@
         max-width: 150px;
     }
 }
+.filters-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
 .feature-filters {
     display: grid;
     grid-template-columns: 1fr 1fr;
