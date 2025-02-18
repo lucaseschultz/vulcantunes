@@ -9,7 +9,8 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
   return (
     <div
       className="product-item"
-      data-testid={`product-${product_id}`}
+      data-testid={`product-${product_model}`}
+      id={`${product_model}`}
     >
       <Image
         src={imgSrc}
