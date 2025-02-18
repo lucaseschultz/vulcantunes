@@ -1,6 +1,3 @@
-product/route.ts:
-Get product description
-
 product-item.tsx:
 Check/tweak look of product-item(s)
 ^Add left margin

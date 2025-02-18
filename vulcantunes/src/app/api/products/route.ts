@@ -23,12 +23,15 @@ export async function GET() {
       p.product_quantity,
       p.product_status,
       p.product_sort_order,
-      GROUP_CONCAT(f.feature_name) as features
+      GROUP_CONCAT(f.feature_name) as features,
+      d.product_name,
+      d.product_description
     FROM vulcantunes_products p
     LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
     LEFT JOIN vulcantunes_features f ON pf.feature_id = f.feature_id
+    LEFT JOIN vulcantunes_product_descriptions d ON p.product_id = d.product_id
     WHERE p.product_status = 1
-    GROUP BY p.product_id, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order
+    GROUP BY p.product_id, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order, d.product_name, d.product_description
     ORDER BY p.product_sort_order
 `)
 
