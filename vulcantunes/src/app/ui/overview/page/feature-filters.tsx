@@ -7,12 +7,12 @@ export const FeatureFilters = memo(function FeatureFilters({
   onFeatureChange
  }: FeatureFiltersProps) {
   return (
-    <div className="checkbox-group">
+    <div className="feature-filters">
       {Object.keys(FEATURE_FILTERS).map((feature) => (
-        <label key={feature} className="checkbox-label">
+        <label key={feature} className="feature-label">
           <input
             type="checkbox"
-            className="checkbox-input"
+            className="feature-input"
             checked={selectedFeatures.has(feature.toLowerCase())}
             onChange={() => onFeatureChange(feature.toLowerCase())}
           />
