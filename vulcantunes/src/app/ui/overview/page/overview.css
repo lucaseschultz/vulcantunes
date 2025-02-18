@@ -68,6 +68,13 @@
         flex-direction: row;
     }
 }
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+.product-price {
+
+}
 .no-products {
     display: flex;
     flex-direction: column;
