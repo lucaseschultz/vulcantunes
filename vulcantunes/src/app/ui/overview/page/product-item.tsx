@@ -23,7 +23,6 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
         onError={() => setImgSrc('/products/image-coming-soon.jpg')}
       />
       <div className="product-details">
-        <span className="product-name">{product_model}</span>
         <span className="product-price">${product_price}</span>
       </div>
     </div>
