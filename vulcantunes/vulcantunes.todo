@@ -26,7 +26,11 @@ Add reCaptcha to "Contact Us" form
 General:
 authorization
 make dynamic account icon
-Make account ("Buy again"/"Purchase History")/login, admin (layout), cart, wishlist, & (products) pages
+Make account ("Buy again"/"Purchase History")/login (explain why info is required) page
+Make admin (layout) page
+Make cart page
+Make wishlist page
+Make product(s) page
 Email recovery
 Add reCaptcha to "Account creation"
 
