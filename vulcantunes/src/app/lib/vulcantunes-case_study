@@ -144,9 +144,9 @@ const loadData = async () => {
 - [X]% faster page load times
 
 ## Challenges and Solutions ##
-1. **Challenge**: [Specific technical challenge]
-   - **Solution**: [How you solved it]
-   - **Outcome**: [Result of your solution]
+1. **Challenge**: Component Flash During Data Loading
+   - **Solution**: Replaced Suspense boundary with local loading state management using useState and added an isLoading check before rendering NoProductsFound
+   - **Outcome**: Eliminated unwanted flash of NoProductsFound component during the initial data fetch, creating a smoother loading experience
 
 2. **Challenge**: [Another challenge]
    - **Solution**: [How you solved it]
