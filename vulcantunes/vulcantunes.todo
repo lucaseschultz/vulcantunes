@@ -1,5 +1,5 @@
 product-item.tsx:
-Check/tweak look of product-item(s)
+Refine product-item(s)
 ^Use quantity in stock (Discontinued/Back-ordered, reorder level, restock date)
 ^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 ^Add favorite button
