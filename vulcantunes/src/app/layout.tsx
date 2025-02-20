@@ -18,7 +18,7 @@ const siteConfig = {
   title: 'VulcanTunes',
   description: "The place to buy innovative audio connectivity options for the Kawasaki Vulcan motorcycle",
   url: "https://vulcantunes.com",
-  iconUrl: "/vulcantunes-icon.png",
+  iconUrl: "/icons&logos/vulcantunes-icon.png",
 };
 
 export const metadata = {
