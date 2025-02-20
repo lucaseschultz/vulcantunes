@@ -45,6 +45,8 @@ Square payments
 Discount codes
 
 production:
+Finish filling out "vulcantunes-case_study"
+Search for ##'s
 "NextJS dev to production tutorial"
 ^update NEXTAUTH_URL in .env
 ^search for "dev" in files to see what needs to be moved to "prod"
