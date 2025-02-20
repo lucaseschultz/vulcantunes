@@ -17,7 +17,7 @@ Brief description of the client/website and the main objectives of the moderniza
   - No CDN implementation causing slow global load times ##
 
 ### User Experience Issues
-- Non-intuitive navigation structure
+- Non-intuitive cluttered navigation structure
 - Lack of mobile optimization
 - Inconsistent design patterns
 - Poor accessibility implementation
