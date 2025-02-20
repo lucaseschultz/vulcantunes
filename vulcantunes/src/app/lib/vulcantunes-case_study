@@ -6,7 +6,7 @@ Brief description of the client/website and the main objectives of the moderniza
 
 ## Original Website Analysis
 ### Technical Assessment
-- **Framework/Technologies**: PHP (zencart)
+- **Framework/Technologies**: PHP (zencart) ##
 - **Performance Metrics**:
   - Load Time: 3.4 seconds
   - First Contentful Paint: 2,900 ms
