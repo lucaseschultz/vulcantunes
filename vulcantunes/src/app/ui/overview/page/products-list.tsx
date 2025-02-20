@@ -40,7 +40,7 @@ export const ProductsList = memo(function ProductsList({
   return (
     <div className="products-list" aria-label="Products list">
       {filteredProducts.map((product) => (
-        <ProductItem key={product.product_id} product={product} />
+        <ProductItem key={product.product_model} product={product} />
       ))}
     </div>
   )
