@@ -22,7 +22,9 @@ Brief description of the client/website and the main objectives of the moderniza
 - Inconsistent design patterns
 - Poor accessibility implementation
 - No dark theme
-- Many unfunctional pages/pages with missing content
+- Unfunctional pages
+- Pages with missing content
+- Misleading/confusing information
 
 ## Modernization Strategy
 ### Technology Stack Selection
