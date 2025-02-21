@@ -75,7 +75,7 @@
 }
 
 .submit-button {
-  background-color: var(--input-color);
+  background-color: var(--interactive-color);
   color: #f9fafb;
   padding: 1rem 2rem;
   border: none;
