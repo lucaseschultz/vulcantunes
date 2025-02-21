@@ -46,11 +46,11 @@
     border: 2px solid var(--outline);
     border-radius: 4px;
     cursor: pointer;
-    accent-color: var(--input-color);
+    accent-color: var(--interactive-color);
 }
 .feature-input:checked {
-    background-color: var(--input-color);
-    border-color: var(--input-color);
+    background-color: var(--interactive-color);
+    border-color: var(--interactive-color);
 }
 .products-list {
     display: flex;
@@ -164,7 +164,7 @@
 }
 .error-button {
     padding: 0.75rem 1.5rem;
-    background-color: var(--input-color);
+    background-color: var(--interactive-color);
     color: white;
     border: none;
     border-radius: 6px;
@@ -173,7 +173,7 @@
     transition: background-color 0.2s ease;
 }
 .error-button:hover {
-    background-color: var(--faded-input-color);
+    background-color: var(--faded-interactive-color);
 }
 .shimmer {
     position: relative;
