@@ -1,4 +1,4 @@
-import { memo, useState } from 'react'
+import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
 
@@ -7,9 +7,13 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
 
   const [imgSrc, setImgSrc] = useState(`/${product_image}`)
 
-  const truncatedDescription = product_description.length > 100
-    ? `${product_description.slice(0, 100)}...`
-    : product_description
+  const truncatedDescription = useMemo(() =>
+      product_description.length > 100
+        ? `${product_description.slice(0, 100)}...`
+        : product_description,
+    [product_description]
+  );
+
 
   return (
     <div
