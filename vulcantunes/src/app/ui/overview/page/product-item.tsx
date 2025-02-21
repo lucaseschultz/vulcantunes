@@ -49,10 +49,10 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
               )}
           </span>
           {product_status === 2 && (
-          <span className="product-discontinued">Discontinued</span>
+            <span className="product-discontinued">Discontinued</span>
           )}
+        </div>
       </div>
     </div>
-</div>
-)
+  )
 })
