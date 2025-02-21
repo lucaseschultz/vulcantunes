@@ -65,6 +65,9 @@ Payments:
 Square payments
 Discount codes
 
+/notify/${product_model}:
+Make email subscription pages
+
 production:
 Finish filling out "vulcantunes-case_study"
 Search for ##'s
