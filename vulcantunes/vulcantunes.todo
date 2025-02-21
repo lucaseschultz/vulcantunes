@@ -22,16 +22,30 @@ Fix 'export not a react component'
 Make "Contact Us" form functional
 Add reCaptcha to "Contact Us" form
 
+Product page(s):
+Make product page(s)
+Increase product_viewed upon navigation: vulcantunes_product_descriptions
+
+Cart Page:
+Make cart page
+
+Login page:
+Explain why login info is required
+
+Account Page:
+Make account page
+
+Wishlist page:
+Add reCaptcha to "Account creation"
+Make wishlist page
+
+Admin page:
+Make admin layout/page
+
 General:
 Authorization
 Make dynamic account icon
-Make account ("Buy again"/"Purchase History")/login (explain why info is required) page
-Make admin (layout) page
-Make cart page
-Make wishlist page
-Make product(s) page (increase product_viewed upon navigation: vulcantunes_product_descriptions)
-Email recovery
-Add reCaptcha to "Account creation"
+Add email recovery
 
 layout.tsx:
 Ask Cody about adding more metadata keywords
