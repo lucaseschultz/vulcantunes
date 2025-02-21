@@ -32,6 +32,9 @@ Make cart page
 Login page:
 Explain why login info is required
 
+General:
+Add authorization
+
 Account Page:
 Make account page
 
@@ -43,8 +46,7 @@ Admin page:
 Make admin layout/page
 
 General:
-Authorization
-Make dynamic account icon
+Make dynamic account icon (Make icon first letter of name and add colorful background?)
 Add email recovery
 
 layout.tsx:
