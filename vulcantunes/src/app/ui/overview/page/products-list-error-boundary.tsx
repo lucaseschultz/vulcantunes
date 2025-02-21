@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState } from "@/src/app/lib/definitions";
 import { ProductsListErrorMessage } from './products-list-error-message';
-import { ERROR_MESSAGES } from '@/src/app/lib/constants';
+import { PRODUCTS_ERROR_MESSAGES } from '@/src/app/lib/constants';
 
 export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
   state: ProductsListErrorBoundaryState = Object.freeze({
@@ -54,7 +54,7 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
 
     return (
       <ProductsListErrorMessage
-        {...ERROR_MESSAGES[this.state.errorType ?? 'unknown']}
+        {...PRODUCTS_ERROR_MESSAGES[this.state.errorType ?? 'unknown']}
         error={this.state.error}
       />
     );

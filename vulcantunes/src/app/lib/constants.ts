@@ -6,7 +6,7 @@ export const FEATURE_FILTERS = {
   "AUX Input": false,
   "AUX Output": false,
 } as const
-export const ERROR_MESSAGES: Record<ErrorType, ErrorMessageConfig> = {
+export const PRODUCTS_ERROR_MESSAGES: Record<ErrorType, ErrorMessageConfig> = {
   network: {
     title: 'Connection Error',
     message: 'Please check your internet connection and try again.',
