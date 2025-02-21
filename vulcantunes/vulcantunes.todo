@@ -29,7 +29,7 @@ Make account ("Buy again"/"Purchase History")/login (explain why info is require
 Make admin (layout) page
 Make cart page
 Make wishlist page
-Make product(s) page
+Make product(s) page (increase product_viewed upon navigation: vulcantunes_product_descriptions)
 Email recovery
 Add reCaptcha to "Account creation"
 
