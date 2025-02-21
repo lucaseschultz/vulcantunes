@@ -1,6 +1,6 @@
 product-item.tsx:
 Refine product-item(s)
-^Use quantity in stock (Discontinued/Back-ordered, reorder level, restock date)
+^Use quantity in stock (Discontinued/Back-ordered, in stock/out of stock, restock date)
 ^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 ^Add favorite button
 ^Add "See Details" button
