@@ -40,6 +40,9 @@ Admin - Inventory Management:
 Discontinued/Back-ordered, reorder level, restock date.
 Quantity in stock
 
+Checkout:
+Increase product_ordered_qty upon purchase: vulcantunes_products
+
 Payments:
 Square payments
 Discount codes
