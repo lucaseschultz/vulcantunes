@@ -8,7 +8,7 @@ import { FilterSection } from './filter-section'
 import { ProductsList } from './products-list'
 import { debounce } from '@/src/app/lib/utils'
 
-export default function Products() {
+export default function ProductsSection() {
   const searchParams = useSearchParams()
   const router = useRouter()
 

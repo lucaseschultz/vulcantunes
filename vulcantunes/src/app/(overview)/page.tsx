@@ -1,8 +1,8 @@
 import '@/src/app/ui/overview/page/overview.css'
-import Products from "@/src/app/ui/overview/page/products"
+import ProductsSection from "@/src/app/ui/overview/page/products-section"
 
 export default function Page() {
   return (
-    <Products />
+    <ProductsSection />
   );
 };
