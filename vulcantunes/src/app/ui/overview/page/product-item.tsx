@@ -4,7 +4,7 @@ import type { ProductItemProps } from '@/src/app/lib/definitions'
 import { ProductQuantity } from "@/src/app/ui/overview/page/product-item-quantity";
 
 export const ProductItem = memo(function ProductItem({ product }: ProductItemProps) {
-  const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price } = product
+  const { product_id, product_status, product_quantity, product_model, product_description, product_name, product_image, product_price } = product
 
   const [imgSrc, setImgSrc] = useState(`/${product_image}`)
 
