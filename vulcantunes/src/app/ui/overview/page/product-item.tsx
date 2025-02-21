@@ -36,7 +36,17 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
           <span className={`product-quantity ${product_quantity === 0 ? 'out-of-stock' : ''}`}>
             {product_quantity > 0
               ? `In stock: ${product_quantity}`
-              : 'Out of stock'}
+              : (
+                <>
+                  Out of stock
+                  <a
+                    href={`/notify/${product_model}`}
+                    className="notify-link"
+                  >
+                    Get notified when available
+                  </a>
+                </>
+              )}
           </span>
           {product_status === 2 && (
           <span className="product-discontinued">Discontinued</span>

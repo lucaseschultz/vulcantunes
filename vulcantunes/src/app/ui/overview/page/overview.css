@@ -111,6 +111,16 @@
     background-color: var(--warning-background-color);
     border-radius: 4px;
 }
+.notify-link {
+    color: var(--interactive-color);
+    font-size: 0.95rem;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.notify-link:hover {
+    color: var(--faded-interactive-color);
+}
 .no-products {
     display: flex;
     flex-direction: column;
