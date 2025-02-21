@@ -31,6 +31,7 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
           height: '200',
           width: 'auto',
         }}
+        priority={false}
         onError={() => setImgSrc('/products/image-coming-soon.jpg')}
       />
       <div className="product-details">
