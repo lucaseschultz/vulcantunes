@@ -3,7 +3,8 @@ import Image from 'next/image'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
 
 export const ProductItem = memo(function ProductItem({ product }: ProductItemProps) {
-  const { product_quantity, product_model, product_description, product_name, product_image, product_price } = product
+  const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price } = product
+
   const [imgSrc, setImgSrc] = useState(`/${product_image}`)
 
   const truncatedDescription = product_description.length > 100
@@ -30,8 +31,18 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
       <div className="product-details">
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
-        <span className="product-price">${product_price}</span>
+        <div className="product-metadata">
+          <span className="product-price">${product_price}</span>
+          <span className={`product-quantity ${product_quantity === 0 ? 'out-of-stock' : ''}`}>
+            {product_quantity > 0
+              ? `In stock: ${product_quantity}`
+              : 'Out of stock'}
+          </span>
+          {product_status === 2 && (
+          <span className="product-discontinued">Discontinued</span>
+          )}
       </div>
     </div>
-  )
+</div>
+)
 })
