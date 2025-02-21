@@ -30,7 +30,7 @@ export const metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.title,
   generator: "Next.js",
-  keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan accessories"],
+  keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan", "accessories", "motorcycle audio accessories", "Vulcan audio system", "motorcycle bluetooth adapter", "buy motorcycle audio", "Vulcan sound system"],
   robots: {
     index: true,
     follow: true,

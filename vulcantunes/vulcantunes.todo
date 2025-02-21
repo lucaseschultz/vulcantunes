@@ -51,9 +51,6 @@ General:
 Make dynamic account icon (Make icon first letter of name and add colorful background?)
 Add email recovery
 
-layout.tsx:
-Ask Cody about adding more metadata keywords
-
 Admin - Inventory Management:
 Discontinued/Back-ordered, reorder level, restock date.
 Quantity in stock
