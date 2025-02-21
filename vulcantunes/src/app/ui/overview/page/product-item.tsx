@@ -1,6 +1,7 @@
 import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
+import { ProductQuantity } from "@/src/app/ui/overview/page/product-item-quantity";
 
 export const ProductItem = memo(function ProductItem({ product }: ProductItemProps) {
   const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price } = product
@@ -37,21 +38,7 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
         <p className="product-description">{truncatedDescription}</p>
         <div className="product-metadata">
           <span className="product-price">${product_price}</span>
-          <span className={`product-quantity ${product_quantity === 0 ? 'out-of-stock' : ''}`}>
-            {product_quantity > 0
-              ? `In stock: ${product_quantity}`
-              : (
-                <>
-                  Out of stock
-                  <a
-                    href={`/notify/${product_model}`}
-                    className="notify-link"
-                  >
-                    Get notified when available
-                  </a>
-                </>
-              )}
-          </span>
+          <ProductQuantity quantity={product_quantity} model={product_model}/>
           {product_status === 2 && (
             <span className="product-discontinued">Discontinued</span>
           )}
