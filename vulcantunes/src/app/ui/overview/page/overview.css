@@ -148,6 +148,10 @@
 .product-quantity {
     color: var(--text-color);
     font-size: 0.95rem;
+    .out-of-stock {
+        color: var(--warning-color);
+        font-weight: 500;
+    }
 }
 .product-quantity.out-of-stock {
     color: var(--warning-color);
