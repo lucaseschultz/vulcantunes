@@ -4,7 +4,7 @@ import type { ProductItemProps } from '@/src/app/lib/definitions'
 import { ProductQuantity } from "@/src/app/ui/overview/page/product-item-quantity";
 import { renderOptionValues } from '@/src/app/lib/actions'
 
-export const ProductItem = memo(function ProductItem({ product }: ProductItemProps) {
+export const ProductItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
   const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price, options } = product
 
   const [imgSrc, setImgSrc] = useState(`/${product_image}`)
@@ -60,7 +60,7 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
             {optionsArray.map(({ type, values, optionType }) => (
               <div key={type} className="option-group">
                 <label>{type}</label>
-                {renderOptionValues(type, values, product.product_model, optionType)}
+                {renderOptionValues(type, values, product.product_model, optionType, isOdd)}
               </div>
             ))}
           </div>

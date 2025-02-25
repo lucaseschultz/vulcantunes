@@ -39,8 +39,12 @@ export const ProductsList = memo(function ProductsList({
 
   return (
     <div className="products-list" aria-label="Products list">
-      {filteredProducts.map((product) => (
-        <ProductItem key={product.product_model} product={product} />
+      {filteredProducts.map((product, index) => (
+        <ProductItem
+          key={product.product_model}
+          product={product}
+          isOdd={index % 2 !== 0}
+        />
       ))}
     </div>
   )

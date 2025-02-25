@@ -43,12 +43,14 @@ export function DisplayNavItems({ NavName, NavItems }: {
     </ul>
   )
 }
-export function renderOptionValues(type: string, values: string[], productModel: string, optionType: number) {
+export function renderOptionValues(type: string, values: string[], productModel: string, optionType: number, isOdd: boolean) {
   switch (optionType) {
     // optionType 0 is dropdown
     case 0:
       return (
-        <select className="product-option-dropdown" name={`${productModel}-${type}`}>
+        <select className="product-option-dropdown" name={`${productModel}-${type}`} style={{
+          background: isOdd ? 'var(--foreground)' : 'transparent'
+        }}>
           <option value="">Select {type}</option>
           {values.map(value => {
             const [optionValue, price, prefix] = value.split(':');
@@ -69,12 +71,15 @@ export function renderOptionValues(type: string, values: string[], productModel:
           className="product-option-text"
           name={`${productModel}-${type}`}
           placeholder={`Enter ${type}`}
+          style={{background: isOdd ? 'var(--foreground)' : 'transparent'}}
         />
       );
     // optionType 2 is radio buttons
     case 2:
       return (
-        <div className="product-option-radio-group">
+        <div className="product-option-radio-group" style={{
+          background: isOdd ? 'var(--foreground)' : 'transparent'
+        }}>
           {values.map(value => {
             const [optionValue, price, prefix] = value.split(':');
             return (

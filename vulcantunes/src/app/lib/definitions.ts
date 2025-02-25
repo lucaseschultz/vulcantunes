@@ -31,7 +31,8 @@ export interface Product {
   options?: string
 }
 export interface ProductItemProps {
-  product: Product
+  product: Product;
+  isOdd: boolean;
 }
 export interface SearchInputProps {
   value: string
