@@ -79,13 +79,14 @@ export function renderOptionValues(type: string, values: string[], productModel:
       return (
         <div className="product-option-radio-group">
           {values.map(value => {
-            const [optionValue, price, prefix] = value.split(':');
+            const [optionValue, price, prefix, , , isDefault] = value.split(':');
             return (
               <label key={optionValue} className="product-option-radio">
                 <input
                   type="radio"
                   name={`${productModel}-${type}`}
                   value={optionValue}
+                  defaultChecked={isDefault === '1'}
                 />
                 {optionValue}
                 {parseFloat(price) > 0 && ` (${prefix}$${parseFloat(price).toFixed(2)})`}

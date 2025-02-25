@@ -32,7 +32,8 @@ export async function GET() {
                 pov.product_option_values_name, ':',
                 pa.options_values_price, ':',
                 pa.price_prefix, ':',
-                po.product_options_type
+                po.product_options_type, ':',
+                pa.attribute_default
                               )) as options
       FROM vulcantunes_products p
       LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
