@@ -57,20 +57,12 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
         <p className="product-description">{truncatedDescription}</p>
         {options && options.length > 0 && (
           <div className="product-options">
-            {optionsArray.length > 0 && (
-              <div className="product-options">
-                {optionsArray.length > 0 && (
-                  <div className="product-options">
-                    {optionsArray.map(({ type, values, optionType }) => (
-                      <div key={type} className="option-group">
-                        <label>{type}</label>
-                        {renderOptionValues(type, values, product.product_model, optionType)}
-                      </div>
-                    ))}
-                  </div>
-                )}
+            {optionsArray.map(({ type, values, optionType }) => (
+              <div key={type} className="option-group">
+                <label>{type}</label>
+                {renderOptionValues(type, values, product.product_model, optionType)}
               </div>
-            )}
+            ))}
           </div>
         )}
         <div className="product-metadata">
