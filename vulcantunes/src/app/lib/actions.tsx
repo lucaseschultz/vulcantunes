@@ -77,9 +77,7 @@ export function renderOptionValues(type: string, values: string[], productModel:
     // optionType 2 is radio buttons
     case 2:
       return (
-        <div className="product-option-radio-group" style={{
-          background: isOdd ? 'var(--foreground)' : 'transparent'
-        }}>
+        <div className="product-option-radio-group">
           {values.map(value => {
             const [optionValue, price, prefix] = value.split(':');
             return (
