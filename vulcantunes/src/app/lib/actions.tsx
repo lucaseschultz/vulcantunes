@@ -43,3 +43,55 @@ export function DisplayNavItems({ NavName, NavItems }: {
     </ul>
   )
 }
+export function renderOptionValues(type: string, values: string[], productModel: string, optionType: number) {
+  switch (optionType) {
+    // optionType 0 is dropdown
+    case 0:
+      return (
+        <select className="product-option-dropdown" name={`${productModel}-${type}`}>
+          <option value="">Select {type}</option>
+          {values.map(value => {
+            const [optionValue, price, prefix] = value.split(':');
+            return (
+              <option key={optionValue} value={optionValue}>
+                {optionValue}
+                {parseFloat(price) > 0 && ` (${prefix}$${parseFloat(price).toFixed(2)})`}
+              </option>
+            );
+          })}
+        </select>
+      );
+    // optionType 1 is text input
+    case 1:
+      return (
+        <input
+          type="text"
+          className="product-option-text"
+          name={`${productModel}-${type}`}
+          placeholder={`Enter ${type}`}
+        />
+      );
+    // optionType 2 is radio buttons
+    case 2:
+      return (
+        <div className="product-option-radio-group">
+          {values.map(value => {
+            const [optionValue, price, prefix] = value.split(':');
+            return (
+              <label key={optionValue} className="product-option-radio">
+                <input
+                  type="radio"
+                  name={`${productModel}-${type}`}
+                  value={optionValue}
+                />
+                {optionValue}
+                {parseFloat(price) > 0 && ` (${prefix}$${parseFloat(price).toFixed(2)})`}
+              </label>
+            );
+          })}
+        </div>
+      );
+    default:
+      return null;
+  }
+}

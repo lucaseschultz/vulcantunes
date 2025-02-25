@@ -28,6 +28,7 @@ export interface Product {
   product_name: string
   product_description: string
   features?: string[]
+  options?: string
 }
 export interface ProductItemProps {
   product: Product

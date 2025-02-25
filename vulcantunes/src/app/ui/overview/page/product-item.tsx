@@ -2,6 +2,7 @@ import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
 import { ProductQuantity } from "@/src/app/ui/overview/page/product-item-quantity";
+import { renderOptionValues } from '@/src/app/lib/actions'
 
 export const ProductItem = memo(function ProductItem({ product }: ProductItemProps) {
   const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price, options } = product
@@ -15,6 +16,23 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
     [product_description]
   );
 
+  const optionsArray = useMemo(() => {
+    if (!product.options) return [];
+    return product.options.split(',').reduce((acc, opt) => {
+      const [type, value, price, prefix, optionType] = opt.split(':');
+      const existingType = acc.find(o => o.type === type);
+      if (existingType) {
+        existingType.values.push(`${value}:${price}:${prefix}`);
+      } else {
+        acc.push({
+          type,
+          values: [`${value}:${price}:${prefix}`],
+          optionType: parseInt(optionType)
+        });
+      }
+      return acc;
+    }, [] as Array<{type: string, values: string[], optionType: number}>);
+  }, [product.options]);
 
   return (
     <div
@@ -37,6 +55,24 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
       <div className="product-details">
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
+        {options && options.length > 0 && (
+          <div className="product-options">
+            {optionsArray.length > 0 && (
+              <div className="product-options">
+                {optionsArray.length > 0 && (
+                  <div className="product-options">
+                    {optionsArray.map(({ type, values, optionType }) => (
+                      <div key={type} className="option-group">
+                        <label>{type}</label>
+                        {renderOptionValues(type, values, product.product_model, optionType)}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
         <div className="product-metadata">
           <span className="product-price">${product_price}</span>
           <ProductQuantity quantity={product_quantity} model={product_model}/>
