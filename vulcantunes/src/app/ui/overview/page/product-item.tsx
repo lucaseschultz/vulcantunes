@@ -82,5 +82,5 @@ export const ProductItem = memo(function ProductItem({ product }: ProductItemPro
         </div>
       </div>
     </div>
-  )
-})
+  );
+});
