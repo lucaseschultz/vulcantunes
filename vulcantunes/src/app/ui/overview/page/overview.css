@@ -188,15 +188,15 @@
     background: var(--foreground);
     border-radius: 8px;
     margin: 2rem;
-}
-.no-products h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-.no-products p {
-    color: var(--faded-text-color);
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+    }
+    p {
+        color: var(--faded-text-color);
+    }
 }
 .error-container {
     display: flex;
