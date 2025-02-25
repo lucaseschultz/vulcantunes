@@ -49,7 +49,7 @@ export function renderOptionValues(type: string, values: string[], productModel:
     case 0:
       return (
         <select className="product-option-dropdown" name={`${productModel}-${type}`} style={{
-          background: isOdd ? 'var(--foreground)' : 'transparent'
+          background: isOdd ? 'var(--foreground)' : 'var(--background)'
         }}>
           <option value="">Select {type}</option>
           {values.map(value => {
@@ -71,7 +71,7 @@ export function renderOptionValues(type: string, values: string[], productModel:
           className="product-option-text"
           name={`${productModel}-${type}`}
           placeholder={`Enter ${type}`}
-          style={{background: isOdd ? 'var(--foreground)' : 'transparent'}}
+          style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
         />
       );
     // optionType 2 is radio buttons
