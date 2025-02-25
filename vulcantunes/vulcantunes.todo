@@ -1,6 +1,3 @@
-(overview)/page.tsx
-Don't display options, when out of stock
-
 product-item.tsx:
 Refine product-item(s)
 ^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")

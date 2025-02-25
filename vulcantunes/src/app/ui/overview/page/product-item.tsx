@@ -55,7 +55,7 @@ export const ProductItem = memo(function ProductItem({ product, isOdd }: Product
       <div className="product-details">
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
-        {options && options.length > 0 && (
+        {options && options.length > 0 && product_quantity > 0 && (
           <div className="product-options">
             {optionsArray.map(({ type, values, optionType }) => (
               <div key={type} className="option-group">
