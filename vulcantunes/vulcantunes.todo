@@ -1,5 +1,5 @@
-overview.css:
-Alternate option button backgrounds, due to .products-list's background being alternated
+(overview)/page.tsx
+Don't display options, when out of stock
 
 product-item.tsx:
 Refine product-item(s)
