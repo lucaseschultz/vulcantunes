@@ -1,3 +1,6 @@
+overview.css:
+Alternate option button backgrounds, due to .products-list's background being alternated
+
 product-item.tsx:
 Refine product-item(s)
 ^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
