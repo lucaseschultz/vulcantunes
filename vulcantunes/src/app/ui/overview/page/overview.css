@@ -47,6 +47,10 @@
     border-radius: 4px;
     cursor: pointer;
     accent-color: var(--interactive-color);
+    :checked {
+        background-color: var(--interactive-color);
+        border-color: var(--interactive-color);
+    }
 }
 .feature-input:checked {
     background-color: var(--interactive-color);
