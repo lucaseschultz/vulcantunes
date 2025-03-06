@@ -1,8 +1,8 @@
 product-item.tsx:
-Refine product-item(s)
-^Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
-^Add favorite button
-^Add "See Details" button
+Make cords one page/item
+Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
+Add favorite button
+Add "See Details" button
 
 vulcantunes_product_descriptions db table:
 Tune product names/descriptions
@@ -74,3 +74,4 @@ Search for ##'s
 
 Wes:
 "Vulcantunes Aux Charge®"?
+Only offer "4' Male to Male 3.5mm Stereo (+$7.00)" for audio jacks (won't the other AUX cables you sell, be compatible)
