@@ -1,12 +1,8 @@
 import { Metadata } from "next";
 import React from "react";
+import { ProductPageParams } from "@/src/app/lib/definitions";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: ProductPageParams): Promise<Metadata> {
   return {
     title: `${params.id}`,
   };
