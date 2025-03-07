@@ -4,12 +4,6 @@ Add "Add to cart" button ("Added to cart" notification that gives the option to 
 Add favorite button
 Add "See Details" button
 
-vulcantunes_product_descriptions db table:
-Tune product names/descriptions
-
-^skeletons.tsx:
-Update to look more like products
-
 overview/page.tsx:
 Add a "New Look" notification banner
 
