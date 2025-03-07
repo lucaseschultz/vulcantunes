@@ -7,18 +7,27 @@ const pool = mysql.createPool({
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE,
   waitForConnections: true,
-  connectionLimit: 10,
+  connectionLimit: 20,
   queueLimit: 0,
   enableKeepAlive: true,
-  keepAliveInitialDelay: 0
+  keepAliveInitialDelay: 30000,
+  maxIdle: 10,
+  idleTimeout: 60000
 })
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: { model: string } }
 ) {
   try {
-    const productId = params.id;
+    const productId = params.model;
+
+    if (!productId || !/^\d+$/.test(productId)) {
+      return NextResponse.json(
+        { error: 'Invalid product ID' },
+        { status: 400 }
+      );
+    }
 
     const [rows] = await pool.execute(`
     SELECT 
@@ -33,29 +42,34 @@ export async function GET(
     LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
     LEFT JOIN vulcantunes_features f ON pf.feature_id = f.feature_id
     WHERE p.product_status = 1 AND p.product_id = ?
-    GROUP BY p.product_id, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order
+    GROUP BY p.product_id
+    LIMIT 1
     `, [productId]);
 
     const products = rows as any[];
 
-    if (products.length === 0) {
+    if (!products.length) {
       return NextResponse.json(
         { error: 'Product not found' },
         { status: 404 }
-      )
+      );
     }
 
     return NextResponse.json(products[0], {
       headers: {
-        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
+        'Cache-Control': 'public, max-age=60, stale-while-revalidate=600',
+        'ETag': `"product-${productId}"`,
+        'Vary': 'Accept-Encoding'
       }
-    })
+    });
 
   } catch (error) {
     console.error('Database error:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch product' },
-      { status: 500 }
-    )
+
+    return NextResponse.json({
+      error: 'Failed to fetch product',
+      code: 'DB_ERROR',
+      timestamp: new Date().toISOString()
+    }, { status: 500 });
   }
 }
