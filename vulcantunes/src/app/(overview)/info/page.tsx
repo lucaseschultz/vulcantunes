@@ -1,3 +1,5 @@
+'use client'
+
 import '@/src/app/ui/overview/info/info.css'
 
 export default function Page() {
@@ -55,4 +57,4 @@ export default function Page() {
       </section>
     </div>
   );
-}
+};
