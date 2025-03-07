@@ -2,7 +2,7 @@ import { memo, useEffect, useState } from "react";
 import { Product, ProductsListProps } from "@/src/app/lib/definitions";
 import { ProductItem } from "./product-item";
 import { NoProductsFound } from "./no-products-found";
-import { ProductsSkeleton } from "./skeletons";
+import { ProductsSkeleton } from "../layout/skeletons";
 
 export const ProductsList = memo(function ProductsList({
    featuresFilter
