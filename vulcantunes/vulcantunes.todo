@@ -9,7 +9,6 @@ Add brand "story"/deatils (Home page?):
 https://baymard.com/premium/blog/dtc-users-informational-needs
 
 /info/page.tsx:
-Fix 'export not a react component'
 Make "Contact Us" form functional
 Add reCaptcha to "Contact Us" form
 
