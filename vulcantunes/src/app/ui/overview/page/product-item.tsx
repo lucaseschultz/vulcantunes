@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
-import { ProductQuantity } from "@/src/app/ui/overview/page/product-item-quantity";
+import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity";
 import { renderOptionValues } from '@/src/app/lib/actions'
 
 export const ProductItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
