@@ -8,10 +8,6 @@ Add Images
 Add brand "story"/deatils (Home page?):
 https://baymard.com/premium/blog/dtc-users-informational-needs
 
-/info/page.tsx:
-Make "Contact Us" form functional
-Add reCaptcha to "Contact Us" form
-
 Product page(s):
 Make product page(s)
 Finish product layout
@@ -38,6 +34,10 @@ Make wishlist page
 
 Admin page:
 Make admin layout/page
+
+/info/page.tsx:
+Make "Contact Us" form functional
+Add reCaptcha to "Contact Us" form
 
 General:
 Make dynamic account icon (Make icon first letter of name and add colorful background?)
