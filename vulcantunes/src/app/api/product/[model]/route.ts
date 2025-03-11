@@ -20,11 +20,11 @@ export async function GET(
   { params }: { params: { model: string } }
 ) {
   try {
-    const productId = params.model;
+    const productModel = params.model;
 
     if (!productModel || !/^[A-Z0-9_]+$/.test(productModel)) {
       return NextResponse.json(
-        { error: 'Invalid product ID' },
+        { error: 'Invalid product model' },
         { status: 400 }
       );
     }
@@ -58,7 +58,7 @@ export async function GET(
     return NextResponse.json(products[0], {
       headers: {
         'Cache-Control': 'public, max-age=60, stale-while-revalidate=600',
-        'ETag': `"product-${productId}"`,
+        'ETag': `"product-${productModel}"`,
         'Vary': 'Accept-Encoding'
       }
     });
