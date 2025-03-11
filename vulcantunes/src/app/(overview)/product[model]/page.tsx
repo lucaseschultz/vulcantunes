@@ -28,7 +28,7 @@ import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quant
 import { getProduct } from "@/src/app/lib/actions";
 import { ProductSkeleton } from "@/src/app/ui/overview/layout/skeletons";
 
-export default async function ProductPage({ params }: { params: { model: string } }) {
+export default async function Page({ params }: { params: { model: string } }) {
   const product = await getProduct(params.model)
 
   if (!product) {
