@@ -73,6 +73,6 @@ export interface ProductsListProps {
 }
 export type ProductPageParams = {
   params: {
-    id: string;
+    model: string;
   };
 };
