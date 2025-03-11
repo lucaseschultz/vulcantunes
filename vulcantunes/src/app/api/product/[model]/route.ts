@@ -30,21 +30,22 @@ export async function GET(
     }
 
     const [rows] = await pool.execute(`
-    SELECT 
-      p.product_id, 
-      p.product_image, 
-      p.product_price, 
-      p.product_quantity,
-      p.product_status,
-      p.product_sort_order,
-      GROUP_CONCAT(f.feature_name) as features
-    FROM vulcantunes_products p
-    LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
-    LEFT JOIN vulcantunes_features f ON pf.feature_id = f.feature_id
-    WHERE p.product_status = 1 AND p.product_id = ?
-    GROUP BY p.product_id
-    LIMIT 1
-    `, [productId]);
+        SELECT
+            p.product_id,
+            p.product_model,
+            p.product_image,
+            p.product_price,
+            p.product_quantity,
+            p.product_status,
+            p.product_sort_order,
+            GROUP_CONCAT(f.feature_name) as features
+        FROM vulcantunes_products p
+                 LEFT JOIN vulcantunes_products_to_features pf ON p.product_id = pf.product_id
+                 LEFT JOIN vulcantunes_features f ON pf.feature_id = f.feature_id
+        WHERE p.product_model = ?
+        GROUP BY p.product_id
+        LIMIT 1
+    `, [productModel]);
 
     const products = rows as any[];
 
