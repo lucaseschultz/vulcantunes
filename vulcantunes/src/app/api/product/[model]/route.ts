@@ -22,7 +22,7 @@ export async function GET(
   try {
     const productId = params.model;
 
-    if (!productId || !/^\d+$/.test(productId)) {
+    if (!productModel || !/^[A-Z0-9_]+$/.test(productModel)) {
       return NextResponse.json(
         { error: 'Invalid product ID' },
         { status: 400 }
