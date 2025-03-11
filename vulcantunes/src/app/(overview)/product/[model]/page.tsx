@@ -22,7 +22,7 @@
 
 import { Suspense } from 'react'
 import Image from 'next/image'
-import '@/src/app/ui/overview/product[id]/product[id].css'
+import '@/src/app/ui/overview/product[model]/product[model].css'
 import { notFound } from 'next/navigation'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity"
 import { getProduct } from "@/src/app/lib/actions";
