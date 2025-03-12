@@ -71,7 +71,7 @@ export interface ProductsListErrorMessageProps extends ErrorMessageConfig {
 export interface ProductsListProps {
   featuresFilter: string;
 }
-export type ProductPageParams = {
+export type ProductPageProps = {
   params: {
     model: string;
   };
