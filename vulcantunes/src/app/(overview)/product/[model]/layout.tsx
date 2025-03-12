@@ -2,14 +2,10 @@ import { Metadata } from "next";
 import React from "react";
 import { ProductPageParams } from "@/src/app/lib/definitions";
 
-export async function generateMetadata(
-  props: ProductPageParams
-): Promise<Metadata> {
-  // Next.js needs us to treat params as potentially async
-  // @ts-ignore - Suppress TypeScript warning as Next.js requires this pattern
-  const resolvedParams = await props.params;
-
-  const product = await fetch(`/api/products/${resolvedParams.model}`).then(res => res.json());
+export async function generateMetadata(props: ProductPageProps): Promise<Metadata> {
+  // Promise.resolve = Explicitly treat params as awaitable, satisfying Next.js's requirement without TypeScript errors
+  const resolvedParams = await Promise.resolve(props.params);
+  const model = resolvedParams.model;
 
   return {
     title: model,
