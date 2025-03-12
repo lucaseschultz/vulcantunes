@@ -12,7 +12,7 @@ export async function generateMetadata(
   const product = await fetch(`/api/products/${resolvedParams.model}`).then(res => res.json());
 
   return {
-    title: product.title || resolvedParams.model,
+    title: model,
   };
 }
 
