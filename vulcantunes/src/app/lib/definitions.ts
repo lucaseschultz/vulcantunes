@@ -73,6 +73,6 @@ export interface ProductsListProps {
 }
 export type ProductPageProps = {
   params: {
-    model: string;
-  };
+    model: string
+  }
 };
