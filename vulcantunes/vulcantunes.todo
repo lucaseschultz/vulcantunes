@@ -1,4 +1,5 @@
 make "new look" popup stay gone, if cleared (use state)
+make custom "not found" page
 
 product-item.tsx:
 Make cords one page/item ("custom lengths available by request")
