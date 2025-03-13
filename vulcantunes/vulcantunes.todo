@@ -1,14 +1,4 @@
 make "new look" popup stay gone, if cleared (use state)
-make custom "not found" page
-
-product-item.tsx:
-Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
-Add favorite button
-Add "See Details" button
-Add Images
-
-Add brand "story"/deatils (Home page?):
-https://baymard.com/premium/blog/dtc-users-informational-needs
 
 Product page(s):
 Fix "new look" popup being covered by content
@@ -17,11 +7,13 @@ Quantity in stock ("In Stock", Discontinued/Back-ordered)
 Back to products button
 Make cords one page/item ("custom lengths available by request") & Make VTCABLE's length selectable?
 
+product-item.tsx:
+Add "See Details" button
+
 skeletons.tsx:
 Make a ProductPageSkeleton and replace product(s) page ProductSkeleton with it
 
-Cart Page:
-Make cart page
+make custom "not found" page
 
 Login page:
 Make login page
@@ -32,10 +24,25 @@ Add authorization
 
 Account Page:
 Make account page
+Add reCaptcha to "Account creation"
+Add email recovery
+
+product-item.tsx:
+Add Images
+Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
+Add favorite button
+
+layout.tsx:
+Make dynamic account icon (Make icon first letter of name and add colorful background?)
+
+Cart Page:
+Make cart page
 
 Wishlist page:
-Add reCaptcha to "Account creation"
 Make wishlist page
+
+Add brand "story"/deatils (Home page?):
+https://baymard.com/premium/blog/dtc-users-informational-needs
 
 Admin page:
 Make admin layout/page
@@ -43,10 +50,6 @@ Make admin layout/page
 /info/page.tsx:
 Make "Contact Us" form functional
 Add reCaptcha to "Contact Us" form
-
-General:
-Make dynamic account icon (Make icon first letter of name and add colorful background?)
-Add email recovery
 
 Admin - Inventory Management:
 Discontinued/Back-ordered, reorder level, restock date.
