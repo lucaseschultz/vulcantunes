@@ -3,7 +3,7 @@
 import { X } from '@phosphor-icons/react'
 import { useState } from 'react'
 
-export default function NewLook() {
+export default function NewLookNotification() {
   const [isVisible, setIsVisible] = useState(true)
 
   if (!isVisible) return null
