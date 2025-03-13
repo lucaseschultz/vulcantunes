@@ -2,7 +2,6 @@ make "new look" popup stay gone, if cleared (use state)
 make custom "not found" page
 
 product-item.tsx:
-Make cords one page/item ("custom lengths available by request")
 Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 Add favorite button
 Add "See Details" button
@@ -16,7 +15,10 @@ Fix "new look" popup being covered by content
 Increase product_viewed upon navigation: vulcantunes_product_descriptions
 Quantity in stock ("In Stock", Discontinued/Back-ordered)
 Back to products button
-Make VTCABLE's length selectable
+Make cords one page/item ("custom lengths available by request") & Make VTCABLE's length selectable?
+
+skeletons.tsx:
+Make a ProductPageSkeleton and replace product(s) page ProductSkeleton with it
 
 Cart Page:
 Make cart page
