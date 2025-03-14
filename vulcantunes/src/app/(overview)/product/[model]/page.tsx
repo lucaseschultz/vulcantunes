@@ -14,43 +14,41 @@ export default async function Page({ params }: { params: { model: string } }) {
   }
 
   return (
-    <main className="product-page-container">
-      <Suspense fallback={<ProductSkeleton/>}>
-        <div className="product-details-container">
-          <div className="product-image-section">
-            <Image
-              src={`/${product.product_image}`}
-              alt={product.product_name}
-              width={400}
-              height={400}
-              priority
-              className="product-main-image"
-            />
+    <Suspense fallback={<ProductSkeleton/>}>
+      <div className="product-details-container">
+        <div className="product-image-section">
+          <Image
+            src={`/${product.product_image}`}
+            alt={product.product_name}
+            width={400}
+            height={400}
+            priority
+            className="product-main-image"
+          />
+        </div>
+
+        <div className="product-info-section">
+          <h1 className="product-title">{product.product_name}</h1>
+          <p className="product-description">{product.product_description}</p>
+
+          <div className="product-features">
+            {product.features && product.features.split(',').map((feature: string) => (
+              <span key={feature} className="feature-tag">{feature}</span>
+            ))}
           </div>
 
-          <div className="product-info-section">
-            <h1 className="product-title">{product.product_name}</h1>
-            <p className="product-description">{product.product_description}</p>
-
-            <div className="product-features">
-              {product.features && product.features.split(',').map((feature: string) => (
-                <span key={feature} className="feature-tag">{feature}</span>
-              ))}
-            </div>
-
-            <div className="product-purchase-section">
-              <span className="product-price">${product.product_price}</span>
-              <ProductQuantity
-                quantity={product.product_quantity}
-                model={product.product_model}
-              />
-              {product.product_status === 2 && (
-                <span className="product-discontinued">Discontinued</span>
-              )}
-            </div>
+          <div className="product-purchase-section">
+            <span className="product-price">${product.product_price}</span>
+            <ProductQuantity
+              quantity={product.product_quantity}
+              model={product.product_model}
+            />
+            {product.product_status === 2 && (
+              <span className="product-discontinued">Discontinued</span>
+            )}
           </div>
         </div>
-      </Suspense>
-    </main>
+      </div>
+    </Suspense>
   )
 }
