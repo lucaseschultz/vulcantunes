@@ -72,7 +72,7 @@ export interface ProductsListProps {
   featuresFilter: string;
 }
 export type ProductPageProps = {
-  params: {
+  params: Promise<{
     model: string
-  }
+  }>
 };
