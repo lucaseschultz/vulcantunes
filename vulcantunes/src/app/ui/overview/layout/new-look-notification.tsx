@@ -4,7 +4,17 @@ import { X } from '@phosphor-icons/react'
 import { useState, useEffect } from 'react'
 
 export default function NewLookNotification() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const hasSeenNotification = localStorage.getItem('vulcantunes-new-look-notification-seen')
+    setIsVisible(hasSeenNotification !== 'true')
+  }, [])
+
+  const dismissNotification = () => {
+    localStorage.setItem('vulcantunes-new-look-notification-seen', 'true')
+    setIsVisible(false)
+  }
 
   if (!isVisible) return null
 
@@ -18,7 +28,7 @@ export default function NewLookNotification() {
           </p>
         </div>
         <button
-          onClick={() => setIsVisible(false)}
+          onClick={dismissNotification}
           className="new-look-close"
           aria-label="Close notification"
         >
