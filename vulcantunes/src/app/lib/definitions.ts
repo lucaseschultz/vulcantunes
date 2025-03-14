@@ -27,7 +27,7 @@ export interface Product {
   product_status: number
   product_name: string
   product_description: string
-  features?: string[]
+  features?: string
   options?: string
 }
 export interface ProductItemProps {
