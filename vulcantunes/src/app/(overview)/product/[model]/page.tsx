@@ -23,8 +23,8 @@ export default async function Page({ params }: { params: { model: string } }) {
       <div className="product-details-container">
         <div className="product-image-section">
           <Image
-            src={`/${product.product_image}`}
-            alt={product.product_name}
+            src={imgSrc}
+            alt={`${product.product_image} image`}
             width={400}
             height={400}
             priority
