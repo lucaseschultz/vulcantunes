@@ -1,6 +1,6 @@
 import { ProductsListErrorMessageProps } from "@/src/app/lib/definitions";
 
-export const ProductsListErrorMessage = ({
+export const ErrorMessage = ({
    title,
    message,
    error
