@@ -10,7 +10,7 @@ Add "See Details" button
 skeletons.tsx:
 Make a ProductPageSkeleton and replace product(s) page ProductSkeleton with it
 
-make custom "not found" page
+make custom notFound() component
 
 Login page:
 Make login page
