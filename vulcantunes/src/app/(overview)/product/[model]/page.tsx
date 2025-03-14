@@ -1,4 +1,6 @@
-import { Suspense } from 'react'
+'use client'
+
+import { Suspense, useState } from 'react'
 import Image from 'next/image'
 import '@/src/app/ui/overview/product[model]/product[model].css'
 import { notFound } from 'next/navigation'
@@ -8,6 +10,9 @@ import { ProductSkeleton } from "@/src/app/ui/overview/layout/skeletons";
 
 export default async function Page({ params }: { params: { model: string } }) {
   const product = await getProduct(params.model)
+
+  const [imgSrc, setImgSrc] = useState(`/products/${product.product_image}`)
+
 
   if (!product) {
     notFound()
@@ -24,6 +29,7 @@ export default async function Page({ params }: { params: { model: string } }) {
             height={400}
             priority
             className="product-main-image"
+            onError={() => setImgSrc('/products/image-coming-soon.jpg')}
           />
         </div>
 
