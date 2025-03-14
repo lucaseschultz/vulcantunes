@@ -1,7 +1,7 @@
 'use client'
 
 import { X } from '@phosphor-icons/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function NewLookNotification() {
   const [isVisible, setIsVisible] = useState(true)
