@@ -7,7 +7,7 @@ import { renderOptionValues } from '@/src/app/lib/client-actions'
 export const ProductItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
   const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price, options } = product
 
-  const [imgSrc, setImgSrc] = useState(`/${product_image}`)
+  const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)
 
   const truncatedDescription = useMemo(() =>
       product_description.length > 100
