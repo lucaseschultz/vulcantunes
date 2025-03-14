@@ -1,8 +1,5 @@
-'use client'
-
-import { Suspense, useState } from 'react'
-import Image from 'next/image'
-import '@/src/app/ui/overview/product[model]/product[model].css'
+import { Suspense } from 'react'
+import '@/src/app/ui/overview/product/[model]/[model].css'
 import { notFound } from 'next/navigation'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity"
 import { getProduct } from "@/src/app/lib/server-actions";
