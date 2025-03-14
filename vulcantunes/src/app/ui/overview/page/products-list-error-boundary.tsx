@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState } from "@/src/app/lib/definitions";
+import { ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState } from "@/src/app/lib/definitions";
 import { ErrorMessage } from '../layout/error-message';
 import { PRODUCTS_ERROR_MESSAGES } from '@/src/app/lib/constants';
 import { getErrorType } from '@/src/app/lib/utils';
