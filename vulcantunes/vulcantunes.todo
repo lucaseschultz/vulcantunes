@@ -25,7 +25,7 @@ Add reCaptcha to "Account creation"
 Add email recovery
 
 product-item.tsx:
-Add Images
+Add Images (vulcantunes_products db)
 Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 Add favorite button
 
