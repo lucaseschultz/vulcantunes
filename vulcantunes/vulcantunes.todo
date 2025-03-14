@@ -1,5 +1,3 @@
-make "new look" popup stay gone, if cleared (use state)
-
 Product page(s):
 Fix "new look" popup being covered by content
 Increase product_viewed upon navigation: vulcantunes_product_descriptions
