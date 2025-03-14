@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import type { WindowSize } from './definitions';
+import type { WindowSize, ErrorType } from './definitions';
 
 export function fetchWindowSize() {
   const [windowSize, setWindowSize] = useState<WindowSize>({
@@ -38,4 +40,35 @@ export function debounce<T>(value: T, delay: number = 750): T {
   }, [value, delay])
 
   return debouncedValue
+}
+
+export function getErrorType(error: Error): ErrorType {
+  if (!error) return 'unknown';
+
+  const errorString = `${error.message} ${error.name}`.toLowerCase();
+
+  const networkErrorPatterns = [
+    'fetch', 'network', 'networkerror', 'aborterror',
+    'timeouterror', 'failed to fetch', 'internet'
+  ];
+  if (networkErrorPatterns.some(pattern => errorString.includes(pattern))) {
+    return 'network';
+  }
+
+  const notFoundPatterns = [
+    '404', 'not found', 'resource missing', 'content unavailable'
+  ];
+  if (notFoundPatterns.some(pattern => errorString.includes(pattern))) {
+    return 'notFound';
+  }
+
+  const serverErrorPatterns = [
+    '500', '502', '503', 'server error', 'internal error',
+    'service unavailable'
+  ];
+  if (serverErrorPatterns.some(pattern => errorString.includes(pattern))) {
+    return 'serverError';
+  }
+
+  return 'unknown';
 }

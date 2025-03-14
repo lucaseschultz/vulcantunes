@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import { ErrorType, ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState } from "@/src/app/lib/definitions";
-import { ProductsListErrorMessage } from './products-list-error-message';
+import { ErrorMessage } from '../layout/error-message';
 import { PRODUCTS_ERROR_MESSAGES } from '@/src/app/lib/constants';
+import { getErrorType } from '@/src/app/lib/utils';
 
 export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
   state: ProductsListErrorBoundaryState = Object.freeze({
@@ -13,47 +14,16 @@ export class ProductsListErrorBoundary extends Component<ProductsListErrorBounda
   static getDerivedStateFromError(error: Error): ProductsListErrorBoundaryState {
     return {
       hasError: true,
-      errorType: ProductsListErrorBoundary.getErrorType(error),
+      errorType: getErrorType(error),
       error
     };
-  }
-
-  private static getErrorType(error: Error): ErrorType {
-    if (!error) return 'unknown';
-
-    const errorString = `${error.message} ${error.name}`.toLowerCase();
-
-    const networkErrorPatterns = [
-      'fetch', 'network', 'networkerror', 'aborterror',
-      'timeouterror', 'failed to fetch', 'internet'
-    ];
-    if (networkErrorPatterns.some(pattern => errorString.includes(pattern))) {
-      return 'network';
-    }
-
-    const notFoundPatterns = [
-      '404', 'not found', 'resource missing', 'content unavailable'
-    ];
-    if (notFoundPatterns.some(pattern => errorString.includes(pattern))) {
-      return 'notFound';
-    }
-
-    const serverErrorPatterns = [
-      '500', '502', '503', 'server error', 'internal error',
-      'service unavailable'
-    ];
-    if (serverErrorPatterns.some(pattern => errorString.includes(pattern))) {
-      return 'serverError';
-    }
-
-    return 'unknown';
   }
 
   render() {
     if (!this.state.hasError) return this.props.children;
 
     return (
-      <ProductsListErrorMessage
+      <ErrorMessage
         {...PRODUCTS_ERROR_MESSAGES[this.state.errorType ?? 'unknown']}
         error={this.state.error}
       />
