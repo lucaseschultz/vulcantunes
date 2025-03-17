@@ -44,59 +44,105 @@ export function DisplayNavItems({ NavName, NavItems }: {
   )
 }
 
-export function renderOptionValues(type: string, values: string[], productModel: string, optionType: number, isOdd: boolean) {
-  switch (optionType) {
-    // optionType 0 is dropdown
-    case 0:
-      return (
-        <select className="product-option-dropdown" name={`${productModel}-${type}`} style={{
-          background: isOdd ? 'var(--foreground)' : 'var(--background)'
-        }}>
-          <option value="">Select {type}</option>
-          {values.map(value => {
-            const [optionValue, price, prefix] = value.split(':');
-            return (
-              <option key={optionValue} value={optionValue}>
-                {optionValue}
-                {parseFloat(price) > 0 && ` (${prefix}${parseFloat(price).toFixed(2)})`}
-              </option>
-            );
-          })}
-        </select>
-      );
-    // optionType 1 is text input
-    case 1:
-      return (
-        <input
-          type="text"
-          className="product-option-text"
-          name={`${productModel}-${type}`}
-          placeholder={`Enter ${type}`}
-          style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
-        />
-      );
-    // optionType 2 is radio buttons
-    case 2:
-      return (
-        <div className="product-option-radio-group">
-          {values.map(value => {
-            const [optionValue, price, prefix, , , isDefault] = value.split(':');
-            return (
-              <label key={optionValue} className="product-option-radio">
-                <input
-                  type="radio"
-                  name={`${productModel}-${type}`}
-                  value={optionValue}
-                  defaultChecked={isDefault === '1'}
-                />
-                {optionValue}
-                {parseFloat(price) > 0 && ` (${prefix}${parseFloat(price).toFixed(2)})`}
-              </label>
-            );
-          })}
+export function renderOptionValues(options: string | null, productModel: string, isOdd: boolean = false) {
+  if (!options || options.length === 0) return null;
+
+  // Parsing options string into structured data, to be able to use it
+  const optionsArray = options.split(',').reduce((acc, opt) => {
+    const [name, value, price, prefix, type, defaultValue] = opt.split(':');
+
+    const existingType = acc.find(o => o.name === name);
+    if (existingType) {
+      existingType.values.push({
+        value,
+        price,
+        prefix,
+        isDefault: defaultValue === '1'
+      });
+    } else {
+      acc.push({
+        name,
+        values: [{
+          value,
+          price,
+          prefix,
+          isDefault: defaultValue === '1'
+        }],
+        optionType: parseInt(type)
+      });
+    }
+    return acc;
+  }, [] as Array<{
+    name: string,
+    values: Array<{value: string, price: string, prefix: string, isDefault: boolean}>,
+    optionType: number
+  }>);
+
+  // Return the rendered option groups
+  return (
+    <>
+      {optionsArray.map(({ name, values, optionType }) => (
+        <div key={name} className="option-group">
+          <label>{name}</label>
+          <div className="option-values">
+            {optionType === 0 && (
+              <select
+                name={`option-${name}-${productModel}`}
+                id={`option-${name}-${productModel}`}
+                className={isOdd ? 'option-select-odd' : 'option-select'}
+              >
+                {values.map(({ value, price, prefix, isDefault }) => (
+                  <option
+                    key={value}
+                    value={value}
+                    selected={isDefault}
+                  >
+                    {value} {price !== '0' ? `(${prefix}$${price})` : ''}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            {optionType === 1 && (
+              <div className="radio-options">
+                {values.map(({ value, price, prefix, isDefault }) => (
+                  <div key={value} className="radio-option">
+                    <input
+                      type="radio"
+                      id={`option-${name}-${value}-${productModel}`}
+                      name={`option-${name}-${productModel}`}
+                      value={value}
+                      defaultChecked={isDefault}
+                    />
+                    <label htmlFor={`option-${name}-${value}-${productModel}`}>
+                      {value} {price !== '0' ? `(${prefix}$${price})` : ''}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {optionType === 2 && (
+              <div className="checkbox-options">
+                {values.map(({ value, price, prefix, isDefault }) => (
+                  <div key={value} className="checkbox-option">
+                    <input
+                      type="checkbox"
+                      id={`option-${name}-${value}-${productModel}`}
+                      name={`option-${name}-${value}-${productModel}`}
+                      value={value}
+                      defaultChecked={isDefault}
+                    />
+                    <label htmlFor={`option-${name}-${value}-${productModel}`}>
+                      {value} {price !== '0' ? `(${prefix}$${price})` : ''}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      );
-    default:
-      return null;
-  }
+      ))}
+    </>
+  );
 }
