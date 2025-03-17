@@ -4,9 +4,6 @@ Quantity in stock ("In Stock", Discontinued/Back-ordered)
 Back to products button
 Make cords one page/item ("custom lengths available by request") & Make VTCABLE's length selectable?
 
-product-item.tsx:
-Add "See Details" button
-
 skeletons.tsx:
 Make a ProductPageSkeleton and replace product(s) page ProductSkeleton with it
 

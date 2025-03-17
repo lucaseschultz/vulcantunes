@@ -189,6 +189,21 @@
 .notify-link:hover {
     color: var(--faded-interactive-color);
 }
+.product-details-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--interactive-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+.product-details-button:hover {
+    background-color: var(--faded-interactive-color);
+}
 .no-products {
     display: flex;
     flex-direction: column;

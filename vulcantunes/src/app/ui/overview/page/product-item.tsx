@@ -1,5 +1,6 @@
 import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity";
 import { renderOptionValues } from '@/src/app/lib/client-actions'
@@ -71,6 +72,12 @@ export const ProductItem = memo(function ProductItem({ product, isOdd }: Product
           {product_status === 2 && (
             <span className="product-discontinued">Discontinued</span>
           )}
+          <Link
+            href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
+            className="product-details-button"
+          >
+            See Details
+          </Link>
         </div>
       </div>
     </div>
