@@ -5,7 +5,7 @@ import type { ProductItemProps } from '@/src/app/lib/definitions'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity";
 import { renderOptionValues } from '@/src/app/lib/client-actions'
 
-export const ProductItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
+export const ProductListItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
   const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price, options } = product
 
   const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)

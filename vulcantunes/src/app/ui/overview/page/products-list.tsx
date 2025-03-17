@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import { Product, ProductsListProps } from "@/src/app/lib/definitions";
-import { ProductItem } from "./product-item";
+import { ProductListItem } from "./product-list-item";
 import { NoProductsFound } from "./no-products-found";
 import { ProductsSkeleton } from "../layout/skeletons";
 
@@ -40,7 +40,7 @@ export const ProductsList = memo(function ProductsList({
   return (
     <div className="products-list" aria-label="Products list">
       {filteredProducts.map((product, index) => (
-        <ProductItem
+        <ProductListItem
           key={product.product_model}
           product={product}
           isOdd={index % 2 !== 0}
