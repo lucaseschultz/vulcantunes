@@ -65,7 +65,7 @@ export interface ErrorMessageConfig {
   title: string
   message: string
 }
-export interface ProductsListErrorMessageProps extends ErrorMessageConfig {
+export interface ErrorMessageProps extends ErrorMessageConfig {
   error?: Error;
 }
 export interface ProductsListProps {
