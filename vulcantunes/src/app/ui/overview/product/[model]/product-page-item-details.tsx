@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity"
 import { Product } from "@/src/app/lib/definitions"
+import { renderOptionValues } from '@/src/app/lib/client-actions'
 
 export default function ProductPageItemDetails({ product }: { product: Product }) {
   const [imgSrc, setImgSrc] = useState(`/products/${product.product_image}`)
@@ -35,7 +36,11 @@ export default function ProductPageItemDetails({ product }: { product: Product }
             <span key={feature} className="feature-tag">{feature}</span>
           ))}
         </div>
-
+        {product.options && product.options.length > 0 && product.product_quantity > 0 && (
+          <div className="product-options">
+            {renderOptionValues(product.product_model, product.options)}
+          </div>
+        )}
         <div className="product-purchase-section">
           <span className="product-price">${product.product_price}</span>
           <ProductQuantity
