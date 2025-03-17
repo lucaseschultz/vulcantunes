@@ -6,7 +6,7 @@ import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quant
 import { renderOptionValues } from '@/src/app/lib/client-actions'
 
 export const ProductListItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
-  const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price, options } = product
+  const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price} = product
 
   const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)
 
@@ -16,24 +16,6 @@ export const ProductListItem = memo(function ProductItem({ product, isOdd }: Pro
         : product_description,
     [product_description]
   );
-
-  const optionsArray = useMemo(() => {
-    if (!product.options) return [];
-    return product.options.split(',').reduce((acc, opt) => {
-      const [type, value, price, prefix, optionType] = opt.split(':');
-      const existingType = acc.find(o => o.type === type);
-      if (existingType) {
-        existingType.values.push(`${value}:${price}:${prefix}`);
-      } else {
-        acc.push({
-          type,
-          values: [`${value}:${price}:${prefix}`],
-          optionType: parseInt(optionType)
-        });
-      }
-      return acc;
-    }, [] as Array<{type: string, values: string[], optionType: number}>);
-  }, [product.options]);
 
   return (
     <div
@@ -56,14 +38,9 @@ export const ProductListItem = memo(function ProductItem({ product, isOdd }: Pro
       <div className="product-details">
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
-        {options && options.length > 0 && product_quantity > 0 && (
+        {product.options && product.options.length > 0 && product.product_quantity > 0 && (
           <div className="product-options">
-            {optionsArray.map(({ type, values, optionType }) => (
-              <div key={type} className="option-group">
-                <label>{type}</label>
-                {renderOptionValues(type, values, product.product_model, optionType, isOdd)}
-              </div>
-            ))}
+            {renderOptionValues(product_model, product.options, isOdd)}
           </div>
         )}
         <div className="product-metadata">
