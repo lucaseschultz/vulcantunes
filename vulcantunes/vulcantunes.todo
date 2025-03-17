@@ -24,6 +24,7 @@ product-list-item.tsx:
 Add Images (vulcantunes_products db)
 Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
 Add favorite button
+Address product-list-items appearing cluttered
 
 layout.tsx:
 Make dynamic account icon (Make icon first letter of name and add colorful background?)
