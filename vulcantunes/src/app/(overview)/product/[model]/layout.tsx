@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import React from "react";
 import { ProductPageProps } from "@/src/app/lib/definitions";
 
-export async function generateMetadata(props: ProductPageProps): Promise<Metadata> {
-  const params = React.use(props.params);
-  const model = params.model;
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const model = resolvedParams.model;
 
   return {
     title: model,
