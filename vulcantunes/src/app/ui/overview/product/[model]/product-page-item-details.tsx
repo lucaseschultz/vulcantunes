@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity"
 import { Product } from "@/src/app/lib/definitions"
 
-export default function ProductDetails({ product }: { product: Product }) {
+export default function ProductPageItemDetails({ product }: { product: Product }) {
   const [imgSrc, setImgSrc] = useState(`/products/${product.product_image}`)
 
   return (

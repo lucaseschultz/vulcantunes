@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { getProduct } from "@/src/app/lib/server-actions"
 import { getErrorType, getErrorMessage } from "@/src/app/lib/utils"
 import { ProductSkeleton } from "@/src/app/ui/overview/layout/skeletons"
-import ProductDetails from "@/src/app/ui/overview/product/[model]/product-details"
+import ProductPageItemDetails from "@/src/app/ui/overview/product/[model]/product-page-item-details"
 import { ErrorMessage } from "@/src/app/ui/overview/layout/error-message"
 
 export default async function Page({ params }: { params: { model: string } }) {
@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: { model: string } }) {
 
     return (
       <Suspense fallback={<ProductSkeleton/>}>
-        <ProductDetails product={product} />
+        <ProductPageItemDetails product={product} />
       </Suspense>
     )
   } catch (error: any) {
