@@ -95,7 +95,8 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
                     value={value}
                     selected={isDefault}
                   >
-                    {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
+                    {value}
+                    {parseFloat(price) > 0 && ` (${prefix}$${price})`}
                   </option>
                 ))}
               </select>
