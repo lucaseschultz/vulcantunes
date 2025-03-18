@@ -26,10 +26,8 @@
     flex-direction: column;
     gap: 1.5rem;
 }
-.product-title {
+.product-name {
     font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-color);
 }
 .product-description {
     font-size: 1.1rem;
