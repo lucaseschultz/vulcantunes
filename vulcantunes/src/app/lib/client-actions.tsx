@@ -95,7 +95,7 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
                     value={value}
                     selected={isDefault}
                   >
-                    {value} {price !== '0' ? `(${prefix}$${price})` : ''}
+                    {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
                   </option>
                 ))}
               </select>
@@ -114,7 +114,7 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
                       defaultChecked={isDefault}
                     />
                     <label htmlFor={`option-${name}-${value}-${productModel}`}>
-                      {value} {price !== '0' ? `(${prefix}$${price})` : ''}
+                      {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
                     </label>
                   </div>
                 ))}
@@ -134,7 +134,7 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
                       defaultChecked={isDefault}
                     />
                     <label htmlFor={`option-${name}-${value}-${productModel}`}>
-                      {value} {price !== '0' ? `(${prefix}$${price})` : ''}
+                      {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
                     </label>
                   </div>
                 ))}
