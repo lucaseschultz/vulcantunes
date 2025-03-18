@@ -37,6 +37,7 @@
     padding-right: .75rem;
   }
 }
+
 main {
   position: relative;
   top: var(--top-nav-height);
@@ -46,10 +47,12 @@ main {
   padding-top: 1.5rem;
   min-height: calc(100vh - var(--top-nav-height) - var(--top-nav-height) - var(--footer-height));
 }
+
 .header-logo {
   margin: 0 auto 2rem;
   display: flex;
 }
+
 footer {
   position: relative;
   top: var(--top-nav-height);
@@ -60,6 +63,7 @@ footer {
 .copyright {
   text-align: center;
 }
+
 .product-name {
   font-weight: 600;
   color: var(--text-color);
