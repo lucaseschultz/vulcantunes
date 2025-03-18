@@ -84,8 +84,6 @@
     color: var(--text-color);
 }
 .product-description {
-    color: var(--faded-text-color);
-    line-height: 1.5;
     font-size: 0.95rem;
 }
 .product-options {
@@ -151,11 +149,6 @@
     gap: 1rem;
     flex-wrap: wrap;
 }
-.product-price {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
 .product-quantity {
     color: var(--text-color);
     font-size: 0.95rem;
@@ -167,14 +160,6 @@
 .product-quantity.out-of-stock {
     color: var(--warning-color);
     font-weight: 500;
-}
-.product-discontinued {
-    color: var(--warning-color);
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    background-color: var(--warning-background-color);
-    border-radius: 4px;
 }
 .notify-link {
     color: var(--interactive-color);

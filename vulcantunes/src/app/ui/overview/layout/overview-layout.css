@@ -60,6 +60,23 @@ footer {
 .copyright {
   text-align: center;
 }
+.product-price {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.product-discontinued {
+  color: var(--warning-color);
+  background-color: var(--warning-background-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.product-description {
+  color: var(--faded-text-color);
+  line-height: 1.5;
+}
 
 .new-look {
   position: fixed;
