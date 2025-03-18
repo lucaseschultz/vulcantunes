@@ -9,6 +9,7 @@
         flex-direction: row;
     }
 }
+
 .filters {
     width: 100%;
     margin-bottom: 2rem;
@@ -56,6 +57,7 @@
     background-color: var(--interactive-color);
     border-color: var(--interactive-color);
 }
+
 .products-list {
     display: flex;
     flex-direction: column;
@@ -130,6 +132,7 @@
 .product-details-button:hover {
     background-color: var(--faded-interactive-color);
 }
+
 .no-products {
     display: flex;
     flex-direction: column;
@@ -150,6 +153,7 @@
         color: var(--faded-text-color);
     }
 }
+
 .error-container {
     display: flex;
     flex-direction: column;
@@ -194,6 +198,7 @@
 .error-button:hover {
     background-color: var(--faded-interactive-color);
 }
+
 .shimmer {
     position: relative;
     overflow: hidden;
@@ -216,6 +221,7 @@
         transform: translateX(100%);
     }
 }
+
 .product-skeleton-image {
   height: 200px;
   width: 200px;
