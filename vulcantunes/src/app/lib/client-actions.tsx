@@ -85,9 +85,12 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
             {/*optionType 0 is dropdown*/}
             {optionType === 0 && (
               <select
-                name={`option-${name}-${productModel}`}
-                id={`option-${name}-${productModel}`}
-                className={isOdd ? 'option-select-odd' : 'option-select'}
+                name={`${productModel}-option-dropdown`}
+                id={`${productModel}-option-dropdown`}
+                className={'product-option-dropdown'}
+                style={{
+                  background: isOdd ? 'var(--foreground)' : 'var(--background)'
+                }}
               >
                 {values.map(({ value, price, prefix, isDefault }) => (
                   <option
