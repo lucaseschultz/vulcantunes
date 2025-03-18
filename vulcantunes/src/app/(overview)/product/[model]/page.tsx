@@ -17,10 +17,12 @@ export default async function Page({ params }: { params: { model: string } }) {
     }
 
     return (
-      <Suspense fallback={<ProductSkeleton/>}>
-        <ProductViewTracker productId={product.product_id} />
-        <ProductPageItemDetails product={product} />
-      </Suspense>
+      <div className="product-page-container">
+        <Suspense fallback={<ProductSkeleton/>}>
+          <ProductViewTracker productId={product.product_id} />
+          <ProductPageItemDetails product={product} />
+        </Suspense>
+      </div>
     )
   } catch (error: any) {
     console.error("Error fetching product:", error)
