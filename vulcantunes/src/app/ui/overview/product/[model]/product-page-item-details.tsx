@@ -28,7 +28,7 @@ export default function ProductPageItemDetails({ product }: { product: Product }
       </div>
 
       <div className="product-info-section">
-        <h1 className="product-title">{product.product_name}</h1>
+        <h1 className="product-name">{product.product_name}</h1>
         <p className="product-description">{product.product_description}</p>
 
         <div className="product-features">
