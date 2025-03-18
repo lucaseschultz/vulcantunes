@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from 'next/navigation'
-import type { IconNavItem, ImageNavItem } from './definitions'
+import type { IconNavItem, ImageNavItem, OptionGroup, RenderOptionValuesProps } from './definitions'
 
 export function DisplayNavItems({ NavName, NavItems }: {
   NavName: string,
@@ -44,7 +44,7 @@ export function DisplayNavItems({ NavName, NavItems }: {
   )
 }
 
-export function renderOptionValues(options: string | null, productModel: string, isOdd: boolean = false) {
+export function renderOptionValues({ options, productModel, isOdd = false }: RenderOptionValuesProps) {
   if (!options || options.length === 0) return null;
 
   // Parsing options string into structured data, to be able to use it
@@ -72,11 +72,7 @@ export function renderOptionValues(options: string | null, productModel: string,
       });
     }
     return acc;
-  }, [] as Array<{
-    name: string,
-    values: Array<{value: string, price: string, prefix: string, isDefault: boolean}>,
-    optionType: number
-  }>);
+  }, [] as OptionGroup[]);
 
   // Return the rendered option groups
   return (

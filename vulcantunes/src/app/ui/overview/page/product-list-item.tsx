@@ -40,7 +40,11 @@ export const ProductListItem = memo(function ProductItem({ product, isOdd }: Pro
         <p className="product-description">{truncatedDescription}</p>
         {product.options && product.options.length > 0 && product.product_quantity > 0 && (
           <div className="product-options">
-            {renderOptionValues(product_model, product.options, isOdd)}
+            {renderOptionValues({
+              productModel: product_model,
+              options: product.options,
+              isOdd
+            })}
           </div>
         )}
         <div className="product-metadata">

@@ -76,3 +76,19 @@ export type ProductPageProps = {
     model: string
   }>
 };
+export interface OptionValue {
+  value: string;
+  price: string;
+  prefix: string;
+  isDefault: boolean;
+}
+export interface OptionGroup {
+  name: string;
+  values: OptionValue[];
+  optionType: number;
+}
+export interface RenderOptionValuesProps {
+  options: string | null;
+  productModel: string;
+  isOdd?: boolean;
+}

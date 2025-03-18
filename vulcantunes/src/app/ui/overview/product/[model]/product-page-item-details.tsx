@@ -38,7 +38,10 @@ export default function ProductPageItemDetails({ product }: { product: Product }
         </div>
         {product.options && product.options.length > 0 && product.product_quantity > 0 && (
           <div className="product-options">
-            {renderOptionValues(product.product_model, product.options)}
+            {renderOptionValues({
+              productModel: product.product_model,
+              options: product.options
+            })}
           </div>
         )}
         <div className="product-purchase-section">
