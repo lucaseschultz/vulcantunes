@@ -126,6 +126,9 @@ footer {
   list-style-type: none;
   display: flex;
   margin-bottom: 0.5rem;
+  label {
+    white-space: nowrap;
+  }
 }
 .product-option-text {
   padding: 0.5rem;
