@@ -24,6 +24,7 @@
 .product-info-section {
     display: flex;
     flex-direction: column;
+    background-color: var(--foreground);
     gap: 1.5rem;
 }
 .product-name {
