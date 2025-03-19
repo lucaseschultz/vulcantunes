@@ -86,6 +86,7 @@
 .product-description {
     font-size: 0.95rem;
 }
+/* Move to overview?: Left off here */
 .product-metadata {
     display: flex;
     align-items: center;
