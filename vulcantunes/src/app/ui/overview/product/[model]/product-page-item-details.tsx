@@ -36,18 +36,20 @@ export default function ProductPageItemDetails({ product }: { product: Product }
             <span key={feature} className="feature-tag">{feature}</span>
           ))}
         </div>
-        {product.options && product.options.length > 0 && product.product_quantity > 0 && (
-          <OptionValues options={product.options} productModel={product.product_model} />
-          )}
         <div className="product-purchase-section">
-          <span className="product-price">${product.product_price}</span>
-          <ProductQuantity
-            quantity={product.product_quantity}
-            model={product.product_model}
-          />
-          {product.product_status === 2 && (
-            <span className="product-discontinued">Discontinued</span>
+          {product.options && product.options.length > 0 && product.product_quantity > 0 && (
+            <OptionValues options={product.options} productModel={product.product_model} />
           )}
+          <div className="product-metadata">
+            <span className="product-price">${product.product_price}</span>
+            <ProductQuantity
+              quantity={product.product_quantity}
+              model={product.product_model}
+            />
+            {product.product_status === 2 && (
+              <span className="product-discontinued">Discontinued</span>
+            )}
+          </div>
         </div>
       </div>
     </div>
