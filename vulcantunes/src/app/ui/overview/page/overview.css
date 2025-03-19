@@ -62,13 +62,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    > *:nth-child(odd) {
-        background: var(--foreground);
-    }
 }
 .product-item {
     display: flex;
     flex-direction: column;
+    background: var(--foreground);
     padding: 1rem;
     @media (min-width: 768px) {
         flex-direction: row;
