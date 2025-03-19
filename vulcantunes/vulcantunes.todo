@@ -19,8 +19,6 @@
  ?"
 
 client-actions.tsx:
-radio options - add a space after button
-
 ^overview-layout.css:
 remove the li styling for .radio-option
 remove fieldset border
