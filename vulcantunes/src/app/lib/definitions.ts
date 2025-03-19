@@ -32,7 +32,6 @@ export interface Product {
 }
 export interface ProductItemProps {
   product: Product;
-  isOdd: boolean;
 }
 export interface SearchInputProps {
   value: string
@@ -90,5 +89,4 @@ export interface OptionGroup {
 export interface OptionValuesProps {
   options: string | null;
   productModel: string;
-  isOdd?: boolean;
 }
