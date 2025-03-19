@@ -29,7 +29,7 @@ Add email recovery
 
 product-list-item.tsx:
 Add Images (vulcantunes_products db)
-Add "Add to cart" button ("Added to cart" notification that gives the option to "view cart")
+Add "Add to cart" button ("Added to cart" notification with option to "view cart"): Save product options to item in cart
 Add favorite button
 Address product-list-items appearing cluttered
 
