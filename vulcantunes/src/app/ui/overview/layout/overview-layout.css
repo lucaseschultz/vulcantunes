@@ -125,6 +125,7 @@ footer {
 .radio-option {
   list-style-type: none;
   display: flex;
+  gap: 0.5rem;
   margin-bottom: 0.5rem;
   label {
     white-space: nowrap;
