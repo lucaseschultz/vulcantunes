@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
 import { ProductQuantity } from "@/src/app/ui/overview/layout/product-item-quantity";
-import { renderOptionValues } from '@/src/app/lib/client-actions'
+import { OptionValues } from '@/src/app/ui/overview/layout/option-values';
 
 export const ProductListItem = memo(function ProductItem({ product, isOdd }: ProductItemProps) {
   const { product_status, product_quantity, product_model, product_description, product_name, product_image, product_price } = product
@@ -39,12 +39,8 @@ export const ProductListItem = memo(function ProductItem({ product, isOdd }: Pro
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
         {product.options && product.options.length > 0 && product.product_quantity > 0 && (
-            renderOptionValues({
-              productModel: product_model,
-              options: product.options,
-              isOdd
-            })
-        )}
+          <OptionValues options={product.options} productModel={product_model} isOdd={isOdd} />
+          )}
         <div className="product-metadata">
           <span className="product-price">${product_price}</span>
           <ProductQuantity quantity={product_quantity} model={product_model}/>
