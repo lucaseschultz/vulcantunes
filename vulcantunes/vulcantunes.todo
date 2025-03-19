@@ -1,3 +1,10 @@
+client-actions.tsx:
+Fix option display content/classNames
+
+Ensure all css values are being used: overview-layout.css, [model].css, & overview.css
+turn renderOptionValues in client-actions.tsx into a component in option-values.tsx
+Need to get text option ("bluetooth" name) to appear for VT_TOOTH?
+
 Product page(s):
 Quantity in stock ("In Stock", Discontinued/Back-ordered)
 Back to products button
