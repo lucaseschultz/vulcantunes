@@ -88,6 +88,7 @@
 }
 .product-details-button {
     display: inline-block;
+    max-width: fit-content;
     padding: 0.5rem 1rem;
     background-color: var(--interactive-color);
     color: white;
