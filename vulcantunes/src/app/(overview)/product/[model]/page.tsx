@@ -11,7 +11,8 @@ import { ProductPageProps } from "@/src/app/lib/definitions";
 
 export default async function Page({ params }: ProductPageProps) {
   try {
-    const product = await getProduct(params.model)
+    const resolvedParams = await (params as unknown as Promise<typeof params>);
+    const product = await getProduct(resolvedParams.model)
 
     if (!product) {
       return notFound()

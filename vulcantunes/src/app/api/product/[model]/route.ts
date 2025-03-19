@@ -19,7 +19,8 @@ export async function GET(
   { params }: { params: { model: string } }
 ) {
   try {
-    const productModel = params.model;
+    const resolvedParams = await (params as unknown as Promise<typeof params>);
+    const productModel = resolvedParams.model;
 
     if (!productModel || !/^[A-Z0-9_]+$/.test(productModel)) {
       return NextResponse.json(
