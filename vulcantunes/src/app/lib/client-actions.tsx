@@ -77,68 +77,73 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
   // Return the rendered option groups
   return (
     <div className="product-options">
-      {optionsArray.map(({ name, values, optionType }) => (
-        <div key={name} className="option-group">
-          <label>{name}</label>
+      {optionsArray.map(({ name, values, optionType }) => {
+        // Find the default value for dropdown
+        const defaultOptionValue = values.find(value => value.isDefault)?.value || values[0].value;
 
-          {/*optionType 0 is dropdown*/}
-          {optionType === 0 && (
-            <select
-              name={`${productModel}-option-dropdown`}
-              id={`${productModel}-option-dropdown`}
-              className={'product-option-dropdown'}
-              style={{
-                background: isOdd ? 'var(--foreground)' : 'var(--background)'
-              }}
-            >
-              {values.map(({ value, price, prefix, isDefault }) => (
-                <option
-                  key={value}
-                  value={value}
-                  selected={isDefault}
-                >
-                  {value}
-                  {parseFloat(price) > 0 && ` (${prefix}$${price})`}
-                </option>
-              ))}
-            </select>
-          )}
+        return (
+          <div key={name} className="option-group">
+            <label>{name}</label>
 
-          {/*optionType 1 is text input*/}
-          {optionType === 1 && (
-            <input
-              type="text"
-              className="product-option-text"
-              name={`${productModel}-${optionType}`}
-              placeholder={`Enter text`}
-              style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
-            />
-          )}
-
-          {/*optionType 2 is radio buttons*/}
-          {optionType === 2 && (
-            <fieldset className="product-option-radio">
-              <ul>
-                {values.map(({ value, price, prefix, isDefault }) => (
-                  <li key={value} className="radio-option">
-                    <input
-                      type="radio"
-                      id={`${productModel}-${name}-${value}-option`}
-                      name={`${productModel}-${name}-option`}
-                      value={value}
-                      defaultChecked={isDefault}
-                    />
-                    <label htmlFor={`${productModel}-${name}-${value}-option`}>
-                      {" "}{value}
-                      {parseFloat(price) > 0 && ` (${prefix}$${price})`}
-                    </label>
-                  </li>
+            {/*optionType 0 is dropdown*/}
+            {optionType === 0 && (
+              <select
+                name={`${productModel}-option-dropdown`}
+                id={`${productModel}-option-dropdown`}
+                className={'product-option-dropdown'}
+                style={{
+                  background: isOdd ? 'var(--foreground)' : 'var(--background)'
+                }}
+                defaultValue={defaultOptionValue}
+              >
+                {values.map(({ value, price, prefix }) => (
+                  <option
+                    key={value}
+                    value={value}
+                  >
+                    {value}
+                    {parseFloat(price) > 0 && ` (${prefix}${price})`}
+                  </option>
                 ))}
-              </ul>
-            </fieldset>
-          )}
-        </div>
-      ))}
+              </select>
+            )}
+
+            {/*optionType 1 is text input*/}
+            {optionType === 1 && (
+              <input
+                type="text"
+                className="product-option-text"
+                name={`${productModel}-${optionType}`}
+                placeholder={`Enter text`}
+                style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
+              />
+            )}
+
+            {/*optionType 2 is radio buttons*/}
+            {optionType === 2 && (
+              <fieldset className="product-option-radio">
+                <ul>
+                  {values.map(({ value, price, prefix, isDefault }) => (
+                    <li key={value} className="radio-option">
+                      <input
+                        type="radio"
+                        id={`${productModel}-${name}-${value}-option`}
+                        name={`${productModel}-${name}-option`}
+                        value={value}
+                        defaultChecked={isDefault}
+                      />
+                      <label htmlFor={`${productModel}-${name}-${value}-option`}>
+                        {" "}{value}
+                        {parseFloat(price) > 0 && ` (${prefix}${price})`}
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </fieldset>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
