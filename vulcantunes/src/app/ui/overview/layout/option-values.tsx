@@ -91,7 +91,7 @@ export function OptionValues({ options, productModel, isOdd = false }: OptionVal
                         defaultChecked={isDefault}
                       />
                       <label htmlFor={`${productModel}-${name}-${value}-option`}>
-                        {" "}{value}
+                        {value}
                         {parseFloat(price) > 0 && ` (${prefix}${price})`}
                       </label>
                     </li>
