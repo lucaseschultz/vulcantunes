@@ -1,3 +1,23 @@
+"client-actions.tsx vulcantunes which is better client-actions.tsx:120-138 or:
+ <div className="product-option-radio-group">
+   {values.map(value => {
+     const [optionValue, price, prefix, , , isDefault] = value.split(':');
+     return (
+       <label key={optionValue} className="product-option-radio">
+         <input
+           type="radio"
+           name={`${productModel}-${type}`}
+           value={optionValue}
+           defaultChecked={isDefault === '1'}
+         />
+         {optionValue}
+         {parseFloat(price) > 0 && ` (${prefix}${parseFloat(price).toFixed(2)})`}
+       </label>
+     );
+   })}
+ </div>
+ ?"
+
 client-actions.tsx:
 Fix option display content/classNames
 radio options - add a space after button
@@ -7,7 +27,7 @@ remove the li styling for .radio-option
 remove fieldset border
 
 Ensure all css values are being used: overview-layout.css, [model].css, & overview.css
-turn renderOptionValues in client-actions.tsx into a component in option-values.tsx
+"vulcantunes turn renderOptionValues in client-actions.tsx into a component in option-values.tsx"
 Need to get text option ("bluetooth" name) to appear for VT_TOOTH?
 
 Product page(s):
