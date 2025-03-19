@@ -107,33 +107,26 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
 
             {/*optionType 1 is text input*/}
             {optionType === 1 && (
-              <div className="radio-options">
+              <div>
+                <input
+                  type="text"
+                  className="product-option-text"
+                  name={`${productModel}-${optionType}`}
+                  placeholder={`Enter text`}
+                  style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
+                />
+              </div>
+            )}
+
+            {/*optionType 2 is radio buttons*/}
+            {optionType === 2 && (
+              <div className="product-option-radio">
                 {values.map(({ value, price, prefix, isDefault }) => (
                   <div key={value} className="radio-option">
                     <input
                       type="radio"
                       id={`option-${name}-${value}-${productModel}`}
                       name={`option-${name}-${productModel}`}
-                      value={value}
-                      defaultChecked={isDefault}
-                    />
-                    <label htmlFor={`option-${name}-${value}-${productModel}`}>
-                      {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/*optionType 2 is radio buttons*/}
-            {optionType === 2 && (
-              <div className="checkbox-options">
-                {values.map(({ value, price, prefix, isDefault }) => (
-                  <div key={value} className="checkbox-option">
-                    <input
-                      type="checkbox"
-                      id={`option-${name}-${value}-${productModel}`}
-                      name={`option-${name}-${value}-${productModel}`}
                       value={value}
                       defaultChecked={isDefault}
                     />
