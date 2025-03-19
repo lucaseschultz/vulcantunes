@@ -48,13 +48,13 @@ export const ProductListItem = memo(function ProductItem({ product, isOdd }: Pro
             {product_status === 2 && (
               <span className="product-discontinued">Discontinued</span>
             )}
-            <Link
-              href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
-              className="product-details-button"
-            >
-              See Details
-            </Link>
           </div>
+          <Link
+            href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
+            className="product-details-button"
+          >
+            See Details
+          </Link>
         </div>
       </div>
     </div>
