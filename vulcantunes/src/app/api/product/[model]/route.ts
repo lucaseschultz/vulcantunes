@@ -16,7 +16,7 @@ const pool = mysql.createPool({
 })
 
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: { model: string } }
 ) {
   try {
