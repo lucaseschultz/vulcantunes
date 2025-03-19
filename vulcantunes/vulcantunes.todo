@@ -19,7 +19,6 @@
  ?"
 
 client-actions.tsx:
-Fix option display content/classNames
 radio options - add a space after button
 
 ^overview-layout.css:

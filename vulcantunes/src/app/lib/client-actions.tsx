@@ -117,22 +117,25 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
 
           {/*optionType 2 is radio buttons*/}
           {optionType === 2 && (
-            <div className="product-option-radio">
-              {values.map(({ value, price, prefix, isDefault }) => (
-                <div key={value} className="radio-option">
-                  <input
-                    type="radio"
-                    id={`option-${name}-${value}-${productModel}`}
-                    name={`option-${name}-${productModel}`}
-                    value={value}
-                    defaultChecked={isDefault}
-                  />
-                  <label htmlFor={`option-${name}-${value}-${productModel}`}>
-                    {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
-                  </label>
-                </div>
-              ))}
-            </div>
+            <fieldset className="product-option-radio">
+              <ul>
+                {values.map(({ value, price, prefix, isDefault }) => (
+                  <li key={value} className="radio-option">
+                    <input
+                      type="radio"
+                      id={`${productModel}-${name}-${value}-option`}
+                      name={`${productModel}-${name}-option`}
+                      value={value}
+                      defaultChecked={isDefault}
+                    />
+                    <label htmlFor={`${productModel}-${name}-${value}-option`}>
+                      {value}
+                      {parseFloat(price) > 0 && ` (${prefix}$${price})`}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </fieldset>
           )}
         </div>
       ))}
