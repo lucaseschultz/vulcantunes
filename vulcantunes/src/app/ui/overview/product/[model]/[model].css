@@ -35,6 +35,7 @@
 }
 .product-description {
     font-size: 1.1rem;
+    white-space: pre-wrap;
 }
 .product-features {
     display: flex;
