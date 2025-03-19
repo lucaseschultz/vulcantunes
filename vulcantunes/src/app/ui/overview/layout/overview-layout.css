@@ -141,10 +141,41 @@ footer {
   background: var(--foreground);
   border-radius: 4px;
 }
+.product-metadata {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 .product-price {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--text-color);
+}
+.product-quantity {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  .out-of-stock {
+    color: var(--warning-color);
+    font-weight: 500;
+  }
+}
+.product-quantity.out-of-stock {
+  color: var(--warning-color);
+  font-weight: 500;
+}
+.notify-link {
+  color: var(--interactive-color);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  :hover {
+    color: var(--faded-interactive-color);
+  }
+}
+.notify-link:hover {
+  color: var(--faded-interactive-color);
 }
 .product-discontinued {
   color: var(--warning-color);

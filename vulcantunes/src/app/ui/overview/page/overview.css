@@ -87,37 +87,6 @@
     font-size: 0.95rem;
 }
 /* Move to overview?: Left off here */
-.product-metadata {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.product-quantity {
-    color: var(--text-color);
-    font-size: 0.95rem;
-    .out-of-stock {
-        color: var(--warning-color);
-        font-weight: 500;
-    }
-}
-.product-quantity.out-of-stock {
-    color: var(--warning-color);
-    font-weight: 500;
-}
-.notify-link {
-    color: var(--interactive-color);
-    font-size: 0.95rem;
-    text-decoration: underline;
-    cursor: pointer;
-    margin-left: 0.5rem;
-    :hover {
-        color: var(--faded-interactive-color);
-    }
-}
-.notify-link:hover {
-    color: var(--faded-interactive-color);
-}
 .product-details-button {
     display: inline-block;
     padding: 0.5rem 1rem;
