@@ -38,21 +38,23 @@ export const ProductListItem = memo(function ProductItem({ product, isOdd }: Pro
       <div className="product-details">
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
-        {product.options && product.options.length > 0 && product.product_quantity > 0 && (
-          <OptionValues options={product.options} productModel={product_model} isOdd={isOdd} />
-          )}
-        <div className="product-metadata">
-          <span className="product-price">${product_price}</span>
-          <ProductQuantity quantity={product_quantity} model={product_model}/>
-          {product_status === 2 && (
-            <span className="product-discontinued">Discontinued</span>
-          )}
-          <Link
-            href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
-            className="product-details-button"
-          >
-            See Details
-          </Link>
+        <div className="product-purchase-section">
+          {product.options && product.options.length > 0 && product.product_quantity > 0 && (
+            <OptionValues options={product.options} productModel={product_model} isOdd={isOdd} />
+            )}
+          <div className="product-metadata">
+            <span className="product-price">${product_price}</span>
+            <ProductQuantity quantity={product_quantity} model={product_model}/>
+            {product_status === 2 && (
+              <span className="product-discontinued">Discontinued</span>
+            )}
+            <Link
+              href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
+              className="product-details-button"
+            >
+              See Details
+            </Link>
+          </div>
         </div>
       </div>
     </div>
