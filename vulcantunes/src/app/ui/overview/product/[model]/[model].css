@@ -26,6 +26,8 @@
     flex-direction: column;
     background-color: var(--foreground);
     gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 8px;
 }
 .product-name {
     font-size: 2rem;
