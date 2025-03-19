@@ -87,7 +87,7 @@ export interface OptionGroup {
   values: OptionValue[];
   optionType: number;
 }
-export interface RenderOptionValuesProps {
+export interface OptionValuesProps {
   options: string | null;
   productModel: string;
   isOdd?: boolean;
