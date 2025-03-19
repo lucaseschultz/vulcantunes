@@ -80,64 +80,60 @@ export function renderOptionValues({ options, productModel, isOdd = false }: Ren
       {optionsArray.map(({ name, values, optionType }) => (
         <div key={name} className="option-group">
           <label>{name}</label>
-          <div className="option-values">
 
-            {/*optionType 0 is dropdown*/}
-            {optionType === 0 && (
-              <select
-                name={`${productModel}-option-dropdown`}
-                id={`${productModel}-option-dropdown`}
-                className={'product-option-dropdown'}
-                style={{
-                  background: isOdd ? 'var(--foreground)' : 'var(--background)'
-                }}
-              >
-                {values.map(({ value, price, prefix, isDefault }) => (
-                  <option
-                    key={value}
+          {/*optionType 0 is dropdown*/}
+          {optionType === 0 && (
+            <select
+              name={`${productModel}-option-dropdown`}
+              id={`${productModel}-option-dropdown`}
+              className={'product-option-dropdown'}
+              style={{
+                background: isOdd ? 'var(--foreground)' : 'var(--background)'
+              }}
+            >
+              {values.map(({ value, price, prefix, isDefault }) => (
+                <option
+                  key={value}
+                  value={value}
+                  selected={isDefault}
+                >
+                  {value}
+                  {parseFloat(price) > 0 && ` (${prefix}$${price})`}
+                </option>
+              ))}
+            </select>
+          )}
+
+          {/*optionType 1 is text input*/}
+          {optionType === 1 && (
+            <input
+              type="text"
+              className="product-option-text"
+              name={`${productModel}-${optionType}`}
+              placeholder={`Enter text`}
+              style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
+            />
+          )}
+
+          {/*optionType 2 is radio buttons*/}
+          {optionType === 2 && (
+            <div className="product-option-radio">
+              {values.map(({ value, price, prefix, isDefault }) => (
+                <div key={value} className="radio-option">
+                  <input
+                    type="radio"
+                    id={`option-${name}-${value}-${productModel}`}
+                    name={`option-${name}-${productModel}`}
                     value={value}
-                    selected={isDefault}
-                  >
-                    {value}
-                    {parseFloat(price) > 0 && ` (${prefix}$${price})`}
-                  </option>
-                ))}
-              </select>
-            )}
-
-            {/*optionType 1 is text input*/}
-            {optionType === 1 && (
-              <div>
-                <input
-                  type="text"
-                  className="product-option-text"
-                  name={`${productModel}-${optionType}`}
-                  placeholder={`Enter text`}
-                  style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
-                />
-              </div>
-            )}
-
-            {/*optionType 2 is radio buttons*/}
-            {optionType === 2 && (
-              <div className="product-option-radio">
-                {values.map(({ value, price, prefix, isDefault }) => (
-                  <div key={value} className="radio-option">
-                    <input
-                      type="radio"
-                      id={`option-${name}-${value}-${productModel}`}
-                      name={`option-${name}-${productModel}`}
-                      value={value}
-                      defaultChecked={isDefault}
-                    />
-                    <label htmlFor={`option-${name}-${value}-${productModel}`}>
-                      {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                    defaultChecked={isDefault}
+                  />
+                  <label htmlFor={`option-${name}-${value}-${productModel}`}>
+                    {value} {price !== '0.00' ? `(${prefix}$${price})` : ''}
+                  </label>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </div>
