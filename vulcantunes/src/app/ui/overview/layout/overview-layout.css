@@ -113,6 +113,9 @@ footer {
     accent-color: var(--interactive-color);
   }
 }
+.radio-option {
+
+}
 .product-option-text {
   padding: 0.5rem;
   border: 1px solid var(--outline);
