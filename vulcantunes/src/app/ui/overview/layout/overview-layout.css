@@ -72,6 +72,14 @@ footer {
   color: var(--faded-text-color);
   line-height: 1.5;
 }
+.product-purchase-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--text-color);
+}
 .product-options {
   display: flex;
   flex-direction: column;

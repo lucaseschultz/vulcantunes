@@ -45,14 +45,6 @@
     border-radius: 20px;
     font-size: 0.9rem;
 }
-.product-purchase-section {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--text-color);
-}
 
 @media (max-width: 768px) {
     .product-details-container {
