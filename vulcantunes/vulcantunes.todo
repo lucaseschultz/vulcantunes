@@ -1,6 +1,5 @@
 client-actions.tsx:
 ^overview-layout.css:
-remove the li styling for .radio-option
 remove fieldset border
 
 Ensure all css values are being used: overview-layout.css, [model].css, & overview.css

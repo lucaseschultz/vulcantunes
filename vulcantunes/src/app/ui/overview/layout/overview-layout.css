@@ -114,7 +114,7 @@ footer {
   }
 }
 .radio-option {
-
+  list-style-type: none;
 }
 .product-option-text {
   padding: 0.5rem;
