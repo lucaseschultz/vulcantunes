@@ -35,7 +35,6 @@
 .product-description {
     font-size: 1.1rem;
 }
-/* Move to overview?: Left off here */
 .product-features {
     display: flex;
     flex-wrap: wrap;
