@@ -7,8 +7,9 @@ import { ProductSkeleton } from "@/src/app/ui/overview/layout/skeletons"
 import ProductPageItemDetails from "@/src/app/ui/overview/product/[model]/product-page-item-details"
 import ProductViewTracker from "@/src/app/ui/overview/product/[model]/product-view-tracker"
 import { ErrorMessage } from "@/src/app/ui/overview/layout/error-message"
+import { ProductPageProps } from "@/src/app/lib/definitions";
 
-export default async function Page({ params }: { params: { model: string } }) {
+export default async function Page({ params }: ProductPageProps) {
   try {
     const product = await getProduct(params.model)
 
