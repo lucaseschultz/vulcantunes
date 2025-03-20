@@ -48,12 +48,8 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
                 defaultValue={defaultOptionValue}
               >
                 {values.map(({ value, price, prefix }) => (
-                  <option
-                    key={value}
-                    value={value}
-                  >
-                    {value}
-                    {parseFloat(price) > 0 && ` (${prefix}${price})`}
+                  <option key={`${optionId}-${value}`} value={value}>
+                    {value}{renderPrice(price, prefix)}
                   </option>
                 ))}
               </select>
