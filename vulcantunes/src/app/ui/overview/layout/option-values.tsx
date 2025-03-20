@@ -33,6 +33,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
     <div className="product-options">
       {optionsArray.map(({ name, values, optionType }) => {
         const defaultOptionValue = values.find(value => value.isDefault)?.value || values[0]?.value;
+        const optionId = `${productModel}-${name}`;
 
         return (
           <div key={name} className="option-group">
