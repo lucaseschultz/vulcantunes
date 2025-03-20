@@ -49,7 +49,7 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
         />
       </div>
       <div className="product-details">
-        <span className="product-name">{product_name}</span>
+        <h2 className="product-name">{product_name}</h2>
         <p className="product-description">{truncatedDescription}</p>
         <div className="product-purchase-section">
           {product.options && product.options.length > 0 && product.product_quantity > 0 && (
