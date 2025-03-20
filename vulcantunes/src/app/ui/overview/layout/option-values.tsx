@@ -38,7 +38,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
           <div key={name} className="option-group">
             <label>{name}</label>
 
-            {/*optionType 0 is dropdown*/}
+            {/* Dropdown (optionType 0) */}
             {optionType === 0 && (
               <select
                 name={`${productModel}-option-dropdown`}
@@ -61,7 +61,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
               </select>
             )}
 
-            {/*optionType 1 is text input*/}
+            {/* Text input (optionType 1) */}
             {optionType === 1 && (
               <input
                 type="text"
@@ -72,7 +72,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
               />
             )}
 
-            {/*optionType 2 is radio buttons*/}
+            {/* Radio buttons (optionType 2) */}
             {optionType === 2 && (
               <fieldset className="product-option-radio">
                 <ul>
