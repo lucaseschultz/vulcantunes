@@ -35,7 +35,7 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
     <article
       className="product-item"
       data-testid={`product-${product_model}`}
-      id={`${product_model}`}
+      id={product_model}
     >
       <Image
         src={imgSrc}
