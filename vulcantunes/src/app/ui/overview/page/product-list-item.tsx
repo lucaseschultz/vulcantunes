@@ -60,8 +60,8 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
           )}
           <div className="product-metadata">
             <span className="product-price">${product_price}</span>
-            <ProductQuantity quantity={product_quantity} model={product_model}/>
-            {product_status === 2 && (
+            <ProductQuantity quantity={product_quantity} model={product_model} />
+            {isDiscontinued && (
               <span className="product-discontinued">Discontinued</span>
             )}
           </div>
