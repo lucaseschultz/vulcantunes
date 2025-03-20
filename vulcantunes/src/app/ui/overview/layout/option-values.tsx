@@ -11,12 +11,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
 
     const existingType = acc.find(o => o.name === name);
     if (existingType) {
-      existingType.values.push({
-        value,
-        price,
-        prefix,
-        isDefault: defaultValue === '1'
-      });
+      existingType.values.push({ value, price, prefix, isDefault });
     } else {
       acc.push({
         name,
