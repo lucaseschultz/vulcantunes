@@ -15,13 +15,8 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
     } else {
       acc.push({
         name,
-        values: [{
-          value,
-          price,
-          prefix,
-          isDefault: defaultValue === '1'
-        }],
-        optionType: parseInt(type)
+        values: [{ value, price, prefix, isDefault }],
+        optionType
       });
     }
     return acc;
