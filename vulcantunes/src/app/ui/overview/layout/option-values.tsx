@@ -8,6 +8,8 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
   // Parse options string into structured data
   const optionsArray = options.split(',').reduce((acc, opt) => {
     const [name, value, price, prefix, type, defaultValue] = opt.split(':');
+    const isDefault = defaultValue === '1';
+    const optionType = parseInt(type);
 
     const existingType = acc.find(o => o.name === name);
     if (existingType) {
