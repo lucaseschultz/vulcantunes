@@ -5,7 +5,7 @@ import { OptionValuesProps, OptionGroup } from '@/src/app/lib/definitions'
 export function OptionValues({ options, productModel }: OptionValuesProps) {
   if (!options || options.length === 0) return null;
 
-  // Parsing options string into structured data, to be able to use it
+  // Parse options string into structured data
   const optionsArray = options.split(',').reduce((acc, opt) => {
     const [name, value, price, prefix, type, defaultValue] = opt.split(':');
 
