@@ -90,7 +90,7 @@
 .product-details-button {
     display: inline-block;
     max-width: fit-content;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.25rem;
     background-color: var(--interactive-color);
     color: white;
     border: none;
