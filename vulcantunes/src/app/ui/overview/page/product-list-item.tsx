@@ -37,18 +37,17 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
       data-testid={`product-${product_model}`}
       id={product_model}
     >
-      <Image
-        src={imgSrc}
-        alt={`${product_image} image`}
-        width={200}
-        height={200}
-        style={{
-          height: '200',
-          width: 'auto',
-        }}
-        priority={false}
-        onError={() => setImgSrc('/products/image-coming-soon.jpg')}
-      />
+      <div className="product-image-container">
+        <Image
+          src={imgSrc}
+          alt={`${product_image} image`}
+          width={200}
+          height={200}
+          className="product-image"
+          priority={false}
+          onError={() => setImgSrc(fallbackImage)}
+        />
+      </div>
       <div className="product-details">
         <span className="product-name">{product_name}</span>
         <p className="product-description">{truncatedDescription}</p>
