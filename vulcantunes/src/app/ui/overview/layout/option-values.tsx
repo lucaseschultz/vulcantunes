@@ -42,12 +42,9 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
             {/* Dropdown (optionType 0) */}
             {optionType === 0 && (
               <select
-                name={`${productModel}-option-dropdown`}
-                id={`${productModel}-option-dropdown`}
-                className={'product-option-dropdown'}
-                style={{
-                  background: isOdd ? 'var(--foreground)' : 'var(--background)'
-                }}
+                name={`${optionId}-dropdown`}
+                id={`${optionId}-control`}
+                className="product-option-dropdown"
                 defaultValue={defaultOptionValue}
               >
                 {values.map(({ value, price, prefix }) => (
