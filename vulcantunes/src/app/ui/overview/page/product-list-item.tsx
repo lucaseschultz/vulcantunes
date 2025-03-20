@@ -73,6 +73,6 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 });
