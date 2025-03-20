@@ -27,6 +27,10 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
     [product_description]
   );
 
+  const isInStock = product_quantity > 0;
+  const isDiscontinued = product_status === 2;
+  const hasOptions = options && options.length > 0;
+
   return (
     <article
       className="product-item"
