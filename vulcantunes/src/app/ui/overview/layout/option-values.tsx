@@ -28,7 +28,6 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
   return (
     <div className="product-options">
       {optionsArray.map(({ name, values, optionType }) => {
-        // Find the default value for dropdown
         const defaultOptionValue = values.find(value => value.isDefault)?.value || values[0]?.value;
 
         return (
