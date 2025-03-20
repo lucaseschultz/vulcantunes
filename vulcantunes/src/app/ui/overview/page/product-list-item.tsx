@@ -17,7 +17,8 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
     options
   } = product;
 
-  const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)
+  const [imgSrc, setImgSrc] = useState(`/products/${product_image}`);
+  const fallbackImage = '/products/image-coming-soon.jpg';
 
   const truncatedDescription = useMemo(() =>
       product_description.length > 100
