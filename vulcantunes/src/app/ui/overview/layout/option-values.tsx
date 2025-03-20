@@ -24,7 +24,11 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
     return acc;
   }, [] as OptionGroup[]);
 
-  // Return the rendered option groups
+  // Render price suffix if price exists
+  const renderPrice = (price: string, prefix: string) => {
+    return parseFloat(price) > 0 ? ` (${prefix}${price})` : '';
+  };
+
   return (
     <div className="product-options">
       {optionsArray.map(({ name, values, optionType }) => {
