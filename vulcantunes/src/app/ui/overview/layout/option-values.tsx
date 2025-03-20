@@ -69,22 +69,24 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
             {/* Radio buttons (optionType 2) */}
             {optionType === 2 && (
               <fieldset className="product-option-radio">
-                <ul>
-                  {values.map(({ value, price, prefix, isDefault }) => (
-                    <li key={value} className="radio-option">
-                      <input
-                        type="radio"
-                        id={`${productModel}-${name}-${value}-option`}
-                        name={`${productModel}-${name}-option`}
-                        value={value}
-                        defaultChecked={isDefault}
-                      />
-                      <label htmlFor={`${productModel}-${name}-${value}-option`}>
-                        {value}
-                        {parseFloat(price) > 0 && ` (${prefix}${price})`}
-                      </label>
-                    </li>
-                  ))}
+                <ul className="radio-options-list">
+                  {values.map(({ value, price, prefix, isDefault }) => {
+                    const radioId = `${optionId}-${value}-option`;
+                    return (
+                      <li key={radioId} className="radio-option">
+                        <input
+                          type="radio"
+                          id={radioId}
+                          name={`${optionId}-option`}
+                          value={value}
+                          defaultChecked={isDefault}
+                        />
+                        <label htmlFor={radioId}>
+                          {value}{renderPrice(price, prefix)}
+                        </label>
+                      </li>
+                    );
+                  })}
                 </ul>
               </fieldset>
             )}
