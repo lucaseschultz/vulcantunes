@@ -36,8 +36,8 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
         const optionId = `${productModel}-${name}`;
 
         return (
-          <div key={name} className="option-group">
-            <label>{name}</label>
+          <div key={optionId} className="option-group">
+            <label htmlFor={`${optionId}-control`}>{name}</label>
 
             {/* Dropdown (optionType 0) */}
             {optionType === 0 && (
