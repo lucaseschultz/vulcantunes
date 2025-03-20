@@ -60,9 +60,9 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
               <input
                 type="text"
                 className="product-option-text"
-                name={`${productModel}-${optionType}`}
-                placeholder={`Enter text`}
-                style={{background: isOdd ? 'var(--foreground)' : 'var(--background)'}}
+                id={`${optionId}-control`}
+                name={`${optionId}-text`}
+                placeholder="Enter text"
               />
             )}
 
