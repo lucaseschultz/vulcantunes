@@ -21,8 +21,8 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
   const fallbackImage = '/products/image-coming-soon.jpg';
 
   const truncatedDescription = useMemo(() =>
-      product_description.length > 100
-        ? `${product_description.slice(0, 100)}...`
+      product_description.length > 175
+        ? `${product_description.slice(0, 175)}...`
         : product_description,
     [product_description]
   );
