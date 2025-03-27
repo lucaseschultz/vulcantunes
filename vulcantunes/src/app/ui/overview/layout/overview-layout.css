@@ -93,6 +93,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  min-width: 150px;
+
   label {
     color: var(--text-color);
     font-weight: 500;
