@@ -129,10 +129,16 @@
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-.product-details-button:hover {
-    background-color: var(--faded-interactive-color);
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: var(--faded-interactive-color);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
 }
 
 .no-products {
