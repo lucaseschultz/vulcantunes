@@ -62,11 +62,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 1.5rem;
 }
 .product-item {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
     background: var(--foreground);
     border: 1px solid var(--outline);
     border-radius: 4px;
