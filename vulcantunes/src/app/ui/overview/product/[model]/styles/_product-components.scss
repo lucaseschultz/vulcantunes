@@ -1,0 +1,45 @@
+@import './mixins';
+
+.product-image-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-main-image {
+  @include rounded-corners;
+  object-fit: contain;
+}
+
+.product-info-section {
+  @include flex-column;
+  background-color: var(--foreground);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--outline);
+  @include rounded-corners;
+}
+
+.product-name {
+  font-size: 2rem;
+}
+
+.product-page-description {
+  @extend .product-description;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+}
+
+.product-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feature-tag {
+  background: var(--background);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}

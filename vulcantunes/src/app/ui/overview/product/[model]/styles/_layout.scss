@@ -1,0 +1,25 @@
+@import './mixins';
+
+.product-page-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.product-details-container {
+  @include responsive-grid(1fr 1fr, 2rem);
+  background: var(--background);
+  @include rounded-corners;
+  padding: 2rem;
+  @include card-shadow;
+}
+
+@media (max-width: 768px) {
+  .product-details-container {
+    grid-template-columns: 1fr;
+  }
+  .product-main-image {
+    width: 100%;
+    height: auto;
+  }
+}

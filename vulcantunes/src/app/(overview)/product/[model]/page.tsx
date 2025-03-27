@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import '@/src/app/ui/overview/product/[model]/[model].css'
+import '@/src/app/ui/overview/product/[model]/styles/[model].css'
 import { notFound } from 'next/navigation'
 import { getProduct } from "@/src/app/lib/server-actions"
 import { getErrorType, getErrorMessage } from "@/src/app/lib/utils"
