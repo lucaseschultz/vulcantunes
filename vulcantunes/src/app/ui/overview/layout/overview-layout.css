@@ -140,7 +140,11 @@ footer {
   align-items: center;
 
   label {
-    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--interactive-color);
+    }
   }
 }
 .product-option-text {
