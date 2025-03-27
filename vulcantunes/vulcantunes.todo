@@ -1,5 +1,5 @@
 Stylesheets:
-Use partials for modular css architecture
+Use partials for modular css architecture (add white space between classes)
 
 Product page(s) & product list:
 Refactor isDiscontinued check to inside of ProductQuantity
