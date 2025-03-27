@@ -119,7 +119,7 @@ footer {
 .product-option-radio,
 .product-option-checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   color: var(--text-color);
   font-size: 0.95rem;
