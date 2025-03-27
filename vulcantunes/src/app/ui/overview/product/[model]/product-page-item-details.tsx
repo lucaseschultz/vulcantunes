@@ -29,7 +29,7 @@ export default function ProductPageItemDetails({ product }: { product: Product }
 
       <div className="product-info-section">
         <h1 className="product-name">{product.product_name}</h1>
-        <p className="product-description product-page-description">{product.product_description}</p>
+        <p className="product-page-description">{product.product_description}</p>
         <div className="product-features">
           {product.features && product.features.split(',').map((feature: string) => (
             <span key={feature} className="feature-tag">{feature}</span>

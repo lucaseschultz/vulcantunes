@@ -1,3 +1,5 @@
+@import '../../../overview/layout/overview-layout.scss';
+
 .product-page-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -34,6 +36,7 @@
     font-size: 2rem;
 }
 .product-page-description {
+    @extend .product-description;
     font-size: 1.1rem;
     white-space: pre-wrap;
 }
