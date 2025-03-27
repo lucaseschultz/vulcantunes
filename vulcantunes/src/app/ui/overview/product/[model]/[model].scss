@@ -1,50 +1,81 @@
 @import '../../../overview/layout/overview-layout.scss';
 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin card-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@mixin rounded-corners($radius: 8px) {
+    border-radius: $radius;
+}
+
+@mixin responsive-grid($columns, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    gap: $gap;
+}
+
+
 .product-page-container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
+
 .product-details-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    @include responsive-grid(1fr 1fr, 2rem);
     background: var(--background);
-    border-radius: 8px;
+    @include rounded-corners;
     padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @include card-shadow;
 }
+
 .product-image-section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+
 .product-main-image {
-    border-radius: 8px;
+    @include rounded-corners;
     object-fit: contain;
 }
+
 .product-info-section {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     background-color: var(--foreground);
     gap: 1.5rem;
     padding: 1.5rem;
     border: 1px solid var(--outline);
-    border-radius: 8px;
+    @include rounded-corners;
 }
+
 .product-name {
     font-size: 2rem;
 }
+
 .product-page-description {
     @extend .product-description;
     font-size: 1.1rem;
     white-space: pre-wrap;
 }
+
 .product-features {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
+
 .feature-tag {
     background: var(--background);
     color: var(--text-color);
