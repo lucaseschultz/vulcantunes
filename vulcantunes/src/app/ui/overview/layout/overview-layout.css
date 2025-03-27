@@ -198,9 +198,6 @@ footer {
     color: var(--faded-interactive-color);
   }
 }
-.notify-link:hover {
-  color: var(--faded-interactive-color);
-}
 .product-discontinued {
   color: var(--warning-color);
   background-color: var(--warning-background-color);
