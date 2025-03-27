@@ -125,6 +125,7 @@ footer {
   font-size: 0.95rem;
   cursor: pointer;
   border: none;
+
   input {
     cursor: pointer;
     accent-color: var(--interactive-color);
