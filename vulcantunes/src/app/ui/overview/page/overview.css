@@ -78,6 +78,29 @@
         gap: 1.5rem;
     }
 }
+
+.product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+
+    @media (min-width: 768px) {
+        min-width: 200px;
+    }
+}
+
+.product-image {
+    object-fit: contain;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    height: 160px;
+    width: auto;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
 .product-details {
     display: flex;
     flex-direction: column;
