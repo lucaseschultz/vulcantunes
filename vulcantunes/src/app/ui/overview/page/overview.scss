@@ -1,19 +1,69 @@
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "tablet" {
+        @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == "desktop" {
+        @media (min-width: 1024px) { @content; }
+    } @else if $breakpoint == "large-desktop" {
+        @media (min-width: 1200px) { @content; }
+    }
+}
+
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin button-style($bg-color: var(--interactive-color), $text-color: white, $padding: 0.5rem 1.25rem) {
+    display: inline-block;
+    padding: $padding;
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: var(--faded-interactive-color);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+@mixin card-container($padding: 1.5rem) {
+    background: var(--foreground);
+    border: 1px solid var(--outline);
+    border-radius: 8px;
+    padding: $padding;
+}
+
+
 .products {
     width: 100%;
     padding: 0 1rem;
     max-width: 1200px;
     margin: 0 auto;
     gap: 2rem;
-    @media (min-width: 768px) {
-        display: flex;
-        flex-direction: row;
+
+    @include respond-to(tablet) {
+        @include flex-container(row, flex-start, stretch, 2rem);
     }
 }
 
 .filters {
     width: 100%;
     margin-bottom: 2rem;
-    @media (min-width: 768px) {
+
+    @include respond-to(tablet) {
         min-width: 155px;
         max-width: 155px;
     }
@@ -65,15 +115,11 @@
     gap: 1.5rem;
 }
 .product-item {
-    display: flex;
-    flex-direction: column;
-    background: var(--foreground);
-    border: 1px solid var(--outline);
-    border-radius: 8px;
-    padding: 1.5rem;
+    @include flex-container(column);
+    @include card-container;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-    @media (min-width: 768px) {
+    @include respond-to(tablet) {
         flex-direction: row;
         gap: 1.5rem;
     }
@@ -118,27 +164,8 @@
     font-size: 0.95rem;
 }
 .product-details-button {
-    display: inline-block;
+    @include button-style;
     max-width: fit-content;
-    padding: 0.5rem 1.25rem;
-    background-color: var(--interactive-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s ease;
-
-    &:hover {
-        background-color: var(--faded-interactive-color);
-        transform: translateY(-1px);
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
 }
 
 .no-products {
@@ -193,15 +220,9 @@
     max-width: 100%;
     overflow-wrap: break-word;
 }
+
 .error-button {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--interactive-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    @include button-style(var(--interactive-color), white, 0.75rem 1.5rem);
 }
 .error-button:hover {
     background-color: var(--faded-interactive-color);
