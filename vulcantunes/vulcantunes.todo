@@ -1,6 +1,10 @@
-Move isDiscontinued check to inside of ProductQuantity
+Stylesheets:
+Use partials for modular css architecture
 
-General:
+Product page(s) & product list:
+Refactor isDiscontinued check to inside of ProductQuantity
+
+DB:
 Need to get text option ("bluetooth" name) to appear for VT_TOOTH?
 
 Product page(s):
