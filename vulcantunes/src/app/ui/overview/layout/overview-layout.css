@@ -154,16 +154,6 @@ footer {
   background: var(--background);
   color: var(--text-color);
   font-size: 0.95rem;
-  max-width: 300px;
-}
-.product-option-readonly {
-  color: var(--faded-text-color);
-  font-size: 0.95rem;
-  padding: 0.5rem;
-  background: var(--foreground);
-  border-radius: 4px;
-}
-.product-metadata {
   display: flex;
   align-items: center;
   gap: 1rem;
