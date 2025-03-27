@@ -192,7 +192,9 @@ footer {
   text-decoration: underline;
   cursor: pointer;
   margin-left: 0.5rem;
-  :hover {
+  transition: color 0.2s ease;
+
+  &:hover {
     color: var(--faded-interactive-color);
   }
 }
