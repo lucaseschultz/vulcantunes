@@ -75,6 +75,7 @@
 
     @media (min-width: 768px) {
         flex-direction: row;
+        gap: 1.5rem;
     }
 }
 .product-details {
