@@ -69,8 +69,10 @@
     flex-direction: column;
     background: var(--foreground);
     border: 1px solid var(--outline);
-    border-radius: 4px;
-    padding: 1rem;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
     @media (min-width: 768px) {
         flex-direction: row;
     }
