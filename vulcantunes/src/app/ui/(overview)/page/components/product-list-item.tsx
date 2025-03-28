@@ -47,7 +47,7 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
       </div>
       <div className="product-details">
         <h2 className="product-name">{product_name}</h2>
-        <p className="product-description">{truncatedDescription}</p>
+        <p className="product-item-description">{truncatedDescription}</p>
         <ProductPurchaseSection
           options={options}
           productModel={product_model}
