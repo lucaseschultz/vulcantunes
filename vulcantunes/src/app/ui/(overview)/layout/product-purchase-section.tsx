@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
 import { ProductMetadata } from '@/src/app/ui/(overview)/layout/product-metadata';
 import { ProductPurchaseSectionProps } from '@/src/app/lib/definitions';
