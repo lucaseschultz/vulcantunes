@@ -3,8 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Product } from "@/src/app/lib/definitions"
-import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
-import { ProductMetadata } from '@/src/app/ui/(overview)/layout/product-metadata';
+import { ProductPurchaseSection } from '@/src/app/ui/(overview)/layout/product-purchase-section';
 
 export default function ProductPageItem({ product }: { product: Product }) {
   const {
@@ -50,18 +49,13 @@ export default function ProductPageItem({ product }: { product: Product }) {
           ))}
         </div>
 
-        <div className="product-purchase-section">
-          {options && options.length > 0 && product_quantity > 0 && (
-            <OptionValues options={options} productModel={product_model} />
-          )}
-
-          <ProductMetadata
-            price={product_price}
-            quantity={product_quantity}
-            model={product_model}
-            isDiscontinued={isDiscontinued}
-          />
-        </div>
+        <ProductPurchaseSection
+          options={options}
+          productModel={product_model}
+          productQuantity={product_quantity}
+          productPrice={product_price}
+          isDiscontinued={isDiscontinued}
+        />
       </div>
     </div>
   )

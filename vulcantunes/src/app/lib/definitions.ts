@@ -90,3 +90,11 @@ export interface OptionValuesProps {
   options: string | null;
   productModel: string;
 }
+export interface ProductPurchaseSectionProps {
+  options?: string;
+  productModel: string;
+  productQuantity: number;
+  productPrice: number;
+  isDiscontinued: boolean;
+  productName?: string;
+}

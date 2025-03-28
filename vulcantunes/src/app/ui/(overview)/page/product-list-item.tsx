@@ -1,9 +1,8 @@
 import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
-import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
-import { ProductMetadata } from '@/src/app/ui/(overview)/layout/product-metadata';
+import { ProductPurchaseSection } from '@/src/app/ui/(overview)/layout/product-purchase-section';
+import Link from "next/link";
 
 export const ProductListItem = memo(function ProductListItem({ product }: ProductItemProps) {
   const {
@@ -27,9 +26,7 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
     [product_description]
   );
 
-  const isInStock = product_quantity > 0;
   const isDiscontinued = product_status === 2;
-  const hasOptions = options && options.length > 0;
 
   return (
     <article
@@ -51,27 +48,14 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
       <div className="product-details">
         <h2 className="product-name">{product_name}</h2>
         <p className="product-description">{truncatedDescription}</p>
-        <div className="product-purchase-section">
-          {hasOptions && isInStock && (
-            <OptionValues
-              options={options}
-              productModel={product_model}
-            />
-          )}
-          <ProductMetadata
-            price={product_price}
-            quantity={product_quantity}
-            model={product_model}
-            isDiscontinued={isDiscontinued}
-          />
-          <Link
-            href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
-            className="product-details-button"
-            aria-label={`See details for ${product_name}`}
-          >
-            See Details
-          </Link>
-        </div>
+        <ProductPurchaseSection
+          options={options}
+          productModel={product_model}
+          productQuantity={product_quantity}
+          productPrice={product_price}
+          isDiscontinued={isDiscontinued}
+          productName={product_name}
+        />
       </div>
     </article>
   );
