@@ -1,4 +1,4 @@
-import { ProductQuantity } from "@/src/app/ui/(overview)/layout/product-quantity";
+import { ProductQuantity } from "@/src/app/ui/(overview)/layout/components/product-quantity";
 
 interface ProductMetadataProps {
   price: number;

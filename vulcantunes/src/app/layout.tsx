@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from "next";
 import "./ui/styles/globals.css";
-import ClientSessionProvider from '@/src/app/ui/layout/client-session-provider';
+import ClientSessionProvider from '@/src/app/ui/layout/components/client-session-provider';
 import { ThemeProvider } from 'next-themes';
 
 export const viewport = {

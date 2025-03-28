@@ -1,5 +1,5 @@
-import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
-import { ProductMetadata } from '@/src/app/ui/(overview)/layout/product-metadata';
+import { OptionValues } from '@/src/app/ui/(overview)/layout/components/option-values';
+import { ProductMetadata } from '@/src/app/ui/(overview)/layout/components/product-metadata';
 import { ProductPurchaseSectionProps } from '@/src/app/lib/definitions';
 
 export function ProductPurchaseSection({

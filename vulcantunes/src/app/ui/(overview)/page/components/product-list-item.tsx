@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
-import { ProductPurchaseSection } from '@/src/app/ui/(overview)/layout/product-purchase-section';
+import { ProductPurchaseSection } from '@/src/app/ui/(overview)/layout/components/product-purchase-section';
 import Link from "next/link";
 
 export const ProductListItem = memo(function ProductListItem({ product }: ProductItemProps) {

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Product } from "@/src/app/lib/definitions"
-import { ProductPurchaseSection } from '@/src/app/ui/(overview)/layout/product-purchase-section';
+import { ProductPurchaseSection } from '@/src/app/ui/(overview)/layout/components/product-purchase-section';
 
 export default function ProductPageItem({ product }: { product: Product }) {
   const {

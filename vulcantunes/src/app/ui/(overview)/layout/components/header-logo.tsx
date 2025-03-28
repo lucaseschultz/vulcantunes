@@ -24,7 +24,7 @@ export default function HeaderLogo() {
     : '/icons&logos/vulcantunes-logo_light.png';
 
   return (
-    <Link href="/">
+    <Link href="/public">
       <Image
         src={logoSrc}
         alt="Vulcantunes.com logo - Your ride just got better"
