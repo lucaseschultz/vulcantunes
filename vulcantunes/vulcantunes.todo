@@ -1,3 +1,5 @@
+Fix feature filters not working
+
 product-page-item:
 Make options' (just dropdown?) flex-direction column, due to "Add a Stereo Extension Cable" being compacted
 
