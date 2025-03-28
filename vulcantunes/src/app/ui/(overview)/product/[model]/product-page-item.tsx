@@ -17,9 +17,9 @@ export default function ProductPageItem({ product }: { product: Product }) {
     options,
     features
   } = product;
-  
+
   const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)
-  
+
   const isDiscontinued = product_status === 2;
 
   return (
