@@ -59,7 +59,7 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
       </div>
       <Link
         href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
-        className="product-details-button"
+        className="product-details-link"
         aria-label={`See details for ${product_name}`}
       >
         See Details
