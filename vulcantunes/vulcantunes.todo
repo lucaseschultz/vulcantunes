@@ -1,6 +1,8 @@
 product-quantity:
 Move ProductQuantity's type to definitions.ts
 
+move components into /components dir
+
 update "see details"'s button styling
 
 product-page-item:
