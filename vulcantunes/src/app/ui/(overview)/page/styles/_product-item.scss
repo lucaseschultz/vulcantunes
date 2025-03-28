@@ -48,6 +48,15 @@
   font-size: 0.95rem;
 }
 .product-details-link {
-  @include button-style;
+  @include button-style(
+    var(--interactive-color),
+    white,
+    0.4rem 1rem
+  );
   max-width: fit-content;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-self: flex-end;
 }
