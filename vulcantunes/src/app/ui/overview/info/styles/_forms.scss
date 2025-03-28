@@ -1,3 +1,5 @@
+@import './mixins';
+
 .contact-form {
   margin-top: 2rem;
 }
@@ -18,26 +20,10 @@
 
   input,
   textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--text-color);
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: var(--foreground);
-    color: var(--text-color);
+    @include form-input;
   }
 }
 
 .submit-button {
-  background-color: var(--interactive-color);
-  color: #f9fafb;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.9;
-  }
+  @include button;
 }
