@@ -26,6 +26,7 @@
   transition: transform 0.2s ease;
   height: 160px;
   width: auto;
+
   &:hover {
     transform: scale(1.05);
   }
@@ -38,6 +39,7 @@
   padding: 1rem 0;
   flex: 1;
 }
+
 .product-name {
   font-size: 1.25rem;
   font-weight: 600;
@@ -47,11 +49,12 @@
 .product-description {
   font-size: 0.95rem;
 }
+
 .product-details-link {
   @include button-style(
-    var(--interactive-color),
-    white,
-    0.4rem 1rem
+                  var(--interactive-color),
+                  white,
+                  0.4rem 1rem
   );
   max-width: fit-content;
   margin-top: 0.75rem;
