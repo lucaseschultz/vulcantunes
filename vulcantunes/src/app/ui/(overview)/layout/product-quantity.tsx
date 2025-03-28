@@ -7,12 +7,17 @@ export const ProductQuantity = memo(function ProductQuantity({
  isDiscontinued
 }: ProductQuantityProps) {
   const isInStock = quantity > 0;
+  const hasLowStock = quantity <= 5;
 
   return (
     <div className={`product-quantity ${isInStock ? '' : 'out-of-stock'}`}>
       {isInStock ? (
         <span>
-          In stock: {quantity}
+          {hasLowStock ? (
+            <span className="low-stock">Low stock: {quantity}</span>
+          ) : (
+            <span>In stock: {quantity}</span>
+          )}
           {isDiscontinued && (
             <span className="product-discontinued"> Discontinued</span>
           )}
