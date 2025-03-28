@@ -1,14 +1,11 @@
 import { memo } from "react";
+import { ProductQuantityProps } from '@/src/app/lib/definitions';
 
 export const ProductQuantity = memo(function ProductQuantity({
  quantity,
  model,
  isDiscontinued
-}: {
-  quantity: number,
-  model: string,
-  isDiscontinued?: boolean
-}) {
+}: ProductQuantityProps) {
   const isInStock = quantity > 0;
 
   return (
