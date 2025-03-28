@@ -1,0 +1,46 @@
+.top-nav {
+  z-index: 2;
+  position: fixed;
+  @include flex-between;
+  width: 100lvw;
+  height: var(--top-nav-height);
+  padding: 10px 2lvw;
+  background-color: #181b26;
+  border-bottom: 1px solid var(--outline);
+
+  @include responsive(tablet) {
+    padding: 10px 1lvw;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: white;
+  }
+
+  * {
+    display: flex;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  li:not(:last-of-type) {
+    margin-right: .5rem;
+  }
+
+  a {
+    @include hover-effect {
+      img, svg {
+        width: var(--top-nav-icon-hover-size);
+        height: var(--top-nav-icon-hover-size);
+      }
+    }
+  }
+}
+
+.top-nav-left {
+  > *:first-child {
+    border-right: 2px solid var(--outline);
+    padding-right: .75rem;
+  }
+}

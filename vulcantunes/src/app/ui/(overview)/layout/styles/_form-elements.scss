@@ -1,0 +1,59 @@
+.product-option-dropdown, .product-option-text {
+  padding: 0.75rem;
+  @include interactive-border;
+  border-radius: 6px;
+  background: var(--background);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  max-width: 300px;
+
+  :hover, :focus {
+    border-color: var(--interactive-color);
+    outline: none;
+  }
+}
+
+.product-option-radio,
+.product-option-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+
+  input {
+    cursor: pointer;
+    accent-color: var(--interactive-color);
+    margin-top: 0.25rem;
+  }
+}
+
+.radio-option {
+  list-style-type: none;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+
+  label {
+    cursor: pointer;
+
+    :hover {
+      color: var(--interactive-color);
+    }
+  }
+}
+
+.notify-link {
+  color: var(--interactive-color);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 0.5rem;
+
+  @include hover-effect {
+    color: var(--faded-interactive-color);
+  }
+}

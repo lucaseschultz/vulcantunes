@@ -1,0 +1,11 @@
+footer {
+  position: relative;
+  top: var(--top-nav-height);
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  height: var(--footer-height);
+}
+
+.copyright {
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+main {
+  position: relative;
+  top: var(--top-nav-height);
+  @include flex-column;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  min-height: calc(100vh - var(--top-nav-height) - var(--top-nav-height) - var(--footer-height));
+}
+
+.header-logo {
+  margin: 0 auto 2rem;
+  @include flex-center;
+}

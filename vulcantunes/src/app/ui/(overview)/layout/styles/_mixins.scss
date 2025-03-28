@@ -1,0 +1,45 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+@mixin hover-effect {
+  transition: all 0.2s ease;
+  :hover {
+    @content;
+  }
+}
+
+@mixin interactive-border {
+  border: 1px solid var(--outline);
+  transition: border-color 0.2s ease;
+
+  :hover, :focus {
+    border-color: var(--interactive-color);
+    outline: none;
+  }
+}
