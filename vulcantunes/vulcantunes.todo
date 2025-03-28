@@ -1,6 +1,3 @@
-Product page(s) & product list:
-Make product metadata its own component
-
 product-quantity:
 Move ProductQuantity's type to definitions.ts
 

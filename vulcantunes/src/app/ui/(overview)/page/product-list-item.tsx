@@ -2,8 +2,8 @@ import { memo, useMemo, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { ProductItemProps } from '@/src/app/lib/definitions'
-import { ProductQuantity } from "@/src/app/ui/(overview)/layout/product-item-quantity";
 import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
+import { ProductMetadata } from '@/src/app/ui/(overview)/layout/product-metadata';
 
 export const ProductListItem = memo(function ProductListItem({ product }: ProductItemProps) {
   const {
@@ -58,14 +58,12 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
               productModel={product_model}
             />
           )}
-          <div className="product-metadata">
-            <span className="product-price">${product_price}</span>
-            <ProductQuantity
-              quantity={product_quantity}
-              model={product_model}
-              isDiscontinued={isDiscontinued}
-            />
-          </div>
+          <ProductMetadata
+            price={product_price}
+            quantity={product_quantity}
+            model={product_model}
+            isDiscontinued={isDiscontinued}
+          />
           <Link
             href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
             className="product-details-button"

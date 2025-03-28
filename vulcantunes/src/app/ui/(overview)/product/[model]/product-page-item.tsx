@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { ProductQuantity } from "@/src/app/ui/(overview)/layout/product-item-quantity"
 import { Product } from "@/src/app/lib/definitions"
 import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
+import { ProductMetadata } from '@/src/app/ui/(overview)/layout/product-metadata';
 
 export default function ProductPageItem({ product }: { product: Product }) {
   const {
@@ -55,14 +55,12 @@ export default function ProductPageItem({ product }: { product: Product }) {
             <OptionValues options={options} productModel={product_model} />
           )}
 
-          <div className="product-metadata">
-            <span className="product-price">${product_price}</span>
-            <ProductQuantity
-              quantity={product_quantity}
-              model={product_model}
-              isDiscontinued={isDiscontinued}
-            />
-          </div>
+          <ProductMetadata
+            price={product_price}
+            quantity={product_quantity}
+            model={product_model}
+            isDiscontinued={isDiscontinued}
+          />
         </div>
       </div>
     </div>
