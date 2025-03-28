@@ -6,7 +6,7 @@ import { ProductQuantity } from "@/src/app/ui/(overview)/layout/product-item-qua
 import { Product } from "@/src/app/lib/definitions"
 import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
 
-export default function ProductPageItemDetails({ product }: { product: Product }) {
+export default function ProductPageItem({ product }: { product: Product }) {
   const [imgSrc, setImgSrc] = useState(`/products/${product.product_image}`)
 
   return (

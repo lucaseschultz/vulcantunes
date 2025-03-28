@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { getProduct } from "@/src/app/lib/server-actions"
 import { getErrorType, getErrorMessage } from "@/src/app/lib/utils"
 import { ProductSkeleton } from "@/src/app/ui/(overview)/layout/skeletons"
-import ProductPageItemDetails from "@/src/app/ui/(overview)/product/[model]/product-page-item-details"
+import ProductPageItem from "@/src/app/ui/(overview)/product/[model]/product-page-item"
 import ProductViewTracker from "@/src/app/ui/(overview)/product/[model]/product-view-tracker"
 import { ErrorMessage } from "@/src/app/ui/(overview)/layout/error-message"
 import { ProductPageProps } from "@/src/app/lib/definitions";
@@ -22,7 +22,7 @@ export default async function Page({ params }: ProductPageProps) {
       <div className="product-page-container">
         <Suspense fallback={<ProductSkeleton/>}>
           <ProductViewTracker productId={product.product_id} />
-          <ProductPageItemDetails product={product} />
+          <ProductPageItem product={product} />
         </Suspense>
       </div>
     )
