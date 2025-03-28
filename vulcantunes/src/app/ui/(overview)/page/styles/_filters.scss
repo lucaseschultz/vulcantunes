@@ -1,0 +1,48 @@
+.filters {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  @include respond-to(tablet) {
+    min-width: 155px;
+    max-width: 155px;
+  }
+}
+.filters-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+.feature-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.feature-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+.feature-input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--outline);
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: var(--interactive-color);
+  :checked {
+    background-color: var(--interactive-color);
+    border-color: var(--interactive-color);
+  }
+}
+.feature-input:checked {
+  background-color: var(--interactive-color);
+  border-color: var(--interactive-color);
+}

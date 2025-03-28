@@ -1,0 +1,18 @@
+.products {
+  width: 100%;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+
+  @include respond-to(tablet) {
+    @include flex-container(row, flex-start, stretch, 2rem);
+  }
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
