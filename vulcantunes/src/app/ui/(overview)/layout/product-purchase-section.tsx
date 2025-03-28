@@ -9,7 +9,6 @@ export function ProductPurchaseSection({
   productQuantity,
   productPrice,
   isDiscontinued,
-  productName
 }: ProductPurchaseSectionProps) {
   const hasOptions = options && options.length > 0;
   const isInStock = productQuantity > 0;
