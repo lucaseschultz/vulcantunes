@@ -8,11 +8,11 @@ interface ProductMetadataProps {
 }
 
 export function ProductMetadata({
-                                  price,
-                                  quantity,
-                                  model,
-                                  isDiscontinued
-                                }: ProductMetadataProps) {
+  price,
+  quantity,
+  model,
+  isDiscontinued
+}: ProductMetadataProps) {
   return (
     <div className="product-metadata">
       <span className="product-price">${price}</span>
