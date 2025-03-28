@@ -1,4 +1,4 @@
-import '@/src/app/ui/overview/account/account.css'
+import '@/src/app/ui/(overview)/account/styles/account.css'
 
 export default function Page() {
   return (

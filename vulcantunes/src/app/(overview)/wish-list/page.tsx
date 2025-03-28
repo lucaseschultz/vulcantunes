@@ -1,4 +1,4 @@
-import '@/src/app/ui/overview/wishlist/styles/wishlist.css'
+import '@/src/app/ui/(overview)/wish-list/styles/wish-list.css'
 
 export default function Page() {
   return (

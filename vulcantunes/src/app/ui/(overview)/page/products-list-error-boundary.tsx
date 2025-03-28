@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState } from "@/src/app/lib/definitions";
-import { ErrorMessage } from '../layout/error-message';
+import { ErrorMessage } from '@/src/app/ui/(overview)/layout/error-message';
 import { getErrorMessage } from '@/src/app/lib/utils';
 
 export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {

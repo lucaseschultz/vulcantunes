@@ -1,6 +1,6 @@
 'use client'
 
-import '@/src/app/ui/overview/info/styles/info.css'
+import '@/src/app/ui/(overview)/info/styles/info.css'
 
 export default function Page() {
   return (
