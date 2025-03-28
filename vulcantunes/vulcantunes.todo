@@ -1,6 +1,8 @@
 product-quantity:
 Move ProductQuantity's type to definitions.ts
 
+update "see details"'s button styling
+
 product-page-item:
 Make options' (just dropdown?) flex-direction column, due to "Add a Stereo Extension Cable" being compacted
 
