@@ -1,5 +1,4 @@
 Product page(s) & product list:
-Refactor isDiscontinued check to inside of ProductQuantity
 Make product metadata its own component
 
 product-page-item:

@@ -60,10 +60,11 @@ export const ProductListItem = memo(function ProductListItem({ product }: Produc
           )}
           <div className="product-metadata">
             <span className="product-price">${product_price}</span>
-            <ProductQuantity quantity={product_quantity} model={product_model} />
-            {isDiscontinued && (
-              <span className="product-discontinued">Discontinued</span>
-            )}
+            <ProductQuantity
+              quantity={product_quantity}
+              model={product_model}
+              isDiscontinued={isDiscontinued}
+            />
           </div>
           <Link
             href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}

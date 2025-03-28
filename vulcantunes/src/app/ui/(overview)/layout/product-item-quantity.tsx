@@ -1,14 +1,29 @@
 import { memo } from "react";
 
-export const ProductQuantity = memo(function ProductQuantity({ quantity, model }: { quantity: number, model: string }) {
+export const ProductQuantity = memo(function ProductQuantity({
+ quantity,
+ model,
+ isDiscontinued
+}: {
+  quantity: number,
+  model: string,
+  isDiscontinued?: boolean
+}) {
   const isInStock = quantity > 0;
 
   return (
-    <span className={`product-quantity ${isInStock ? '' : 'out-of-stock'}`}>
+    <div className={`product-quantity ${isInStock ? '' : 'out-of-stock'}`}>
       {isInStock ? (
-        `In stock: ${quantity}`
+        <span>
+          In stock: {quantity}
+          {isDiscontinued && (
+            <span className="product-discontinued"> Discontinued</span>
+          )}
+        </span>
+      ) : isDiscontinued ? (
+        <span className="product-discontinued">Discontinued</span>
       ) : (
-        <>
+        <span>
           Out of stock
           <a
             href={`/notify/${model}`}
@@ -17,9 +32,9 @@ export const ProductQuantity = memo(function ProductQuantity({ quantity, model }
           >
             Get notified when available
           </a>
-        </>
+        </span>
       )}
-    </span>
+    </div>
   );
 });
 

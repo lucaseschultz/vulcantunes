@@ -46,10 +46,8 @@ export default function ProductPageItem({ product }: { product: Product }) {
             <ProductQuantity
               quantity={product.product_quantity}
               model={product.product_model}
+              isDiscontinued={product.product_status === 2}
             />
-            {product.product_status === 2 && (
-              <span className="product-discontinued">Discontinued</span>
-            )}
           </div>
         </div>
       </div>
