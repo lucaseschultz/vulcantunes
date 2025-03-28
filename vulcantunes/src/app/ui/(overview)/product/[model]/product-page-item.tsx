@@ -7,14 +7,28 @@ import { Product } from "@/src/app/lib/definitions"
 import { OptionValues } from '@/src/app/ui/(overview)/layout/option-values';
 
 export default function ProductPageItem({ product }: { product: Product }) {
-  const [imgSrc, setImgSrc] = useState(`/products/${product.product_image}`)
+  const {
+    product_status,
+    product_quantity,
+    product_model,
+    product_description,
+    product_name,
+    product_image,
+    product_price,
+    options,
+    features
+  } = product;
+  
+  const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)
+  
+  const isDiscontinued = product_status === 2;
 
   return (
     <div className="product-details-container">
       <div className="product-image-section">
         <Image
           src={imgSrc}
-          alt={`${product.product_image} image`}
+          alt={`${product_image} image`}
           width={400}
           height={400}
           style={{
@@ -28,25 +42,25 @@ export default function ProductPageItem({ product }: { product: Product }) {
       </div>
 
       <div className="product-info-section">
-        <h1 className="product-name">{product.product_name}</h1>
-        <p className="product-page-description">{product.product_description}</p>
+        <h1 className="product-name">{product_name}</h1>
+        <p className="product-page-description">{product_description}</p>
         <div className="product-features">
-          {product.features && product.features.split(',').map((feature: string) => (
+          {features && features.split(',').map((feature: string) => (
             <span key={feature} className="feature-tag">{feature}</span>
           ))}
         </div>
 
         <div className="product-purchase-section">
-          {product.options && product.options.length > 0 && product.product_quantity > 0 && (
-            <OptionValues options={product.options} productModel={product.product_model} />
+          {options && options.length > 0 && product_quantity > 0 && (
+            <OptionValues options={options} productModel={product_model} />
           )}
 
           <div className="product-metadata">
-            <span className="product-price">${product.product_price}</span>
+            <span className="product-price">${product_price}</span>
             <ProductQuantity
-              quantity={product.product_quantity}
-              model={product.product_model}
-              isDiscontinued={product.product_status === 2}
+              quantity={product_quantity}
+              model={product_model}
+              isDiscontinued={isDiscontinued}
             />
           </div>
         </div>
