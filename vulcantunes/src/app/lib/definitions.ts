@@ -101,5 +101,5 @@ export interface ProductPurchaseSectionProps {
 export interface ProductQuantityProps {
   quantity: number;
   model: string;
-  isDiscontinued?: boolean;
+  isDiscontinued: boolean;
 }
