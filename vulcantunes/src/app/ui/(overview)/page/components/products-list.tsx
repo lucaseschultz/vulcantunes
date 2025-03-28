@@ -1,12 +1,12 @@
-import { memo, useEffect, useState } from "react";
-import { Product, ProductsListProps } from "@/src/app/lib/definitions";
-import { ProductListItem } from "./product-list-item";
-import { NoProductsFound } from "./no-products-found";
-import { ProductsSkeleton } from "@/src/app/ui/(overview)/layout/components/skeletons";
+import {memo, useEffect, useState} from "react";
+import {Product, ProductsListProps} from "@/src/app/lib/definitions";
+import {ProductListItem} from "./product-list-item";
+import {NoProductsFound} from "./no-products-found";
+import {ProductsSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 
 export const ProductsList = memo(function ProductsList({
-   featuresFilter
- }: ProductsListProps) {
+                                                         featuresFilter
+                                                       }: ProductsListProps) {
   const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -21,6 +21,7 @@ export const ProductsList = memo(function ProductsList({
         setIsLoading(false)
       }
     }
+
     fetchProducts()
   }, [])
 
@@ -30,11 +31,11 @@ export const ProductsList = memo(function ProductsList({
   })
 
   if (isLoading) {
-    return <ProductsSkeleton />
+    return <ProductsSkeleton/>
   }
 
   if (filteredProducts.length === 0) {
-    return <NoProductsFound />
+    return <NoProductsFound/>
   }
 
   return (

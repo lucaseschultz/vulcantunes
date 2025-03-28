@@ -1,12 +1,12 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
-import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useState } from 'react'
-import { ProductsListErrorBoundary } from './products-list-error-boundary'
-import { FilterSection } from './filter-section'
-import { ProductsList } from './products-list'
-import { debounce } from '@/src/app/lib/utils'
+import {useSearchParams} from 'next/navigation'
+import {useRouter} from 'next/navigation'
+import {useCallback, useEffect, useState} from 'react'
+import {ProductsListErrorBoundary} from './products-list-error-boundary'
+import {FilterSection} from './filter-section'
+import {ProductsList} from './products-list'
+import {debounce} from '@/src/app/lib/utils'
 
 export default function ProductsSection() {
   const searchParams = useSearchParams()
