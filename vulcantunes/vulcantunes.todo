@@ -1,5 +1,3 @@
-Fix feature filters not working
-
 Hide filtered products, rather than rerendering them
 
 product-page-item:
