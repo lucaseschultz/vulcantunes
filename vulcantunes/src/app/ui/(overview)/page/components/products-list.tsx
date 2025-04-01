@@ -26,8 +26,14 @@ export const ProductsList = memo(function ProductsList({
   }, [])
 
   const filteredProducts = products.filter((product) => {
-    return featuresFilters.length === 0 ||
-      featuresFilters.split(',').every(feature => product.features?.includes(feature))
+    if (featuresFilters.length === 0) return true;
+
+    if (!product.features) return false;
+
+    const filterFeatures = featuresFilters.split(',');
+    const productFeatures = product.features.split(',').map(f => f.trim().toLowerCase());
+
+    return filterFeatures.every(feature => productFeatures.includes(feature));
   })
 
   if (isLoading) {
