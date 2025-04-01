@@ -1,5 +1,3 @@
-Hide filtered products, rather than rerendering them
-
 product-page-item:
 Make options' (just dropdown?) flex-direction column, due to "Add a Stereo Extension Cable" being compacted
 
