@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import {NextResponse} from 'next/server'
 import mysql from "mysql2/promise";
 
 const pool = mysql.createPool({
@@ -43,7 +43,8 @@ export async function GET() {
               LEFT JOIN vulcantunes_product_options po ON pa.options_id = po.product_options_id
               LEFT JOIN vulcantunes_product_option_values pov ON pa.options_values_id = pov.product_option_values_id
       WHERE p.product_status = 1 OR p.product_quantity > 0
-      GROUP BY p.product_id, p.product_model, p.product_image, p.product_price, p.product_quantity, p.product_status, p.product_sort_order, d.product_name, d.product_description
+      GROUP BY p.product_id, p.product_model, p.product_image, p.product_price, p.product_quantity, p.product_status, +
+          p.product_sort_order, d.product_name, d.product_description
       ORDER BY p.product_sort_order
 `)
 
@@ -56,7 +57,8 @@ export async function GET() {
   } catch (error) {
     console.error('Database error:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch products' },
-      { status: 500 }
-    )  }
+      {error: 'Failed to fetch products'},
+      {status: 500}
+    )
+  }
 }
