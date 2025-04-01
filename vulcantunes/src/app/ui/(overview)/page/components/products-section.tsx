@@ -41,7 +41,7 @@ export default function ProductsSection() {
   return (
     <div className="products">
       <FilterSection
-        features={features}
+        selectedFeatures={features}
         handleFeatureChange={handleFeatureChange}
       />
       <ProductsListErrorBoundary>

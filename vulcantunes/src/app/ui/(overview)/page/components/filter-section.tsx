@@ -3,14 +3,14 @@ import {FeatureFilters} from './feature-filters'
 import type {FilterSectionProps} from '@/src/app/lib/definitions'
 
 export const FilterSection = memo(function FilterSection({
-                                                           features,
+                                                           selectedFeatures,
                                                            handleFeatureChange
                                                          }: FilterSectionProps) {
   return (
     <div className="filters">
       <h2 className="filters-title">Filter Products</h2>
       <FeatureFilters
-        selectedFeatures={features}
+        selectedFeatures={selectedFeatures}
         onFeatureChange={handleFeatureChange}
       />
     </div>

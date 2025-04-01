@@ -38,7 +38,7 @@ export interface SearchInputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 export interface FilterSectionProps {
-  features: Set<string>
+  selectedFeatures: Set<string>
   handleFeatureChange: (features: string) => void
 }
 export interface FeatureFiltersProps {
