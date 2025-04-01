@@ -81,7 +81,7 @@ export interface ErrorMessageProps extends ErrorMessageConfig {
 }
 
 export interface ProductsListProps {
-  featuresFilter: string;
+  featuresFilters: string;
 }
 
 export type ProductPageProps = {

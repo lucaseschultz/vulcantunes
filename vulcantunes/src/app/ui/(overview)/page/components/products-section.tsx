@@ -46,7 +46,7 @@ export default function ProductsSection() {
       />
       <ProductsListErrorBoundary>
         <ProductsList
-          featuresFilter={debouncedFeatures}
+          featuresFilters={debouncedFeatures}
         />
       </ProductsListErrorBoundary>
     </div>

@@ -5,7 +5,7 @@ import {NoProductsFound} from "./no-products-found";
 import {ProductsSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 
 export const ProductsList = memo(function ProductsList({
-                                                         featuresFilter
+                                                         featuresFilters
                                                        }: ProductsListProps) {
   const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -26,8 +26,8 @@ export const ProductsList = memo(function ProductsList({
   }, [])
 
   const filteredProducts = products.filter((product) => {
-    return featuresFilter.length === 0 ||
-      featuresFilter.split(',').every(feature => product.features?.includes(feature))
+    return featuresFilters.length === 0 ||
+      featuresFilters.split(',').every(feature => product.features?.includes(feature))
   })
 
   if (isLoading) {
