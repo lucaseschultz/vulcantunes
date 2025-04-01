@@ -1,4 +1,4 @@
-import {memo, useEffect, useState} from "react";
+import {memo, useEffect, useState, useMemo} from "react";
 import {Product, ProductsListProps} from "@/src/app/lib/definitions";
 import {ProductListItem} from "./product-list-item";
 import {NoProductsFound} from "./no-products-found";
@@ -25,16 +25,18 @@ export const ProductsList = memo(function ProductsList({
     fetchProducts()
   }, [])
 
-  const filteredProducts = products.filter((product) => {
-    if (featuresFilters.length === 0) return true;
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      if (featuresFilters.length === 0) return true;
 
-    if (!product.features) return false;
+      if (!product.features) return false;
 
-    const filterFeatures = featuresFilters.split(',');
-    const productFeatures = product.features.split(',').map(f => f.trim().toLowerCase());
+      const filterFeatures = featuresFilters.split(',');
+      const productFeatures = product.features.split(',').map(f => f.trim().toLowerCase());
 
-    return filterFeatures.every(feature => productFeatures.includes(feature));
-  })
+      return filterFeatures.every(feature => productFeatures.includes(feature));
+    });
+  }, [products, featuresFilters]);
 
   if (isLoading) {
     return <ProductsSkeleton/>
