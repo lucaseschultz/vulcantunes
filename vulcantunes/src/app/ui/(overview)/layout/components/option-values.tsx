@@ -1,8 +1,8 @@
 'use client'
 
-import { OptionValuesProps, OptionGroup } from '@/src/app/lib/definitions'
+import {OptionValuesProps, OptionGroup} from '@/src/app/lib/definitions'
 
-export function OptionValues({ options, productModel }: OptionValuesProps) {
+export function OptionValues({options, productModel}: OptionValuesProps) {
   if (!options || options.length === 0) return null;
 
   // Parse options string into structured data
@@ -13,11 +13,11 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
 
     const existingType = acc.find(o => o.name === name);
     if (existingType) {
-      existingType.values.push({ value, price, prefix, isDefault });
+      existingType.values.push({value, price, prefix, isDefault});
     } else {
       acc.push({
         name,
-        values: [{ value, price, prefix, isDefault }],
+        values: [{value, price, prefix, isDefault}],
         optionType
       });
     }
@@ -31,7 +31,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
 
   return (
     <div className="product-options">
-      {optionsArray.map(({ name, values, optionType }) => {
+      {optionsArray.map(({name, values, optionType}) => {
         const defaultOptionValue = values.find(value => value.isDefault)?.value || values[0]?.value;
         const optionId = `${productModel}-${name}`;
 
@@ -47,7 +47,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
                 className="product-option-dropdown"
                 defaultValue={defaultOptionValue}
               >
-                {values.map(({ value, price, prefix }) => (
+                {values.map(({value, price, prefix}) => (
                   <option key={`${optionId}-${value}`} value={value}>
                     {value}{renderPrice(price, prefix)}
                   </option>
@@ -70,7 +70,7 @@ export function OptionValues({ options, productModel }: OptionValuesProps) {
             {optionType === 2 && (
               <fieldset className="product-option-radio">
                 <ul className="radio-options-list">
-                  {values.map(({ value, price, prefix, isDefault }) => {
+                  {values.map(({value, price, prefix, isDefault}) => {
                     const radioId = `${optionId}-${value}-option`;
                     return (
                       <li key={radioId} className="radio-option">
