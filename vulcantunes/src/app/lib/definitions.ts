@@ -1,5 +1,5 @@
-import { IconProps } from "@phosphor-icons/react";
-import { ChangeEvent, ComponentType, ReactNode } from 'react';
+import {IconProps} from "@phosphor-icons/react";
+import {ChangeEvent, ComponentType, ReactNode} from 'react';
 
 export interface IconNavItem {
   name: string;
@@ -7,6 +7,7 @@ export interface IconNavItem {
   icon: ComponentType<IconProps>;
   size: number;
 }
+
 export interface ImageNavItem {
   name: string;
   href: string;
@@ -15,10 +16,12 @@ export interface ImageNavItem {
   width: number;
   height: number;
 }
+
 export interface WindowSize {
   width: number
   height: number
 }
+
 export interface Product {
   product_model: string
   product_image: string
@@ -30,29 +33,36 @@ export interface Product {
   features?: string
   options?: string
 }
+
 export interface ProductItemProps {
   product: Product;
 }
+
 export interface SearchInputProps {
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
+
 export interface FilterSectionProps {
   selectedFeatures: Set<string>
   handleFeatureChange: (features: string) => void
 }
+
 export interface FeatureFiltersProps {
   selectedFeatures: Set<string>;
   onFeatureChange: (feature: string) => void;
 }
+
 export interface ProductsListErrorBoundaryProps {
   children: ReactNode
 }
+
 export interface ProductsListErrorBoundaryState {
   hasError: boolean
   errorType: ErrorType | null
   error?: Error
 }
+
 export const ErrorTypes = {
   NETWORK: 'network',
   NOT_FOUND: 'notFound',
@@ -60,36 +70,44 @@ export const ErrorTypes = {
   UNKNOWN: 'unknown'
 } as const
 export type ErrorType = (typeof ErrorTypes)[keyof typeof ErrorTypes]
+
 export interface ErrorMessageConfig {
   title: string
   message: string
 }
+
 export interface ErrorMessageProps extends ErrorMessageConfig {
   error?: Error;
 }
+
 export interface ProductsListProps {
   featuresFilter: string;
 }
+
 export type ProductPageProps = {
   params: Promise<{
     model: string
   }>
 };
+
 export interface OptionValue {
   value: string;
   price: string;
   prefix: string;
   isDefault: boolean;
 }
+
 export interface OptionGroup {
   name: string;
   values: OptionValue[];
   optionType: number;
 }
+
 export interface OptionValuesProps {
   options: string | null;
   productModel: string;
 }
+
 export interface ProductPurchaseSectionProps {
   options?: string;
   productModel: string;
@@ -98,6 +116,7 @@ export interface ProductPurchaseSectionProps {
   isDiscontinued: boolean;
   productName?: string;
 }
+
 export interface ProductQuantityProps {
   quantity: number;
   model: string;
