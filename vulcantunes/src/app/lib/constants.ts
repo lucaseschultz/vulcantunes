@@ -3,6 +3,7 @@ import { ErrorMessageConfig, ErrorType } from "./definitions";
 export const FEATURE_FILTERS = {
   "Bluetooth": false,
   "USB Charger": false,
+  "AUX Cable": false,
   "AUX Input": false,
   "AUX Output": false,
 } as const
