@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import type { WindowSize, ErrorType, ErrorMessageConfig } from './definitions';
-import { PRODUCTS_ERROR_MESSAGES } from "@/src/app/lib/constants";
+import {useState, useEffect} from 'react'
+import type {WindowSize, ErrorType, ErrorMessageConfig} from './definitions';
+import {PRODUCTS_ERROR_MESSAGES} from "@/src/app/lib/constants";
 
 export function fetchWindowSize() {
   const [windowSize, setWindowSize] = useState<WindowSize>({
