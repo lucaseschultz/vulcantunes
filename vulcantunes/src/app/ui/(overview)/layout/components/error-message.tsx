@@ -1,10 +1,10 @@
-import { ErrorMessageProps } from "@/src/app/lib/definitions";
+import {ErrorMessageProps} from "@/src/app/lib/definitions";
 
 export const ErrorMessage = ({
-   title,
-   message,
-   error
-}: ErrorMessageProps) => {
+                               title,
+                               message,
+                               error
+                             }: ErrorMessageProps) => {
   return (
     <div
       className="error-container"
