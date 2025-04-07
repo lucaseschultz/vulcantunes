@@ -6,13 +6,13 @@ import Footer from "@/src/app/ui/(overview)/layout/components/footer";
 import React from "react";
 
 export default function Layout({
-  children
-}: {
+                                 children
+                               }: {
   children: React.ReactNode;
 }) {
   return (
     <div className="page">
-      <TopNav />
+      <TopNav/>
       <main>
         <header>
           <NewLookNotification/>
