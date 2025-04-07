@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: 2rem;
 
-  @include respond-to(tablet) {
+  @include responsive(tablet) {
     min-width: 155px;
     max-width: 155px;
   }

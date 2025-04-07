@@ -6,7 +6,7 @@
   @include card-container;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  @include respond-to(tablet) {
+  @include responsive(tablet) {
     flex-direction: row;
     gap: 1.5rem;
   }
