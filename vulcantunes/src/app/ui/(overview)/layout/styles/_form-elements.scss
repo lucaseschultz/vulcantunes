@@ -5,7 +5,11 @@
   background: var(--background);
   color: var(--text-color);
   font-size: 0.95rem;
-  max-width: 300px;
+  width: auto;
+
+  @include responsive(tablet) {
+    width: fit-content;
+  }
 
   :hover, :focus {
     border-color: var(--interactive-color);
