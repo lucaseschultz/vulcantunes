@@ -41,6 +41,10 @@
   margin-bottom: 0.5rem;
   align-items: center;
 
+  @include responsive(tablet) {
+    white-space: nowrap;
+  }
+
   label {
     cursor: pointer;
 
