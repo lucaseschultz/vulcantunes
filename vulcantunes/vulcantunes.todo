@@ -2,9 +2,7 @@ Product page(s):
 Fix horizontal spacing (overflowing page)
 Make cords one page/item ("custom lengths available by request") & Make VTCABLE's length selectable?
 
-skeletons.tsx:
-Make a ProductPageSkeleton and replace product(s) page ProductSkeleton with it
-
+General:
 make custom notFound() component
 
 Login page:
