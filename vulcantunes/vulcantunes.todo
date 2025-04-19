@@ -2,6 +2,7 @@ product-page-item:
 Make options' (just dropdown?) flex-direction column, due to "Add a Stereo Extension Cable" being compacted
 
 *
+Make dropdown selected option color & background color priority (over hover)
 - Should _mixing be imported from next to eachother, or from layouts' mixins, in order to avoid duplicated mixin content
 (search for @extends)
 - Make see details link more noticeable
