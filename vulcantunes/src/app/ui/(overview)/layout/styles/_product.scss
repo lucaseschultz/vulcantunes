@@ -31,7 +31,6 @@
 .option-group {
   @include flex-column;
   gap: 0.5rem;
-  min-width: 150px;
 
   label {
     color: var(--text-color);
