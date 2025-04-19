@@ -5,11 +5,6 @@
   color: var(--text-color);
 }
 
-.product-description {
-  color: var(--faded-text-color);
-  line-height: 1.5;
-}
-
 .product-purchase-section {
   @include flex-column;
   gap: 1.5rem;
