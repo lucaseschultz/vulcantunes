@@ -1,13 +1,13 @@
 'use client'
 
-import type { ImageNavItem, IconNavItem } from '@/src/app/lib/definitions'
-import { ShoppingCart, User, Heart, Info } from "@phosphor-icons/react/dist/ssr"
-import { DisplayNavItems } from '@/src/app/lib/client-actions'
-import { useMemo } from 'react'
-import { fetchWindowSize } from '@/src/app/lib/utils'
+import type {ImageNavItem, IconNavItem} from '@/src/app/lib/definitions'
+import {ShoppingCart, User, Heart, Info} from "@phosphor-icons/react/dist/ssr"
+import {DisplayNavItems} from '@/src/app/lib/client-actions'
+import {useMemo} from 'react'
+import {fetchWindowSize} from '@/src/app/lib/utils'
 
 export default function TopNav() {
-  const { width } = fetchWindowSize()
+  const {width} = fetchWindowSize()
   const iconSize = useMemo(() => (width >= 768 ? 28 : 24), [width])
 
   const topNavLeft = useMemo(() => [{
@@ -44,8 +44,8 @@ export default function TopNav() {
 
   return (
     <nav className='top-nav' aria-label='Main navigation'>
-      <DisplayNavItems NavName='top-nav-left' NavItems={topNavLeft} />
-      <DisplayNavItems NavName='top-nav-right' NavItems={topNavRight} />
+      <DisplayNavItems NavName='top-nav-left' NavItems={topNavLeft}/>
+      <DisplayNavItems NavName='top-nav-right' NavItems={topNavRight}/>
     </nav>
   )
 }
