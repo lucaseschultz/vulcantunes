@@ -3,7 +3,7 @@
   width: 200px;
   background-color: var(--text-color);
   border-radius: 8px;
-  margin-bottom: 1rem;
+  margin-right: 1.5rem;
 }
 
 .product-skeleton-name {
@@ -19,22 +19,18 @@
   gap: 0.5rem;
 }
 
-.product-skeleton-description::before, .product-skeleton-description::after, .product-skeleton-price {
-  height: 1.5rem;
-  background-color: var(--text-color);
+.product-skeleton-description::before, .product-skeleton-description::after {
+  content: '';
+  height: 1.25rem;
+  background-color: var(--faded-text-color);
+  width: 90%;
   border-radius: 4px;
 }
 
-.product-skeleton-description::before {
-  content: '';
-  width: 100%;
-}
-
-.product-skeleton-description::after {
-  content: '';
-  width: 80px;
-}
-
 .product-skeleton-price {
+  margin-top: 0.5rem;
+  height: 1.5rem;
+  background-color: var(--text-color);
   width: 80px;
+  border-radius: 4px;
 }
