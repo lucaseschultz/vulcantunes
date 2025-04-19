@@ -19,25 +19,22 @@
   gap: 0.5rem;
 }
 
+.product-skeleton-description::before, .product-skeleton-description::after, .product-skeleton-price {
+  height: 1.5rem;
+  background-color: var(--text-color);
+  border-radius: 4px;
+}
+
 .product-skeleton-description::before {
   content: '';
-  height: 1.5rem;
   width: 100%;
-  background-color: var(--faded-text-color);
-  border-radius: 4px;
 }
 
 .product-skeleton-description::after {
   content: '';
-  height: 1.5rem;
   width: 80px;
-  background-color: var(--faded-text-color);
-  border-radius: 4px;
 }
 
 .product-skeleton-price {
-  height: 1.5rem;
   width: 80px;
-  background-color: var(--text-color);
-  border-radius: 4px;
 }
