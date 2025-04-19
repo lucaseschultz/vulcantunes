@@ -5,17 +5,20 @@
   border-radius: 8px;
   margin-bottom: 1rem;
 }
+
 .product-skeleton-name {
   height: 1.5rem;
   width: 400px;
   background-color: var(--text-color);
   border-radius: 4px;
 }
+
 .product-skeleton-description {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .product-skeleton-description::before {
   content: '';
   height: 1.5rem;
@@ -23,6 +26,7 @@
   background-color: var(--faded-text-color);
   border-radius: 4px;
 }
+
 .product-skeleton-description::after {
   content: '';
   height: 1.5rem;
@@ -30,6 +34,7 @@
   background-color: var(--faded-text-color);
   border-radius: 4px;
 }
+
 .product-skeleton-price {
   height: 1.5rem;
   width: 80px;
