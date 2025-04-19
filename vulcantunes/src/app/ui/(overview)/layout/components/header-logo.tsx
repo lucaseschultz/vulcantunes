@@ -1,5 +1,6 @@
 'use client';
 
+import {HeaderLogoSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 import Image from "next/image";
 import Link from "next/link";
 import {useTheme} from 'next-themes';
@@ -13,8 +14,9 @@ export default function HeaderLogo() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
   if (!mounted) {
-    return null;
+    return <HeaderLogoSkeleton/>;
   }
 
   const currentTheme = theme === 'system' ? systemTheme : theme || 'light';
