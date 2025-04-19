@@ -21,3 +21,19 @@
     height: auto;
   }
 }
+
+.product-navigation {
+  margin-bottom: 1rem;
+}
+
+.all-products-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--faded-text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--interactive-color);
+  }
+}
