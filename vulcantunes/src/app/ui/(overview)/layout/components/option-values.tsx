@@ -29,18 +29,31 @@ export function OptionValues({options, productModel}: OptionValuesProps) {
     return parseFloat(price) > 0 ? ` (${prefix}${price})` : '';
   };
 
-  const dropdownOptions = optionsArray.filter(option => option.optionType === 0);
-  const otherOptions = optionsArray.filter(option => option.optionType !== 0);
-
   return (
     <div className="product-options">
-
-      {otherOptions.map(({name, values, optionType}) => {
+      {optionsArray.map(({name, values, optionType}) => {
+        const defaultOptionValue = values.find(value => value.isDefault)?.value || values[0]?.value;
         const optionId = `${productModel}-${name}`;
 
         return (
           <div key={optionId} className="option-group">
             <label htmlFor={`${optionId}-control`}>{name}</label>
+
+            {/* Dropdown (optionType 0) */}
+            {optionType === 0 && (
+              <select
+                name={`${optionId}-dropdown`}
+                id={`${optionId}-control`}
+                className="product-option-dropdown"
+                defaultValue={defaultOptionValue}
+              >
+                {values.map(({value, price, prefix}) => (
+                  <option key={`${optionId}-${value}`} value={value}>
+                    {value}{renderPrice(price, prefix)}
+                  </option>
+                ))}
+              </select>
+            )}
 
             {/* Text input (optionType 1) */}
             {optionType === 1 && (
@@ -80,34 +93,6 @@ export function OptionValues({options, productModel}: OptionValuesProps) {
           </div>
         );
       })}
-
-      {dropdownOptions.length > 0 && (
-        <div className="product-dropdown-options">
-          {dropdownOptions.map(({name, values}) => {
-            const defaultOptionValue = values.find(value => value.isDefault)?.value || values[0]?.value;
-            const optionId = `${productModel}-${name}`;
-
-            return (
-              <div key={optionId} className="option-group">
-                <label htmlFor={`${optionId}-control`}>{name}</label>
-                <select
-                  name={`${optionId}-dropdown`}
-                  id={`${optionId}-control`}
-                  className="product-option-dropdown"
-                  defaultValue={defaultOptionValue}
-                >
-                  {values.map(({value, price, prefix}) => (
-                    <option key={`${optionId}-${value}`} value={value}>
-                      {value}{renderPrice(price, prefix)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
     </div>
   );
 }
