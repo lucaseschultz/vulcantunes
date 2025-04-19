@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .shimmer::before {
   content: '';
   position: absolute;
@@ -15,6 +16,7 @@
                   transparent
   );
 }
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
