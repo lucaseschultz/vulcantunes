@@ -28,8 +28,6 @@ export function ProductsSkeleton() {
 
 export function HeaderLogoSkeleton() {
   return (
-    <div className="header-logo-skeleton shimmer">
-      <div className="header-logo-skeleton-image"/>
-    </div>
+    <div className="header-logo-skeleton"></div>
   )
 }
