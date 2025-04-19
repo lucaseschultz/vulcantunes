@@ -2,6 +2,8 @@
 
 import {useState} from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import {ArrowLeft} from '@phosphor-icons/react'
 import {Product} from "@/src/app/lib/definitions"
 import {ProductPurchaseSection} from '@/src/app/ui/(overview)/layout/components/product-purchase-section';
 
@@ -23,39 +25,48 @@ export default function ProductPageItem({product}: { product: Product }) {
   const isDiscontinued = product_status === 2;
 
   return (
-    <div className="product-details-container">
-      <div className="product-image-section">
-        <Image
-          src={imgSrc}
-          alt={`${product_image} image`}
-          width={400}
-          height={400}
-          style={{
-            height: '400',
-            width: 'auto',
-          }}
-          priority
-          className="product-main-image"
-          onError={() => setImgSrc('/products/image-coming-soon.jpg')}
-        />
+    <div className="product-page">
+      <div className="product-navigation">
+        <Link href="/" className="all-products-link">
+          <ArrowLeft size={16} weight="bold"/>
+          <span>All Products</span>
+        </Link>
       </div>
 
-      <div className="product-info-section">
-        <h1 className="product-name">{product_name}</h1>
-        <p className="product-page-description">{product_description}</p>
-        <div className="product-features">
-          {features && features.split(',').map((feature: string) => (
-            <span key={feature} className="feature-tag">{feature}</span>
-          ))}
+      <div className="product-details-container">
+        <div className="product-image-section">
+          <Image
+            src={imgSrc}
+            alt={`${product_image} image`}
+            width={400}
+            height={400}
+            style={{
+              height: '400',
+              width: 'auto',
+            }}
+            priority
+            className="product-main-image"
+            onError={() => setImgSrc('/products/image-coming-soon.jpg')}
+          />
         </div>
 
-        <ProductPurchaseSection
-          options={options}
-          productModel={product_model}
-          productQuantity={product_quantity}
-          productPrice={product_price}
-          isDiscontinued={isDiscontinued}
-        />
+        <div className="product-info-section">
+          <h1 className="product-name">{product_name}</h1>
+          <p className="product-page-description">{product_description}</p>
+          <div className="product-features">
+            {features && features.split(',').map((feature: string) => (
+              <span key={feature} className="feature-tag">{feature}</span>
+            ))}
+          </div>
+
+          <ProductPurchaseSection
+            options={options}
+            productModel={product_model}
+            productQuantity={product_quantity}
+            productPrice={product_price}
+            isDiscontinued={isDiscontinued}
+          />
+        </div>
       </div>
     </div>
   )
