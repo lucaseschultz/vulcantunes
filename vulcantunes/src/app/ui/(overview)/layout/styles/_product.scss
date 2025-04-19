@@ -38,6 +38,14 @@
     font-weight: 500;
     font-size: 0.95rem;
   }
+
+  input, select {
+    cursor: pointer;
+
+    &:hover, &:focus {
+      border-color: var(--interactive-color);
+    }
+  }
 }
 
 .product-metadata {
