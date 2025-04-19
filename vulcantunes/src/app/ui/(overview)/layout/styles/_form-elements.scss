@@ -27,10 +27,14 @@
   cursor: pointer;
   border: none;
 
-  input {
+  label {
     cursor: pointer;
     accent-color: var(--interactive-color);
     margin-top: 0.25rem;
+
+    &:hover {
+      color: var(--interactive-color);
+    }
   }
 }
 
