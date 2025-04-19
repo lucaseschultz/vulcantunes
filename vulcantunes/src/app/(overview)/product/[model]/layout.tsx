@@ -1,8 +1,8 @@
-import { Metadata } from "next";
+import {Metadata} from "next";
 import React from "react";
-import { ProductPageProps } from "@/src/app/lib/definitions";
+import {ProductPageProps} from "@/src/app/lib/definitions";
 
-export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata({params}: ProductPageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const model = resolvedParams.model;
 
@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 export default function Layout({
-   children,
-}: {
+                                 children,
+                               }: {
   children: React.ReactNode;
 }) {
   return children;

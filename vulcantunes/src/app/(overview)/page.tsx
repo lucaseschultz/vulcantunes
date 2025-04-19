@@ -3,6 +3,6 @@ import ProductsSection from "@/src/app/ui/(overview)/page/components/products-se
 
 export default function Page() {
   return (
-    <ProductsSection />
+    <ProductsSection/>
   );
 };
