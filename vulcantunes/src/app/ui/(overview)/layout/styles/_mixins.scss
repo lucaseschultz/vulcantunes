@@ -35,10 +35,11 @@
 }
 
 @mixin interactive-border {
+  cursor: pointer;
   border: 1px solid var(--outline);
   transition: border-color 0.2s ease;
 
-  :hover, :focus {
+  &:hover, &:focus {
     border-color: var(--interactive-color);
     outline: none;
   }
