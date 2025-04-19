@@ -1,14 +1,11 @@
-.header-logo-skeleton {
-  margin: 0 auto 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import 'main';
+@import 'animations';
 
-.header-logo-skeleton-image {
+.header-logo-skeleton {
+  @extend .header-logo;
+  @extend .shimmer;
   width: 80lvw;
   max-width: 491px;
   height: 101px;
-  background-color: #e0e0e0;
-  border-radius: 4px;
+  border-radius: 8px;
 }
