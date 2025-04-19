@@ -1,4 +1,4 @@
-import { ProductQuantity } from "@/src/app/ui/(overview)/layout/components/product-quantity";
+import {ProductQuantity} from "@/src/app/ui/(overview)/layout/components/product-quantity";
 
 interface ProductMetadataProps {
   price: number;
@@ -8,11 +8,11 @@ interface ProductMetadataProps {
 }
 
 export function ProductMetadata({
-  price,
-  quantity,
-  model,
-  isDiscontinued
-}: ProductMetadataProps) {
+                                  price,
+                                  quantity,
+                                  model,
+                                  isDiscontinued
+                                }: ProductMetadataProps) {
   return (
     <div className="product-metadata">
       <span className="product-price">${price}</span>
