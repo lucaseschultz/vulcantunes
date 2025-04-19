@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import {useTheme} from 'next-themes';
+import {useEffect, useState} from 'react';
 
 export default function HeaderLogo() {
   const [mounted, setMounted] = useState(false);
-  const { theme, systemTheme } = useTheme();
+  const {theme, systemTheme} = useTheme();
 
   // Prevent theme flash during hydration
   useEffect(() => {
