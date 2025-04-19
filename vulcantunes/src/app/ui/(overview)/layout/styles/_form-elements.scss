@@ -10,11 +10,6 @@
   @include responsive(tablet) {
     width: fit-content;
   }
-
-  :hover, :focus {
-    border-color: var(--interactive-color);
-    outline: none;
-  }
 }
 
 .product-option-radio,
