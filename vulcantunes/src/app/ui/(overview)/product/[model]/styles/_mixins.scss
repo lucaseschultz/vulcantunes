@@ -9,14 +9,6 @@
   flex-direction: column;
 }
 
-@mixin card-shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-@mixin rounded-corners($radius: 8px) {
-  border-radius: $radius;
-}
-
 @mixin responsive-grid($columns, $gap) {
   display: grid;
   grid-template-columns: $columns;
