@@ -1,10 +1,10 @@
 html {
   color-scheme: dark;
-
   @media (prefers-color-scheme: light) {
     color-scheme: light;
   }
 
+  transition: all 0.2s ease;
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
