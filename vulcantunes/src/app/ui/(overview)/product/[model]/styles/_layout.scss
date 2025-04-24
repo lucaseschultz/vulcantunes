@@ -7,9 +7,7 @@
 .product-details-container {
   @include responsive-grid(1fr 1fr, 2rem);
   background: var(--background);
-  @include rounded-corners;
   padding: 2rem;
-  @include card-shadow;
 }
 
 @media (max-width: 768px) {
