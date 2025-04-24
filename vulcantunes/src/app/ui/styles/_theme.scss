@@ -4,7 +4,7 @@ html {
     color-scheme: light;
   }
 
-  transition: all 0.2s ease;
+  transition: all 0.2s ease-in-out;
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
