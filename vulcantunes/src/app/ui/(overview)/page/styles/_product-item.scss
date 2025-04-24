@@ -1,5 +1,4 @@
-@import '../../layout/styles/product-include';
-@import 'mixins';
+@import '../../layout/styles/product-extend';
 
 .product-item {
   @include flex-container(column);
