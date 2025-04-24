@@ -4,7 +4,7 @@
   margin: 0 auto;
   gap: 2rem;
 
-  @include responsive(tablet) {
+  @include minViewport(tablet) {
     @include flex-container(row, flex-start, stretch, 2rem);
   }
 }

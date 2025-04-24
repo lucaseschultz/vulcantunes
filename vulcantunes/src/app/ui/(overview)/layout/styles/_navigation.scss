@@ -8,7 +8,7 @@
   background-color: #181b26;
   border-bottom: 1px solid var(--outline);
 
-  @include responsive(tablet) {
+  @include minViewport(tablet) {
     padding: 10px 1lvw;
   }
 

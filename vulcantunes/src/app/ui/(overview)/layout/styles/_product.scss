@@ -16,7 +16,7 @@
   gap: 1.25rem;
   margin: 0.5rem 0;
 
-  @include responsive(tablet) {
+  @include minViewport(tablet) {
     flex-direction: row;
   }
 }

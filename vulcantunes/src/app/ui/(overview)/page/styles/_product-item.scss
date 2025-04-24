@@ -5,7 +5,7 @@
   @include flex-container(column);
   @include card-container;
 
-  @include responsive(tablet) {
+  @include minViewport(tablet) {
     flex-direction: row;
   }
 }
@@ -17,7 +17,7 @@
   padding: 0.5rem;
   margin-right: 1.5rem;
 
-  @include responsive(tablet) {
+  @include minViewport(tablet) {
     min-width: 200px;
   }
 }
