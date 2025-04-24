@@ -29,7 +29,7 @@
   }
 
   a {
-    @include hover-effect {
+    :hover {
       img, svg {
         width: var(--top-nav-icon-hover-size);
         height: var(--top-nav-icon-hover-size);
