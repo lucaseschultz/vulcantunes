@@ -6,15 +6,9 @@
   gap: $gap;
 }
 
-@mixin flex-center {
+@mixin flex-direction($direction) {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
 }
 
 @mixin minViewport($breakpoint) {
