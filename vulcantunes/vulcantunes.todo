@@ -5,6 +5,9 @@ convert _product-include.scss to mixins
 navbar:
 fix icons not changing size on hover
 
+no-products-found.tsx:
+Add link to "Contact Us" form to avoid site abandonment
+
 Product page(s):
 Fix horizontal spacing (overflowing page)
 Make cords one page/item ("custom lengths available by request") & Make VTCABLE's length selectable?
