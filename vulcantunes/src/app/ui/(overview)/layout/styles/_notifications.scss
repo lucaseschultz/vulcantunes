@@ -1,6 +1,6 @@
 .new-look {
   position: fixed;
-  bottom: 1rem;
+  top: var(--top-nav-height);
   right: 1rem;
   max-width: 24rem;
   @include card-container(var(--foreground), 8px, 1px solid var(--warning-color), 1rem)
