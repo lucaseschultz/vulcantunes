@@ -57,7 +57,7 @@
 }
 
 .error-button {
-  @include button-style(var(--interactive-color), white, 0.75rem 1.5rem);
+  @include button-style(0.75rem 1.5rem, var(--interactive-color), white);
 }
 
 .error-button:hover {
