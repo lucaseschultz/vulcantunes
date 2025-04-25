@@ -15,6 +15,7 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 0.9;
+    background-color: var(--faded-interactive-color);
+    transform: scale(1.05);
   }
 }
