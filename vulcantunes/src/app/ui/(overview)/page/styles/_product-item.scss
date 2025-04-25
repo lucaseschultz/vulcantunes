@@ -53,11 +53,7 @@
 }
 
 .product-details-link {
-  @include button-style(
-                  var(--interactive-color),
-                  white,
-                  0.4rem 1rem
-  );
+  @include button-style;
   white-space: nowrap;
   font-size: 1rem;
   font-weight: 600;
