@@ -14,10 +14,8 @@
 }
 
 .fine-print {
-  background-color: var(--background);
-  padding: 1.5rem;
-  border-radius: 6px;
   margin-top: 1rem;
+  @include card-container(var(--background), 6px, none, 1.5rem);
 
   ul {
     list-style-type: disc;
