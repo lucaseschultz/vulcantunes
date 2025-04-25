@@ -3,7 +3,7 @@
   bottom: 1rem;
   right: 1rem;
   max-width: 24rem;
-  @include card-container(var(--foreground), 8px, 1px solid var(--outline), 1rem)
+  @include card-container(var(--foreground), 8px, 1px solid var(--warning-color), 1rem)
 }
 
 .new-look-content {
@@ -30,8 +30,13 @@
 .new-look-close {
   margin-left: 1rem;
   color: var(--interactive-color);
-}
 
-.new-look-close:hover {
-  color: var(--faded-interactive-color);
+  &:hover {
+    background-color: var(--background);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
 }
