@@ -26,5 +26,5 @@
 }
 
 .submit-button {
-  @include button-style;
+  @include button-style(1rem 2rem);
 }
