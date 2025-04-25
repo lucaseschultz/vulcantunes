@@ -28,11 +28,3 @@
     transform: translateY(0);
   }
 }
-
-//##
-@mixin card-container($padding: 1.5rem) {
-  background: var(--foreground);
-  border: 1px solid var(--outline);
-  border-radius: 8px;
-  padding: $padding;
-}
