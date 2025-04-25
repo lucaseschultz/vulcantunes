@@ -12,7 +12,8 @@
   }
 }
 
-@mixin card-container($background-color: var(--foreground), $border-radius: 8px, $border: 1px solid var(--outline), $padding: 2rem) {
+@mixin card-container($background-color: var(--foreground), $border-radius: 8px, $border: 1px solid var(--outline),
+                      $padding: 2rem) {
   background-color: $background-color;
   border-radius: $border-radius;
   border: $border;
