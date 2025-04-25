@@ -4,7 +4,7 @@
 }
 
 .product-purchase-section {
-  @include flex-direction(column);
+  @include flex-container(column);
   gap: 1.5rem;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -12,7 +12,7 @@
 }
 
 .product-options {
-  @include flex-direction(column);
+  @include flex-container(column);
   gap: 1.25rem;
   margin: 0.5rem 0;
 
@@ -22,7 +22,7 @@
 }
 
 .option-group {
-  @include flex-direction(column);
+  @include flex-container(column);
   gap: 0.5rem;
 
   label {
