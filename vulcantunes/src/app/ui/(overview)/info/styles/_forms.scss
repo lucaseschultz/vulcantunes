@@ -18,7 +18,10 @@
 
   input,
   textarea {
-    @include form-input;
+    @include card-container(var(--foreground), 4px, 1px solid var(--text-color), .8rem);
+    width: 100%;
+    font-size: 1rem;
+    color: var(--text-color);
   }
 }
 
