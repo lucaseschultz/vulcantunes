@@ -1,6 +1,5 @@
 scss mixins:
 move repeated mixins to global mixins files (mixins imports & @include)
-rename mixins/_layout.scss to _globals.scss?
 convert _product-include.scss to mixins
 
 Product page(s):
