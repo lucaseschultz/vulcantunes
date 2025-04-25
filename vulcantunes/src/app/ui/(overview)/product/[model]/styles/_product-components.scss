@@ -10,7 +10,7 @@
 }
 
 .product-info-section {
-  @include flex-column;
+  @include flex-direction(column);
   @include card-container(var(--foreground), 8px, 1px solid var(--outline), 1.5rem);
   gap: 1.5rem;
 }
