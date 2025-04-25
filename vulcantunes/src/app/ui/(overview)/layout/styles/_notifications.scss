@@ -1,9 +1,14 @@
 .new-look {
   position: fixed;
-  top: var(--top-nav-height);
+  bottom: 1rem;
   right: 1rem;
   max-width: 24rem;
-  @include card-container(var(--foreground), 8px, 1px solid var(--warning-color), 1rem)
+  @include card-container(var(--foreground), 8px, 1px solid var(--warning-color), 1rem);
+
+  @include minViewport(tablet) {
+    top: var(--top-nav-height);
+    bottom: revert;
+  }
 }
 
 .new-look-content {
