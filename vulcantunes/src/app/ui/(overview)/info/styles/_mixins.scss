@@ -1,10 +1,4 @@
-@mixin form-input {
-  @include card-container(var(--foreground), 4px, 1px solid var(--text-color), .8rem);
-  width: 100%;
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
+//##
 @mixin button($bg-color: var(--interactive-color), $text-color: #f9fafb) {
   background-color: $bg-color;
   color: $text-color;
