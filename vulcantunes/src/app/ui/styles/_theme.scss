@@ -7,5 +7,6 @@ html {
   transition: all 0.2s ease-in-out;
   @media (prefers-reduced-motion: reduce) {
     transition: none;
+    transform: none;
   }
 }
