@@ -1,6 +1,7 @@
 scss mixins:
 move repeated mixins to global mixins files (mixins imports & @include)
 convert _product-include.scss to mixins
+reduce .form-group input - padding
 
 navbar:
 fix icons not changing size on hover
