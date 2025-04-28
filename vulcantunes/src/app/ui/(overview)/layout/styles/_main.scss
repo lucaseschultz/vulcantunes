@@ -9,5 +9,5 @@ main {
 
 .header-logo {
   margin: 0 auto 2rem;
-  @include flex-center;
+  @include flex-container(null, center, center);
 }

@@ -33,7 +33,7 @@
 }
 
 .product-metadata {
-  @include flex-center;
+  @include flex-container(null, center, center);
   justify-content: flex-start;
   gap: 1.25rem;
   flex-wrap: wrap;
@@ -49,7 +49,7 @@
 .product-quantity {
   color: var(--text-color);
   font-size: 0.95rem;
-  @include flex-center;
+  @include flex-container(null, center, center);
   justify-content: flex-start;
   gap: 0.5rem;
 

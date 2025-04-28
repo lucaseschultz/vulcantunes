@@ -12,7 +12,7 @@
 }
 
 .new-look-content {
-  @include flex-between;
+  @include flex-container(null, center, space-between);
   align-items: flex-start;
 }
 

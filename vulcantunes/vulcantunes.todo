@@ -1,5 +1,4 @@
 scss mixins:
-move repeated mixins to global mixins files (@import ')
 reduce .form-group input - padding
 
 navbar:
