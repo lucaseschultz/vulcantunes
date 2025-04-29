@@ -24,7 +24,7 @@ Add favorite button
 Address product-list-items appearing cluttered
 
 layout.tsx:
-Make dynamic account icon (Make icon first letter of name and add colorful background?)
+If user's logged in, change account icon to be a circle with the first letter of username inside it
 
 Cart Page:
 Make cart page
