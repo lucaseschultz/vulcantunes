@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: 2rem;
   position: sticky;
-  top: calc(var(--top-nav-height) + 8rem);
+  top: calc(var(--top-nav-height) + 10.75rem);
   height: fit-content;
 
   @include minViewport(laptop) {
