@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 0 1rem;
 
-  @include minViewport(tablet) {
+  @include minViewport(laptop) {
     padding: 0 2rem;
   }
 }
@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: 1fr;
   background: var(--background);
-  @include minViewport(tablet) {
+  @include minViewport(laptop) {
     grid-template-columns: 1fr 1fr;
   }
 }

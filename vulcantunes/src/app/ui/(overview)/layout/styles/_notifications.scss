@@ -5,7 +5,7 @@
   max-width: 24rem;
   @include card-container(var(--foreground), 8px, 1px solid var(--warning-color), 1rem);
 
-  @include minViewport(tablet) {
+  @include minViewport(laptop) {
     top: var(--top-nav-height);
     bottom: revert;
   }

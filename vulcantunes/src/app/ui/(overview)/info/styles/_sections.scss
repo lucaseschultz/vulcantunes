@@ -9,7 +9,7 @@
     border-bottom: 2px solid var(--outline);
     padding-bottom: 0.5rem;
 
-    @include minViewport(tablet) {
+    @include minViewport(laptop) {
       font-size: 1.5rem;
     }
   }

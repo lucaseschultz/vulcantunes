@@ -4,7 +4,7 @@
   padding: 0 1rem;
   gap: 2rem;
 
-  @include minViewport(tablet) {
+  @include minViewport(laptop) {
     @include flex-container(row);
     padding: 0 2rem;
   }

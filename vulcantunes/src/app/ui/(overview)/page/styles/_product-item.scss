@@ -2,7 +2,7 @@
   @include flex-container(column);
   @include card-container;
 
-  @include minViewport(tablet) {
+  @include minViewport(laptop) {
     flex-direction: row;
   }
 }
@@ -14,7 +14,7 @@
   padding: 0.5rem;
   margin-right: 1.5rem;
 
-  @include minViewport(tablet) {
+  @include minViewport(laptop) {
     min-width: 200px;
   }
 }
