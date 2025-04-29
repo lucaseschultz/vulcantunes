@@ -15,15 +15,7 @@ export default function NotFoundPage() {
         <p>If you think there's a mistake or issue on our behalf, please let us know
           <Link href="/info#contact-us"> here</Link>.</p>
 
-        <div className="not-found-page-links">
-          <Link href="/public" className="not-found-page-link not-found-page-link_primary">
-            Return Home
-          </Link>
-
-          <Link href="/products" className="not-found-page-link not-found-page-link_secondary">
-            Browse Products
-          </Link>
-        </div>
+        <div className="return-home-link"><Link href="/">Return Home</Link></div>
       </div>
     </div>
   );
