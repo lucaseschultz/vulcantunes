@@ -8,14 +8,6 @@
   background-color: #181b26;
   border-bottom: 1px solid var(--outline);
 
-  @include minViewport(laptop) {
-    padding: 10px 1lvw;
-  }
-
-  @media (prefers-color-scheme: light) {
-    background-color: white;
-  }
-
   * {
     display: flex;
   }
@@ -35,6 +27,14 @@
         height: var(--top-nav-icon-hover-size);
       }
     }
+  }
+
+  @include minViewport(laptop) {
+    padding: 10px 1lvw;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: white;
   }
 }
 
