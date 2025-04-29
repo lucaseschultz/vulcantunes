@@ -1,15 +1,15 @@
-import type { ReactNode } from 'react';
-import type { Metadata, Viewport } from "next";
+import type {ReactNode} from 'react';
+import type {Metadata, Viewport} from "next";
 import "./ui/styles/globals.css";
 import ClientSessionProvider from '@/src/app/ui/layout/components/client-session-provider';
-import { ThemeProvider } from 'next-themes';
+import {ThemeProvider} from 'next-themes';
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#171717" },
-    { media: "(prefers-color-scheme: light)", color: "white" }
+    {media: "(prefers-color-scheme: dark)", color: "#171717"},
+    {media: "(prefers-color-scheme: light)", color: "white"}
   ],
   colorScheme: "light dark"
 } satisfies Viewport
@@ -30,7 +30,9 @@ export const metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.title,
   generator: "Next.js",
-  keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan", "accessories", "motorcycle audio accessories", "Vulcan audio system", "motorcycle bluetooth adapter", "buy motorcycle audio", "Vulcan sound system"],
+  keywords: ["Kawasaki Vulcan", "motorcycle audio", "bluetooth motorcycle", "motorcycle connectivity", "Vulcan",
+    "accessories", "motorcycle audio accessories", "Vulcan audio system", "motorcycle bluetooth adapter",
+    "buy motorcycle audio", "Vulcan sound system"],
   robots: {
     index: true,
     follow: true,
@@ -69,18 +71,18 @@ export const metadata = {
 } satisfies Metadata;
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: ReactNode;
 }>) {
   return (
     <ClientSessionProvider>
       <html lang="en" suppressHydrationWarning>
-        <body>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
-        </body>
+      <body>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        {children}
+      </ThemeProvider>
+      </body>
       </html>
     </ClientSessionProvider>
   );
