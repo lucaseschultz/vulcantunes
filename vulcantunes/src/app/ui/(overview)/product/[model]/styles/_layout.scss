@@ -3,23 +3,6 @@
   padding: 0 1rem;
 }
 
-.product-details-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--background);
-  padding: 2rem;
-}
-
-@media (max-width: 768px) {
-  .product-details-container {
-    grid-template-columns: 1fr;
-  }
-  .product-main-image {
-    width: 100%;
-    height: auto;
-  }
-}
-
 .product-navigation {
   width: fit-content;
   margin-bottom: 1rem;
