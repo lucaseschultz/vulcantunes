@@ -5,7 +5,7 @@ scss mixins:
 reduce .form-group input - padding
 
 navbar:
-fix icons not changing size on hover
+fix nav-icons not changing size on hover
 
 no-products-found.tsx:
 Add link to "Contact Us" form to avoid site abandonment
