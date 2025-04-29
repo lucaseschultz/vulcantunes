@@ -5,7 +5,7 @@
   gap: 2rem;
 
   @include minViewport(tablet) {
-    @include flex-container(row, flex-start, stretch);
+    @include flex-container(row);
     padding: 0 2rem;
   }
 }
