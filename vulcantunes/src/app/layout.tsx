@@ -1,6 +1,6 @@
 import type {ReactNode} from 'react';
 import type {Metadata, Viewport} from "next";
-import "./ui/styles/globals.css";
+import "./ui/layout/styles/globals.css";
 import ClientSessionProvider from '@/src/app/ui/layout/components/client-session-provider';
 import {ThemeProvider} from 'next-themes';
 
