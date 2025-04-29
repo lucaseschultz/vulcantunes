@@ -41,21 +41,11 @@
 
 .radio-option {
   list-style-type: none;
-  display: flex;
-  gap: 0.5rem;
   margin-bottom: 0.5rem;
   align-items: center;
 
   @include minViewport(laptop) {
     white-space: nowrap;
-  }
-
-  label {
-    cursor: pointer;
-
-    :hover {
-      color: var(--interactive-color);
-    }
   }
 }
 
