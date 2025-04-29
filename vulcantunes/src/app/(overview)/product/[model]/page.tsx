@@ -1,5 +1,5 @@
 import '@/src/app/ui/(overview)/product/[model]/styles/[model].css'
-import {notFound} from 'next/navigation'
+import notFound from '@/src/app/not-found'
 import {getProduct} from "@/src/app/lib/server-actions"
 import {getErrorType, getErrorMessage} from "@/src/app/lib/utils"
 import ProductPageItem from "@/src/app/ui/(overview)/product/[model]/components/product-page-item"
