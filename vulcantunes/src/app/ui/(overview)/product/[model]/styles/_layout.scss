@@ -37,3 +37,12 @@
     color: var(--interactive-color);
   }
 }
+
+.product-details-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--background);
+  @include minViewport(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
