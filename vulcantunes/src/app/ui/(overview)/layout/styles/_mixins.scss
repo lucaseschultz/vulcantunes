@@ -25,10 +25,6 @@
   border-radius: $border-radius;
   border: $border;
   padding: $padding;
-
-  @include minViewport(laptop) {
-    padding: 1.5rem;
-  }
 }
 
 @mixin button-style($padding: 0.5rem 1.25rem, $bg-color: var(--interactive-color), $text-color: white) {

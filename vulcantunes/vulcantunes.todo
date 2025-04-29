@@ -1,6 +1,3 @@
-scss mixins:
-reduce .form-group input - padding
-
 navbar:
 fix nav-icons not changing size on hover
 
