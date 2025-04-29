@@ -23,18 +23,12 @@
   }
 }
 
-  &-link {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.375rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
+.return-home-button {
+  @include card-container(var(--interactive-color), 0.375rem, null, 0.75rem 1.5rem);
+  display: inline-block;
+  font-weight: 500;
 
-    &_primary {
-      background-color: var(--interactive-color);
-      color: white;
-
-      &:hover {
-        background-color: var(--faded-interactive-color);
-      }
-    }
+  &:hover {
+    background-color: var(--faded-interactive-color);
+  }
+}
