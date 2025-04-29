@@ -21,7 +21,7 @@ Add email recovery
 
 product-list-item.tsx:
 Add Images (vulcantunes_products db)
-Keep image(s) centered after scrolling past them?
+Keep image(s) centered after scrolling past them? (position: sticky?)
 Add "Add to cart" button ("Added to cart" notification with option to "view cart"): Save product options to item in cart
 Add favorite button
 Address product-list-items appearing cluttered
