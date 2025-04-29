@@ -1,6 +1,10 @@
 .product-page-container {
   margin: 0 auto;
   padding: 0 1rem;
+
+  @include minViewport(tablet) {
+    padding: 0 2rem;
+  }
 }
 
 .product-navigation {
