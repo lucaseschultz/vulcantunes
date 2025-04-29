@@ -1,7 +1,7 @@
 import '@/src/app/ui/(overview)/layout/styles/overview-layout.css';
 import TopNav from "@/src/app/ui/(overview)/layout/components/topnav";
 import NewLookNotification from "@/src/app/ui/(overview)/layout/components/new-look-notification";
-import HeaderLogo from "@/src/app/ui/(overview)/layout/components/header-logo";
+import HeaderLogo from "@/src/app/ui/layout/components/header-logo";
 import Footer from "@/src/app/ui/(overview)/layout/components/footer";
 import React from "react";
 
