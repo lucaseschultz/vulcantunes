@@ -21,7 +21,7 @@
   }
 
   a {
-    :hover {
+    &:hover {
       img, svg {
         width: var(--top-nav-icon-hover-size);
         height: var(--top-nav-icon-hover-size);

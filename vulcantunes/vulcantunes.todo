@@ -1,6 +1,3 @@
-navbar:
-fix nav-icons not changing size on hover
-
 no-products-found.tsx:
 Add link to "Contact Us" form to avoid site abandonment
 
