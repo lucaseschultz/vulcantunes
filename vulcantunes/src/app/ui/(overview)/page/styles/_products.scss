@@ -1,7 +1,7 @@
 .products {
   width: 100%;
+  margin: 1rem auto 0;
   padding: 0 1rem;
-  margin: 0 auto;
   gap: 2rem;
 
   @include minViewport(tablet) {
