@@ -25,8 +25,8 @@ export default function Page() {
           <p>Refunds will only be processed upon our receipt of the product</p>
           <ul>
             <li>Defective products are entitled to a 100% refund including shipping costs</li>
-            <li>Non-defective product returns will only be refunded the purchase price of the product itself. Shipping
-              costs will not be refunded
+            <li id="contact-us">Non-defective product returns will only be refunded the purchase price of the product
+              itself. Shipping costs will not be refunded
             </li>
           </ul>
         </div>
