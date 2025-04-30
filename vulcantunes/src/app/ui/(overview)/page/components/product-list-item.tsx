@@ -29,17 +29,6 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
 
   const isDiscontinued = product_status === 2;
 
-  const wishListProduct = {
-    id: product_model,
-    name: product_name,
-    price: product_price,
-    imageUrl: imgSrc,
-    description: truncatedDescription,
-    quantity: product_quantity,
-    model: product_model,
-    isDiscontinued: isDiscontinued,
-  };
-
   return (
     <article
       className="product-item"
