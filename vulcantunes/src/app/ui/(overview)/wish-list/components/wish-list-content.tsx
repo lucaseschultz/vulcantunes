@@ -72,7 +72,6 @@ export default function WishListContent() {
               alt={item.name}
               width={150}
               height={150}
-              objectFit="cover"
             />
           </div>
           <div className="wish-list-item-details">
