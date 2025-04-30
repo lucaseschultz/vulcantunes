@@ -1,6 +1,7 @@
 'use client'
 
 import {useState, useEffect} from 'react'
+import {Heart} from "@phosphor-icons/react"
 import {WishListButtonProps} from '@/src/app/lib/definitions';
 
 export default function WishListButton({product}: WishListButtonProps) {
@@ -43,7 +44,11 @@ export default function WishListButton({product}: WishListButtonProps) {
       onClick={toggleWishList}
       aria-label={isInWishList ? "Remove from wish list" : "Add to wish list"}
     >
-      {isInWishList ? '❤️' : '🤍'}
+      <Heart
+        weight={isInWishList ? "fill" : "regular"}
+        className="heart-icon"
+        size={24}
+      />
     </button>
   )
 }

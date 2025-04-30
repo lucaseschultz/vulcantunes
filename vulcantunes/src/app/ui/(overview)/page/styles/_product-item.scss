@@ -74,23 +74,26 @@
 }
 
 .wish-list-button {
-  @include card-container(transparent, 4px, 1px solid var(--interactive-color), 0.5rem 1rem);
-  color: var(--interactive-color);
+  padding: 0.5rem;
   cursor: pointer;
-  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  transition: transform 0.2s ease;
 
   &:hover {
-    color: rgba(59, 130, 246, 0.1);
+    transform: scale(1.1);
+  }
+
+  .heart-icon {
+    color: #ccc;
   }
 
   &.in-wish-list {
-    color: var(--interactive-color);
-
-    &:hover {
-      color: var(--faded-interactive-color);
+    .heart-icon {
+      color: var(--warning-color);
     }
   }
 }
