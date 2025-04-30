@@ -1,5 +1,4 @@
-wish-list-content.tsx:
-move interface to definitions.ts (use existing?)
+reuse product page cards?
 
 wish-list-content.tsx/wish-list.scss & product-items.scss/wish-list-button.tsx:
 audit
