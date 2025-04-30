@@ -123,25 +123,6 @@ export interface ProductQuantityProps {
   isDiscontinued: boolean;
 }
 
-export interface WishListItem {
-  id: string;
-  name: string;
-  price: number;
-  imageUrl: string;
-  description: string;
-  quantity: number;
-  model: string;
-  isDiscontinued: boolean;
-}
-
-export interface WishListButtonProps {
-  product: WishListItem
-}
-
-export interface WishListItemProps {
-  item: WishListItem;
-}
-
 export interface ProductMetadataProps {
   price: number;
   quantity: number;
