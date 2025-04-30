@@ -12,7 +12,7 @@ export function useWishList() {
   useEffect(() => {
     const loadWishlist = () => {
       try {
-        const savedItems = localStorage.getItem('wishlist')
+        const savedItems = localStorage.getItem(WISHLIST_KEY)
         if (savedItems) {
           setItems(JSON.parse(savedItems))
         }
