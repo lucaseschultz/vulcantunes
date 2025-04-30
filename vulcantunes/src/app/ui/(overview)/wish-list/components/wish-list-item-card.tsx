@@ -1,36 +1,49 @@
-import {WishListItem} from "@/src/app/lib/definitions";
-import Image from "next/image";
-import Link from "next/link";
+import {memo, useState} from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import {WishListItemProps} from '@/src/app/lib/definitions'
 
-const WishListItemCard = ({item, onRemove}: { item: WishListItem, onRemove: (id: string) => void }) => (
-  <div className="wish-list-item-card">
-    <div className="wish-list-item-image">
-      <Image
-        src={item.imageUrl}
-        alt={item.name}
-        width={150}
-        height={150}
-        className="wish-list-item-image"
-      />
-    </div>
-    <div className="wish-list-item-content">
-      <h2 className="wish-list-item-title">{item.name}</h2>
-      <p className="wish-list-item-price">${item.price}</p>
-      <p className="wish-list-item-description">{item.description}</p>
-      <div className="wish-list-item-actions">
+export const WishListItemCard = memo(function WishListItemCard({
+                                                                 item,
+                                                                 onRemove
+                                                               }: WishListItemProps) {
+  const [imgSrc, setImgSrc] = useState(item.imageUrl);
+  const fallbackImage = '/products/image-coming-soon.jpg';
+
+  return (
+    <article className="product-item" data-testid={`wishlist-${item.id}`} id={item.id}>
+      <div className="product-image-container">
+        <Image
+          src={imgSrc}
+          alt={`${item.name} image`}
+          width={200}
+          height={200}
+          className="product-image"
+          priority={false}
+          onError={() => setImgSrc(fallbackImage)}
+        />
+      </div>
+      <div className="product-details">
+        <h2 className="product-name">{item.name}</h2>
+        <p className="product-item-description">{item.description}</p>
+        <div className="product-price">${item.price}</div>
+      </div>
+      <div className="product-actions">
         <button
-          className="wish-list-remove-button"
+          className="error-button"
           onClick={() => onRemove(item.id)}
+          aria-label={`Remove ${item.name} from wish list`}
         >
           Remove
         </button>
         <Link
           href={`/product/${item.id}`}
-          className="wish-list-view-button"
+          className="product-details-button"
+          aria-label={`See details for ${item.name}`}
         >
-          View Details
+          See Details
         </Link>
       </div>
-    </div>
-  </div>
-)
+    </article>
+  );
+});
