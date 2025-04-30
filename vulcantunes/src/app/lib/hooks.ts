@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react'
 import {WishListItem} from './definitions'
 
-export function useWishlist() {
+const WISHLIST_KEY = 'wishlist'
+
+export function useWishList() {
   const [items, setItems] = useState<WishListItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
