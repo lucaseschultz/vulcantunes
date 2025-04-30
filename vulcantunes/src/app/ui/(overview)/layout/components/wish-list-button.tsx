@@ -1,16 +1,7 @@
 'use client'
 
 import {useState, useEffect} from 'react'
-
-interface WishListButtonProps {
-  product: {
-    id: string;
-    name: string;
-    price: number;
-    imageUrl: string;
-    description: string;
-  }
-}
+import {WishListButtonProps} from '@/src/app/lib/definitions';
 
 export default function WishListButton({product}: WishListButtonProps) {
   const [isInWishList, setIsInWishList] = useState(false)

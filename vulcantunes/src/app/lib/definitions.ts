@@ -130,3 +130,7 @@ export interface WishListItem {
   imageUrl: string;
   description: string;
 }
+
+export interface WishListButtonProps {
+  product: WishListItem
+}
