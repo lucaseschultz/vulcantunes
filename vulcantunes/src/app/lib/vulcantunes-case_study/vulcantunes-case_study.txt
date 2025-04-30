@@ -145,8 +145,10 @@ const loadData = async () => {
 
 ## Challenges and Solutions
 1. **Challenge**: Component Flash During Data Loading
-   - **Solution**: Replaced Suspense boundary with local loading state management using useState and added an isLoading check before rendering NoProductsFound
-   - **Outcome**: Eliminated unwanted flash of NoProductsFound component during the initial data fetch, creating a smoother loading experience
+   - **Solution**: Replaced Suspense boundary with local loading state management using useState and added an isLoading
+   check before rendering NoProductsFound
+   - **Outcome**: Eliminated unwanted flash of NoProductsFound component during the initial data fetch, creating a
+   smoother loading experience
 
 2. **Challenge**: Have to use multiple classes for the same wrapper, in order to avoid conflicting styling
    - **Solution**: Refactored the site to use the SCSS preprocessor, allowing classes to extend one another
