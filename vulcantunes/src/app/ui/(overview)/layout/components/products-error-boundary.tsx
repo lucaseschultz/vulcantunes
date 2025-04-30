@@ -3,7 +3,7 @@ import {ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState} from "@/
 import {ErrorMessage} from '@/src/app/ui/(overview)/layout/components/error-message';
 import {getErrorMessage} from '@/src/app/lib/utils';
 
-export class ProductsListErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
+export class ProductsErrorBoundary extends Component<ProductsListErrorBoundaryProps, ProductsListErrorBoundaryState> {
   state: ProductsListErrorBoundaryState = Object.freeze({
     hasError: false,
     errorType: null,

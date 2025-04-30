@@ -3,7 +3,7 @@
 import {useSearchParams} from 'next/navigation'
 import {useRouter} from 'next/navigation'
 import {useCallback, useEffect, useState} from 'react'
-import {ProductsListErrorBoundary} from './products-list-error-boundary'
+import {ProductsErrorBoundary} from '../../layout/components/products-error-boundary'
 import {FilterSection} from './filter-section'
 import {ProductsList} from './products-list'
 import {debounce} from '@/src/app/lib/utils'
@@ -44,11 +44,11 @@ export default function ProductsSection() {
         selectedFeatures={features}
         handleFeatureChange={handleFeatureChange}
       />
-      <ProductsListErrorBoundary>
+      <ProductsErrorBoundary>
         <ProductsList
           featuresFilters={debouncedFeatures}
         />
-      </ProductsListErrorBoundary>
+      </ProductsErrorBoundary>
     </div>
   )
 }
