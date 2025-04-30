@@ -35,6 +35,9 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
     price: product_price,
     imageUrl: imgSrc,
     description: truncatedDescription,
+    quantity: product_quantity,
+    model: product_model,
+    isDiscontinued: isDiscontinued,
   };
 
   return (
