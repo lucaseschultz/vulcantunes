@@ -122,3 +122,11 @@ export interface ProductQuantityProps {
   model: string;
   isDiscontinued: boolean;
 }
+
+export interface WishListItem {
+  id: string;
+  name: string;
+  price: number;
+  imageUrl: string;
+  description: string;
+}
