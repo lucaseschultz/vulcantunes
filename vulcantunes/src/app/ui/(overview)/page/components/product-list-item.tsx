@@ -59,7 +59,7 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
         />
       </div>
       <div className="product-actions">
-        <WishListButton product={wishListProduct}/>
+        <WishListButton product={product}/>
         <Link
           href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
           className="product-details-button"
