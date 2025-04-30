@@ -18,7 +18,7 @@ export default function WishListButton({product}: WishListButtonProps) {
     } catch (error) {
       console.error('Failed to check wish list status:', error)
     }
-  }, [product.id])
+  }, [product.product_id])
 
   const toggleWishList = () => {
     try {
