@@ -10,10 +10,10 @@ export default function WishListButton({product}: WishListButtonProps) {
   useEffect(() => {
     // Check if product is already in wish list
     try {
-      const savedItems = localStorage.getItem('wishlist')
-      if (savedItems) {
-        const wishlist = JSON.parse(savedItems)
-        setIsInWishList(wishlist.some((item: any) => item.id === product.id))
+      const savedProducts = localStorage.getItem('wishlist')
+      if (savedProducts) {
+        const wishlist = JSON.parse(savedProducts)
+        setIsInWishList(wishlist.some((savedProduct: any) => savedProduct.id === product.product_id))
       }
     } catch (error) {
       console.error('Failed to check wish list status:', error)
@@ -22,8 +22,8 @@ export default function WishListButton({product}: WishListButtonProps) {
 
   const toggleWishList = () => {
     try {
-      const savedItems = localStorage.getItem('wishlist')
-      let wishlist = savedItems ? JSON.parse(savedItems) : []
+      const savedProducts = localStorage.getItem('wishlist')
+      let wishlist = savedProducts ? JSON.parse(savedProducts) : []
 
       if (isInWishList) {
         wishlist = wishlist.filter((item: any) => item.id !== product.id)
