@@ -137,7 +137,6 @@ export interface WishListButtonProps {
 
 export interface WishListItemProps {
   item: WishListItem;
-  onRemove: (id: string) => void;
 }
 
 export interface ProductMetadataProps {

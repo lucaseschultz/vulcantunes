@@ -2,10 +2,10 @@ import {memo, useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {WishListItemProps} from '@/src/app/lib/definitions'
+import WishListButton from "@/src/app/ui/(overview)/layout/components/wish-list-button";
 
 export const WishListItemCard = memo(function WishListItemCard({
                                                                  item,
-                                                                 onRemove
                                                                }: WishListItemProps) {
   const [imgSrc, setImgSrc] = useState(item.imageUrl);
   const fallbackImage = '/products/image-coming-soon.jpg';
@@ -29,13 +29,7 @@ export const WishListItemCard = memo(function WishListItemCard({
         <div className="product-price">${item.price}</div>
       </div>
       <div className="product-actions">
-        <button
-          className="error-button"
-          onClick={() => onRemove(item.id)}
-          aria-label={`Remove ${item.name} from wish list`}
-        >
-          Remove
-        </button>
+        <WishListButton product={item}/>
         <Link
           href={`/product/${item.id}`}
           className="product-details-button"

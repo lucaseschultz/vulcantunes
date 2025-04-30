@@ -6,7 +6,7 @@ import {WishListItemCard} from "@/src/app/ui/(overview)/wish-list/components/wis
 import {ProductsSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 
 export default function WishListContent() {
-  const {items, isLoading, removeItem} = useWishList()
+  const {items, isLoading} = useWishList()
 
   if (isLoading) {
     return <ProductsSkeleton/>
@@ -33,7 +33,6 @@ export default function WishListContent() {
         <WishListItemCard
           key={item.id}
           item={item}
-          onRemove={removeItem}
         />
       ))}
     </div>
