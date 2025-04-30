@@ -1,3 +1,4 @@
+
 # VulcanTunes Website Modernization
 *Duration: Nov 2024-* ##
 
@@ -47,14 +48,13 @@ Brief description of the client/website and the main objectives of the moderniza
     - Image optimization included
     - Strong developer ecosystem
 
-  - Native CSS over preprocessors
-    - Modern CSS features like custom properties
-    - Native nesting with @nest
-    - Scoping with @scope
-    - Container queries
-    - :has() selector
-    - Native color functions
-    - Zero build complexity
+  - SCSS preprocessor over native CSS
+    - Ability for classes to extend one another
+    - Nested selectors for better organization
+    - Mixins for reusable style patterns
+    - Partials for modular CSS architecture
+    - Built-in functions for complex calculations
+    - Maintainable and scalable styling approach
 
   - TypeScript over JavaScript
     - Early error detection
@@ -143,14 +143,14 @@ const loadData = async () => {
 - [X]% reduction in bounce rate
 - [X]% faster page load times
 
-## Challenges and Solutions ##
+## Challenges and Solutions
 1. **Challenge**: Component Flash During Data Loading
    - **Solution**: Replaced Suspense boundary with local loading state management using useState and added an isLoading check before rendering NoProductsFound
    - **Outcome**: Eliminated unwanted flash of NoProductsFound component during the initial data fetch, creating a smoother loading experience
 
-2. **Challenge**: [Another challenge]
-   - **Solution**: [How you solved it]
-   - **Outcome**: [Result of your solution]
+2. **Challenge**: Have to use multiple classes for the same wrapper, in order to avoid conflicting styling
+   - **Solution**: Refactored the site to use the SCSS preprocessor, allowing classes to extend one another
+   - **Outcome**: Eliminated unnecessarily large number of classes that are assigned to one wrapper
 
 ## Lessons Learned ##
 - Key technical insights gained
