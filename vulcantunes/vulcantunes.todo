@@ -1,5 +1,7 @@
 reuse product page cards?
 
+use @import button-style instead of card-container, where appropriate
+
 wish-list-content.tsx/wish-list.scss:
 audit
 
