@@ -1,5 +1,8 @@
 wish-list-content.tsx:
-move interface to definitions (use existing?)
+move interface to definitions.ts (use existing?)
+
+wish-list-content.tsx, wish-list.scss:
+audit
 
 layouts:
 add page descriptions to layout metadata
