@@ -76,19 +76,11 @@
 .wish-list-button {
   padding: 0.5rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: transparent;
   border: none;
-  transition: transform 0.2s ease;
 
   &:hover {
     transform: scale(1.1);
-  }
-
-  .heart-icon {
-    color: #ccc;
   }
 
   &.in-wish-list {
