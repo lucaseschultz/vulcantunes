@@ -53,12 +53,16 @@ export default function ProductPageItem({product}: { product: Product }) {
         <div className="product-info-section">
           <h1 className="product-name">{product_name}</h1>
           <p className="product-page-description">{product_description}</p>
-          <div className="product-features">
-            {features && features.split(',').map((feature: string) => (
-              <span key={feature} className="feature-tag">{feature}</span>
-            ))}
-          </div>
-
+          {features && features.length > 0 && (
+            <div className="product-features-section">
+              <h3 className="product-features-header">Features</h3>
+              <div className="product-features">
+                {features.split(',').map((feature: string) => (
+                  <span key={feature} className="feature-tag">{feature.trim()}</span>
+                ))}
+              </div>
+            </div>
+          )}
           <ProductPurchaseSection
             options={options}
             productModel={product_model}
