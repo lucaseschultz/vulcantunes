@@ -6,24 +6,11 @@ import {WishListItemCard} from "@/src/app/ui/(overview)/wish-list/components/wis
 import {ProductsSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 
 export default function WishListContent() {
-  const {items, isLoading, error, removeItem, setError} = useWishList()
+  const {items, isLoading, removeItem} = useWishList()
 
   if (isLoading) {
     return <ProductsSkeleton/>
-  }
 
-  if (error) {
-    return (
-      <div className="wish-list-error">
-        <p>{error}</p>
-        <button
-          onClick={() => setError(null)}
-          className="dismiss-button"
-        >
-          Dismiss
-        </button>
-      </div>
-    )
   }
 
   if (items.length === 0) {
