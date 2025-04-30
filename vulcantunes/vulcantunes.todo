@@ -1,3 +1,6 @@
+wish-list-content.tsx:
+move interface to definitions (use existing?)
+
 layouts:
 add page descriptions to layout metadata
 
