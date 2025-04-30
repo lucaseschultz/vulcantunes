@@ -3,16 +3,13 @@
 import Link from 'next/link'
 import {useWishList} from '@/src/app/lib/hooks'
 import {WishListItemCard} from "@/src/app/ui/(overview)/wish-list/components/wish-list-item-card";
+import {ProductsSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 
 export default function WishListContent() {
   const {items, isLoading, error, removeItem, setError} = useWishList()
 
   if (isLoading) {
-    return (
-      <div className="wish-list-loading">
-        <div className="loading-text">Loading your wish list...</div>
-      </div>
-    )
+    return <ProductsSkeleton/>
   }
 
   if (error) {
