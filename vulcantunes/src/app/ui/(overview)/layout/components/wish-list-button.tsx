@@ -45,7 +45,7 @@ export default function WishListButton({product}: WishListButtonProps) {
       onClick={toggleWishList}
       aria-label={isInWishList ? "Remove from wish list" : "Add to wish list"}
     >
-      {isInWishList ? '❤️ In Wish List' : '🤍 Add to Wish List'}
+      {isInWishList ? '❤️' : '🤍'}
     </button>
   )
 }
