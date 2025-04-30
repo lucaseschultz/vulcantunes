@@ -83,15 +83,14 @@
   gap: 0.5rem;
 
   &:hover {
-    background-color: rgba(59, 130, 246, 0.1);
+    color: rgba(59, 130, 246, 0.1);
   }
 
   &.in-wish-list {
-    background-color: var(--interactive-color);
-    color: var(--foreground);
+    color: var(--interactive-color);
 
     &:hover {
-      background-color: var(--faded-interactive-color);
+      color: var(--faded-interactive-color);
     }
   }
 }
