@@ -3,6 +3,7 @@ import Image from 'next/image'
 import type {ProductItemProps} from '@/src/app/lib/definitions'
 import {ProductPurchaseSection} from '@/src/app/ui/(overview)/layout/components/product-purchase-section';
 import Link from "next/link";
+import WishListButton from '../../layout/components/wish-list-button';
 
 export const ProductListItem = memo(function ProductListItem({product}: ProductItemProps) {
   const {
@@ -27,6 +28,14 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
   );
 
   const isDiscontinued = product_status === 2;
+
+  const wishListProduct = {
+    id: product_model,
+    name: product_name,
+    price: product_price,
+    imageUrl: imgSrc,
+    description: truncatedDescription,
+  };
 
   return (
     <article
@@ -57,13 +66,16 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
           productName={product_name}
         />
       </div>
-      <Link
-        href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
-        className="product-details-link"
-        aria-label={`See details for ${product_name}`}
-      >
-        See Details
-      </Link>
+      <div className="product-actions">
+        <WishListButton product={wishListProduct}/>
+        <Link
+          href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
+          className="product-details-link"
+          aria-label={`See details for ${product_name}`}
+        >
+          See Details
+        </Link>
+      </div>
     </article>
   );
 });

@@ -51,13 +51,19 @@
   color: var(--faded-text-color);
 }
 
+.product-actions {
+  @include flex-container(column, null, flex-end, 0.75rem);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
 .product-details-link {
   @include button-style;
   white-space: nowrap;
   font-size: 1rem;
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  align-self: flex-end;
+  width: fit-content;
   background-color: var(--interactive-color);
   color: var(--foreground);
 
