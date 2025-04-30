@@ -129,6 +129,9 @@ export interface WishListItem {
   price: number;
   imageUrl: string;
   description: string;
+  quantity: number;
+  model: string;
+  isDiscontinued: boolean;
 }
 
 export interface WishListButtonProps {
