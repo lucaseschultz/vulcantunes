@@ -1,7 +1,7 @@
 wish-list-content.tsx:
 move interface to definitions.ts (use existing?)
 
-wish-list-content.tsx, wish-list.scss:
+wish-list-content.tsx/wish-list.scss & product-items.scss/wish-list-button.tsx:
 audit
 
 layouts:
