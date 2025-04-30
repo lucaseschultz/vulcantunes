@@ -26,7 +26,7 @@ export default function WishListButton({product}: WishListButtonProps) {
       let wishlist = savedProducts ? JSON.parse(savedProducts) : []
 
       if (isInWishList) {
-        wishlist = wishlist.filter((item: any) => item.id !== product.id)
+        wishlist = wishlist.filter((savedProduct: any) => savedProduct.id !== product.product_id)
       } else {
         wishlist.push(product)
       }
