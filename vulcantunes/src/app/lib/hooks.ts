@@ -8,6 +8,7 @@ export function useWishList() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  // Load wishlist from localStorage
   useEffect(() => {
     const loadWishlist = () => {
       try {
