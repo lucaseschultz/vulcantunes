@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {WishListItemProps} from '@/src/app/lib/definitions'
 import WishListButton from "@/src/app/ui/(overview)/layout/components/wish-list-button";
+import {ProductPurchaseSection} from "@/src/app/ui/(overview)/layout/components/product-purchase-section";
 
 export const WishListItemCard = memo(function WishListItemCard({
                                                                  item,
@@ -26,7 +27,11 @@ export const WishListItemCard = memo(function WishListItemCard({
       <div className="product-details">
         <h2 className="product-name">{item.name}</h2>
         <p className="product-item-description">{item.description}</p>
-        <div className="product-price">${item.price}</div>
+        <ProductPurchaseSection
+          productModel={item.model}
+          productQuantity={item.quantity}
+          productPrice={item.price}
+          isDiscontinued={item.isDiscontinued}/>
       </div>
       <div className="product-actions">
         <WishListButton product={item}/>
