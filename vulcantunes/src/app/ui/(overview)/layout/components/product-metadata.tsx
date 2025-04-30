@@ -1,11 +1,5 @@
 import {ProductQuantity} from "@/src/app/ui/(overview)/layout/components/product-quantity";
-
-interface ProductMetadataProps {
-  price: number;
-  quantity: number;
-  model: string;
-  isDiscontinued: boolean;
-}
+import {ProductMetadataProps} from "@/src/app/lib/definitions";
 
 export function ProductMetadata({
                                   price,
