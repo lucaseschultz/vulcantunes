@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import HeaderLogo from "@/src/app/ui/layout/components/header-logo";
-import '../styles/not-found.css';
+import '../styles/page-not-found.css';
 
 export default function NotFoundPage() {
   return (
