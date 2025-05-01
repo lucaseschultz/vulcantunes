@@ -44,7 +44,8 @@ export const WishListItemCard = memo(function WishListItemCard({
           productModel={product_model}
           productQuantity={product_quantity}
           productPrice={product_price}
-          isDiscontinued={isDiscontinued}/>
+          isDiscontinued={isDiscontinued}
+        />
       </div>
       <div className="product-actions">
         <WishListButton product={product}/>
