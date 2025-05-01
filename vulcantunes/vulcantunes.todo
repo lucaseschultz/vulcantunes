@@ -1,4 +1,9 @@
+fix stretched images on homepage
+
 Add features to wishlist
+
+wish-list.scss/wish-list-item-card.tsx:
+take a look at styling (reuse product card classes?)
 
 fix wishlist button & wishlist page (local storage)
 
