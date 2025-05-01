@@ -1,10 +1,10 @@
-.product-image-section {
+.product-page-image-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.product-main-image {
+.product-page-main-image {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
@@ -16,7 +16,7 @@
   }
 }
 
-.product-info-section {
+.product-page-info {
   @include flex-container(column);
   @include card-container(var(--foreground), 8px, 1px solid var(--outline), 1.5rem);
   gap: 1.5rem;
@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-.product-name {
+.product-page-name {
   font-size: 2rem;
 }
 
@@ -37,22 +37,4 @@
   @include product-description;
   font-size: 1.1rem;
   white-space: pre-wrap;
-}
-
-.product-features-header {
-  margin-bottom: 1rem;
-}
-
-.product-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.feature-tag {
-  background: var(--background);
-  color: var(--text-color);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
 }

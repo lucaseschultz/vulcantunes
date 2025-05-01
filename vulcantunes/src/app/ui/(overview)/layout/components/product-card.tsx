@@ -54,10 +54,10 @@ export function ProductCard({
           className={imageClassName}
         />
       </div>
-      <div className="product-details">
+      <div className="product-info">
         <h2 className="product-name">{product_name}</h2>
         {typeof displayDescription === 'string' ? (
-          <p className="product-item-description">{displayDescription}</p>
+          <p className="product-description">{displayDescription}</p>
         ) : (
           displayDescription
         )}

@@ -18,7 +18,7 @@ export function ProductImage({
                                width,
                                height,
                                priority = false,
-                               className = "product-image"
+                               className = "product-main-image"
                              }: ProductImageProps) {
   const [imgSrc, setImgSrc] = useState(`/products/${productImage}`)
   const fallbackImage = '/products/image-coming-soon.jpg'

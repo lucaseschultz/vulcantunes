@@ -32,20 +32,20 @@ export default function ProductPageItem({product}: { product: Product }) {
       </div>
 
       <article className="product-details-container" data-testid={`wishlist-${product_model}`} id={product_model}>
-        <div className="product-image-section">
+        <div className="product-page-image-container">
           <ProductImage
             productImage={product_image}
             productName={product_name}
             width={400}
             height={400}
             priority={true}
-            className="product-main-image"
+            className="product-page-main-image"
           />
         </div>
 
-        <div className="product-info-section">
+        <div className="product-page-info">
           <div className="product-info-header">
-            <h1 className="product-name">{product_name}</h1>
+            <h1 className="product-page-name">{product_name}</h1>
             <WishListButton product={product}/>
           </div>
           <p className="product-page-description">{product_description}</p>
