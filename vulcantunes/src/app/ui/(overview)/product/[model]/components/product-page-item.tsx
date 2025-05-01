@@ -33,7 +33,7 @@ export default function ProductPageItem({product}: { product: Product }) {
         </Link>
       </div>
 
-      <div className="product-details-container">
+      <article className="product-details-container" data-testid={`wishlist-${product_model}`} id={product_model}>
         <div className="product-image-section">
           <Image
             src={imgSrc}
@@ -67,7 +67,7 @@ export default function ProductPageItem({product}: { product: Product }) {
             isDiscontinued={isDiscontinued}
           />
         </div>
-      </div>
+      </article>
     </div>
   )
 }
