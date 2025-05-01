@@ -5,6 +5,7 @@ import {ArrowLeft} from '@phosphor-icons/react'
 import {Product} from "@/src/app/lib/definitions"
 import {ProductPurchaseSection} from '@/src/app/ui/(overview)/layout/components/product-purchase-section'
 import {ProductImage} from '@/src/app/ui/(overview)/layout/components/product-image'
+import WishListButton from '@/src/app/ui/(overview)/layout/components/wish-list-button'
 
 export default function ProductPageItem({product}: { product: Product }) {
   const {
@@ -43,7 +44,10 @@ export default function ProductPageItem({product}: { product: Product }) {
         </div>
 
         <div className="product-info-section">
-          <h1 className="product-name">{product_name}</h1>
+          <div className="product-info-header">
+            <h1 className="product-name">{product_name}</h1>
+            <WishListButton product={product}/>
+          </div>
           <p className="product-page-description">{product_description}</p>
           {features && features.length > 0 && (
             <div className="product-features-section">
