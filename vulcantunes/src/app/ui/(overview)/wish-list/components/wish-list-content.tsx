@@ -28,7 +28,7 @@ export default function WishListContent() {
   }
 
   return (
-    <div className="wish-list-items" aria-label="Wish list items">
+    <div className="products-list" aria-label="Wish list items">
       {products.map(product => (
         <WishListItemCard
           product={product}
