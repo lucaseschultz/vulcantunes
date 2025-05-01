@@ -19,7 +19,7 @@ export const WishListItemCard = memo(function WishListItemCard({
     options,
   } = product;
 
-  const [imgSrc, setImgSrc] = useState(product_image);
+  const [imgSrc, setImgSrc] = useState(`/products/${product_image}`);
   const fallbackImage = '/products/image-coming-soon.jpg';
 
   const isDiscontinued = product_status === 2;
