@@ -19,7 +19,7 @@ export default function WishListContent() {
         <p>Your wish list is empty</p>
         <Link
           href="/"
-          className="browse-button"
+          className="product-details-button"
         >
           Browse Products
         </Link>
