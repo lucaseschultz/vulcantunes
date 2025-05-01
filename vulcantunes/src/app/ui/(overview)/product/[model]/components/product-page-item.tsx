@@ -40,10 +40,6 @@ export default function ProductPageItem({product}: { product: Product }) {
             alt={`${product_image} image`}
             width={400}
             height={400}
-            style={{
-              height: '400',
-              width: 'auto',
-            }}
             priority
             className="product-main-image"
             onError={() => setImgSrc('/products/image-coming-soon.jpg')}
