@@ -6,14 +6,14 @@ import {WishListItemCard} from "@/src/app/ui/(overview)/wish-list/components/wis
 import {ProductsSkeleton} from "@/src/app/ui/(overview)/layout/components/skeletons";
 
 export default function WishListContent() {
-  const {items, isLoading} = useWishList()
+  const {products, isLoading} = useWishList()
 
   if (isLoading) {
     return <ProductsSkeleton/>
 
   }
 
-  if (items.length === 0) {
+  if (products.length === 0) {
     return (
       <div className="wish-list-empty">
         <p className="empty-message">Your wish list is empty</p>
@@ -29,10 +29,9 @@ export default function WishListContent() {
 
   return (
     <div className="wish-list-items" aria-label="Wish list items">
-      {items.map(item => (
+      {products.map(product => (
         <WishListItemCard
-          key={item.id}
-          item={item}
+          product={product}
         />
       ))}
     </div>
