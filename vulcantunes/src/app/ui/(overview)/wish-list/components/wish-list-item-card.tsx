@@ -16,6 +16,7 @@ export const WishListItemCard = memo(function WishListItemCard({
     product_name,
     product_image,
     product_price,
+    options,
   } = product;
 
   const [imgSrc, setImgSrc] = useState(product_image);
@@ -40,6 +41,7 @@ export const WishListItemCard = memo(function WishListItemCard({
         <h2 className="product-name">{product_name}</h2>
         <p className="product-item-description">{product_description}</p>
         <ProductPurchaseSection
+          options={options}
           productModel={product_model}
           productQuantity={product_quantity}
           productPrice={product_price}
