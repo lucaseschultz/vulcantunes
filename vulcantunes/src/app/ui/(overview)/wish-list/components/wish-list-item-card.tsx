@@ -25,11 +25,11 @@ export const WishListItemCard = memo(function WishListItemCard({
   const isDiscontinued = product_status === 2;
 
   return (
-    <article className="product-item" data-testid={`wishlist-${product_id}`} id={String(product_id)}>
+    <article className="product-item" data-testid={`wishlist-${product_model}`} id={product_model}>
       <div className="product-image-container">
         <Image
           src={imgSrc}
-          alt={`${product_name} image`}
+          alt={`${product_image} image`}
           width={200}
           height={200}
           className="product-image"
@@ -50,7 +50,7 @@ export const WishListItemCard = memo(function WishListItemCard({
       <div className="product-actions">
         <WishListButton product={product}/>
         <Link
-          href={`/product/${product_id}`}
+          href={`${process.env.NEXTAUTH_URL}/product/${product_model}`}
           className="product-details-button"
           aria-label={`See details for ${product_name}`}
         >
