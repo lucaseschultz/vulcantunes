@@ -1,9 +1,6 @@
 reuse product page cards?
 
-use @import button-style instead of card-container, where appropriate
-
-wish-list-content.tsx/wish-list.scss:
-audit
+use @import button-style instead of card-container, where appropriate (make see product-details-button always white)
 
 layouts:
 add page descriptions to layout metadata
