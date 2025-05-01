@@ -55,7 +55,6 @@ export const ProductListItem = memo(function ProductListItem({product}: ProductI
           productQuantity={product_quantity}
           productPrice={product_price}
           isDiscontinued={isDiscontinued}
-          productName={product_name}
         />
       </div>
       <div className="product-actions">
