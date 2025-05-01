@@ -9,7 +9,6 @@ export const WishListItemCard = memo(function WishListItemCard({
                                                                  product,
                                                                }: ProductItemProps) {
   const {
-    product_id,
     product_status,
     product_quantity,
     product_model,
