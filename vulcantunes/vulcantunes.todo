@@ -1,5 +1,7 @@
 reuse product page cards?
 
+fix wishlist button & wishlist page
+
 use @import button-style instead of card-container, where appropriate (make see product-details-button always white)
 
 layouts:
