@@ -6,7 +6,7 @@ import {ProductItemProps} from '@/src/app/lib/definitions';
 
 export default function WishListButton({product}: ProductItemProps) {
   const {
-    product_id
+    product_model
   } = product;
 
   const [isInWishList, setIsInWishList] = useState(false)
@@ -17,12 +17,12 @@ export default function WishListButton({product}: ProductItemProps) {
       const savedProducts = localStorage.getItem('wishlist')
       if (savedProducts) {
         const wishlist = JSON.parse(savedProducts)
-        setIsInWishList(wishlist.some((savedProduct: any) => savedProduct.id === product_id))
+        setIsInWishList(wishlist.some((savedProduct: any) => savedProduct.model === product_model))
       }
     } catch (error) {
       console.error('Failed to check wish list status:', error)
     }
-  }, [product_id])
+  }, [product_model])
 
   const toggleWishList = () => {
     try {
@@ -30,7 +30,7 @@ export default function WishListButton({product}: ProductItemProps) {
       let wishlist = savedProducts ? JSON.parse(savedProducts) : []
 
       if (isInWishList) {
-        wishlist = wishlist.filter((savedProduct: any) => savedProduct.id !== product_id)
+        wishlist = wishlist.filter((savedProduct: any) => savedProduct.model !== product_model)
       } else {
         wishlist.push(product)
       }
