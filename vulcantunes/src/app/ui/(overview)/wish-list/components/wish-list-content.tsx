@@ -31,6 +31,7 @@ export default function WishListContent() {
     <div className="products-list" aria-label="Wish list items">
       {products.map(product => (
         <WishListItemCard
+          key={product.product_model}
           product={product}
         />
       ))}
