@@ -16,7 +16,7 @@ export default function WishListContent() {
   if (products.length === 0) {
     return (
       <div className="wish-list-empty">
-        <p className="empty-message">Your wish list is empty</p>
+        <p>Your wish list is empty</p>
         <Link
           href="/"
           className="browse-button"
