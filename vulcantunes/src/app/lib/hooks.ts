@@ -45,7 +45,7 @@ export function useWishList() {
   const addProduct = useCallback((product: Product) => {
     try {
       // Prevent duplicates
-      if (products.some(existingProduct => existingProduct.product_id === product.product_id)) {
+      if (products.some(existingProduct => existingProduct.product_model === product.product_model)) {
         return false
       }
 
@@ -60,9 +60,9 @@ export function useWishList() {
   }, [products, saveWishlist])
 
   // Remove product from wishlist
-  const removeProduct = useCallback((id: number) => {
+  const removeProduct = useCallback((model: string) => {
     try {
-      const updatedProducts = products.filter(product => product.product_id !== id)
+      const updatedProducts = products.filter(product => product.product_model !== model)
       setProducts(updatedProducts)
       return saveWishlist(updatedProducts)
     } catch (error) {
