@@ -23,6 +23,7 @@ export interface WindowSize {
 }
 
 export interface Product {
+  product_id: number;
   product_model: string
   product_image: string
   product_price: number

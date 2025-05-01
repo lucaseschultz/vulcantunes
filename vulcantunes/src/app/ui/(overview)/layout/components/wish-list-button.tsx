@@ -5,6 +5,10 @@ import {Heart} from "@phosphor-icons/react"
 import {ProductItemProps} from '@/src/app/lib/definitions';
 
 export default function WishListButton({product}: ProductItemProps) {
+  const {
+    product_id
+  } = product;
+
   const [isInWishList, setIsInWishList] = useState(false)
 
   useEffect(() => {
@@ -13,12 +17,12 @@ export default function WishListButton({product}: ProductItemProps) {
       const savedProducts = localStorage.getItem('wishlist')
       if (savedProducts) {
         const wishlist = JSON.parse(savedProducts)
-        setIsInWishList(wishlist.some((savedProduct: any) => savedProduct.id === product.product_id))
+        setIsInWishList(wishlist.some((savedProduct: any) => savedProduct.id === product_id))
       }
     } catch (error) {
       console.error('Failed to check wish list status:', error)
     }
-  }, [product.product_id])
+  }, [product_id])
 
   const toggleWishList = () => {
     try {
@@ -26,7 +30,7 @@ export default function WishListButton({product}: ProductItemProps) {
       let wishlist = savedProducts ? JSON.parse(savedProducts) : []
 
       if (isInWishList) {
-        wishlist = wishlist.filter((savedProduct: any) => savedProduct.id !== product.product_id)
+        wishlist = wishlist.filter((savedProduct: any) => savedProduct.id !== product_id)
       } else {
         wishlist.push(product)
       }
