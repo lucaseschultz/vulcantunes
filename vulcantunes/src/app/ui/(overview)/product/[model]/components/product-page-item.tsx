@@ -1,11 +1,10 @@
 'use client'
 
-import {useState} from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import {ArrowLeft} from '@phosphor-icons/react'
 import {Product} from "@/src/app/lib/definitions"
-import {ProductPurchaseSection} from '@/src/app/ui/(overview)/layout/components/product-purchase-section';
+import {ProductPurchaseSection} from '@/src/app/ui/(overview)/layout/components/product-purchase-section'
+import {ProductImage} from '@/src/app/ui/(overview)/layout/components/product-image'
 
 export default function ProductPageItem({product}: { product: Product }) {
   const {
@@ -18,11 +17,9 @@ export default function ProductPageItem({product}: { product: Product }) {
     product_price,
     options,
     features
-  } = product;
+  } = product
 
-  const [imgSrc, setImgSrc] = useState(`/products/${product_image}`)
-
-  const isDiscontinued = product_status === 2;
+  const isDiscontinued = product_status === 2
 
   return (
     <div className="product-page">
@@ -35,14 +32,13 @@ export default function ProductPageItem({product}: { product: Product }) {
 
       <article className="product-details-container" data-testid={`wishlist-${product_model}`} id={product_model}>
         <div className="product-image-section">
-          <Image
-            src={imgSrc}
-            alt={`${product_image} image`}
+          <ProductImage
+            productImage={product_image}
+            productName={product_name}
             width={400}
             height={400}
-            priority
+            priority={true}
             className="product-main-image"
-            onError={() => setImgSrc('/products/image-coming-soon.jpg')}
           />
         </div>
 
