@@ -143,3 +143,13 @@ export interface ProductCardProps {
 export interface WishListProps {
   product_model: string
 }
+
+export interface NotificationType {
+  showWishlistNotification: boolean
+  setShowWishlistNotification: (show: boolean) => void
+}
+
+export interface DisplayNavItemsProps {
+  NavName: string;
+  NavItems: (ImageNavItem | IconNavItem)[];
+}
