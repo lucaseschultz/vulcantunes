@@ -56,6 +56,19 @@
   z-index: 10;
   animation: fadeInOut 3s ease-in-out forwards;
 
+  // Speech bubble caret
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--success-color, #4CAF50);
+  }
+
   @include minViewport(laptop) {
     font-size: 14px;
     padding: 6px 10px;
