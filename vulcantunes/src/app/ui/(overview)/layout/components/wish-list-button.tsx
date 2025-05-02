@@ -34,10 +34,8 @@ export default function WishListButton({product_model}: WishListProps) {
       } else {
         wishlist.push(product_model)
 
-        // Only show notification if we're on the topnav page
         if (pathname === '/') {
           setShowWishlistNotification(true)
-          // Auto-hide notification after 3 seconds
           setTimeout(() => {
             setShowWishlistNotification(false)
           }, 3000)
