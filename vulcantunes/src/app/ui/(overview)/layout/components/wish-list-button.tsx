@@ -2,12 +2,14 @@
 
 import {useState, useEffect} from 'react'
 import {Heart} from "@phosphor-icons/react"
-import {WishListProps} from '@/src/app/lib/definitions';
+import {WishListProps} from '@/src/app/lib/definitions'
+import {useNotification} from '@/src/app/ui/layout/components/notification-context'
+import {usePathname} from 'next/navigation'
 
 export default function WishListButton({product_model}: WishListProps) {
-
-
   const [isInWishList, setIsInWishList] = useState(false)
+  const {setShowWishlistNotification} = useNotification()
+  const pathname = usePathname()
 
   useEffect(() => {
     // Check if product is already in wish list
@@ -31,6 +33,15 @@ export default function WishListButton({product_model}: WishListProps) {
         wishlist = wishlist.filter((model: string) => model !== product_model)
       } else {
         wishlist.push(product_model)
+
+        // Only show notification if we're on the topnav page
+        if (pathname === '/') {
+          setShowWishlistNotification(true)
+          // Auto-hide notification after 3 seconds
+          setTimeout(() => {
+            setShowWishlistNotification(false)
+          }, 3000)
+        }
       }
 
       localStorage.setItem('wishlist', JSON.stringify(wishlist))
