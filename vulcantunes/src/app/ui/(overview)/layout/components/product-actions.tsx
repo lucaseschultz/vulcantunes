@@ -1,16 +1,11 @@
 import Link from 'next/link'
 import WishListButton from './wish-list-button'
-import {Product} from '@/src/app/lib/definitions'
+import {ProductItemProps} from '@/src/app/lib/definitions'
 
-interface ProductActionsProps {
-  product: Product
-  showWishlistButton?: boolean
-}
-
-export function ProductActions({product, showWishlistButton = true}: ProductActionsProps) {
+export function ProductActions({product}: ProductItemProps) {
   return (
     <div className="product-actions">
-      {showWishlistButton && <WishListButton product={product}/>}
+      <WishListButton product={product}/>
       <Link
         href={`${process.env.NEXTAUTH_URL}/product/${product.product_model}`}
         className="product-details-button"
