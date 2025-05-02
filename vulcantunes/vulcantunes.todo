@@ -1,5 +1,3 @@
-convert wishlist to use api call, rather than storing in browser
-
 Add features to wishlist
 
 wish-list.scss:
