@@ -9,7 +9,10 @@ export function NotificationProvider({children}: { children: ReactNode }) {
   const [showWishListNotification, setShowWishListNotification] = useState(false)
 
   return (
-    <NotificationContext.Provider value={{showWishListNotification: showWishListNotification, setShowWishListNotification: setShowWishListNotification}}>
+    <NotificationContext.Provider value={{
+      showWishListNotification: showWishListNotification,
+      setShowWishListNotification: setShowWishListNotification
+    }}>
       {children}
     </NotificationContext.Provider>
   )
