@@ -10,7 +10,6 @@ export default function WishListContent() {
 
   if (isLoading) {
     return <ProductsSkeleton/>
-
   }
 
   if (products.length === 0) {
