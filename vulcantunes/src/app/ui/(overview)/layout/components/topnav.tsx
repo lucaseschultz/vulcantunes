@@ -2,7 +2,7 @@
 
 import type {ImageNavItem, IconNavItem} from '@/src/app/lib/definitions'
 import {ShoppingCart, User, Heart, Info} from "@phosphor-icons/react/dist/ssr"
-import {DisplayNavItems} from '@/src/app/lib/client-actions'
+import {DisplayNavItems, CustomDisplayNavItems} from '@/src/app/lib/client-actions'
 import {useMemo} from 'react'
 import {fetchWindowSize} from '@/src/app/lib/utils'
 
@@ -44,7 +44,7 @@ export default function TopNav() {
   return (
     <nav className='top-nav' aria-label='Main navigation'>
       <DisplayNavItems NavName='top-nav-left' NavItems={topNavLeft}/>
-      <DisplayNavItems NavName='top-nav-right' NavItems={topNavRight}/>
+      <CustomDisplayNavItems NavName='top-nav-right' NavItems={topNavRight}/>
     </nav>
   )
 }
