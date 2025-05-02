@@ -16,7 +16,6 @@ export function ProductCard({
     product_status,
     product_quantity,
     product_model,
-    product_description,
     product_name,
     product_image,
     product_price,
@@ -24,7 +23,6 @@ export function ProductCard({
   } = product
 
   const isDiscontinued = product_status === 2
-  const displayDescription = description || product_description
 
   return (
     <article
@@ -44,11 +42,7 @@ export function ProductCard({
       </div>
       <div className="product-info">
         <h2 className="product-name">{product_name}</h2>
-        {typeof displayDescription === 'string' ? (
-          <p className="product-description">{displayDescription}</p>
-        ) : (
-          displayDescription
-        )}
+        <p className="product-description">{description}</p>
         {additionalContent}
         <ProductPurchaseSection
           options={options}

@@ -8,6 +8,7 @@ export const WishListItemCard = memo(function WishListItemCard({product}: Produc
     <ProductCard
       product={product}
       imageClassName="product-main-image"
+      description={product.product_description}
       testIdPrefix="wishlist"
       actions={<ProductActions product={product}/>}
     />

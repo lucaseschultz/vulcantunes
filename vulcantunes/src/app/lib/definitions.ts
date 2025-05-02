@@ -134,7 +134,7 @@ export interface ProductCardProps {
   imageSize?: { width: number; height: number }
   imagePriority?: boolean
   imageClassName?: string
-  description?: string | ReactNode
+  description: string
   testIdPrefix?: string
   actions?: ReactNode
   additionalContent?: ReactNode
