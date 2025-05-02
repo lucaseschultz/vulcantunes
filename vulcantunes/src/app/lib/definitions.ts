@@ -153,3 +153,8 @@ export interface DisplayNavItemsProps {
   NavName: string;
   NavItems: (ImageNavItem | IconNavItem)[];
 }
+
+export interface NavItemProps {
+  navItem: IconNavItem | ImageNavItem
+  renderNotification?: (navItem: IconNavItem | ImageNavItem) => React.ReactNode | null
+}

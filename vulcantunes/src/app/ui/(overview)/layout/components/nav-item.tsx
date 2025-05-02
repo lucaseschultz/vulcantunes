@@ -3,15 +3,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import {usePathname} from 'next/navigation'
-import {IconNavItem, ImageNavItem} from '@/src/app/lib/definitions'
+import {NavItemProps, IconNavItem, ImageNavItem} from '@/src/app/lib/definitions'
 
-
-interface NavItemRendererProps {
-  navItem: IconNavItem | ImageNavItem
-  renderNotification?: (navItem: IconNavItem | ImageNavItem) => React.ReactNode | null
-}
-
-export function NavItem({navItem, renderNotification}: NavItemRendererProps) {
+export function NavItem({navItem, renderNotification}: NavItemProps) {
   const pathname = usePathname()
   const isImage = typeof navItem.icon === 'string'
 
