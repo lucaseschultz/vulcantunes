@@ -48,11 +48,9 @@
 
 .wish-list-notification {
   position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  @include card-container(#4CAF50, 4px, none, 4px 8px);
-  color: white;
+  top: var(--top-nav-height);
+  right: 1px;
+  @include card-container(var(--success-color), 4px, none, 4px 8px);
   font-size: 12px;
   white-space: nowrap;
   z-index: 10;
