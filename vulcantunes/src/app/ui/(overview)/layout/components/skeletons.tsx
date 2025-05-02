@@ -1,6 +1,6 @@
 export function ProductSkeleton() {
   return (
-    <div className="product-item shimmer">
+    <div className="product-item-skeleton">
       <div className="product-skeleton-image"/>
       <div className="product-info">
         <div className="product-skeleton-name"/>

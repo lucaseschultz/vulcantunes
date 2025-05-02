@@ -9,3 +9,8 @@
   height: 101px;
   border-radius: 8px;
 }
+
+.product-item-skeleton {
+  @extend .product-item;
+  @extend .shimmer;
+}
