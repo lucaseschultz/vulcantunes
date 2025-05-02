@@ -56,7 +56,12 @@
   font-size: 12px;
   white-space: nowrap;
   z-index: 10;
-  animation: fadeInOut 3s ease-in-out;
+  animation: fadeInOut 3s ease-in-out forwards;
+
+  @include minViewport(laptop) {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
 }
 
 @keyframes fadeInOut {
