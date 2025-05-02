@@ -1,18 +1,6 @@
-import {ReactNode} from 'react'
-import {Product} from '@/src/app/lib/definitions'
+import {ProductCardProps} from '@/src/app/lib/definitions'
 import {ProductPurchaseSection} from './product-purchase-section'
 import {ProductImage} from './product-image'
-
-interface ProductCardProps {
-  product: Product
-  imageSize?: { width: number; height: number }
-  imagePriority?: boolean
-  imageClassName?: string
-  description?: string | ReactNode
-  testIdPrefix?: string
-  actions?: ReactNode
-  additionalContent?: ReactNode
-}
 
 export function ProductCard({
                               product,

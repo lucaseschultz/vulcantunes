@@ -1,6 +1,3 @@
-product-card.tsx:
-move interface to definitions
-
 Add features to wishlist
 
 wish-list.scss/wish-list-item-card.tsx:

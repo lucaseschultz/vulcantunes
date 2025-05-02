@@ -128,3 +128,14 @@ export interface ProductMetadataProps {
   model: string;
   isDiscontinued: boolean;
 }
+
+export interface ProductCardProps {
+  product: Product
+  imageSize?: { width: number; height: number }
+  imagePriority?: boolean
+  imageClassName?: string
+  description?: string | ReactNode
+  testIdPrefix?: string
+  actions?: ReactNode
+  additionalContent?: ReactNode
+}
