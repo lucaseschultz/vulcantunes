@@ -133,9 +133,13 @@
 }
 
 .product-actions {
-  @include flex-container(column, null, flex-end, 0.75rem);
+  @include flex-container(row, null, flex-end, 0.75rem);
   margin-top: 0.5rem;
   text-align: center;
+
+  @include minViewport(laptop) {
+    flex-direction: column;
+  }
 }
 
 .product-details-button {
@@ -145,6 +149,7 @@
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: fit-content;
+  margin-left: auto;
   margin-top: auto;
   background-color: var(--interactive-color);
 
