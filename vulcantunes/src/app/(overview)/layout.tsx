@@ -4,6 +4,7 @@ import NewLookNotification from "@/src/app/ui/(overview)/layout/components/new-l
 import HeaderLogo from "@/src/app/ui/layout/components/header-logo";
 import Footer from "@/src/app/ui/(overview)/layout/components/footer";
 import React from "react";
+import {NotificationProvider} from '@/src/app/ui/layout/components/notification-context';
 
 export default function Layout({
                                  children
@@ -12,15 +13,17 @@ export default function Layout({
 }) {
   return (
     <div className="page">
-      <TopNav/>
-      <main>
-        <header>
-          <NewLookNotification/>
-          <HeaderLogo/>
-        </header>
-        {children}
-      </main>
-      <Footer/>
+      <NotificationProvider>
+        <TopNav/>
+        <main>
+          <header>
+            <NewLookNotification/>
+            <HeaderLogo/>
+          </header>
+          {children}
+        </main>
+        <Footer/>
+      </NotificationProvider>
     </div>
   );
 }
