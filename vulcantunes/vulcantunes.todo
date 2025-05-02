@@ -1,4 +1,5 @@
-fix stretched images on homepage
+product-card.tsx:
+move interface to definitions
 
 Add features to wishlist
 
