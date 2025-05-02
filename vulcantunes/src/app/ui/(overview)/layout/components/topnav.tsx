@@ -41,7 +41,6 @@ export default function TopNav() {
     size: iconSize,
   }] satisfies IconNavItem[], [iconSize])
 
-
   return (
     <nav className='top-nav' aria-label='Main navigation'>
       <DisplayNavItems NavName='top-nav-left' NavItems={topNavLeft}/>
