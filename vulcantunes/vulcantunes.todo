@@ -2,7 +2,7 @@ convert wishlist to use api call, rather than storing in browser
 
 Add features to wishlist
 
-wish-list.scss/wish-list-item-card.tsx:
+wish-list.scss:
 take a look at styling (reuse product card classes?)
 
 fix wishlist button & wishlist page (local storage)
