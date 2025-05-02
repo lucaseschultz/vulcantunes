@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-export function WishlistNotification() {
+export function WishListNotification() {
   return (
-    <div className="wishlist-notification">
-      Added to wishlist!
+    <div className="wish-list-notification">
+      Added to wish list!
     </div>
   );
 }

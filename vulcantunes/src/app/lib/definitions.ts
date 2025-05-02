@@ -145,8 +145,8 @@ export interface WishListProps {
 }
 
 export interface NotificationType {
-  showWishlistNotification: boolean
-  setShowWishlistNotification: (show: boolean) => void
+  showWishListNotification: boolean
+  setShowWishListNotification: (show: boolean) => void
 }
 
 export interface DisplayNavItemsProps {

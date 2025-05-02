@@ -8,16 +8,16 @@ import {usePathname} from 'next/navigation'
 
 export default function WishListButton({product_model}: WishListProps) {
   const [isInWishList, setIsInWishList] = useState(false)
-  const {setShowWishlistNotification} = useNotification()
+  const {setShowWishListNotification} = useNotification()
   const pathname = usePathname()
 
   useEffect(() => {
     // Check if product is already in wish list
     try {
-      const savedProducts = localStorage.getItem('wishlist')
+      const savedProducts = localStorage.getItem('wish-list')
       if (savedProducts) {
-        const wishlist = JSON.parse(savedProducts)
-        setIsInWishList(wishlist.includes(product_model))
+        const wishList = JSON.parse(savedProducts)
+        setIsInWishList(wishList.includes(product_model))
       }
     } catch (error) {
       console.error('Failed to check wish list status:', error)
@@ -26,23 +26,23 @@ export default function WishListButton({product_model}: WishListProps) {
 
   const toggleWishList = () => {
     try {
-      const savedProducts = localStorage.getItem('wishlist')
-      let wishlist = savedProducts ? JSON.parse(savedProducts) : []
+      const savedProducts = localStorage.getItem('wish-list')
+      let wishList = savedProducts ? JSON.parse(savedProducts) : []
 
       if (isInWishList) {
-        wishlist = wishlist.filter((model: string) => model !== product_model)
+        wishList = wishList.filter((model: string) => model !== product_model)
       } else {
-        wishlist.push(product_model)
+        wishList.push(product_model)
 
         if (pathname === '/') {
-          setShowWishlistNotification(true)
+          setShowWishListNotification(true)
           setTimeout(() => {
-            setShowWishlistNotification(false)
+            setShowWishListNotification(false)
           }, 3000)
         }
       }
 
-      localStorage.setItem('wishlist', JSON.stringify(wishlist))
+      localStorage.setItem('wish-list', JSON.stringify(wishList))
       setIsInWishList(!isInWishList)
     } catch (error) {
       console.error('Failed to update wish list:', error)

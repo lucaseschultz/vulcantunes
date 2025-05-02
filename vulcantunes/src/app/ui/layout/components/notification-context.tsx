@@ -6,10 +6,10 @@ import {NotificationType} from '@/src/app/lib/definitions'
 const NotificationContext = createContext<NotificationType | undefined>(undefined)
 
 export function NotificationProvider({children}: { children: ReactNode }) {
-  const [showWishlistNotification, setShowWishlistNotification] = useState(false)
+  const [showWishListNotification, setShowWishListNotification] = useState(false)
 
   return (
-    <NotificationContext.Provider value={{showWishlistNotification, setShowWishlistNotification}}>
+    <NotificationContext.Provider value={{showWishListNotification: showWishListNotification, setShowWishListNotification: setShowWishListNotification}}>
       {children}
     </NotificationContext.Provider>
   )

@@ -1,16 +1,16 @@
 import {useState, useEffect, useCallback} from 'react'
 import {Product} from './definitions'
 
-const WISHLIST_KEY = 'wishlist'
+const WISHLIST_KEY = 'wish-list'
 
 export function useWishList() {
   const [products, setProducts] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Load wishlist from localStorage
+  // Load wish list from localStorage
   useEffect(() => {
-    const loadWishlist = () => {
+    const loadWishList = () => {
       try {
         const savedProducts = localStorage.getItem(WISHLIST_KEY)
         if (savedProducts) {
@@ -25,12 +25,12 @@ export function useWishList() {
     }
 
     // Use setTimeout to avoid hydration issues with localStorage
-    const timeoutId = setTimeout(loadWishlist, 0)
+    const timeoutId = setTimeout(loadWishList, 0)
     return () => clearTimeout(timeoutId)
   }, [])
 
-  // Save wishlist to localStorage
-  const saveWishlist = useCallback((updatedProducts: Product[]) => {
+  // Save wish list to localStorage
+  const saveWishList = useCallback((updatedProducts: Product[]) => {
     try {
       localStorage.setItem(WISHLIST_KEY, JSON.stringify(updatedProducts))
       return true
@@ -41,7 +41,7 @@ export function useWishList() {
     }
   }, [])
 
-  // Add product to wishlist
+  // Add product to wish list
   const addProduct = useCallback((product: Product) => {
     try {
       // Prevent duplicates
@@ -51,26 +51,26 @@ export function useWishList() {
 
       const updatedProducts = [...products, product]
       setProducts(updatedProducts)
-      return saveWishlist(updatedProducts)
+      return saveWishList(updatedProducts)
     } catch (error) {
       console.error('Failed to add product to wish list:', error)
       setError('Failed to update your wish list. Please try again.')
       return false
     }
-  }, [products, saveWishlist])
+  }, [products, saveWishList])
 
-  // Remove product from wishlist
+  // Remove product from wish list
   const removeProduct = useCallback((model: string) => {
     try {
       const updatedProducts = products.filter(product => product.product_model !== model)
       setProducts(updatedProducts)
-      return saveWishlist(updatedProducts)
+      return saveWishList(updatedProducts)
     } catch (error) {
       console.error('Failed to update wish list:', error)
       setError('Failed to update your wish list. Please try again.')
       return false
     }
-  }, [products, saveWishlist])
+  }, [products, saveWishList])
 
   // Clear error message
   const clearError = useCallback(() => {

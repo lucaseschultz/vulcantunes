@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import {IconNavItem, ImageNavItem} from '@/src/app/lib/definitions'
 import {useNotification} from '@/src/app/ui/layout/components/notification-context'
-import {WishlistNotification} from './wish-list-notification'
+import {WishListNotification} from './wish-list-notification'
 
 interface NavItemProps {
   navItem: IconNavItem | ImageNavItem
@@ -12,7 +12,7 @@ interface NavItemProps {
 
 export function NavItem({navItem}: NavItemProps) {
   const {
-    showWishlistNotification
+    showWishListNotification
   } = useNotification();
 
   // Determine if this is an image nav item
@@ -34,8 +34,8 @@ export function NavItem({navItem}: NavItemProps) {
       </Link>
 
       {/* Render notification if this is the Wish List item and notification should be shown */}
-      {navItem.name === 'Wish List' && showWishlistNotification && (
-        <WishlistNotification/>
+      {navItem.name === 'Wish List' && showWishListNotification && (
+        <WishListNotification/>
       )}
     </li>
   )

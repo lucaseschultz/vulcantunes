@@ -11,20 +11,20 @@ export default function WishListContent() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchWishlistProducts() {
+    async function fetchWishListProducts() {
       try {
         setIsLoading(true)
 
-        // Get wishlist models from localStorage
-        const savedModels = localStorage.getItem('wishlist')
-        if (!savedModels) {
+        // Get wish list models from localStorage
+        const savedModelsNumbers = localStorage.getItem('wish-list')
+        if (!savedModelsNumbers) {
           setProducts([])
           return
         }
 
-        const wishlistModels = JSON.parse(savedModels) as string[]
+        const wishListModelNumbers = JSON.parse(savedModelsNumbers) as string[]
 
-        if (wishlistModels.length === 0) {
+        if (wishListModelNumbers.length === 0) {
           setProducts([])
           return
         }
@@ -33,21 +33,21 @@ export default function WishListContent() {
         const response = await fetch('/api/products')
         const allProducts = await response.json()
 
-        // Filter products that are in the wishlist
-        const wishlistProducts = allProducts.filter((product: Product) =>
-          wishlistModels.includes(product.product_model)
+        // Filter products that are in the wish list
+        const wishListProducts = allProducts.filter((product: Product) =>
+          wishListModelNumbers.includes(product.product_model)
         )
 
-        setProducts(wishlistProducts)
+        setProducts(wishListProducts)
       } catch (error) {
-        console.error('Failed to fetch wishlist products:', error)
+        console.error('Failed to fetch wish list products:', error)
         setProducts([])
       } finally {
         setIsLoading(false)
       }
     }
 
-    fetchWishlistProducts()
+    fetchWishListProducts()
   }, [])
 
   if (isLoading) {

@@ -31,7 +31,7 @@ export default function ProductPageItem({product}: { product: Product }) {
         </Link>
       </div>
 
-      <article className="product-details-container" data-testid={`wishlist-${product_model}`} id={product_model}>
+      <article className="product-details-container" data-testid={`wish-list-${product_model}`} id={product_model}>
         <div className="product-page-image-container">
           <ProductImage
             productImage={product_image}
