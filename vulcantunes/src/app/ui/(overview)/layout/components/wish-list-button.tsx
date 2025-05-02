@@ -2,12 +2,10 @@
 
 import {useState, useEffect} from 'react'
 import {Heart} from "@phosphor-icons/react"
-import {ProductItemProps} from '@/src/app/lib/definitions';
+import {WishListProps} from '@/src/app/lib/definitions';
 
-export default function WishListButton({product}: ProductItemProps) {
-  const {
-    product_model
-  } = product;
+export default function WishListButton({product_model}: WishListProps) {
+
 
   const [isInWishList, setIsInWishList] = useState(false)
 

@@ -46,7 +46,7 @@ export default function ProductPageItem({product}: { product: Product }) {
         <div className="product-page-info">
           <div className="product-info-header">
             <h1 className="product-page-name">{product_name}</h1>
-            <WishListButton product={product}/>
+            <WishListButton product_model={product_model}/>
           </div>
           <p className="product-page-description">{product_description}</p>
           {features && features.length > 0 && (

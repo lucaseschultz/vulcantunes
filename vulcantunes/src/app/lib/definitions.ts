@@ -139,3 +139,7 @@ export interface ProductCardProps {
   actions?: ReactNode
   additionalContent?: ReactNode
 }
+
+export interface WishListProps {
+  product_model: string
+}
