@@ -1,5 +1,3 @@
-use @import button-style instead of card-container, where appropriate (make see product-details-button always white)
-
 layouts:
 add page descriptions to layout metadata
 
