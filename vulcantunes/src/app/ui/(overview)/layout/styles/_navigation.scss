@@ -49,7 +49,7 @@
 .wish-list-notification {
   position: absolute;
   top: var(--top-nav-height);
-  right: 1px;
+  right: -10%;
   @include card-container(var(--success-color), 4px, none, 4px 8px);
   font-size: 12px;
   white-space: nowrap;
