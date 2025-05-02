@@ -18,7 +18,7 @@ export function ProductCard({
                               product,
                               imageSize = {width: 200, height: 200},
                               imagePriority = false,
-                              imageClassName = "product-image",
+                              imageClassName = "product-main-image",
                               description,
                               testIdPrefix = "product",
                               actions,
