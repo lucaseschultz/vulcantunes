@@ -8,6 +8,7 @@ export async function generateMetadata({params}: ProductPageProps): Promise<Meta
 
   return {
     title: model,
+    description: `${model} product page`,
   };
 }
 
