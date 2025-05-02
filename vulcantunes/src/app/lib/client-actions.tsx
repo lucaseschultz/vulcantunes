@@ -3,12 +3,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import {usePathname} from 'next/navigation'
-import type {IconNavItem, ImageNavItem} from './definitions'
+import {DisplayNavItemsProps, IconNavItem, ImageNavItem} from './definitions'
 
-export function DisplayNavItems({NavName, NavItems}: {
-  NavName: string,
-  NavItems: (IconNavItem | ImageNavItem)[]
-}) {
+export function DisplayNavItems({NavName, NavItems}: DisplayNavItemsProps) {
   const pathname = usePathname()
 
   return (
