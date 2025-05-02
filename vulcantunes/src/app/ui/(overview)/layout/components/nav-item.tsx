@@ -1,37 +1,42 @@
 'use client'
 
-import Link from "next/link"
-import Image from "next/image"
-import {usePathname} from 'next/navigation'
-import {NavItemProps, IconNavItem, ImageNavItem} from '@/src/app/lib/definitions'
+import Link from 'next/link'
+import Image from 'next/image'
+import {IconNavItem, ImageNavItem} from '@/src/app/lib/definitions'
+import {useNotification} from '@/src/app/ui/layout/components/notification-context'
+import {WishlistNotification} from './wish-list-notification'
 
-export function NavItem({navItem, renderNotification}: NavItemProps) {
-  const pathname = usePathname()
-  const isImage = typeof navItem.icon === 'string'
+interface NavItemProps {
+  navItem: IconNavItem | ImageNavItem
+}
+
+export function NavItem({navItem}: NavItemProps) {
+  const {
+    showWishlistNotification
+  } = useNotification();
+
+  // Determine if this is an image nav item
+  const isImageNavItem = 'alt' in navItem;
 
   return (
-    <li key={navItem.name}>
-      <Link
-        href={navItem.href}
-        aria-label={`${navItem.name} button`}
-        title={navItem.name}
-      >
-        {isImage ? (
+    <li className="nav-item">
+      <Link href={navItem.href} className="nav-link">
+        {isImageNavItem ? (
           <Image
-            src={navItem.icon as string}
-            alt={isImage ? (navItem as ImageNavItem).alt : navItem.name}
+            src={(navItem as ImageNavItem).icon}
+            alt={(navItem as ImageNavItem).alt}
             width={(navItem as ImageNavItem).width}
             height={(navItem as ImageNavItem).height}
           />
         ) : (
-          <navItem.icon
-            size={(navItem as IconNavItem).size}
-            aria-hidden="true"
-            weight={navItem.href === pathname ? 'fill' : 'regular'}
-          />
+          <navItem.icon size={(navItem as IconNavItem).size}/>
         )}
       </Link>
-      {renderNotification && renderNotification(navItem)}
+
+      {/* Render notification if this is the Wish List item and notification should be shown */}
+      {navItem.name === 'Wish List' && showWishlistNotification && (
+        <WishlistNotification/>
+      )}
     </li>
   )
 }
